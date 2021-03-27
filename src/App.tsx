@@ -5,8 +5,8 @@ import initData from './assets/product-manager.json'
 
 import CollapBtn from './components/CollapBtn/CollapBtn'
 import Conversation from './components/Conversation/Conversation'
-
 import PopUpBtn from './components/PopUpBtn/PopUpBtn'
+import Selection from './components/Selection/Selection'
 import TopBar from './components/TopBar/TopBar'
 
 import Match from './components/Match/Match'
@@ -154,10 +154,10 @@ export default class App extends React.Component<{}, State> {
                         </div>
                     </div>
                 )
-            //   case "selection":
-            //     return (
-            //       <Selection data={this.state.data} handleNext={this.handleNext} />
-            //     );
+              case "selection":
+                return (
+                  <Selection data={this.state.data} handleNext={this.handleNext} />
+                );
             //   case "form":
             //     return (
             //       <div>
