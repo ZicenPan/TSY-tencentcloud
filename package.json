@@ -1,0 +1,59 @@
+{
+  "name": "react-custom",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.13.0",
+    "@cloudbase/js-sdk": "^1.4.0",
+    "bootstrap": "^4.6.0",
+    "json-loader": "^0.5.7",
+    "node-sass": "^4.14.1",
+    "popper.js": "^1.16.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.5.2",
+    "react-dom": "^16.13.1",
+    "react-modal": "^3.12.1",
+    "typescript": "^3.9.2"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "cross-env CI=false react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject",
+    "deploy": "cloudbase framework deploy"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.2",
+    "@types/node": "^14.0.1",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-modal": "^3.12.0",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "cross-env": "^7.0.3",
+    "customize-cra": "^0.9.1",
+    "eslint": "^7.23.0",
+    "eslint-config-alloy": "^3.7.2",
+    "eslint-plugin-react": "^7.20.0",
+    "jquery": "^3.6.0",
+    "react-app-rewired": "^2.1.6",
+    "react-script": "^2.0.5",
+    "react-scripts": "^4.0.3"
+  }
+}
