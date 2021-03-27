@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import img from '../../assets/exitIcon.png'
 
 import "../../scss/style.scss";
 
@@ -17,10 +18,12 @@ class TopBar extends React.Component {
   //   console.log("here");
   //   return <div>{this.props.content}</div>;
   // };
+
   render() {
     return (
       <section className="progress-bar-top fixed-top bg-white">
         <div className="d-flex flex-row">
+        <img src={img} alt="Logo" />
             <span className="circle-blue" />
           <div className="number-circle-blue" style={{marginLeft: 380}}>1</div>
           <p className="ml-20" style={{alignSelf: "center"}}>接受需求</p>
