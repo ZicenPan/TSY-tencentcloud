@@ -1,64 +1,57 @@
-import React from "react";
-import { Dustbin } from "./Dustbin";
-import { Box } from "./Box";
+import React from 'react'
+import { Dustbin } from './Dustbin'
+import { Box } from './Box'
 import '../../scss/style.scss'
 
-export default function Match() {
-  return (
-    <div>
-      <h2 className="mt-160">明确分析目标</h2>
-      <div className="mt-40 d-flex flex-row flex-wrap">
-        <p style={{ lineHeight: 2.5 }}>
-          用户调研反映多数用户希望在”探元素社交软件“里增加表情反馈功能，该竞品分析报告旨在分析总结竞品表情反馈功能的
-        </p>
-        <div
-          className="align-self-center"
-          style={{ overflow: "hidden", clear: "both", marginLeft: "10px" }}
-        >
-          <Dustbin />
-        </div>
-        <div style={{ lineHeight: 2.5 }}> 、</div>
-        <div
-          className="align-self-center"
-          style={{ overflow: "hidden", clear: "both", marginLeft: "10px" }}
-        >
-          <Dustbin />
-        </div>
-        <div style={{ lineHeight: 2.5 }}> 、</div>
+interface Props {
+    data: any
+    handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
 
-        <div
-          className="align-self-center"
-          style={{ overflow: "hidden", clear: "both", marginLeft: "10px" }}
-        >
-          <Dustbin />
-        </div>
-        <p style={{ lineHeight: 2.5 }}>和己方产品的</p>
-        <div
-          className="align-self-center"
-          style={{ overflow: "hidden", clear: "both", marginLeft: "10px" }}
-        >
-          <Dustbin />
-        </div>
-        <div style={{ lineHeight: 2.5 }}> 、</div>
+interface State {
+    num: number
+    img: any
+}
 
-        <div
-          className="align-self-center"
-          style={{ overflow: "hidden", clear: "both", marginLeft: "10px" }}
-        >
-          <Dustbin />
-        </div>
-        <div style={{ lineHeight: 2.5 }}> 。</div>
-      </div>
-      <div
-        className="d-flex justify-content-center mt-80"
-        style={{ overflow: "hidden", clear: "both" }}
-      >
-        <Box name="呈现方式" />
-        <Box name="优缺点" />
-        <Box name="用户价值" />
-        <Box name="启发点" />
-        <Box name="机会点" />
-      </div>
-    </div>
-  );
+export default class Match extends React.Component<Props, State> {
+    constructor(props: any) {
+        super(props)
+        this.state = {
+            num: 0,
+            img: ''
+        }
+    }
+
+    render() {
+        console.log(this.props.data)
+        const items = this.props.data.content.map((item: any) => {
+            if (item.type === 'dustbin') {
+                return (
+                    <div
+                        className="align-self-center"
+                        style={{ overflow: 'hidden', clear: 'both', marginLeft: '10px' }}
+                    >
+                        <Dustbin />
+                    </div>
+                )
+            } else {
+                return <p style={{ lineHeight: 2.5 }}>{item.data}</p>
+            }
+        })
+        const boxes = this.props.data.boxes.map((item: any, index: number) => {
+            return <Box key={index} name={item.name} />
+        })
+        return (
+            <div>
+                <h2 className="mt-160">{this.props.data.name}</h2>
+                <div className="mt-40 d-flex flex-row flex-wrap">{items}</div>
+                <div
+                    className="d-flex justify-content-center mt-80"
+                    style={{ overflow: 'hidden', clear: 'both' }}
+                >
+                    {boxes}
+                </div>
+            </div>
+        )
+    }
 }

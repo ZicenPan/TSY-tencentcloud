@@ -24,7 +24,6 @@ class TopBar extends React.Component {
       <section className="progress-bar-top fixed-top bg-white">
         <div className="d-flex flex-row">
         <img src={img} alt="Logo" />
-            <span className="circle-blue" />
           <div className="number-circle-blue" style={{marginLeft: 380}}>1</div>
           <p className="ml-20" style={{alignSelf: "center"}}>接受需求</p>
           <div className="number-circle-grey ml-40">2</div>

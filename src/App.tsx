@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import initData from './assets/product-manager.json'
 
 import CollapBtn from './components/CollapBtn/CollapBtn'
+import ComponentSheet from './components/Form/ComponentSheet'
 import Conversation from './components/Conversation/Conversation'
 import PopUpBtn from './components/PopUpBtn/PopUpBtn'
 import Selection from './components/Selection/Selection'
@@ -117,7 +118,7 @@ export default class App extends React.Component<{}, State> {
                 return (
                     <div>
                         <DndProvider backend={HTML5Backend}>
-                            <Match />
+                            <Match data={this.state.data} handleNext={this.handleNext}/>
                         </DndProvider>
                         <button
                             onClick={this.handleNext}
@@ -158,22 +159,23 @@ export default class App extends React.Component<{}, State> {
                 return (
                   <Selection data={this.state.data} handleNext={this.handleNext} />
                 );
-            //   case "form":
-            //     return (
-            //       <div>
-            //         <ComponentSheet />
-            //         <div>
-            //           <button
-            //             onClick={this.handleNext}
-            //             type="submit"
-            //             className="btn btn-blue"
-            //             style={{ position: "fixed", top: "85%", left: "70%" }}
-            //           >
-            //             Next
-            //           </button>
-            //         </div>
-            //       </div>
-            //     );
+              case "form":
+                return (
+                  <div>
+                    <h2>{this.state.data.name}</h2>
+                    <ComponentSheet data="" handleNext={this.handleNext}/>
+                    <div>
+                      <button
+                        onClick={this.handleNext}
+                        type="submit"
+                        className="btn btn-blue"
+                        style={{ position: "fixed", top: "85%", left: "70%" }}
+                      >
+                        Next
+                      </button>
+                    </div>
+                  </div>
+                );
             default:
                 return <div />
         }

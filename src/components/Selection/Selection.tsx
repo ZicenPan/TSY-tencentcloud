@@ -3,8 +3,6 @@
 import React, { Component } from 'react'
 import '../../scss/style.scss'
 
-import a from '../../assets/exitIcon.png'
-
 interface Props {
     data: any
     handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
@@ -58,7 +56,7 @@ export default class Selection extends Component<Props, State> {
                     {this.renderItem(4, 'exitIcon')}
                     {this.renderItem(5, 'exitIcon')}
                 </div>
-                <div className="mt-40 ml-at">
+                <div className="mt-80 ml-800">
                     <button
                         onClick={this.props.handleNext}
                         type="submit"

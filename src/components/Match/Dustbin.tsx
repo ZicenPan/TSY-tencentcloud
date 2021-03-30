@@ -25,9 +25,7 @@ export const Dustbin = () => {
   const isActive = canDrop && isOver;
   let backgroundColor = "white";
   if (isActive) {
-    backgroundColor = "darkgreen";
-  } else if (canDrop) {
-    backgroundColor = "darkkhaki";
+    backgroundColor = "#cccccc";
   }
   return (
     <div
