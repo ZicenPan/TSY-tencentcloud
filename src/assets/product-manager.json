@@ -64,6 +64,7 @@
                 {
                     "name": "明确分析目标",
                     "type": "match",
+                    "num": 5,
                     "content": [
                         {
                             "type": "text",
@@ -71,6 +72,7 @@
                         },
                         {
                             "type": "dustbin",
+                            "id": "0",
                             "data": ""
                         },
                         {
@@ -79,6 +81,7 @@
                         },
                         {
                             "type": "dustbin",
+                            "id": "1",
                             "data": ""
                         },
                         {
@@ -87,6 +90,7 @@
                         },
                         {
                             "type": "dustbin",
+                            "id": "2",
                             "data": ""
                         },
                         {
@@ -95,6 +99,7 @@
                         },
                         {
                             "type": "dustbin",
+                            "id": "3",
                             "data": ""
                         },
                         {
@@ -103,6 +108,7 @@
                         },
                         {
                             "type": "dustbin",
+                            "id": "4",
                             "data": ""
                         },
                         {

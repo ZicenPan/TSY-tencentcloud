@@ -10,7 +10,7 @@ import PopUpBtn from './components/PopUpBtn/PopUpBtn'
 import Selection from './components/Selection/Selection'
 import TopBar from './components/TopBar/TopBar'
 
-import Match from './components/Match/Match'
+import { Match } from './components/Match/Match'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
