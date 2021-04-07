@@ -26,6 +26,7 @@ interface State {
     step: number
     cap: number
     data: any
+    stageChange: number;
 }
 
 export default class App extends React.Component<{}, State> {
@@ -35,7 +36,8 @@ export default class App extends React.Component<{}, State> {
             stage: 1,
             step: 0,
             cap: initData.stages[1].steps!.length,
-            data: initData.stages[1].steps ? initData.stages[1].steps[0] : ''
+            data: initData.stages[1].steps ? initData.stages[1].steps[0] : '',
+            stageChange: 0
         }
         this.handleNext = this.handleNext.bind(this)
     }
@@ -92,15 +94,19 @@ export default class App extends React.Component<{}, State> {
         if (this.state.step < this.state.cap - 1) {
             this.setState(() => ({
               step: this.state.step + 1,
-                data: initData.stages[this.state.stage].steps![this.state.step + 1]
+                data: initData.stages[this.state.stage].steps![this.state.step + 1],
+                stageChange: 0
             }))
+
         } else {
             this.setState(() => ({
                 stage: this.state.stage + 1,
                 step: 0,
                 cap: initData.stages[this.state.stage + 1].steps!.length,
-                data: initData.stages[this.state.stage + 1].steps![0]
+                data: initData.stages[this.state.stage + 1].steps![0],
+                stageChange: 1
             }))
+   
         }
     }
 
@@ -184,27 +190,43 @@ export default class App extends React.Component<{}, State> {
     render() {
         console.log(initData)
         console.log('current: ', this.state.stage, ' ', this.state.step)
+
+        // TopBar 参数准备
+        const stageStrs = []
+        for (let i = 1; i < initData.stages.length; i++) {
+            stageStrs.push(initData.stages[i].name);
+        }
+
         return (
             <div className="App">
-                <TopBar />
+                <TopBar stageStrs = {stageStrs} cur = {this.state.stage}/>
                 <div className="main-container d-flex flex-row justify-content-between">
                     <div className="d-flex flex-column">
                         <div className="mt-40 ml-40">
                             <PopUpBtn
                                 name="任务描述"
                                 content="分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                stage={this.state.stage}
+                                data=""
+                                changeStage = {this.state.stageChange}
                             />
                         </div>
                         <div className="mt-40 ml-40">
                             <PopUpBtn
                                 name="操作指引"
                                 content="操作-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                stage={this.state.stage}
+                                data=""
+                                changeStage = {this.state.stageChange}
                             />
                         </div>
                         <div className="mt-40 ml-40">
                             <PopUpBtn
                                 name="资源库"
                                 content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                stage={this.state.stage}
+                                data={initData.recources}
+                                changeStage = {this.state.stageChange}
                             />
                         </div>
                         <div className="side-container-240" />

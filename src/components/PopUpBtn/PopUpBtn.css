@@ -4,6 +4,9 @@
     background-color: #ffffff;
     padding: 40px;
     border-radius: 20px;
+    overflow: auto!important;
+    max-height:80%;
+
 }
 
 .Overlay {
@@ -13,4 +16,8 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
+}
+
+.Modal-Div {
+    overflow: auto!important;
 }

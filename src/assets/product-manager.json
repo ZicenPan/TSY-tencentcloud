@@ -291,5 +291,32 @@
             "name": "验收上线",
             "steps": []
         }
+    ],
+    "recources":[
+        {},
+        {
+            "rid": 1,
+            "name": "需求详情",
+            "stage_id": 1,
+            "src_url": ""
+        },
+        {
+            "rid": 2,
+            "name": "竞品分析文档",
+            "stage_id": 2,
+            "src_url": ""
+        },
+        {
+            "rid": 3,
+            "name": "需求文档",
+            "stage_id": 3,
+            "src_url": ""
+        },
+        {
+            "rid": 4,
+            "name": "项目排期表",
+            "stage_id": 4,
+            "src_url": ""
+        }
     ]
 }

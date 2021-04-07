@@ -19,6 +19,8 @@
     "react-dom": "^16.13.1",
     "react-modal": "^3.12.1",
     "react-select": "^4.3.0",
+    "react-tooltip": "^4.2.17",
+    "react-tooltiper": "^1.1.1",
     "typescript": "^3.9.2",
     "url-loader": "^4.1.1"
   },
