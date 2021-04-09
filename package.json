@@ -7,6 +7,7 @@
     "@cloudbase/js-sdk": "^1.4.0",
     "bootstrap": "^4.6.0",
     "file-loader": "^6.2.0",
+    "griffith": "^1.10.0",
     "json-loader": "^0.5.7",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
@@ -22,7 +23,8 @@
     "react-tooltip": "^4.2.17",
     "react-tooltiper": "^1.1.1",
     "typescript": "^3.9.2",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "video-react": "^0.14.1"
   },
   "scripts": {
     "start": "react-app-rewired start",

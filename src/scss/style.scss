@@ -4,6 +4,7 @@
 @import './_margins.scss';
 @import './_react-datasheet-styles.scss';
 @import '~bootstrap/scss/bootstrap.scss';
+@import '~video-react/styles/scss/video-react';
  
 .ContestPreview {
   margin: 1em;
@@ -287,4 +288,18 @@
 
 .scrollbar {
   overflow: auto!important;
+}
+
+.video-introduction {
+  font-family: PingFang HK;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height, or 150% */
+
+
+  /* 深灰 */
+
+  color: #797979;
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import "./ResourcePoolContent.css"
-import logo from "../../../assets/recource_pool.png"
-import backicon from "../../../assets/backicon.png"
-import rsc1 from "../../../assets/resource1.png"
+import logo from "@/assets/recource_pool.png"
+import backicon from "@/assets/backicon.png"
+import rsc1 from "@/assets/resource1.png"
 
 interface Props {
     stage: number
@@ -21,8 +21,11 @@ export default class ResourcePoolContent extends React.Component<Props, State> {
             resourceId: 0,
             type:"list",
         }
+        this.handleClickRsc = this.handleClickRsc.bind(this);
+        this.handleClickBackIcon = this.handleClickBackIcon.bind(this);
     }
 
+    
     handleClickRsc(rid) {
         if(rid < this.props.stage) {
             this.setState({
@@ -105,6 +108,8 @@ export default class ResourcePoolContent extends React.Component<Props, State> {
                     
                 )
             }
+            default:
+                return <div />
         }
     }
     

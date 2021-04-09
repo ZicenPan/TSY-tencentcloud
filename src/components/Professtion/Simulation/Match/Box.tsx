@@ -7,7 +7,7 @@ import {
     useDrag
 } from 'react-dnd'
 import { ItemTypes } from './ItemTypes'
-import '../../scss/style.scss'
+import '@/scss/style.scss'
 
 const style: React.CSSProperties = {
     border: '1px dashed gray',

@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React, { Component } from 'react'
-import '../../scss/style.scss'
+import '@/scss/style.scss'
 
 interface Props {
     data: any
@@ -23,7 +23,7 @@ export default class Selection extends Component<Props, State> {
     }
 
     renderItem = (id: number, imgName: string) => {
-        const requestImageFile = require.context('./../../assets/', true, /.png$/)
+        const requestImageFile = require.context('../../../../assets/', true, /.png$/)
 
         return (
             <div className="sel mt-20">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Dustbin } from './Dustbin'
 import { Box } from './Box'
-import '../../scss/style.scss'
+import '@/scss/style.scss'
 
 interface Props {
     data: any

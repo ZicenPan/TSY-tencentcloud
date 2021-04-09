@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import img from '../../assets/exitIcon.png';
+import img from '@/assets/exitIcon.png';
 
-import "../../scss/style.scss";
+import "@/scss/style.scss";
 import "./TopBar.css";
 
 interface Props {
   stageStrs: Array<string>,
-  cur: number
+  cur: number,
+  handleChangeType: Function
 }
 
 // //后续可能会有点击stage编号跳转的需求
@@ -61,9 +62,9 @@ class TopBar extends React.Component<Props, {}> {
           {stagesBars}
 
           <div className="ml-auto">
-            <a href="/sim">
-              <button id="bannerBtn" type="button" className="btn btn-blue">
-                业内人士分享视频
+            <a>
+              <button id="bannerBtn" type="button" className="btn btn-blue" onClick={()=>{this.props.handleChangeType("sketch")}}>
+                个人中心
               </button>
             </a>
           </div>
