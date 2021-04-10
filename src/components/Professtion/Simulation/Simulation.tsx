@@ -13,6 +13,7 @@ import Selection from './Selection/Selection'
 import TopBar from './TopBar/TopBar'
 import Video from './SimulationVideo/SimulationVideo'
 import Match from './Match/Match'
+import StepNav from './StepNav/StepNav'
 
 import './Simulation.css'
 
@@ -23,34 +24,39 @@ const onPopState = (handler: any) => {
 
 interface Props {
     stage: number
+    step: number
     handleChangeStage: Function
     handleChangeType: Function
+    handleChangeStep:Function
 }
 
+// 由于存在顶部栏的任务跳转curStage与props中的stage不一定相等
 interface State {
-    stage: number
-    step: number
+    curStage: number
+    curStep: number
     data: any
     stageChange: number;
 }
-
+    
 export default class Simulation extends React.Component<Props, State> {
     constructor(props: any) {
         super(props)
         this.state = {
-            stage: 1,
-            step: 0,
-            data: initData.stages[1].steps ? initData.stages[1].steps[0] : '',
+            curStage: this.props.stage,
+            curStep: this.props.step,
+            data: initData.stages[this.props.stage].steps ? initData.stages[this.props.stage].steps[this.props.step] : '',
             stageChange: 0
         }
         this.handleNext = this.handleNext.bind(this)
+        this.handleChangeCurStage = this.handleChangeCurStage.bind(this)
+        this.handleChangeStep = this.handleChangeStep.bind(this)
     }
 
     componentDidMount() {
         console.log(this.state)
         onPopState(() => {
             this.setState({
-                step: this.state.step
+                curStep: this.state.curStep
             })
         })
     }
@@ -94,22 +100,50 @@ export default class Simulation extends React.Component<Props, State> {
 
     handleNext = () => {
         console.log(this.state)
-        console.log('beforeNext: ', this.props.stage, ' ', this.state.step)
-        const cap = initData.stages[this.props.stage].steps!.length
-        if (this.state.step < cap - 1) {
+        console.log('beforeNext: ', this.state.curStage, ' ', this.state.curStep)
+        const cap = initData.stages[this.state.curStage].steps!.length
+        if (this.state.curStep < cap - 1) {
             this.setState(() => ({
-                step: this.state.step + 1,
-                data: initData.stages[this.props.stage].steps![this.state.step + 1],
+                curStep: this.state.curStep + 1,
+                data: initData.stages[this.state.curStage].steps![this.state.curStep + 1],
                 stageChange: 0
             }))
 
+            if(this.state.curStep >= this.props.step) {
+                this.props.handleChangeStep(this.props.step + 1)
+            } 
         } else {
             this.setState(() => ({
-                step: 0,
-                data: initData.stages[this.props.stage].steps![0],
-                stageChange: 1
+                curStage: this.state.curStage + 1,
+                curStep: 0,
+                data: initData.stages[this.state.curStage + 1].steps![0],
+                stageChange: this.state.curStage >= this.props.stage? 1:0
             }))
-            this.props.handleChangeStage(this.props.stage+1)
+            
+            if (this.state.curStage >= this.props.stage) {
+                this.props.handleChangeStage(this.props.stage + 1)
+                this.props.handleChangeStep(0)
+            }
+        }
+    }
+
+    handleChangeCurStage = (curStage) => {
+        if (curStage <= this.props.stage) {
+            this.setState({
+                curStage: curStage,
+                curStep: 0,
+                data: initData.stages[curStage].steps ? initData.stages[curStage].steps[0] : '',
+                stageChange:0
+            })
+        }
+    }
+
+    handleChangeStep = (step) => {
+        if (step < initData.stages[this.state.curStage].steps.length) {
+            this.setState({
+                data: initData.stages[this.state.curStage].steps[step],
+                curStep: step,
+            })
         }
     }
 
@@ -119,7 +153,7 @@ export default class Simulation extends React.Component<Props, State> {
                 return (
                     <Conversation
                         data={this.state.data.content.convo}
-                        id={this.state.step}
+                        id={this.state.curStep}
                         handleNext={this.handleNext}
                     />
                 )
@@ -226,7 +260,7 @@ export default class Simulation extends React.Component<Props, State> {
 
     render() {
         console.log(initData)
-        console.log('current: ', this.props.stage, ' ', this.state.step)
+        console.log('current: ', this.state.curStage, ' ', this.state.curStep)
 
         // TopBar 参数准备
         const stageStrs = []
@@ -236,9 +270,15 @@ export default class Simulation extends React.Component<Props, State> {
 
         return (
             <div className="App">
-                <TopBar stageStrs = {stageStrs} cur = {this.props.stage} handleChangeType={this.props.handleChangeType}/>
+                <TopBar 
+                    stage = {this.props.stage}
+                    stageStrs = {stageStrs} 
+                    curStage = {this.state.curStage} 
+                    handleChangeType={this.props.handleChangeType}
+                    handleChangeCurStage={this.handleChangeCurStage}
+                />
                 <div className="main-container d-flex flex-row justify-content-between">
-                    <div className="d-   flex-column">
+                    <div className="d-flex flex-column">
                         <div className="mt-40 ml-40">
                             <PopUpBtn
                                 name="任务描述"
@@ -264,6 +304,17 @@ export default class Simulation extends React.Component<Props, State> {
                                 stage={this.props.stage}
                                 data={initData.recources}
                                 changeStage = {this.state.stageChange}
+                            />
+                        </div>
+
+                        <div className="mt-40 ml-40">
+                            <StepNav
+                                stage = {this.props.stage}
+                                curStage = {this.state.curStage}
+                                curStep = {this.state.curStep}
+                                step = {this.props.step}
+                                stepInfo = {initData.stages[this.state.curStage].steps}
+                                handleChangeStep = {this.handleChangeStep}
                             />
                         </div>
                         <div className="side-container-240" />

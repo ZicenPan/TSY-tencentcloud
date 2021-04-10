@@ -7,8 +7,10 @@ import "./TopBar.css";
 
 interface Props {
   stageStrs: Array<string>,
-  cur: number,
+  curStage: number,
+  stage: number,
   handleChangeType: Function
+  handleChangeCurStage: Function
 }
 
 // //后续可能会有点击stage编号跳转的需求
@@ -44,12 +46,33 @@ class TopBar extends React.Component<Props, {}> {
         let firstBarStyle = {}
         if (i === 1)
           firstBarStyle = {marginLeft: 380};
-        if (this.props.cur === i) {
-          stagesBars.push(<div key={"topbar"+i.toString()} className="number-circle-blue ml-40" style={firstBarStyle}>{i}</div>);
-          stagesBars.push(<p key={"topbarstr"+i.toString()} className="ml-20" style={{alignSelf: "center"}}>{this.props.stageStrs[i-1]}</p>);
+        
+        if (i <= this.props.stage) {
+          stagesBars.push(
+            <div 
+              key={"topbar"+i.toString()} 
+              className="number-circle-blue ml-40" 
+              style={firstBarStyle} 
+              onClick={()=>{this.props.handleChangeCurStage(i)}}
+            >
+              {i}
+            </div>
+          );
         } else {
-          stagesBars.push(<div key={"topbar"+i.toString()} className="number-circle-grey ml-40" style={firstBarStyle}>{i}</div>);
+          stagesBars.push(
+            <div 
+              key={"topbar"+i.toString()} 
+              className="number-circle-grey ml-40" 
+              style={firstBarStyle} 
+              onClick={()=>{this.props.handleChangeCurStage(i)}}
+            >
+              {i}
+            </div>
+            );
         }
+        if (this.props.curStage === i) {
+          stagesBars.push(<p key={"topbarstr"+i.toString()} className="ml-20" style={{alignSelf: "center"}}>{this.props.stageStrs[i-1]}</p>);
+        } 
 
     }
 

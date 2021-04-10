@@ -16,6 +16,7 @@ interface Props {
 interface State {
     type: string
     stage: number
+    step: number
 }
 
 export default class Professtion extends React.Component<Props, State> {
@@ -24,15 +25,23 @@ export default class Professtion extends React.Component<Props, State> {
         this.state = {
             type: "sketch",
             stage: 1,
+            step: 0
         }
         this.handleChangeStage = this.handleChangeStage.bind(this);
         this.handeChangeType = this.handeChangeType.bind(this);
+        this.handleChangeStep = this.handleChangeStep.bind(this)
     }
 
     
     handleChangeStage(stage) {
         this.setState({
             stage: stage
+        })
+    }
+
+    handleChangeStep(step) {
+        this.setState({
+            step: step
         })
     }
 
@@ -47,8 +56,9 @@ export default class Professtion extends React.Component<Props, State> {
             case "sketch": {  
                 return (
                     <div>
+                        <h1>个人中心</h1>
                         <h1 className="mt-40">产品经理</h1>
-                        <h2>模拟任务进行进度：{this.state.stage}</h2>
+                        <h2>模拟任务进行进度：stage:{this.state.stage}step:{this.state.step}</h2>
                         <button className="btn btn-blue" onClick={()=>{this.handeChangeType("simulation")}}>产品经理模拟</button>
                         <button className="btn btn-blue" onClick={()=>{this.handeChangeType("professtionVideo")}}>视频集中页面</button>
                     </div>
@@ -59,8 +69,10 @@ export default class Professtion extends React.Component<Props, State> {
                     <div>
                         <Simulation 
                             stage={this.state.stage} 
+                            step={this.state.step}
                             handleChangeStage={(stage)=>{this.handleChangeStage(stage)}}
                             handleChangeType={this.handeChangeType}
+                            handleChangeStep={this.handleChangeStep}
                         />
                     </div>
                     
@@ -88,7 +100,6 @@ export default class Professtion extends React.Component<Props, State> {
     render() {
         return(
             <div>
-                <h1>个人中心</h1>
                 {this.currentContent()}
             </div>
             
