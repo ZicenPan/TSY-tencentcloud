@@ -23,16 +23,18 @@ const style: React.CSSProperties = {
 export interface BoxProps {
     key: number
     name: string
+    type: string
 }
 
-export const Box: React.FC<BoxProps> = ({ name }) => {
+export const Box: React.FC<BoxProps> = ({ name, type }) => {
     const [{ isDragging }, drag]: any = useDrag(() => ({
-        type: ItemTypes.BOX,
-        item: { name: name, type: ItemTypes.BOX },
+        type: getType(type),
+        item: { name: name, type: getType(type) },
         end: (item, monitor) => {
             const dropResult = monitor.getDropResult()
-            if (item && dropResult) {
+            if (item && dropResult && typeof dropResult === "object") {
                 console.log(item);
+                console.log(dropResult);
                 //  alert(`You dropped ${item.name} into ${dropResult.name}!`);
             }
         },
