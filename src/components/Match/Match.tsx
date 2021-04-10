@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { Dustbin } from './Dustbin'
 import { Box } from './Box'
+import { getType } from './ItemTypes'
 import update from 'immutability-helper'
 import '../../scss/style.scss'
 import { isJSDocCommentContainingNode } from 'typescript'
@@ -16,6 +17,7 @@ interface State {
 }
 
 export const Match: React.FC<Props> = ({ data }) => {
+    const [matched, setMatched] = useState(true)
     const [droppedBoxes, setDroppedBoxes] = useState(new Set())
     const [dustbins, setDustbins] = useState([
         {
@@ -59,6 +61,9 @@ export const Match: React.FC<Props> = ({ data }) => {
 
     const handleDrop = useCallback(
         (index, item) => {
+            console.log("index", index)
+            console.log("item", item)
+
             // setDroppedBoxNames(update(droppedBoxNames, item.name ? { $push: [item.name] } : { $push: [] }))
             setDustbins(
                 update(dustbins, {
@@ -74,22 +79,27 @@ export const Match: React.FC<Props> = ({ data }) => {
     )
 
     // Dustbin layouts
-    const temp = [...dustbins];
+    const temp = [...dustbins]
+
+    const a = useCallback(
+        (val: boolean) => {
+            setMatched(matched && val)
+            console.log("curV", val)
+            console.log("curM", matched)
+        },
+        [matched]
+    )
+
+    // const check=useCallback(())
 
     const items = data.content.map((item: any, index: number) => {
         if (item.type === 'dustbin') {
-            console.log("id",item.id)
-            console.log("dustbin", dustbins)
-            console.log("temp", temp)
             return (
                 <div
                     className="align-self-center"
                     style={{ overflow: 'hidden', clear: 'both', marginLeft: '10px' }}
                 >
-                    <Dustbin
-                        lastItem={temp[item.id].lastItem}
-                        onDrop={(box: any) => handleDrop(item.id, box)}
-                    />
+                    <Dustbin type={getType(item.data)} onDrop={(box: any) => handleDrop(item.id, box)} />
                 </div>
             )
         } else {
@@ -98,8 +108,10 @@ export const Match: React.FC<Props> = ({ data }) => {
     })
 
     const boxes = data.boxes.map((item: any, index: number) => {
-        return <Box key={index} name={item.name} />
+        return <Box key={index} name={item.name} type={item.type} />
     })
+
+    console.log("all: ", matched)
 
     return (
         <div>

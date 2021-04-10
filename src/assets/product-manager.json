@@ -73,7 +73,7 @@
                         {
                             "type": "dustbin",
                             "id": "0",
-                            "data": ""
+                            "data": "A"
                         },
                         {
                             "type": "text",
@@ -82,7 +82,7 @@
                         {
                             "type": "dustbin",
                             "id": "1",
-                            "data": ""
+                            "data": "A"
                         },
                         {
                             "type": "text",
@@ -91,7 +91,7 @@
                         {
                             "type": "dustbin",
                             "id": "2",
-                            "data": ""
+                            "data": "A"
                         },
                         {
                             "type": "text",
@@ -100,7 +100,7 @@
                         {
                             "type": "dustbin",
                             "id": "3",
-                            "data": ""
+                            "data": "B"
                         },
                         {
                             "type": "text",
@@ -109,7 +109,7 @@
                         {
                             "type": "dustbin",
                             "id": "4",
-                            "data": ""
+                            "data": "B"
                         },
                         {
                             "type": "text",
@@ -118,19 +118,24 @@
                     ],
                     "boxes": [
                         {
-                            "name": "呈现方式"
+                            "name": "呈现方式",
+                            "type": "A"
                         },
                         {
-                            "name": "优缺点"
+                            "name": "优缺点",
+                            "type": "A"
                         },
                         {
-                            "name": "用户价值"
+                            "name": "用户价值",
+                            "type": "A"
                         },
                         {
-                            "name": "启发点"
+                            "name": "启发点",
+                            "type": "B"
                         },
                         {
-                            "name": "机会点"
+                            "name": "机会点",
+                            "type": "B"
                         }
                     ]
                 },
