@@ -4,6 +4,7 @@
 @import './_margins.scss';
 @import './_react-datasheet-styles.scss';
 @import '~bootstrap/scss/bootstrap.scss';
+@import '~video-react/styles/scss/video-react';
  
 .ContestPreview {
   margin: 1em;
@@ -103,9 +104,10 @@
   border: 1px solid $blue-dark;
   color: $white;
   text-align: center;
-  align-self: center;
+  align-self: center; 
 
   font: 14px Play, sans-serif;
+  cursor: pointer;
 }
 
 .number-circle-grey {
@@ -283,4 +285,22 @@
 .sel-icon{
   height:50px;
   width:50px !important;
+}
+
+.scrollbar {
+  overflow: auto!important;
+}
+
+.video-introduction {
+  font-family: PingFang HK;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  /* identical to box height, or 150% */
+
+
+  /* 深灰 */
+
+  color: #797979;
 }

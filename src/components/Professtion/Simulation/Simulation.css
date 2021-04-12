@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-container {
+  position: relative;
+  top: 80px;
+}
+
+.side-container-240 {
+  display: inline-block;
+  width:240px;
+}
+
+.react-logo {
+  margin-left: 20px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .react-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
