@@ -51,6 +51,11 @@
                             }
                         ]
                     }
+                },
+                {
+                    "name": "产品经理需求的由来",
+                    "type": "video",
+                    "vid": 1
                 }
             ]
         },
@@ -296,6 +301,68 @@
         {
             "name": "验收上线",
             "steps": []
+        }
+    ],
+    "recources":[
+        {},
+        {
+            "rid": 1,
+            "name": "需求详情",
+            "stage_id": 1,
+            "src_url": ""
+        },
+        {
+            "rid": 2,
+            "name": "竞品分析文档",
+            "stage_id": 2,
+            "src_url": ""
+        },
+        {
+            "rid": 3,
+            "name": "需求文档",
+            "stage_id": 3,
+            "src_url": ""
+        },
+        {
+            "rid": 4,
+            "name": "项目排期表",
+            "stage_id": 4,
+            "src_url": ""
+        }
+    ],
+    "videos":[
+        {},
+        {
+            "vid": 1,
+            "name": "产品经理需求的由来",
+            "introduction": "“产品经理”这一岗位最早出现于上世纪初。宝洁公司推出一款名叫“Camay”的香皂，但市场反响平平，于是宝洁公司的年轻职员麦古利提出“Camay”应该有专属的品牌负责人，以对市场负责为导向，进而管控“Camay”的设计、制作、销售等流程。宝洁的高层同意了麦古利的建议，并支持他进行尝试，最终大获成功。后来，宝洁根据这一事件调整了管理体系，产品经理这一岗位已现雏形。",
+            "stage_id": 1,
+            "src_url": "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
+            "cover_url": "https://video-react.js.org/assets/poster.png"
+        },
+        {
+            "vid": 2,
+            "name": "竞品调研的一二三",
+            "introduction": "“产品经理”这一岗位最早出现于上世纪初。宝洁公司推出一款名叫“Camay”的香皂，但市场反响平平，于是宝洁公司的年轻职员麦古利提出“Camay”应该有专属的品牌负责人，以对市场负责为导向，进而管控“Camay”的设计、制作、销售等流程。宝洁的高层同意了麦古利的建议，并支持他进行尝试，最终大获成功。后来，宝洁根据这一事件调整了管理体系，产品经理这一岗位已现雏形。",
+            "stage_id": 2,
+            "src_url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4",
+            "cover_url": "http://182.254.228.214/simulation/static/media/cloudbase.a32240d6.png"
+        },
+        {
+            "vid": 3,
+            "name": "一份需求文档的诞生",
+            "introduction": "“产品经理”这一岗位最早出现于上世纪初。宝洁公司推出一款名叫“Camay”的香皂，但市场反响平平，于是宝洁公司的年轻职员麦古利提出“Camay”应该有专属的品牌负责人，以对市场负责为导向，进而管控“Camay”的设计、制作、销售等流程。宝洁的高层同意了麦古利的建议，并支持他进行尝试，最终大获成功。后来，宝洁根据这一事件调整了管理体系，产品经理这一岗位已现雏形。",
+            "stage_id": 3,
+            "src_url": "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
+            "cover_url": "https://video-react.js.org/assets/poster.png"
+        },
+        {
+            "vid": 4,
+            "name": "产品经理的点滴",
+            "introduction": "“产品经理”这一岗位最早出现于上世纪初。宝洁公司推出一款名叫“Camay”的香皂，但市场反响平平，于是宝洁公司的年轻职员麦古利提出“Camay”应该有专属的品牌负责人，以对市场负责为导向，进而管控“Camay”的设计、制作、销售等流程。宝洁的高层同意了麦古利的建议，并支持他进行尝试，最终大获成功。后来，宝洁根据这一事件调整了管理体系，产品经理这一岗位已现雏形。",
+            "stage_id": 4,
+            "src_url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4",
+            "cover_url": "http://182.254.228.214/simulation/static/media/cloudbase.a32240d6.png"
         }
     ]
 }
