@@ -10,6 +10,9 @@ import PopUpBtn from './components/PopUpBtn/PopUpBtn'
 import Selection from './components/Selection/Selection'
 import TopBar from './components/TopBar/TopBar'
 
+import DataSheet from './components/Form/DataSheetTry'
+import Form from './components/Form/Form'
+
 import { Match } from './components/Match/Match'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
@@ -91,7 +94,7 @@ export default class App extends React.Component<{}, State> {
         console.log('beforeNext: ', this.state.stage, ' ', this.state.step)
         if (this.state.step < this.state.cap - 1) {
             this.setState(() => ({
-              step: this.state.step + 1,
+                step: this.state.step + 1,
                 data: initData.stages[this.state.stage].steps![this.state.step + 1]
             }))
         } else {
@@ -118,7 +121,7 @@ export default class App extends React.Component<{}, State> {
                 return (
                     <div>
                         <DndProvider backend={HTML5Backend}>
-                            <Match data={this.state.data} handleNext={this.handleNext}/>
+                            <Match data={this.state.data} handleNext={this.handleNext} />
                         </DndProvider>
                         <button
                             onClick={this.handleNext}
@@ -155,27 +158,27 @@ export default class App extends React.Component<{}, State> {
                         </div>
                     </div>
                 )
-              case "selection":
+            case 'selection':
+                return <Selection data={this.state.data} handleNext={this.handleNext} />
+            case 'form':
                 return (
-                  <Selection data={this.state.data} handleNext={this.handleNext} />
-                );
-              case "form":
-                return (
-                  <div>
-                    <h2>{this.state.data.name}</h2>
-                    <ComponentSheet data="" handleNext={this.handleNext}/>
                     <div>
-                      <button
-                        onClick={this.handleNext}
-                        type="submit"
-                        className="btn btn-blue"
-                        style={{ position: "fixed", top: "85%", left: "70%" }}
-                      >
-                        Next
-                      </button>
+                        <h2 className="mt-160">{this.state.data.name}</h2>
+                        <Form data={this.state.data.grid} />
+                        <DataSheet data={this.state.data.grid} />
+                        {/* <ComponentSheet data="" handleNext={this.handleNext} /> */}
+                        <div>
+                            <button
+                                onClick={this.handleNext}
+                                type="submit"
+                                className="btn btn-blue"
+                                style={{ position: 'fixed', top: '85%', left: '70%' }}
+                            >
+                                Next
+                            </button>
+                        </div>
                     </div>
-                  </div>
-                );
+                )
             default:
                 return <div />
         }
