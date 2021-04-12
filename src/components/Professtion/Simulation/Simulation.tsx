@@ -14,6 +14,7 @@ import TopBar from './TopBar/TopBar'
 import Video from './SimulationVideo/SimulationVideo'
 import Match from './Match/Match'
 import StepNav from './StepNav/StepNav'
+import FakeUi from './FakeUi/FakeUi'
 
 import './Simulation.css'
 
@@ -251,6 +252,16 @@ export default class Simulation extends React.Component<Props, State> {
                           </div>
                       )
                   }
+                }
+                case "fakeui": {
+                    return(
+                        <div>
+                            <FakeUi
+                                data={this.state.data.content}
+                            />
+
+                        </div>
+                    )
                 }
 
             default:

@@ -1,0 +1,17 @@
+.fakeui-hit {
+    position:absolute;
+
+    left: 50%+3%;
+    top: 20%+130%;
+    z-index: 2;
+}   
+
+.fakeui-ui {
+    width: 100%;
+    z-index: 1;
+}   
+
+.fakeui-container {
+    max-width: 400px;
+    height: 100px;
+}
