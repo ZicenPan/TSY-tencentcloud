@@ -81,7 +81,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         <div>
             <h2 className="mt-160">{data.name}</h2>
             <div className="mt-40 d-flex flex-row flex-wrap">
-                {dustbins.map((item: any, index) => {
+                {dustbins.map((item: any, index: number) => {
                     if (item.type === 'dustbin') {
                         return (
                             <Dustbin
@@ -106,6 +106,14 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                 ))}
             </div>
             <PageResult checked={matched()} handleNext={handleNext} />
+            <button
+                onClick={handleNext}
+                type="submit"
+                className="btn btn-blue"
+                style={{ position: 'fixed', top: '85%', left: '90%' }}
+            >
+                Skip
+            </button>
         </div>
     )
 })
