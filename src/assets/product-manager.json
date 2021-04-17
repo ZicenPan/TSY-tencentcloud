@@ -183,7 +183,35 @@
                 },
                 {
                     "name": "竞品对比分析",
-                    "type": "form"
+                    "type": "fakeui",
+                    "content": [
+                        {
+                            "fuid":1,
+                            "name":"xx",
+                            "url":"http://182.254.228.214/simulation/static/media/fakeui-fs-1.png",
+                            "hit_flag": 1,
+                            "offset_left":13,
+                            "offset_bottom":240,
+                            "width": 76,
+                            "height": 90
+                        },
+                        {
+                            "fuid":2,
+                            "name":"xx",
+                            "url":"http://182.254.228.214/simulation/static/media/fakeui-fs-2.png",
+                            "hit_flag": 1,
+                            "offset_left":5,
+                            "offset_bottom":297,
+                            "width": 16,
+                            "height": 80
+                        },
+                        {
+                            "fuid":2,
+                            "name":"xx",
+                            "url":"http://182.254.228.214/simulation/static/media/fakeui-fs-3.png",
+                            "hit_flag": 0
+                        }
+                    ]
                 },
                 {
                     "name": "用户反馈分析",
