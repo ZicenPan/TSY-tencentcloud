@@ -1,12 +1,9 @@
-import { monitorEventLoopDelay } from 'perf_hooks'
-import React, { CSSProperties, useState } from 'react'
-import { useDrop } from 'react-dnd'
-import { availTypes } from './ItemTypes'
-import '@/scss/style.scss'
+import React, { CSSProperties, FC, memo, useState } from 'react'
+import { ConnectDropTarget, DropTargetMonitor, DropTarget } from 'react-dnd'
+import { setFlagsFromString } from 'v8'
 
 const style: CSSProperties = {
     height: '3rem',
-    // width: '7rem',
     marginRight: '1.5rem',
     marginBottom: '1.5rem',
     color: 'black',
@@ -14,42 +11,44 @@ const style: CSSProperties = {
     textAlign: 'center',
     fontSize: '1rem',
     lineHeight: 'normal',
-    float: 'left'
+    float: 'left',
+    verticalAlign: 'center'
 }
-export const Dustbin = ({ type, onDrop }) => {
+
+export interface DustbinProps {
+    accepts: string[]
+    lastDroppedItem?: any
+    onDrop: (item: any) => void
+
+    // Collected Props
+    canDrop: boolean
+    isOver: boolean
+    connectDropTarget: ConnectDropTarget
+}
+
+export const Dustbin: FC<DustbinProps> = memo(function Dustbin({
+    accepts,
+    isOver,
+    canDrop,
+    connectDropTarget,
+    lastDroppedItem
+}) {
+    const isActive = isOver && canDrop
     const [last, setLast] = useState("")
-    const [{ canDrop, isOver, item }, drop] = useDrop(() => ({
-        accept: availTypes,
-        // drop: onDrop,
-        drop: (box: any) => {
-            setLast(box.name)
-            onDrop(type === box.type)
-            return { type }
-        },
-        collect: (monitor) => ({
-            isOver: monitor.isOver(),
-            canDrop: monitor.canDrop(),
-            item: monitor.getItem()
-        })
-    }))
-    const isActive = canDrop && isOver
-    // if (didDrop) {
-    //     setLastDropped(item.name)
-    // }
+
     let backgroundColor = 'white'
     if (isActive) {
         backgroundColor = '#cccccc'
-        // console.log(item.name)
     }
-    // console.log(last)
-    return (
+
+    return connectDropTarget(
         <div
-            ref={drop}
+            ref={connectDropTarget}
             role="Dustbin"
             style={{ ...style, backgroundColor, border: 'solid 1px black', textAlign: 'center' }}
         >
-            {last ? (
-                <p style={{ verticalAlign: 'center' }}>{last}</p>
+            {lastDroppedItem ? (
+                <p style={{ verticalAlign: 'center' }}>{lastDroppedItem.name}</p>
             ) : (
                 <p>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -57,4 +56,18 @@ export const Dustbin = ({ type, onDrop }) => {
             )}
         </div>
     )
-}
+})
+
+export default DropTarget(
+    (props: DustbinProps) => props.accepts,
+    {
+        drop(props: DustbinProps, monitor: DropTargetMonitor) {
+            props.onDrop(monitor.getItem())
+        }
+    },
+    (connect, monitor) => ({
+        connectDropTarget: connect.dropTarget(),
+        isOver: monitor.isOver(),
+        canDrop: monitor.canDrop()
+    })
+)(Dustbin)
