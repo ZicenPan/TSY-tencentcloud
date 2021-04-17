@@ -2,7 +2,7 @@ import { monitorEventLoopDelay } from 'perf_hooks'
 import React, { CSSProperties, useState } from 'react'
 import { useDrop } from 'react-dnd'
 import { availTypes } from './ItemTypes'
-import '@/scss/style.scss'
+import '../../scss/style.scss'
 
 const style: CSSProperties = {
     height: '3rem',
