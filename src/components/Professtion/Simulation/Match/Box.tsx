@@ -6,7 +6,7 @@ import {
     DragSourceSpec,
     useDrag
 } from 'react-dnd'
-import { ItemTypes } from './ItemTypes'
+import { getType } from './ItemTypes'
 import '@/scss/style.scss'
 
 const style: React.CSSProperties = {
@@ -24,17 +24,25 @@ export interface BoxProps {
     key: number
     name: string
     type: string
+    onDrop: any
 }
 
-export const Box: React.FC<BoxProps> = ({ name, type }) => {
+export const Box: React.FC<BoxProps> = ({ name, type, onDrop }) => {
     const [{ isDragging }, drag]: any = useDrag(() => ({
         type: getType(type),
         item: { name: name, type: getType(type) },
         end: (item, monitor) => {
-            const dropResult = monitor.getDropResult()
-            if (item && dropResult && typeof dropResult === "object") {
+            const dropResult: any = monitor.getDropResult()
+            if (item && dropResult) {
                 console.log(item);
-                console.log(dropResult);
+                console.log("result", dropResult);
+                if (item.type === dropResult.type) {
+                    onDrop(true);
+                    console.log("match", true);
+                } else {
+                    onDrop(false);
+                    console.log("match", false)
+                }
                 //  alert(`You dropped ${item.name} into ${dropResult.name}!`);
             }
         },
