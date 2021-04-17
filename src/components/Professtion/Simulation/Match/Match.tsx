@@ -21,7 +21,6 @@ interface DustbinState {
 interface BoxState {
     name: string
     type: string
-    matched: boolean
 }
 
 export interface DustbinSpec {
