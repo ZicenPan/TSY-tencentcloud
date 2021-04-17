@@ -124,23 +124,23 @@
                     "boxes": [
                         {
                             "name": "呈现方式",
-                            "type": "A",
+                            "type": "A"
                         },
                         {
                             "name": "优缺点",
-                            "type": "A",
+                            "type": "A"
                         },
                         {
                             "name": "用户价值",
-                            "type": "A",
+                            "type": "A"
                         },
                         {
                             "name": "启发点",
-                            "type": "B",
+                            "type": "B"
                         },
                         {
                             "name": "机会点",
-                            "type": "B",
+                            "type": "B"
                         }
                     ]
                 },
