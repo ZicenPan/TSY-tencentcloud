@@ -77,8 +77,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "0",
-                            "data": "A"
+                            "data": "A",
+                            "matched": false
                         },
                         {
                             "type": "text",
@@ -86,8 +86,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "1",
-                            "data": "A"
+                            "data": "A",
+                            "matched": false
                         },
                         {
                             "type": "text",
@@ -95,8 +95,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "2",
-                            "data": "A"
+                            "data": "A",
+                            "matched": false
                         },
                         {
                             "type": "text",
@@ -104,8 +104,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "3",
-                            "data": "B"
+                            "data": "B",
+                            "matched": false
                         },
                         {
                             "type": "text",
@@ -113,8 +113,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "4",
-                            "data": "B"
+                            "data": "B",
+                            "matched": false
                         },
                         {
                             "type": "text",

@@ -186,7 +186,7 @@
 // })
 
 import React, { FC, memo, useState, useCallback } from 'react'
-import { NativeTypes } from 'react-dnd-html5-backend'
+import ReactModal from 'react-modal'
 import Dustbin from './Dustbins'
 import Box from './Boxes'
 import { ItemTypes, availTypes } from './ItemTypes'
@@ -226,13 +226,14 @@ export interface ContainerState {
     boxes: BoxSpec[]
 }
 
-export const Match: FC<Props> = memo(function Match({ data }) {
+export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
     const [dustbins, setDustbins] = useState(data.content)
 
     const [boxes] = useState<BoxState[]>(data.boxes)
 
     const [droppedBoxNames, setDroppedBoxNames] = useState<string[]>([])
 
+    const [showModal, setShowModal] = useState(false)
     function isDropped(boxName: string) {
         return droppedBoxNames.indexOf(boxName) > -1
     }
@@ -257,7 +258,32 @@ export const Match: FC<Props> = memo(function Match({ data }) {
         },
         [droppedBoxNames, dustbins]
     )
-    console.log(dustbins)
+
+    const matched = () => {
+        const a = dustbins.filter(function (item) {
+            return item.matched === false
+        })
+        return a.length === 0
+    }
+
+    function handleOpenModal() {
+        setShowModal(true)
+    }
+
+    function handleCloseModal() {
+        setShowModal(false)
+    }
+
+    function getModelContent() {
+        return (
+            <div>
+                {' '}
+                {matched()
+                    ? '恭喜，你已经成功明确分析目标啦！'
+                    : '很遗憾，你的答案不正确哦。不要气馁，再试一次吧！'}
+            </div>
+        )
+    }
     return (
         <div>
             <h2 className="mt-160">{data.name}</h2>
@@ -286,6 +312,24 @@ export const Match: FC<Props> = memo(function Match({ data }) {
                     <Box name={name} type={type} isDropped={isDropped(name)} key={index} />
                 ))}
             </div>
+            <button
+                onClick={handleOpenModal}
+                type="submit"
+                className="btn btn-blue"
+                style={{ position: 'fixed', top: '85%', left: '70%' }}
+            >
+                Next
+            </button>
+
+            <ReactModal
+                isOpen={showModal}
+                contentLabel="onRequestClose Example"
+                onRequestClose={matched ? handleNext : handleCloseModal}
+                className="Modal centered"
+                overlayClassName="Overlay"
+            >
+                {getModelContent()}
+            </ReactModal>
         </div>
     )
 })

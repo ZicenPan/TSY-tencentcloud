@@ -165,14 +165,6 @@ export default class Simulation extends React.Component<Props, State> {
                         <DndProvider backend={HTML5Backend}>
                             <Match data={this.state.data} handleNext={this.handleNext} />
                         </DndProvider>
-                        <button
-                            onClick={this.handleNext}
-                            type="submit"
-                            className="btn btn-blue"
-                            style={{ position: 'fixed', top: '85%', left: '70%' }}
-                        >
-                            Next
-                        </button>
                     </div>
                 )
             case 'why':
