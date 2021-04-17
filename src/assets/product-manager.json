@@ -124,23 +124,28 @@
                     "boxes": [
                         {
                             "name": "呈现方式",
-                            "type": "A"
+                            "type": "A",
+                            "matched": false
                         },
                         {
                             "name": "优缺点",
-                            "type": "A"
+                            "type": "A",
+                            "matched": false
                         },
                         {
                             "name": "用户价值",
-                            "type": "A"
+                            "type": "A",
+                            "matched": false
                         },
                         {
                             "name": "启发点",
-                            "type": "B"
+                            "type": "B",
+                            "matched": false
                         },
                         {
                             "name": "机会点",
-                            "type": "B"
+                            "type": "B",
+                            "matched": false
                         }
                     ]
                 },
@@ -230,7 +235,7 @@
                         ],
                         [
                             { "value": "用户访谈", "readOnly": true, "type": "title" },
-                            { "value": "", "type": "select", "options": ["视觉","流程"] },
+                            { "value": "", "type": "select", "options": ["视觉", "流程"] },
                             { "value": "", "type": "select" },
                             { "value": "", "type": "select" }
                         ],
@@ -684,7 +689,7 @@
             "steps": []
         }
     ],
-    "recources":[
+    "recources": [
         {},
         {
             "rid": 1,
@@ -711,7 +716,7 @@
             "src_url": ""
         }
     ],
-    "videos":[
+    "videos": [
         {},
         {
             "vid": 1,

@@ -12,12 +12,11 @@ import PopUpBtn from './PopUpBtn/PopUpBtn'
 import Selection from './Selection/Selection'
 import TopBar from './TopBar/TopBar'
 import Video from './SimulationVideo/SimulationVideo'
-import Match from './Match/Match'
+import { Match } from './Match/Match'
 import StepNav from './StepNav/StepNav'
 import FakeUi from './FakeUi/FakeUi'
 
 import './Simulation.css'
-
 
 const onPopState = (handler: any) => {
     window.onpopstate = handler
@@ -28,7 +27,7 @@ interface Props {
     step: number
     handleChangeStage: Function
     handleChangeType: Function
-    handleChangeStep:Function
+    handleChangeStep: Function
 }
 
 // 由于存在顶部栏的任务跳转curStage与props中的stage不一定相等
@@ -36,16 +35,18 @@ interface State {
     curStage: number
     curStep: number
     data: any
-    stageChange: number;
+    stageChange: number
 }
-    
+
 export default class Simulation extends React.Component<Props, State> {
     constructor(props: any) {
         super(props)
         this.state = {
             curStage: this.props.stage,
             curStep: this.props.step,
-            data: initData.stages[this.props.stage].steps ? initData.stages[this.props.stage].steps[this.props.step] : '',
+            data: initData.stages[this.props.stage].steps
+                ? initData.stages[this.props.stage].steps[this.props.step]
+                : '',
             stageChange: 0
         }
         this.handleNext = this.handleNext.bind(this)
@@ -110,17 +111,17 @@ export default class Simulation extends React.Component<Props, State> {
                 stageChange: 0
             }))
 
-            if(this.state.curStep >= this.props.step) {
+            if (this.state.curStep >= this.props.step) {
                 this.props.handleChangeStep(this.props.step + 1)
-            } 
+            }
         } else {
             this.setState(() => ({
                 curStage: this.state.curStage + 1,
                 curStep: 0,
                 data: initData.stages[this.state.curStage + 1].steps![0],
-                stageChange: this.state.curStage >= this.props.stage? 1:0
+                stageChange: this.state.curStage >= this.props.stage ? 1 : 0
             }))
-            
+
             if (this.state.curStage >= this.props.stage) {
                 this.props.handleChangeStage(this.props.stage + 1)
                 this.props.handleChangeStep(0)
@@ -134,7 +135,7 @@ export default class Simulation extends React.Component<Props, State> {
                 curStage: curStage,
                 curStep: 0,
                 data: initData.stages[curStage].steps ? initData.stages[curStage].steps[0] : '',
-                stageChange:0
+                stageChange: 0
             })
         }
     }
@@ -143,7 +144,7 @@ export default class Simulation extends React.Component<Props, State> {
         if (step < initData.stages[this.state.curStage].steps.length) {
             this.setState({
                 data: initData.stages[this.state.curStage].steps[step],
-                curStep: step,
+                curStep: step
             })
         }
     }
@@ -162,7 +163,7 @@ export default class Simulation extends React.Component<Props, State> {
                 return (
                     <div>
                         <DndProvider backend={HTML5Backend}>
-                            <Match data={this.state.data} handleNext={this.handleNext}/>
+                            <Match data={this.state.data} handleNext={this.handleNext} />
                         </DndProvider>
                         <button
                             onClick={this.handleNext}
@@ -199,70 +200,66 @@ export default class Simulation extends React.Component<Props, State> {
                         </div>
                     </div>
                 )
-              case "selection":
+            case 'selection':
+                return <Selection data={this.state.data} handleNext={this.handleNext} />
+            case 'form':
                 return (
-                  <Selection data={this.state.data} handleNext={this.handleNext} />
-                );
-              case "form":
-                return (
-                  <div>
-                    <h2>{this.state.data.name}</h2>
-                    <ComponentSheet data="" handleNext={this.handleNext}/>
                     <div>
-                      <button
-                        onClick={this.handleNext}
-                        type="submit"
-                        className="btn btn-blue"
-                        style={{ position: "fixed", top: "85%", left: "70%" }}
-                      >
-                        Next
-                      </button>
-                    </div>
-                  </div>
-                );
-              case "video": {
-                  let videoInfo:any;
-                  let findedFlag = false;
-                  for (let i = 1; i < initData.videos.length; i++) {
-                    if (initData.videos[i].vid === this.state.data.vid) {
-                        findedFlag = true;
-                        videoInfo = initData.videos[i];
-                    }
-                  }
-                  if (findedFlag) {
-                    return(
-                      <div>
-                        <Video videoInfo={videoInfo} />
+                        <h2>{this.state.data.name}</h2>
+                        <ComponentSheet data="" handleNext={this.handleNext} />
                         <div>
                             <button
-                            onClick={this.handleNext}
-                            type="submit"
-                            className="btn btn-blue"
-                            style={{ position: "fixed", top: "90%", left: "88%" , padding: "10px 100px" }}
+                                onClick={this.handleNext}
+                                type="submit"
+                                className="btn btn-blue"
+                                style={{ position: 'fixed', top: '85%', left: '70%' }}
                             >
                                 Next
                             </button>
                         </div>
-                      </div>
-                    );
-                  } else {
-                      return(
-                          <div>
-                              视频资源未找到
-                          </div>
-                      )
-                  }
+                    </div>
+                )
+            case 'video': {
+                let videoInfo: any
+                let findedFlag = false
+                for (let i = 1; i < initData.videos.length; i++) {
+                    if (initData.videos[i].vid === this.state.data.vid) {
+                        findedFlag = true
+                        videoInfo = initData.videos[i]
+                    }
                 }
-                case "fakeui": {
-                    return(
+                if (findedFlag) {
+                    return (
                         <div>
-                            <FakeUi
-                                data={this.state.data.content}
-                            />
-
+                            <Video videoInfo={videoInfo} />
+                            <div>
+                                <button
+                                    onClick={this.handleNext}
+                                    type="submit"
+                                    className="btn btn-blue"
+                                    style={{
+                                        position: 'fixed',
+                                        top: '90%',
+                                        left: '88%',
+                                        padding: '10px 100px'
+                                    }}
+                                >
+                                    Next
+                                </button>
+                            </div>
                         </div>
                     )
+                } else {
+                    return <div>视频资源未找到</div>
                 }
+            }
+            case 'fakeui': {
+                return (
+                    <div>
+                        <FakeUi data={this.state.data.content} />
+                    </div>
+                )
+            }
 
             default:
                 return <div />
@@ -276,15 +273,15 @@ export default class Simulation extends React.Component<Props, State> {
         // TopBar 参数准备
         const stageStrs = []
         for (let i = 1; i < initData.stages.length; i++) {
-            stageStrs.push(initData.stages[i].name);
+            stageStrs.push(initData.stages[i].name)
         }
 
         return (
             <div className="App">
-                <TopBar 
-                    stage = {this.props.stage}
-                    stageStrs = {stageStrs} 
-                    curStage = {this.state.curStage} 
+                <TopBar
+                    stage={this.props.stage}
+                    stageStrs={stageStrs}
+                    curStage={this.state.curStage}
                     handleChangeType={this.props.handleChangeType}
                     handleChangeCurStage={this.handleChangeCurStage}
                 />
@@ -296,7 +293,7 @@ export default class Simulation extends React.Component<Props, State> {
                                 content="分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                 stage={this.props.stage}
                                 data=""
-                                changeStage = {this.state.stageChange}
+                                changeStage={this.state.stageChange}
                             />
                         </div>
                         <div className="mt-40 ml-40">
@@ -305,7 +302,7 @@ export default class Simulation extends React.Component<Props, State> {
                                 content="操作-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                 stage={this.props.stage}
                                 data=""
-                                changeStage = {this.state.stageChange}
+                                changeStage={this.state.stageChange}
                             />
                         </div>
                         <div className="mt-40 ml-40">
@@ -314,18 +311,18 @@ export default class Simulation extends React.Component<Props, State> {
                                 content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                 stage={this.props.stage}
                                 data={initData.recources}
-                                changeStage = {this.state.stageChange}
+                                changeStage={this.state.stageChange}
                             />
                         </div>
 
                         <div className="mt-40 ml-40">
                             <StepNav
-                                stage = {this.props.stage}
-                                curStage = {this.state.curStage}
-                                curStep = {this.state.curStep}
-                                step = {this.props.step}
-                                stepInfo = {initData.stages[this.state.curStage].steps}
-                                handleChangeStep = {this.handleChangeStep}
+                                stage={this.props.stage}
+                                curStage={this.state.curStage}
+                                curStep={this.state.curStep}
+                                step={this.props.step}
+                                stepInfo={initData.stages[this.state.curStage].steps}
+                                handleChangeStep={this.handleChangeStep}
                             />
                         </div>
                         <div className="side-container-240" />
