@@ -1,10 +1,10 @@
 import React, { FC, memo, useState, useCallback } from 'react'
-import ReactModal from 'react-modal'
 import Dustbin from './Dustbin'
 import Box from './Box'
 import { ItemTypes, availTypes } from './ItemTypes'
 import update from 'immutability-helper'
 import '@/scss/style.scss'
+import { PageResult } from './../Result/PageResult'
 
 interface Props {
     data: any
@@ -46,7 +46,6 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
 
     const [droppedBoxNames, setDroppedBoxNames] = useState<string[]>([])
 
-    const [showModal, setShowModal] = useState(false)
     function isDropped(boxName: string) {
         return droppedBoxNames.indexOf(boxName) > -1
     }
@@ -79,24 +78,6 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         return a.length === 0
     }
 
-    function handleOpenModal() {
-        setShowModal(true)
-    }
-
-    function handleCloseModal() {
-        setShowModal(false)
-    }
-
-    function getModelContent() {
-        return (
-            <div>
-                {' '}
-                {matched()
-                    ? '恭喜，你已经成功明确分析目标啦！'
-                    : '很遗憾，你的答案不正确哦。不要气馁，再试一次吧！'}
-            </div>
-        )
-    }
     return (
         <div>
             <h2 className="mt-160">{data.name}</h2>
@@ -125,24 +106,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                     <Box name={name} type={type} isDropped={isDropped(name)} key={index} />
                 ))}
             </div>
-            <button
-                onClick={handleOpenModal}
-                type="submit"
-                className="btn btn-blue"
-                style={{ position: 'fixed', top: '85%', left: '70%' }}
-            >
-                Next
-            </button>
-
-            <ReactModal
-                isOpen={showModal}
-                contentLabel="onRequestClose Example"
-                onRequestClose={matched() ? handleNext : handleCloseModal}
-                className="Modal centered"
-                overlayClassName="Overlay"
-            >
-                {getModelContent()}
-            </ReactModal>
+            <PageResult checked={matched()} handleNext={handleNext} />
         </div>
     )
 })
