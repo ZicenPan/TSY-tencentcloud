@@ -125,27 +125,22 @@
                         {
                             "name": "呈现方式",
                             "type": "A",
-                            "matched": false
                         },
                         {
                             "name": "优缺点",
                             "type": "A",
-                            "matched": false
                         },
                         {
                             "name": "用户价值",
                             "type": "A",
-                            "matched": false
                         },
                         {
                             "name": "启发点",
                             "type": "B",
-                            "matched": false
                         },
                         {
                             "name": "机会点",
                             "type": "B",
-                            "matched": false
                         }
                     ]
                 },
