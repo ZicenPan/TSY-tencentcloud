@@ -12,11 +12,12 @@ import '@/scss/style.scss'
 const style: React.CSSProperties = {
     border: '1px dashed gray',
     backgroundColor: 'white',
-    padding: '0.5rem 1rem',
+    padding: '0.7rem 1rem 0rem 1rem',
     marginRight: '1.5rem',
-    marginBottom: '1.5rem',
     cursor: 'move',
-    float: 'left'
+    float: 'left',
+    verticalAlign: 'middle',
+    lineHeight: 1.5
 }
 
 export interface BoxProps {
@@ -27,10 +28,11 @@ export interface BoxProps {
 export const Box: React.FC<BoxProps> = ({ name }) => {
     const [{ isDragging }, drag]: any = useDrag(() => ({
         type: ItemTypes.BOX,
-        item: { name, type: ItemTypes.BOX },
+        item: { name: name, type: ItemTypes.BOX },
         end: (item, monitor) => {
             const dropResult = monitor.getDropResult()
             if (item && dropResult) {
+                console.log(item);
                 //  alert(`You dropped ${item.name} into ${dropResult.name}!`);
             }
         },
