@@ -1,8 +1,15 @@
 import React from "react";
 import ReactModal from "react-modal";
-import './PopUpBtn.css'
-import ResourcePoolContent from './ResourcePoolContent/ResourcePoolContent'
 import ReactTooltip from "react-tooltip";
+
+import ResourcePoolContent from './ResourcePoolContent/ResourcePoolContent'
+import TaskDescContent from './TaskDescContent/TaskDescContent'
+import OpGuideContent from './OpGuideContent/OpGuideContent'
+
+import './PopUpBtn.css'
+
+
+
 
 interface Props {
     name: string;
@@ -10,6 +17,7 @@ interface Props {
     stage: number;
     data: any;
     changeStage: number;
+    logoUrl: string
 }
 
 interface State {
@@ -18,6 +26,7 @@ interface State {
 
 export default class PopUpBtn extends React.Component<Props, State> {
   fooRef = null
+  msg = ""
   constructor(props: any) {
     super(props);
     this.state = {
@@ -47,17 +56,11 @@ export default class PopUpBtn extends React.Component<Props, State> {
     switch (this.props.name) {
       case "任务描述":
           return(
-            <div>
-                <h2>{this.props.name}</h2>
-                <p className="mt-20">{this.props.content}</p>
-            </div>
+            <TaskDescContent content={this.props.content}/>
           )
       case "操作指引":
           return(
-            <div>
-                <h2>{this.props.name}</h2>
-                <p className="mt-20">{this.props.content}</p>
-          </div>
+            <OpGuideContent content={this.props.content}/>
           )
       case "资源库":
         return(
@@ -66,13 +69,20 @@ export default class PopUpBtn extends React.Component<Props, State> {
     }
   }
 
-  getTipMsg() {
+  getContext() {
     switch (this.props.name) {
-      case "任务描述":
-          return ""
-      case "操作指引":
-          return ""
+      case "任务描述": {
+        this.msg = ""
+
+
+        break
+      }
+      case "操作指引": {
+        this.msg = ""
+        break
+      }
       case "资源库": {
+        // 获得提示信息
         let name = ""
         for (let i = 1; i < this.props.data.length; i++) {
           if(this.props.data[i].rid === this.props.stage) {
@@ -80,20 +90,25 @@ export default class PopUpBtn extends React.Component<Props, State> {
           }
           
         }
-        return "你的“" + name + "”已经更新并保存"
+        this.msg =  "你的“" + name + "”已经更新并保存"
+
+        // 获得图片
+        break
       }
     }
   }
  
 
   render() {
-    // 获得提示框内容
-    let msg = this.getTipMsg()
+    // 获得各个按钮所需信息
+    this.getContext()
+
+
     // 处理提示框消息
     if(this.props.changeStage === 1) {
       if (this.state.showModal) {
         ReactTooltip.hide(this.fooRef)
-        msg = ""
+        this.msg = ""
       } else {
         ReactTooltip.show(this.fooRef)
       }
@@ -101,10 +116,13 @@ export default class PopUpBtn extends React.Component<Props, State> {
       ReactTooltip.hide(this.fooRef)
     }
 
+
+
     return (
       <div>
-        <button className="btn btn-white"  ref={ref => {this.fooRef = ref}} onClick={this.handleOpenModal}  data-event = "null" data-effect ="solid" data-type = "info" data-event-off = "click" data-tip = {msg} data-place="right">
-          <p>{this.props.name}</p>
+        <button className="PopUpBtn d-flex flex-row"  ref={ref => {this.fooRef = ref}} onClick={this.handleOpenModal}  data-event = "null" data-effect ="solid" data-type = "info" data-event-off = "click" data-tip = {this.msg} data-place="right">
+          <img className = "PopUpBtn-Logo" src={this.props.logoUrl} alt="logo"/>
+          <p className="ml-10 PopUpBtn-Name">{this.props.name}</p>
         </button>
         <ReactTooltip/>
         <ReactModal

@@ -1,7 +1,8 @@
-.App {
+.Simulation {
   text-align: center;
   align-items: center;
   justify-content: center;
+  height: 10000px;
 }
 
 .main-container {

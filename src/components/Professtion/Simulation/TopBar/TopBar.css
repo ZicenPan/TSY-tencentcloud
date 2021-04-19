@@ -1,4 +1,8 @@
-.div-topbar {
-    position: absolute;
-    max-height: 100px;
+#topbar-div-topbar {
+    max-height: 70px;
+    display:block;
+}
+
+.topbar-div-topbar {
+
 }

@@ -15,9 +15,16 @@ import Video from './SimulationVideo/SimulationVideo'
 import Match from './Match/Match'
 import StepNav from './StepNav/StepNav'
 import FakeUi from './FakeUi/FakeUi'
+import TestInput from './TestInput/TestInput'
 
+import linesImg from '@/assets/lines.png'
+import {rscLogoUrl, opGuideLogoUrl, taskDescLogoUrl} from "../../../assets/cdnUrlConfig"
 import './Simulation.css'
+import { url } from 'node:inspector'
 
+const tysPrefix = "tys_sim_"
+const userPrefix = "user1"
+const pid = 1
 
 const onPopState = (handler: any) => {
     window.onpopstate = handler
@@ -36,10 +43,11 @@ interface State {
     curStage: number
     curStep: number
     data: any
-    stageChange: number;
+    stageChange: number
 }
     
 export default class Simulation extends React.Component<Props, State> {
+    inputData = {}
     constructor(props: any) {
         super(props)
         this.state = {
@@ -51,6 +59,8 @@ export default class Simulation extends React.Component<Props, State> {
         this.handleNext = this.handleNext.bind(this)
         this.handleChangeCurStage = this.handleChangeCurStage.bind(this)
         this.handleChangeStep = this.handleChangeStep.bind(this)
+        this.handleSetInputData = this.handleSetInputData.bind(this)
+        this.getInputData()
     }
 
     componentDidMount() {
@@ -60,7 +70,61 @@ export default class Simulation extends React.Component<Props, State> {
                 curStep: this.state.curStep
             })
         })
+
+
     }
+
+    getInputData() {
+        let userSimInput = JSON.parse(localStorage.getItem(tysPrefix+userPrefix + "_" + pid.toString()))
+        if (userSimInput !== null) {
+            this.inputData = userSimInput["inputInfo"]
+            // console.log("userSimInput" + JSON.stringify(userSimInput["inputInfo"]))
+            // console.log("userSimInput" + JSON.stringify(this.inputData))
+        }
+    }
+
+    handleSetInputData(stage:number, step:number, content) {
+        let stageStr = this.state.curStage.toString()
+        let stepStr = this.state.curStep.toString()
+        let userSimInput = JSON.parse(localStorage.getItem(tysPrefix+userPrefix+ "_" + pid.toString()))
+
+        let inputStageInfo = {}
+        let inputStepInfo = {}
+        inputStepInfo[stepStr] = content
+        inputStageInfo[stageStr] = inputStepInfo
+
+        if (userSimInput === null) {
+            userSimInput = {}
+            userSimInput["inputInfo"] = {}
+            userSimInput["inputInfo"][stageStr] = inputStepInfo
+        } else {
+            if(!userSimInput["inputInfo"].hasOwnProperty(stageStr)) {
+                userSimInput["inputInfo"] = {}
+                userSimInput["inputInfo"][stageStr] = inputStepInfo
+            } else if (!userSimInput["inputInfo"][stageStr].hasOwnProperty(stepStr)) {
+                userSimInput["inputInfo"][stageStr] = inputStepInfo
+            } else {
+                userSimInput["inputInfo"][stageStr][stepStr] = content
+            }
+        }
+        
+        this.inputData = userSimInput["inputInfo"]
+
+        localStorage.setItem(tysPrefix+userPrefix+ "_" + pid.toString(), JSON.stringify(userSimInput))
+
+    }
+
+    isStepInputFilled(stage, step) {
+        console.log("isStepInputFilled" + JSON.stringify(this.inputData))
+
+        if (this.inputData.hasOwnProperty(stage.toString())) {
+            if (this.inputData[stage.toString()].hasOwnProperty(step.toString())) {
+                return true;
+            }
+        }
+        return false
+    }
+
     componentWillUnmount() {
         onPopState(null)
     }
@@ -263,6 +327,24 @@ export default class Simulation extends React.Component<Props, State> {
                         </div>
                     )
                 }
+                case "testinput": {
+                    let fillFlag = false
+                    let inputContent:any
+                    if(this.isStepInputFilled(this.state.curStage, this.state.curStep)) {
+                        fillFlag = true
+                        inputContent = this.inputData[this.state.curStage][this.state.curStep]
+                        console.log(this.state.curStage + " " + this.state.curStep + " " + inputContent)
+                    }
+                    return(
+                        <div className="mt-40">
+                            <TestInput 
+                                inputContent={inputContent} 
+                                handleSetInputData={(content)=>{this.handleSetInputData(this.state.curStage, this.state.curStep, content)}}
+                                fillFlag = {fillFlag}
+                            />
+                        </div>
+                    )
+                }
 
             default:
                 return <div />
@@ -280,7 +362,7 @@ export default class Simulation extends React.Component<Props, State> {
         }
 
         return (
-            <div className="App">
+            <div className="Simulation" style={{background:`url("${linesImg}")`}}>
                 <TopBar 
                     stage = {this.props.stage}
                     stageStrs = {stageStrs} 
@@ -290,31 +372,34 @@ export default class Simulation extends React.Component<Props, State> {
                 />
                 <div className="main-container d-flex flex-row justify-content-between">
                     <div className="d-flex flex-column">
-                        <div className="mt-40 ml-40">
+                        <div className="mt-20 ml-40">
                             <PopUpBtn
                                 name="任务描述"
                                 content="分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                 stage={this.props.stage}
                                 data=""
                                 changeStage = {this.state.stageChange}
+                                logoUrl = {taskDescLogoUrl}
                             />
                         </div>
-                        <div className="mt-40 ml-40">
+                        <div className="mt-20 ml-40">
                             <PopUpBtn
                                 name="操作指引"
                                 content="操作-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                 stage={this.props.stage}
                                 data=""
                                 changeStage = {this.state.stageChange}
+                                logoUrl = {opGuideLogoUrl}
                             />
                         </div>
-                        <div className="mt-40 ml-40">
+                        <div className="mt-20 ml-40">
                             <PopUpBtn
                                 name="资源库"
                                 content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                 stage={this.props.stage}
                                 data={initData.recources}
                                 changeStage = {this.state.stageChange}
+                                logoUrl = {rscLogoUrl}
                             />
                         </div>
 
@@ -331,9 +416,7 @@ export default class Simulation extends React.Component<Props, State> {
                         <div className="side-container-240" />
                     </div>
                     <div className="flex-grow-1"> {this.currentContent()}</div>
-                    <div className="name">
-                        <div className="side-container-240" />
-                    </div>
+            
                 </div>
             </div>
         )

@@ -30,7 +30,7 @@ export default class FakeUi extends React.Component<Props, State> {
     }   
 
     render() {
-
+        
         let hitArea = <div/>
         if (this.props.data[this.state.num].hit_flag === 1) {
             const hitLeft = this.props.data[this.state.num].offset_left
@@ -58,7 +58,6 @@ export default class FakeUi extends React.Component<Props, State> {
                 <img className="fakeui-ui" src = {this.props.data[this.state.num].url}/>
                 {hitArea}
             </div>
-            
-        )
+        )/ 
     }
 }

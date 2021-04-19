@@ -182,7 +182,7 @@
                         {
                             "fuid":1,
                             "name":"xx",
-                            "url":"http://182.254.228.214/simulation/static/media/fakeui-fs-1.png",
+                            "url":"http://182.254.228.214/static/img/fakeui-fs-1.png",
                             "hit_flag": 1,
                             "offset_left":13,
                             "offset_bottom":240,
@@ -192,7 +192,7 @@
                         {
                             "fuid":2,
                             "name":"xx",
-                            "url":"http://182.254.228.214/simulation/static/media/fakeui-fs-2.png",
+                            "url":"http://182.254.228.214/static/img/fakeui-fs-2.png",
                             "hit_flag": 1,
                             "offset_left":5,
                             "offset_bottom":297,
@@ -202,7 +202,7 @@
                         {
                             "fuid":2,
                             "name":"xx",
-                            "url":"http://182.254.228.214/simulation/static/media/fakeui-fs-3.png",
+                            "url":"http://182.254.228.214/static/img/fakeui-fs-3.png",
                             "hit_flag": 0
                         }
                     ]

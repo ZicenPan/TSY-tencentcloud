@@ -1,8 +1,8 @@
 import React from "react";
 import "./ResourcePoolContent.css"
-import logo from "@/assets/recource_pool.png"
 import backicon from "@/assets/backicon.png"
 import rsc1 from "@/assets/resource1.png"
+import {rscLogoUrl} from "../../../../../assets/cdnUrlConfig"
 
 interface Props {
     stage: number
@@ -70,7 +70,7 @@ export default class ResourcePoolContent extends React.Component<Props, State> {
                 return (
                     <div>
                         <div className="d-flex flex-row ">
-                            <img className="list-logo" src={logo} alt="logo"/>
+                            <img  src={rscLogoUrl} alt="logo"/>
                             <h2 className="ml-20">资源库</h2>
                         </div>
             
