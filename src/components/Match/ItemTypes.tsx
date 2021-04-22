@@ -1,14 +1,11 @@
 import React from 'react'
 
 export const ItemTypes = {
-    A: 'A',
-    B: 'B',
-    FOOD: 'food',
-    GLASS: 'glass',
-    PAPER: 'paper',
-    C: 'C'
+    A: 'a',
+    B: 'b',
+    C: 'c'
 }
-  
+
 export const getType = (type: string) => {
   switch (type) {
       case 'A':

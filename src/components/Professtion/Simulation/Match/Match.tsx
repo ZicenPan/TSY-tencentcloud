@@ -1,70 +1,67 @@
-import React, { useCallback, useState } from 'react'
-import { Dustbin } from './Dustbin'
-import { Box } from './Box'
+import React, { FC, memo, useState, useCallback } from 'react'
+import Dustbin from './Dustbin'
+import Box from './Box'
+import { ItemTypes, availTypes } from './ItemTypes'
 import update from 'immutability-helper'
-import { isJSDocCommentContainingNode } from 'typescript'
 import '@/scss/style.scss'
+import { PageResult } from './../Result/PageResult'
 
 interface Props {
     data: any
     handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 
-interface State {
-    num: number
-    img: any
+interface DustbinState {
+    accepts: string[]
+    lastDroppedItem: any
+    type: string
+    matched: boolean
 }
 
-export const Match: React.FC<Props> = ({ data }) => {
-    const [droppedBoxes, setDroppedBoxes] = useState(new Set())
-    const [dustbins, setDustbins] = useState([
-        {
-            name: '1',
-            lastItem: null
-        },
-        {
-            name: '2',
-            lastItem: null
-        },
-        {
-            name: '3',
-            lastItem: null
-        },
-        {
-            name: '4',
-            lastItem: null
-        },
-        {
-            name: '5',
-            lastItem: null
-        }
-    ])
+interface BoxState {
+    name: string
+    type: string
+}
 
-    // // Init the dustbins
-    // setDustbins(
-    //     update(dustbins, {
-    //         $push: [
-    //             {
-    //                 type: 'dustbin',
-    //                 lastItem: '',
-    //             }
-    //         ]
-    //     })
-    // )
-    function isDropped(boxName) {
+export interface DustbinSpec {
+    accepts: string[]
+    lastDroppedItem: any
+}
+export interface BoxSpec {
+    name: string
+    type: string
+}
+
+export interface ContainerState {
+    droppedBoxNames: string[]
+    dustbins: DustbinSpec[]
+    boxes: BoxSpec[]
+}
+
+export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
+    const [dustbins, setDustbins] = useState(data.content)
+
+    const [boxes] = useState<BoxState[]>(data.boxes)
+
+    const [droppedBoxNames, setDroppedBoxNames] = useState<string[]>([])
+
+    function isDropped(boxName: string) {
         return droppedBoxNames.indexOf(boxName) > -1
     }
 
-    const [droppedBoxNames, setDroppedBoxNames] = useState([])
-
     const handleDrop = useCallback(
-        (index, item) => {
-            // setDroppedBoxNames(update(droppedBoxNames, item.name ? { $push: [item.name] } : { $push: [] }))
+        (index: number, item: BoxSpec) => {
+            setDroppedBoxNames(
+                update(droppedBoxNames, item.name ? { $push: [item.name] } : { $push: [] })
+            )
             setDustbins(
                 update(dustbins, {
                     [index]: {
-                        lastItem: {
+                        lastDroppedItem: {
                             $set: item
+                        },
+                        matched: {
+                            $set: item.type === dustbins[index].data
                         }
                     }
                 })
@@ -73,44 +70,50 @@ export const Match: React.FC<Props> = ({ data }) => {
         [droppedBoxNames, dustbins]
     )
 
-    // Dustbin layouts
-    const temp = [...dustbins];
-
-    const items = data.content.map((item: any, index: number) => {
-        if (item.type === 'dustbin') {
-            console.log("id",item.id)
-            console.log("dustbin", dustbins)
-            console.log("temp", temp)
-            return (
-                <div
-                    className="align-self-center"
-                    style={{ overflow: 'hidden', clear: 'both', marginLeft: '10px' }}
-                >
-                    <Dustbin
-                        lastItem={temp[item.id].lastItem}
-                        onDrop={(box: any) => handleDrop(item.id, box)}
-                    />
-                </div>
-            )
-        } else {
-            return <p style={{ lineHeight: 2.5 }}>{item.data}</p>
-        }
-    })
-
-    const boxes = data.boxes.map((item: any, index: number) => {
-        return <Box key={index} name={item.name} />
-    })
+    const matched = () => {
+        const a = dustbins.filter(function (item) {
+            return item.matched === false
+        })
+        return a.length === 0
+    }
 
     return (
         <div>
             <h2 className="mt-160">{data.name}</h2>
-            <div className="mt-40 d-flex flex-row flex-wrap">{items}</div>
+            <div className="mt-40 d-flex flex-row flex-wrap">
+                {dustbins.map((item: any, index: number) => {
+                    if (item.type === 'dustbin') {
+                        return (
+                            <Dustbin
+                                accepts={availTypes}
+                                lastDroppedItem={item.lastDroppedItem}
+                                onDrop={(box) => handleDrop(index, box)}
+                                key={index}
+                            />
+                        )
+                    } else {
+                        return <p style={{ lineHeight: 2.5 }}>{item.data}</p>
+                    }
+                })}
+            </div>
+
             <div
                 className="d-flex justify-content-center mt-80"
                 style={{ overflow: 'hidden', clear: 'both' }}
             >
-                {boxes}
+                {boxes.map(({ name, type }, index) => (
+                    <Box name={name} type={type} isDropped={isDropped(name)} key={index} />
+                ))}
             </div>
+            <PageResult checked={matched()} handleNext={handleNext} />
+            <button
+                onClick={handleNext}
+                type="submit"
+                className="btn btn-blue"
+                style={{ position: 'fixed', top: '85%', left: '90%' }}
+            >
+                Skip
+            </button>
         </div>
     )
-}
+})
