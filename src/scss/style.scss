@@ -34,11 +34,6 @@
 
 // progress bar top
 
-.convo-container {
-  position: relative;
-  top: 70%;
-  padding: 0 60px;
-}
 
 .app-container {
   position: fixed;
@@ -127,13 +122,17 @@
 
 .convo-speaker {
   background: $white;
-  border-color: #000000;
+  border-color:white;
 
-  position: relative;
-  padding: 10px 40px;
+  width: 120px;
+  padding: 10px 20px;
   cursor: default;
   border-radius: 50px;
-  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
+  // box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
+  outline: none !important;
+  box-shadow: none !important;
+  border:none;
+  
 }
 
 .convo-content {
@@ -291,16 +290,3 @@
   overflow: auto!important;
 }
 
-.video-introduction {
-  font-family: PingFang HK;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  /* identical to box height, or 150% */
-
-
-  /* 深灰 */
-
-  color: #797979;
-}

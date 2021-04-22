@@ -12,6 +12,7 @@
     /* 深灰 */
 
     color: #797979;
+    z-index: 9999;
 }
 
 .StepNav-font-blue {
@@ -29,5 +30,27 @@
 
     color: #325AE4;
     cursor: pointer;
+    z-index:9999;
 }
 
+.StepNav-font-cur {
+    /* body */
+
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+
+    /* primary-蓝 */
+
+    color: #325AE4;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.StepNav-container {
+    z-index: 2;
+}

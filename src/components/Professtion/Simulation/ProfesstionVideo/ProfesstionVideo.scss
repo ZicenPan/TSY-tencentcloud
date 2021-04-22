@@ -1,6 +1,12 @@
 .video-cover {
-    height: 230px;
+    height: 180px;
     width: 300px;
+    border: #080808;
+    border-radius: 10px;
+    border-color: #080808;
+    border-right: solid;
+
+    cursor: pointer;
 }
 
 #profession-play {
@@ -38,6 +44,19 @@
 }
 
 .profession-video-list {
-    height: 800px;
-    overflow-y:auto
+    width: 100%;
+    // overflow-y:auto
+}
+.professionvideo-introduction-content{
+      /* body */
+
+      font-family: PingFang HK;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 24px;
+      /* identical to box height, or 150% */
+      color: #000000;
+  
+      width: 80%;
 }

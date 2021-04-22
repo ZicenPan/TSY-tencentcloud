@@ -12,12 +12,14 @@ import PopUpBtn from './PopUpBtn/PopUpBtn'
 import Selection from './Selection/Selection'
 import TopBar from './TopBar/TopBar'
 import Video from './SimulationVideo/SimulationVideo'
-import Match from './Match/Match'
+import ProfesstionsVideos from './ProfesstionVideo/ProfesstionVideo'
+import {Match} from './Match/Match'
 import StepNav from './StepNav/StepNav'
 import FakeUi from './FakeUi/FakeUi'
 import TestInput from './TestInput/TestInput'
 
 import linesImg from '@/assets/lines.png'
+import conversionBack from '@/assets/conversation-back.png'
 import {rscLogoUrl, opGuideLogoUrl, taskDescLogoUrl} from "../../../assets/cdnUrlConfig"
 import './Simulation.css'
 import { url } from 'node:inspector'
@@ -36,6 +38,7 @@ interface Props {
     handleChangeStage: Function
     handleChangeType: Function
     handleChangeStep:Function
+    type:string
 }
 
 // 由于存在顶部栏的任务跳转curStage与props中的stage不一定相等
@@ -54,7 +57,7 @@ export default class Simulation extends React.Component<Props, State> {
             curStage: this.props.stage,
             curStep: this.props.step,
             data: initData.stages[this.props.stage].steps ? initData.stages[this.props.stage].steps[this.props.step] : '',
-            stageChange: 0
+            stageChange: 0,
         }
         this.handleNext = this.handleNext.bind(this)
         this.handleChangeCurStage = this.handleChangeCurStage.bind(this)
@@ -70,8 +73,6 @@ export default class Simulation extends React.Component<Props, State> {
                 curStep: this.state.curStep
             })
         })
-
-
     }
 
     getInputData() {
@@ -163,6 +164,11 @@ export default class Simulation extends React.Component<Props, State> {
     //   });
     // };
 
+    setBackgroundImg = () => {
+        let imgUrl = this.state.data.backgroundImg ? this.state.data.backgroundImg:"";
+
+    }
+
     handleNext = () => {
         console.log(this.state)
         console.log('beforeNext: ', this.state.curStage, ' ', this.state.curStep)
@@ -176,7 +182,7 @@ export default class Simulation extends React.Component<Props, State> {
 
             if(this.state.curStep >= this.props.step) {
                 this.props.handleChangeStep(this.props.step + 1)
-            } 
+            }
         } else {
             this.setState(() => ({
                 curStage: this.state.curStage + 1,
@@ -212,7 +218,7 @@ export default class Simulation extends React.Component<Props, State> {
         }
     }
 
-    currentContent = () => {
+    currentSimulationContent = () => {
         switch (this.state.data.type) {
             case 'conversation':
                 return (
@@ -295,14 +301,14 @@ export default class Simulation extends React.Component<Props, State> {
                   }
                   if (findedFlag) {
                     return(
-                      <div>
+                      <div className="Simulation-video ">
                         <Video videoInfo={videoInfo} />
                         <div>
                             <button
                             onClick={this.handleNext}
                             type="submit"
                             className="btn btn-blue"
-                            style={{ position: "fixed", top: "90%", left: "88%" , padding: "10px 100px" }}
+                            style={{padding: "10px 150px" , marginTop: 10, marginLeft:"20%" }}
                             >
                                 Next
                             </button>
@@ -320,11 +326,23 @@ export default class Simulation extends React.Component<Props, State> {
                 case "fakeui": {
                     return(
                         <div>
+                            <div>
                             <FakeUi
                                 data={this.state.data.content}
                             />
+                            </div>
 
+                            {/* <button
+                                onClick={this.handleNext}
+                                type="submit"
+                                className="btn btn-blue"
+                                style={{ position: "fixed", top: "85%", left: "70%" }}
+                            >
+                                Next
+                         </button> */}
                         </div>
+
+                        
                     )
                 }
                 case "testinput": {
@@ -350,6 +368,25 @@ export default class Simulation extends React.Component<Props, State> {
                 return <div />
         }
     }
+    currentContent = () => {
+        switch (this.props.type) {
+            case "simulation": {
+                return this.currentSimulationContent()
+            }
+            case "professtionVideo": {
+                return (
+                    <div>
+                        <ProfesstionsVideos 
+                            stage = {this.props.stage}
+                            videoData={initData.videos}
+                        />
+                    </div>
+                )
+            } 
+            default:
+                return <div />
+        }
+    }
 
     render() {
         console.log(initData)
@@ -362,7 +399,14 @@ export default class Simulation extends React.Component<Props, State> {
         }
 
         return (
-            <div className="Simulation" style={{background:`url("${linesImg}")`}}>
+            <div className="Simulation" 
+                style={{
+                    background:`url("${linesImg}"),url("${this.state.data.backgroundImg ? this.state.data.backgroundImg:""}")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "100% 100%" ,
+                    zIndex:-2,
+                }}
+            >
                 <TopBar 
                     stage = {this.props.stage}
                     stageStrs = {stageStrs} 
@@ -378,7 +422,7 @@ export default class Simulation extends React.Component<Props, State> {
                                 content="分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                 stage={this.props.stage}
                                 data=""
-                                changeStage = {this.state.stageChange}
+                                changeStage = {0}
                                 logoUrl = {taskDescLogoUrl}
                             />
                         </div>
@@ -388,7 +432,7 @@ export default class Simulation extends React.Component<Props, State> {
                                 content="操作-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                 stage={this.props.stage}
                                 data=""
-                                changeStage = {this.state.stageChange}
+                                changeStage = {0}
                                 logoUrl = {opGuideLogoUrl}
                             />
                         </div>
@@ -403,7 +447,7 @@ export default class Simulation extends React.Component<Props, State> {
                             />
                         </div>
 
-                        <div className="mt-40 ml-40">
+                        <div className="mt-40 ml-20">
                             <StepNav
                                 stage = {this.props.stage}
                                 curStage = {this.state.curStage}

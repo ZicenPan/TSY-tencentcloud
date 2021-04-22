@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 
+import './Conversation.scss'
+
+import characterImg from "@/assets/Character.png"
+
 interface Props {
     data: Array<any>
     id: number
@@ -38,20 +42,30 @@ class Conversation extends Component<Props, State> {
     }
 
     render() {
+        let speaker = this.lookupConvo(this.state.num).speaker
+        let speakerClassName = speaker==="用户"?"convo-speaker-user":"convo-speaker-others"
+        let containerClassName = speaker==="用户"?"convo-container-user":"convo-container-others"
+        let characterImgDom = speaker!=="用户"?<img className="conversation-character" src = {characterImg}/>:<div/>
         return (
-            <div className="convo-container">
-                <div className="btn convo-speaker">
-                    <h2>{this.lookupConvo(this.state.num).speaker}</h2>
+                <div className="convo-container">
+                    <div className={containerClassName}>
+                        <button className="convo-speaker"  id={speakerClassName} >
+                            <h2 className="text-center">{speaker}</h2>
+                        </button>
+                        <div>
+                            <button onClick={this.nextConvo} type="submit" className="convo-content">
+                                <h2>{this.lookupConvo(this.state.num).content}</h2>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div className="mt-40">
+                        <h4 className="text-grey-dark text-center">点击空白区域继续</h4>
+                    </div>
+                    {/* {characterImgDom} */}
+                    
                 </div>
-                <div>
-                    <button onClick={this.nextConvo} type="submit" className="convo-content">
-                        <h2>{this.lookupConvo(this.state.num).content}</h2>
-                    </button>
-                </div>
-                <div className="mt-40">
-                    <h4 className="text-grey-dark text-center">点击空白区域继续</h4>
-                </div>
-            </div>
+
         )
     }
 }

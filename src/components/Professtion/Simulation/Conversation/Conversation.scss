@@ -1,0 +1,39 @@
+.convo-container {
+    position: relative;
+    top: 75%;
+    padding: 0 0px;
+    z-index: 1;
+}
+.convo-container-others {
+    margin-right: 50%;
+    padding: 0 0px;
+    z-index: 1;
+}
+
+.convo-container-user {
+    top: 70%;
+    margin-left: 20%;
+    padding: 0 0px;
+    z-index: 1;
+}
+
+#convo-speaker-others {
+    // left: -320px;
+    // float: left;
+    margin-right: 500px;
+}
+
+#convo-speaker-user {
+    margin-left: 690px;
+    z-index: 1;
+    // left: 930px;
+}
+
+.conversation-character {
+    position: relative;
+    bottom:-10%;
+    right: 70%;
+    z-index: -2;
+    width: 50%;
+}
+

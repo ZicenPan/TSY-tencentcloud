@@ -48,3 +48,7 @@
 .PopUpBtn-Logo {
     margin-top: 3px;
 }
+
+.PopUpBtn-container {
+    z-index: 2;
+}

@@ -4,7 +4,6 @@ import '@/scss/style.scss'
 import './Professtion.scss'
 import initData from '../../assets/product-manager.json'
 import Simulation from './Simulation/Simulation'
-import ProfessionVideo from './ProfesstionVideo/ProfesstionVideo'
 import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript'
 
 const tysPrefix = "tys_sim_"
@@ -148,6 +147,7 @@ export default class Professtion extends React.Component<Props, State> {
                         <Simulation 
                             stage={this.state.stage} 
                             step={this.state.step}
+                            type="simulation"
                             handleChangeStage={(stage)=>{this.handleChangeStage(stage)}}
                             handleChangeType={this.handleChangeType}
                             handleChangeStep={this.handleChangeStep}
@@ -159,12 +159,13 @@ export default class Professtion extends React.Component<Props, State> {
             case "professtionVideo": {
                 return (
                     <div>
-                        <ProfessionVideo 
-                            professtionName={this.props.professtionName}
-                            stage={this.state.stage}
-                            pid={this.props.pid}
+                        <Simulation 
+                            stage={this.state.stage} 
+                            step={this.state.step}
+                            type="professtionVideo"
+                            handleChangeStage={(stage)=>{this.handleChangeStage(stage)}}
                             handleChangeType={this.handleChangeType}
-                            videoData={initData.videos}
+                            handleChangeStep={this.handleChangeStep}
                         />
                     </div>
                     

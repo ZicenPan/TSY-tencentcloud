@@ -48,7 +48,7 @@ export default class FakeUi extends React.Component<Props, State> {
                 zIndex: 2,
                 opacity: 0.5,
                 cursor: 'pointer',
-                // backgroundColor: 'blue',
+                backgroundColor: 'blue',
             }
     
             hitArea = <div style={fakeUiHitStyle} onClick={this.handleHitArea}/>
@@ -58,6 +58,6 @@ export default class FakeUi extends React.Component<Props, State> {
                 <img className="fakeui-ui" src = {this.props.data[this.state.num].url}/>
                 {hitArea}
             </div>
-        )/ 
+        )
     }
 }

@@ -19,23 +19,20 @@ interface Props {
 // }
 
 class TopBar extends React.Component<Props, {}> {
-  // constructor(props: any) {
-  //   super(props)
-  //   this.state = {
-  //     cur: 0,
-  //   };
-// }
+  constructor(props: any) {
+    super(props)
+    this.handleClickStageBar = this.handleClickStageBar.bind(this)
+}
+  
 
   componentDidMount() {
     console.log(this.props);
   } 
-  // displayC = () => {
-  //   if (this.state.cur == 0) {
-  //     return;
-  //   }
-  //   console.log("here");
-  //   return <div>{this.props.content}</div>;
-  // };
+
+  handleClickStageBar(i) {
+    this.props.handleChangeCurStage(i)
+    this.props.handleChangeType("simulation")
+  }
 
   render() {
 
@@ -50,7 +47,7 @@ class TopBar extends React.Component<Props, {}> {
             <div 
               key={"topbar"+i.toString()} 
               className="number-circle-blue ml-40" 
-              onClick={()=>{this.props.handleChangeCurStage(i)}}
+              onClick={()=>{this.handleClickStageBar(i)}}
             >
               {i}
             </div>
@@ -60,7 +57,7 @@ class TopBar extends React.Component<Props, {}> {
             <div 
               key={"topbar"+i.toString()} 
               className="number-circle-grey ml-40" 
-              onClick={()=>{this.props.handleChangeCurStage(i)}}
+              onClick={()=>{this.handleClickStageBar(i)}}
             >
               {i}
             </div>
@@ -82,13 +79,13 @@ class TopBar extends React.Component<Props, {}> {
           </div>
           
 
-          {/* <div className="ml-auto">
+          <div className="topbar-video">
             <a>
-              <button id="bannerBtn" type="button" className="btn btn-blue" onClick={()=>{this.props.handleChangeType("sketch")}}>
-                个人中心
+              <button id="bannerBtn" type="button" className="btn btn-blue" onClick={()=>{this.props.handleChangeType("professtionVideo")}}>
+                产品经理视频
               </button>
             </a>
-          </div> */}
+          </div>
         </div>
       </div>
     );

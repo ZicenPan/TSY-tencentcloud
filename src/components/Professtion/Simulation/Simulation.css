@@ -2,7 +2,8 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  height: 10000px;
+  height: 900px;
+  z-index: 1;
 }
 
 .main-container {
@@ -38,3 +39,13 @@
     transform: rotate(360deg);
   }
 }
+/* 
+.Simulation-sidebar {
+  position: absolute;
+} */
+
+.Simulation-video {
+  margin-left: 10%;
+  width: 100%;
+}
+

@@ -27,6 +27,7 @@ interface State {
 export default class PopUpBtn extends React.Component<Props, State> {
   fooRef = null
   msg = ""
+  hasOpenModal = false
   constructor(props: any) {
     super(props);
     this.state = {
@@ -45,11 +46,12 @@ export default class PopUpBtn extends React.Component<Props, State> {
 
   handleOpenModal() {
     this.setState({ showModal: true });
-    ReactTooltip.hide(this.fooRef)
+    this.hasOpenModal = true
   }
 
   handleCloseModal() {
     this.setState({ showModal: false });
+    this.hasOpenModal = false
   }
 
   getModelContent() {
@@ -73,8 +75,6 @@ export default class PopUpBtn extends React.Component<Props, State> {
     switch (this.props.name) {
       case "任务描述": {
         this.msg = ""
-
-
         break
       }
       case "操作指引": {
@@ -102,29 +102,24 @@ export default class PopUpBtn extends React.Component<Props, State> {
   render() {
     // 获得各个按钮所需信息
     this.getContext()
-
-
-    // 处理提示框消息
-    if(this.props.changeStage === 1) {
-      if (this.state.showModal) {
-        ReactTooltip.hide(this.fooRef)
-        this.msg = ""
-      } else {
+    
+    if (this.props.changeStage === 1) {
+      // ReactTooltip.show(this.fooRef) 
+      if (!this.hasOpenModal) {
         ReactTooltip.show(this.fooRef)
-      }
-    } else {
-      ReactTooltip.hide(this.fooRef)
+      } else 
+        this.msg= ""
     }
-
-
-
+    
+    console.log(this.props.changeStage)
     return (
-      <div>
+      <div className="PopUpBtn-container">
         <button className="PopUpBtn d-flex flex-row"  ref={ref => {this.fooRef = ref}} onClick={this.handleOpenModal}  data-event = "null" data-effect ="solid" data-type = "info" data-event-off = "click" data-tip = {this.msg} data-place="right">
           <img className = "PopUpBtn-Logo" src={this.props.logoUrl} alt="logo"/>
           <p className="ml-10 PopUpBtn-Name">{this.props.name}</p>
         </button>
         <ReactTooltip/>
+
         <ReactModal
           isOpen={this.state.showModal}
           contentLabel="onRequestClose Example"
@@ -136,6 +131,7 @@ export default class PopUpBtn extends React.Component<Props, State> {
           <button className="btn btn-blue mt-40 btn-right"onClick={this.handleCloseModal}>明白了</button>
         </ReactModal>
       </div>
+      
     );
   }
 }
