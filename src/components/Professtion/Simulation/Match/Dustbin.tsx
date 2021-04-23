@@ -1,6 +1,4 @@
 import { monitorEventLoopDelay } from 'perf_hooks'
-import React, { CSSProperties, useState } from 'react'
-import { useDrop } from 'react-dnd'
 import { ItemTypes } from './ItemTypes'
 // import '../../scss/style.scss'
 import React, { CSSProperties, FC, memo, useState } from 'react'

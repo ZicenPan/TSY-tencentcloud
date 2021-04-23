@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
-import { Dustbin } from './Dustbin'
-import { Box } from './Box'
+// import { Dustbin } from './Dustbin'
+// import { Box } from './Box'
 import { getType } from './ItemTypes'
 import update from 'immutability-helper'
 import '../../scss/style.scss'
@@ -99,7 +99,7 @@ export const Match: React.FC<Props> = ({ data }) => {
                     className="align-self-center"
                     style={{ overflow: 'hidden', clear: 'both', marginLeft: '10px' }}
                 >
-                    <Dustbin type={getType(item.data)} onDrop={(box: any) => handleDrop(item.id, box)} />
+                    {/* <Dustbin type={getType(item.data)} onDrop={(box: any) => handleDrop(item.id, box)} /> */}
                 </div>
             )
         } else {
@@ -108,7 +108,7 @@ export const Match: React.FC<Props> = ({ data }) => {
     })
 
     const boxes = data.boxes.map((item: any, index: number) => {
-        return <Box key={index} name={item.name} type={item.type} />
+        // return <Box key={index} name={item.name} type={item.type} />
     })
 
     console.log("all: ", matched)

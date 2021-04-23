@@ -6,7 +6,8 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import initData from '../../../assets/product-manager.json'
 
 import CollapBtn from './CollapBtn/CollapBtn'
-import ComponentSheet from './Form/ComponentSheet'
+// import ComponentSheet from './Form/ComponentSheet'
+import ComponentSheet from '../../Form/Form'
 import Conversation from './Conversation/Conversation'
 import PopUpBtn from './PopUpBtn/PopUpBtn'
 import { Selection } from './Selection/Selection'
@@ -96,7 +97,7 @@ export default class Simulation extends React.Component<Props, State> {
         inputStepInfo[stepStr] = content
         inputStageInfo[stageStr] = inputStepInfo
 
-        if (userSimInput === null) {
+        if (userSimInput === null) {    
             userSimInput = {}
             userSimInput["inputInfo"] = {}
             userSimInput["inputInfo"][stageStr] = inputStepInfo
@@ -185,6 +186,8 @@ export default class Simulation extends React.Component<Props, State> {
             if (this.state.curStep >= this.props.step) {
                 this.props.handleChangeStep(this.props.step + 1)
             }
+        } else if (this.state.curStage >= initData.stages.length-1) {
+            console.log("over")
         } else {
             this.setState(() => ({
                 curStage: this.state.curStage + 1,
@@ -320,6 +323,16 @@ export default class Simulation extends React.Component<Props, State> {
                 return (
                     <div>
                         <FakeUi data={this.state.data.content} />
+                        <div>
+                            <button
+                                onClick={this.handleNext}
+                                type="submit"
+                                className="btn btn-blue"
+                                style={{ position: 'fixed', top: '85%', left: '70%' }}
+                            >
+                                Next
+                            </button>
+                        </div>
                     </div>
                 )
             }
@@ -359,23 +372,22 @@ export default class Simulation extends React.Component<Props, State> {
         }
 
         return (
-            <div className="Simulation" 
+            <div className="Simulation z-index-lowest" 
                 style={{
                     background:`url("${linesImg}"),url("${this.state.data.backgroundImg ? this.state.data.backgroundImg:""}")`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "100% 100%" ,
-                    zIndex:-2,
                 }}
             >
-                <TopBar 
-                    stage = {this.props.stage}
-                    stageStrs = {stageStrs} 
-                    curStage = {this.state.curStage} 
-                    handleChangeType={this.props.handleChangeType}
-                    handleChangeCurStage={this.handleChangeCurStage}
-                />
+                <div className="z-index-highest">
+                    <TopBar 
+                        stage = {this.props.stage}
+                        stageStrs = {stageStrs} 
+                        curStage = {this.state.curStage} 
+                        handleChangeType={this.props.handleChangeType}
+                        handleChangeCurStage={this.handleChangeCurStage}
+                    />
+                </div>
                 <div className="main-container d-flex flex-row justify-content-between">
-                    <div className="d-flex flex-column">
+                    <div className="d-flex flex-column z-index-high">
                         <div className="mt-20 ml-40">
                             <PopUpBtn
                                 name="任务描述"
@@ -419,7 +431,7 @@ export default class Simulation extends React.Component<Props, State> {
                         </div>
                         <div className="side-container-240" />
                     </div>
-                    <div className="flex-grow-1"> {this.currentContent()}</div>
+                    <div className="flex-grow-1 z-index-mid"> {this.currentContent()}</div>
             
                 </div>
             </div>

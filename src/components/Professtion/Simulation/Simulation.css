@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: center;
   height: 900px;
-  z-index: 1;
+  background-repeat:no-repeat!important;
+  background-size:100% 100%!important;
 }
 
 .main-container {

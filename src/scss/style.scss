@@ -290,3 +290,25 @@
   overflow: auto!important;
 }
 
+.z-index-lowest {
+  z-index: -9999;
+}
+
+.z-index-low {
+  z-index: -1;
+}
+
+.z-index-mid {
+  z-index: 0;
+}
+
+.z-index-high {
+  z-index: 1;
+}
+
+.z-index-highest {
+  z-index: 9999;
+}
+
+
+

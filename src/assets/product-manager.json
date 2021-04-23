@@ -688,7 +688,12 @@
         },
         {
             "name": "验收上线",
-            "steps": []
+            "steps": [
+                {
+                    "name": "验收上线",
+                    "type": "why"  
+                }
+            ]
         }
     ],
     "recources": [

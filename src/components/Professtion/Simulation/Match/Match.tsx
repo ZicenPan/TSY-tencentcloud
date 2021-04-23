@@ -1,5 +1,5 @@
 import React, { FC, memo, useState, useCallback } from 'react'
-import Dustbin from './Dustbin'
+import DropTarget from './Dustbin'
 import Box from './Box'
 import { ItemTypes, availTypes } from './ItemTypes'
 import update from 'immutability-helper'
@@ -84,7 +84,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                 {dustbins.map((item: any, index: number) => {
                     if (item.type === 'dustbin') {
                         return (
-                            <Dustbin
+                            <DropTarget
                                 accepts={availTypes}
                                 lastDroppedItem={item.lastDroppedItem}
                                 onDrop={(box) => handleDrop(index, box)}
