@@ -1,5 +1,6 @@
+
 .Modal {
-    position: absolute;
+    position: absolute; 
     top: 60%;
     width: 60%;
     background-color: #ffffff;
@@ -7,7 +8,6 @@
     border-radius: 20px;
     overflow: auto!important;
     max-height:75%;
-
 }
 
 .Overlay {
@@ -17,6 +17,7 @@
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
 }
 
 .Modal-Div {
@@ -50,5 +51,4 @@
 }
 
 .PopUpBtn-container {
-    z-index: 2;
 }

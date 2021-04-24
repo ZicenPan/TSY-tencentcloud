@@ -64,7 +64,6 @@ class Conversation extends Component<Props, State> {
                     
                     
                 </div>
-
         )
     }
 }

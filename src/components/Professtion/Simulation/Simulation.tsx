@@ -341,14 +341,63 @@ export default class Simulation extends React.Component<Props, State> {
                 return <div />
         }
     }
+
     currentContent = () => {
         switch (this.props.type) {
             case "simulation": {
-                return this.currentSimulationContent()
+                return (
+                    <div className="main-container d-flex flex-row justify-content-between">
+                        <div className="d-flex flex-column z-index-high">
+                            <div className="mt-20 ml-40">
+                                <PopUpBtn
+                                    name="任务描述"
+                                    content="分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                    stage={this.props.stage}
+                                    data=""
+                                    changeStage = {0}
+                                    logoUrl = {taskDescLogoUrl}
+                                />
+                            </div>
+                            <div className="mt-20 ml-40">
+                                <PopUpBtn
+                                    name="操作指引"
+                                    content="操作-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                    stage={this.props.stage}
+                                    data=""
+                                    changeStage = {0}
+                                    logoUrl = {opGuideLogoUrl}
+                                />
+                            </div>
+                            <div className="mt-20 ml-40">
+                                <PopUpBtn
+                                    name="资源库"
+                                    content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                    stage={this.props.stage}
+                                    data={initData.recources}
+                                    changeStage = {this.state.stageChange}
+                                    logoUrl = {rscLogoUrl}
+                                />
+                            </div>
+
+                            <div className="mt-40 ml-20">
+                                <StepNav
+                                    stage={this.props.stage}
+                                    curStage={this.state.curStage}
+                                    curStep={this.state.curStep}
+                                    step={this.props.step}
+                                    stepInfo={initData.stages[this.state.curStage].steps}
+                                    handleChangeStep={this.handleChangeStep}
+                                />
+                            </div>
+                            <div className="side-container-240" />
+                        </div>
+                        <div className="flex-grow-1 z-index-mid"> {this.currentSimulationContent()}</div>
+                    </div>
+                )
             }
             case "professtionVideo": {
                 return (
-                    <div>
+                    <div className="main-container">
                         <ProfesstionsVideos 
                             stage = {this.props.stage}
                             videoData={initData.videos}
@@ -371,11 +420,17 @@ export default class Simulation extends React.Component<Props, State> {
             stageStrs.push(initData.stages[i].name)
         }
 
+        // 背景图片获取
+        let backStyle = {}
+        if(this.props.type === "simulation"){
+            backStyle = {
+                background:`url("${linesImg}"),url("${this.state.data.backgroundImg ? this.state.data.backgroundImg:""}")`,
+            }
+        }
+        // 背景图片获取
         return (
             <div className="Simulation z-index-lowest" 
-                style={{
-                    background:`url("${linesImg}"),url("${this.state.data.backgroundImg ? this.state.data.backgroundImg:""}")`,
-                }}
+                style={backStyle}
             >
                 <div className="z-index-highest">
                     <TopBar 
@@ -386,54 +441,8 @@ export default class Simulation extends React.Component<Props, State> {
                         handleChangeCurStage={this.handleChangeCurStage}
                     />
                 </div>
-                <div className="main-container d-flex flex-row justify-content-between">
-                    <div className="d-flex flex-column z-index-high">
-                        <div className="mt-20 ml-40">
-                            <PopUpBtn
-                                name="任务描述"
-                                content="分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
-                                stage={this.props.stage}
-                                data=""
-                                changeStage = {0}
-                                logoUrl = {taskDescLogoUrl}
-                            />
-                        </div>
-                        <div className="mt-20 ml-40">
-                            <PopUpBtn
-                                name="操作指引"
-                                content="操作-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
-                                stage={this.props.stage}
-                                data=""
-                                changeStage = {0}
-                                logoUrl = {opGuideLogoUrl}
-                            />
-                        </div>
-                        <div className="mt-20 ml-40">
-                            <PopUpBtn
-                                name="资源库"
-                                content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
-                                stage={this.props.stage}
-                                data={initData.recources}
-                                changeStage = {this.state.stageChange}
-                                logoUrl = {rscLogoUrl}
-                            />
-                        </div>
 
-                        <div className="mt-40 ml-20">
-                            <StepNav
-                                stage={this.props.stage}
-                                curStage={this.state.curStage}
-                                curStep={this.state.curStep}
-                                step={this.props.step}
-                                stepInfo={initData.stages[this.state.curStage].steps}
-                                handleChangeStep={this.handleChangeStep}
-                            />
-                        </div>
-                        <div className="side-container-240" />
-                    </div>
-                    <div className="flex-grow-1 z-index-mid"> {this.currentContent()}</div>
-            
-                </div>
+                {this.currentContent()}
             </div>
         )
     }

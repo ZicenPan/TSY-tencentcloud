@@ -6,7 +6,7 @@ import ResourcePoolContent from './ResourcePoolContent/ResourcePoolContent'
 import TaskDescContent from './TaskDescContent/TaskDescContent'
 import OpGuideContent from './OpGuideContent/OpGuideContent'
 
-import './PopUpBtn.css'
+import './PopUpBtn.scss'
 
 
 

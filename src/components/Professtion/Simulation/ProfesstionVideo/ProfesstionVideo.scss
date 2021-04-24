@@ -10,7 +10,7 @@
 }
 
 #profession-play {
-    width: 80%;
+    width: 70%;
 }
 
 
@@ -58,5 +58,89 @@
       /* identical to box height, or 150% */
       color: #000000;
   
-      width: 80%;
+      width: 70%;
 }
+
+
+.ProfesstionVideo-Modal {
+    position: absolute; 
+    // top: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    // overflow: auto!important;
+    // max-height:75%;
+}
+
+.ProfesstionVideo-Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(155, 152, 152, 0.5);
+    z-index: 9999;
+}
+
+.ProfesstionVideo-main-title {
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 31.25px;
+    line-height: 47px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+    margin-left: 100px;
+    margin-top: 100px;
+}
+.ProfesstionVideo-title {
+    /* header 2 */
+
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 37px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+
+    margin-left: 100px;
+    margin-top: 40px;
+}
+
+.ProfesstionVideo-stageid {
+    font-family: Play;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 37px;
+    /* identical to box height, or 150% */
+    
+    
+    /* primary-蓝 */
+    
+    color: #325AE4;
+  }
+
+  .ProfesstionVideo-play-container {
+      position: relative;
+      left: 250px;
+    //   top:60px
+  }
+
+  .ProfesstionVideo-close-btn {
+      position: fixed;
+      right: 100px;
+      top: 100px;
+      cursor: pointer;
+  }
