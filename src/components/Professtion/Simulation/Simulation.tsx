@@ -273,7 +273,7 @@ export default class Simulation extends React.Component<Props, State> {
                     <div>
                         <h2>{this.state.data.name}</h2>
                         <Form data={this.state.data} handleNext={this.handleNext} />
-                        <ComponentSheet data="" handleNext={this.handleNext} />
+                        {/* <ComponentSheet data="" handleNext={this.handleNext} /> */}
                         <div>
                             <button
                                 onClick={this.handleNext}
