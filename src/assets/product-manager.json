@@ -198,29 +198,29 @@
                     "type": "fakeui",
                     "content": [
                         {
-                            "fuid":1,
-                            "name":"xx",
-                            "url":"http://182.254.228.214/static/img/fakeui-fs-1.png",
+                            "fuid": 1,
+                            "name": "xx",
+                            "url": "http://182.254.228.214/simulation/static/media/fakeui-fs-1.png",
                             "hit_flag": 1,
-                            "offset_left":13,
-                            "offset_bottom":135,
+                            "offset_left": 13,
+                            "offset_bottom": 240,
                             "width": 76,
                             "height": 55
                         },
                         {
-                            "fuid":2,
-                            "name":"xx",
-                            "url":"http://182.254.228.214/static/img/fakeui-fs-2.png",
+                            "fuid": 2,
+                            "name": "xx",
+                            "url": "http://182.254.228.214/simulation/static/media/fakeui-fs-2.png",
                             "hit_flag": 1,
-                            "offset_left":5,
-                            "offset_bottom":167,
+                            "offset_left": 5,
+                            "offset_bottom": 297,
                             "width": 16,
                             "height": 45
                         },
                         {
-                            "fuid":2,
-                            "name":"xx",
-                            "url":"http://182.254.228.214/static/img/fakeui-fs-3.png",
+                            "fuid": 2,
+                            "name": "xx",
+                            "url": "http://182.254.228.214/simulation/static/media/fakeui-fs-3.png",
                             "hit_flag": 0
                         }
                     ]
@@ -228,61 +228,89 @@
                 {
                     "name": "用户反馈分析",
                     "type": "form",
+                    "columns": [
+                        {
+                            "dataField": "id",
+                            "text": "步骤",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        },
+                        {
+                            "dataField": "proscons",
+                            "text": "竞品的优点/缺点",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        },
+                        {
+                            "dataField": "ins",
+                            "text": "启发点",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        }
+                    ],
                     "grid": [
-                        [
-                            { "value": "来源", "readOnly": true, "type": "title" },
-                            { "value": "分类", "readOnly": true, "type": "title" },
-                            { "value": "引用", "readOnly": true, "type": "title" },
-                            { "value": "分析", "readOnly": true, "type": "title" }
-                        ],
-                        [
-                            { "value": "用户访谈", "readOnly": true, "type": "title" },
-                            { "value": "", "type": "select", "options": ["视觉", "流程"] },
-                            { "value": "", "type": "select" },
-                            { "value": "", "type": "select" }
-                        ],
-                        [
-                            { "value": "网上论坛", "readOnly": true, "type": "title" },
-                            { "value": "" },
-                            { "value": "" },
-                            { "value": "" }
-                        ],
-                        [
-                            { "value": "用户访谈", "readOnly": true, "type": "title" },
-                            { "value": "" },
-                            { "value": "" },
-                            { "value": "" }
-                        ]
+                        { "id": "飞书", "proscons": "单击表情撤销反馈非常简洁，易于用户操作", "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"},
+                        { "id": "", "proscons": "", "ins": ""},
+                        { "id": "", "proscons": "", "ins": ""},
+                        { "id": "messenger", "proscons": "", "ins": ""},
+                        { "id": "", "proscons": "", "ins": ""},
+                        { "id": "", "proscons": "", "ins": ""}
                     ]
                 },
                 {
                     "name": "结论与建议",
                     "type": "form",
+                    "columns": [
+                        {
+                            "dataField": "id",
+                            "text": "竞品",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        },
+                        {
+                            "dataField": "process",
+                            "text": "流程",
+                            "editor": {
+                                "type": "select",
+                                "options": [
+                                    {
+                                        "value": "A",
+                                        "label": "选择反馈信息"
+                                    },
+                                    {
+                                        "value": "B",
+                                        "label": "发送表情反馈"
+                                    },
+                                    {
+                                        "value": "C",
+                                        "label": "撤销表情反馈"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "dataField": "interaction",
+                            "text": "交互",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        },
+                        {
+                            "dataField": "vision",
+                            "text": "视觉",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        }
+                    ],
                     "grid": [
-                        [
-                            { "value": "来源", "readOnly": true },
-                            { "value": "分类", "readOnly": true },
-                            { "value": "引用", "readOnly": true },
-                            { "value": "分析", "readOnly": true }
-                        ],
-                        [
-                            { "value": "用户访谈", "readOnly": true },
-                            { "value": 1 },
-                            { "value": 3 },
-                            { "value": 3 }
-                        ],
-                        [
-                            { "value": "网上论坛", "readOnly": true },
-                            { "value": 2 },
-                            { "value": 4 },
-                            { "value": 4 }
-                        ],
-                        [
-                            { "value": "用户访谈", "readOnly": true },
-                            { "value": 1 },
-                            { "value": 3 },
-                            { "value": 3 }
-                        ]
+                        { "id": "步骤一", "process": "", "interaction": "", "vision": "" },
+                        { "id": "步骤二", "process": "", "interaction": "", "vision": "" },
+                        { "id": "步骤三", "process": "", "interaction": "", "vision": "" }
                     ]
                 }
             ]

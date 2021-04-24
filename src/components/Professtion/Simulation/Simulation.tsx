@@ -4,7 +4,7 @@ import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
 import initData from '../../../assets/product-manager.json'
-
+import { Form } from './Form/Form'
 import CollapBtn from './CollapBtn/CollapBtn'
 // import ComponentSheet from './Form/ComponentSheet'
 import ComponentSheet from '../../Form/Form'
@@ -272,6 +272,7 @@ export default class Simulation extends React.Component<Props, State> {
                 return (
                     <div>
                         <h2>{this.state.data.name}</h2>
+                        <Form data={this.state.data} handleNext={this.handleNext} />
                         <ComponentSheet data="" handleNext={this.handleNext} />
                         <div>
                             <button
@@ -323,16 +324,14 @@ export default class Simulation extends React.Component<Props, State> {
                 return (
                     <div>
                         <FakeUi data={this.state.data.content} />
-                        <div>
-                            <button
-                                onClick={this.handleNext}
-                                type="submit"
-                                className="btn btn-blue"
-                                style={{ position: 'fixed', top: '85%', left: '70%' }}
-                            >
-                                Next
-                            </button>
-                        </div>
+                        <button
+                            onClick={this.handleNext}
+                            type="submit"
+                            className="btn btn-blue"
+                            style={{ position: 'fixed', top: '85%', left: '70%' }}
+                        >
+                            Next
+                        </button>
                     </div>
                 )
             }
