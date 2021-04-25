@@ -223,27 +223,52 @@ export default class Simulation extends React.Component<Props, State> {
         }
     }
 
-    currentSimulationContent = () => {
-        switch (this.state.data.type) {
+    parseSimulationContent = (templateData) => {
+        let className = templateData.alignself?templateData.alignself:"";
+        // className += " z-index-mid"
+        switch (templateData.type) {
+            case "combination": {
+                className += " d-flex";
+                if (templateData.direction === "row") {
+                    className += " flex-row"
+                } else if (templateData.direction === "column") {
+                    className += " flex-column"
+                }
+
+                let childContents = []
+                for(let child of templateData.content) {
+                    childContents.push(this.parseSimulationContent(child))
+                    childContents.push(<div className="ml-40 mt-40"/>)
+                }
+                return (
+                    <div className={className}> 
+                        {childContents}
+                    </div>
+                )
+            }
             case 'conversation':
                 return (
-                    <Conversation
-                        data={this.state.data.content.convo}
-                        id={this.state.curStep}
-                        handleNext={this.handleNext}
-                    />
+                    <div className={className}>
+                        <Conversation
+                            data={templateData.content.convo}
+                            id={this.state.curStep}
+                            handleNext={this.handleNext}
+                        />
+                    </div>
                 )
             case 'match':
                 return (
-                    <div>
+                    <div className={className}>
                         <DndProvider backend={HTML5Backend}>
-                            <Match data={this.state.data} handleNext={this.handleNext} />
+                            <Match data={templateData} handleNext={this.handleNext} />
                         </DndProvider>
                     </div>
                 )
             case 'why':
+                className+=" nihao"
                 return (
-                    <div className="nihao">
+                    
+                    <div className={className}>
                         <CollapBtn
                             name="是什么"
                             content="竞品调研是设计产品或产品功能前的必备步骤，通过对竞争对手的产品进行比较、分析和总结，了解市场情况并得出产品规划建议的过程。"
@@ -251,7 +276,7 @@ export default class Simulation extends React.Component<Props, State> {
                         <CollapBtn
                             name="为什么"
                             content={
-                                '-价值：了解竞争对手的产品和市场动态，取其精华，去其糟粕 \n-影响：为产品制定可行且优于竞品的方 \n-对接方：帮助研发和设计团队快速了解市场标准及目前已经被采用的方案，提升开发效率'
+                                '-价值：xx，去其糟粕 \n-影响：xx \n-对接方：帮助研发和设计团队快速了解市场标准及目前已经被采用的方案，提升开发效率'
                             }
                         />
                         <div>
@@ -266,13 +291,18 @@ export default class Simulation extends React.Component<Props, State> {
                         </div>
                     </div>
                 )
-            case 'selection':
-                return <Selection data={this.state.data} handleNext={this.handleNext} />
+            case 'selection': {
+                return (
+                    <div className={className}>
+                        <Selection data={templateData} handleNext={this.handleNext} />
+                    </div>
+                )
+            }
             case 'form':
                 return (
-                    <div>
-                        <h2>{this.state.data.name}</h2>
-                        <Form data={this.state.data} handleNext={this.handleNext} />
+                    <div className={className}>
+                        <h2>{templateData.name}</h2>
+                        <Form data={templateData} handleNext={this.handleNext} />
                         {/* <ComponentSheet data="" handleNext={this.handleNext} /> */}
                         <div>
                             <button
@@ -290,14 +320,14 @@ export default class Simulation extends React.Component<Props, State> {
                 let videoInfo: any
                 let findedFlag = false
                 for (let i = 1; i < initData.videos.length; i++) {
-                    if (initData.videos[i].vid === this.state.data.vid) {
+                    if (initData.videos[i].vid === templateData.vid) {
                         findedFlag = true
                         videoInfo = initData.videos[i]
                     }
                 }
                 if (findedFlag) {
                     return (
-                        <div>
+                        <div className={className}>
                             <Video videoInfo={videoInfo} />
                             <div>
                                 <button
@@ -322,8 +352,8 @@ export default class Simulation extends React.Component<Props, State> {
             }
             case 'fakeui': {
                 return (
-                    <div>
-                        <FakeUi data={this.state.data.content} />
+                    <div className={className}>
+                        <FakeUi data={templateData.content} />
                         <button
                             onClick={this.handleNext}
                             type="submit"
@@ -346,7 +376,7 @@ export default class Simulation extends React.Component<Props, State> {
             case "simulation": {
                 return (
                     <div className="main-container d-flex flex-row justify-content-between">
-                        <div className="d-flex flex-column z-index-high">
+                        <div className="d-flex PopUpNavList flex-column z-index-high">
                             <div className="mt-20 ml-40">
                                 <PopUpBtn
                                     name="任务描述"
@@ -390,7 +420,12 @@ export default class Simulation extends React.Component<Props, State> {
                             </div>
                             <div className="side-container-240" />
                         </div>
-                        <div className="flex-grow-1 z-index-mid"> {this.currentSimulationContent()}</div>
+
+                        <div className="z-index-mid d-flex">
+                            {this.parseSimulationContent(this.state.data)}
+                        </div>
+                        
+                        <div className="PopUpNavList ml-20" />
                     </div>
                 )
             }

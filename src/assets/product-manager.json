@@ -64,9 +64,54 @@
             "name": "竞品调研",
             "steps": [
                 {
-                    "name": "竞品调研",
-                    "type": "why"
+                    "name": "竞品对比分析",
+                    "type": "combination",
+                    "direction":"column",
+                    "content":[
+                        {
+                            "name": "竞品调研",
+                            "type": "why",
+                            "alignself": "align-self-center"
+                        },
+                        {
+                            "name": "用户反馈分析",
+                            "type": "form",
+                            "alignself": "align-self-center",
+                            "columns": [
+                                {
+                                    "dataField": "id",
+                                    "text": "步骤",
+                                    "editor": {
+                                        "type":"textarea"
+                                    }
+                                },
+                                {
+                                    "dataField": "proscons",
+                                    "text": "竞品的优点/缺点",
+                                    "editor": {
+                                        "type":"textarea"
+                                    }
+                                },
+                                {
+                                    "dataField": "ins",
+                                    "text": "启发点",
+                                    "editor": {
+                                        "type":"textarea"
+                                    }
+                                }
+                            ],
+                            "grid": [
+                                { "id": "飞书", "proscons": "单击表情撤销反馈非常简洁，易于用户操作", "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"},
+                                { "id": "", "proscons": "", "ins": ""},
+                                { "id": "", "proscons": "", "ins": ""},
+                                { "id": "messenger", "proscons": "", "ins": ""},
+                                { "id": "", "proscons": "", "ins": ""},
+                                { "id": "", "proscons": "", "ins": ""}
+                            ]
+                        }
+                    ]
                 },
+
                 {
                     "name": "明确分析目标",
                     "type": "match",
@@ -195,33 +240,119 @@
                 },
                 {
                     "name": "竞品对比分析",
-                    "type": "fakeui",
-                    "content": [
+                    "type": "combination",
+                    "direction":"row",
+                    "content":[
                         {
-                            "fuid": 1,
-                            "name": "xx",
-                            "url": "http://182.254.228.214/simulation/static/media/fakeui-fs-1.png",
-                            "hit_flag": 1,
-                            "offset_left": 13,
-                            "offset_bottom": 240,
-                            "width": 76,
-                            "height": 55
+                            "name": "竞品对比分析",
+                            "type": "fakeui",
+                            "alignself": "align-self-start",
+                            "content": [
+                                {
+                                    "fuid": 1,
+                                    "name": "xx",
+                                    "url": "http://182.254.228.214/static/img/fakeui-fs-1.png",
+                                    "hit_flag": 1,
+                                    "offset_left": 13,
+                                    "offset_bottom": 135,
+                                    "width": 76,
+                                    "height": 55
+                                },
+                                {
+                                    "fuid": 2,
+                                    "name": "xx",
+                                    "url": "http://182.254.228.214/static/img/fakeui-fs-2.png",
+                                    "hit_flag": 1,
+                                    "offset_left": 5,
+                                    "offset_bottom": 167,
+                                    "width": 16,
+                                    "height": 45
+                                },
+                                {
+                                    "fuid": 2,
+                                    "name": "xx",
+                                    "url": "http://182.254.228.214/static/img/fakeui-fs-3.png",
+                                    "hit_flag": 0
+                                }
+                            ]
                         },
                         {
-                            "fuid": 2,
-                            "name": "xx",
-                            "url": "http://182.254.228.214/simulation/static/media/fakeui-fs-2.png",
-                            "hit_flag": 1,
-                            "offset_left": 5,
-                            "offset_bottom": 297,
-                            "width": 16,
-                            "height": 45
-                        },
-                        {
-                            "fuid": 2,
-                            "name": "xx",
-                            "url": "http://182.254.228.214/simulation/static/media/fakeui-fs-3.png",
-                            "hit_flag": 0
+                            "name": "用户反馈分析",
+                            "type": "combination",
+                            "direction": "column",
+                            "alignself": "align-self-center",
+                            "content": [
+                                {
+                                    "name": "用户反馈分析1",
+                                    "type": "form",
+                                    "columns": [
+                                        {
+                                            "dataField": "id",
+                                            "text": "步骤",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "proscons",
+                                            "text": "竞品的优点/缺点",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "ins",
+                                            "text": "启发点",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        }
+                                    ],
+                                    "grid": [
+                                        { "id": "飞书", "proscons": "单击表情撤销反馈非常简洁，易于用户操作", "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "messenger", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""}
+                                    ]
+                                },
+                                {
+                                    "name": "用户反馈分析2",
+                                    "type": "form",
+                                    "columns": [
+                                        {
+                                            "dataField": "id",
+                                            "text": "步骤",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "proscons",
+                                            "text": "竞品的优点/缺点",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "ins",
+                                            "text": "启发点",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        }
+                                    ],
+                                    "grid": [
+                                        { "id": "飞书", "proscons": "单击表情撤销反馈非常简洁，易于用户操作", "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "messenger", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""}
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },

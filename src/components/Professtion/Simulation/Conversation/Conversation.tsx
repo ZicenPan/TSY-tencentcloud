@@ -59,7 +59,7 @@ class Conversation extends Component<Props, State> {
                     </div>
                     {characterImgDom}
                     <div className="mt-40">
-                        <h4 className="text-grey-dark text-center">点击空白区域继续</h4>
+                        <h4 className="text-grey-dark text-center">点击对话框继续</h4>
                     </div>
                     
                     

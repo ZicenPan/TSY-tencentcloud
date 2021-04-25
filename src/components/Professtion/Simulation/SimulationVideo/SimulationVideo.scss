@@ -1,5 +1,5 @@
 .Player {
-    width: 67%;//不能超过67，不然弹窗不会显示，此问题暂未找到根源
+    // width: 67%;//不能超过67，不然弹窗不会显示，此问题暂未找到根源
     // height: 90%;
 }
 
@@ -41,7 +41,7 @@
     /* identical to box height, or 150% */
     color: #000000;
 
-    width: 67%;
+    width: 1000px;
   }
 
   .video-title {
