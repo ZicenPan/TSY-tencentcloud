@@ -105,7 +105,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                     <Box name={name} type={type} isDropped={isDropped(name)} key={index} />
                 ))}
             </div>
-            <PageResult checked={matched()} handleNext={handleNext} />
+            <PageResult checked={matched()} handleNext={handleNext} resultMsg={data.resultMsg}/>
             <button
                 onClick={handleNext}
                 type="submit"

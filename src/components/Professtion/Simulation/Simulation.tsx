@@ -264,20 +264,18 @@ export default class Simulation extends React.Component<Props, State> {
                         </DndProvider>
                     </div>
                 )
-            case 'why':
-                className+=" nihao"
+            case 'explain':
+                // className+=" nihao"
                 return (
                     
                     <div className={className}>
                         <CollapBtn
-                            name="是什么"
-                            content="竞品调研是设计产品或产品功能前的必备步骤，通过对竞争对手的产品进行比较、分析和总结，了解市场情况并得出产品规划建议的过程。"
+                            name={this.state.data.content[0].name!+"是什么"}
+                            content={this.state.data.content[0].content!}
                         />
                         <CollapBtn
-                            name="为什么"
-                            content={
-                                '-价值：xx，去其糟粕 \n-影响：xx \n-对接方：帮助研发和设计团队快速了解市场标准及目前已经被采用的方案，提升开发效率'
-                            }
+                            name={this.state.data.content[1].name!+"为什么"}
+                            content={this.state.data.content[1].content!}
                         />
                         <div>
                             <button
@@ -380,7 +378,7 @@ export default class Simulation extends React.Component<Props, State> {
                             <div className="mt-20 ml-40">
                                 <PopUpBtn
                                     name="任务描述"
-                                    content="分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                    content={this.state.data.taskDesc}
                                     stage={this.props.stage}
                                     data=""
                                     changeStage = {0}
@@ -390,7 +388,7 @@ export default class Simulation extends React.Component<Props, State> {
                             <div className="mt-20 ml-40">
                                 <PopUpBtn
                                     name="操作指引"
-                                    content="操作-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                    content={this.state.data.opGuide}
                                     stage={this.props.stage}
                                     data=""
                                     changeStage = {0}

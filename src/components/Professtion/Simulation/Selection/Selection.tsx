@@ -41,6 +41,7 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
     }
 
     console.log('options', options)
+    console.log(data.resultMsg)
     return (
         <div className="mt-40">
             <h2>{data.name}</h2>
@@ -75,7 +76,13 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
                     )
                 })}
             </div>
-            <PageResult checked={matched()} handleNext={handleNext} />
+            
+            <PageResult 
+                checked={matched()} 
+                handleNext={handleNext} 
+                resultMsg = {data.resultMsg}
+                
+           />
             <button
                 onClick={handleNext}
                 type="submit"

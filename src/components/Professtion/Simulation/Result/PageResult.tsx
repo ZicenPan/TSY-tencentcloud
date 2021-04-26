@@ -5,9 +5,12 @@ import '@/scss/style.scss'
 interface Props {
     checked: boolean
     handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+    resultMsg: any
+
 }
 
-export const PageResult: FC<Props> = memo(function PageResult({ checked, handleNext }) {
+export const PageResult: FC<Props> = memo(function PageResult({ checked, handleNext, resultMsg}) {
+    const [showStandard, setShowStandard] = useState(false)
     const [showModal, setShowModal] = useState(false)
 
     function handleOpenModal() {
@@ -19,14 +22,29 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
     }
 
     function getModelContent() {
+        let content:string
+        if (showStandard&&checked) 
+            content = resultMsg.standardMsg?resultMsg.standardMsg:""
+        else if (checked) 
+            content = resultMsg.correctMsg?resultMsg.correctMsg:"回答正确"
+        else 
+            content = resultMsg.errorMsg?resultMsg.errorMsg:"回答错误"
+
         return (
             <div>
                 {' '}
-                {checked
-                    ? '恭喜，你已经成功明确分析目标啦！'
-                    : '很遗憾，你的答案不正确哦。不要气馁，再试一次吧！'}
+                {content}
             </div>
         )
+    }
+
+    function handleStandard() {
+        if (!checked)
+            handleCloseModal()
+        else {
+            setShowStandard(true)
+            handleOpenModal()
+        }
     }
 
     return (
@@ -42,7 +60,7 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
             <ReactModal
                 isOpen={showModal}
                 contentLabel="onRequestClose Example"
-                onRequestClose={checked ? handleNext : handleCloseModal}
+                onRequestClose={showStandard ? handleNext : handleStandard}
                 className="Modal centered"
                 overlayClassName="Overlay"
             >

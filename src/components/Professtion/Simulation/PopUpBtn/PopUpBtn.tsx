@@ -90,8 +90,8 @@ export default class PopUpBtn extends React.Component<Props, State> {
           }
           
         }
-        this.msg =  "你的“" + name + "”已经更新并保存"
-
+        this.msg =  name!==""?"你的“" + name + "”已经更新并保存":""
+        console.log(this.msg)
         // 获得图片
         break
       }
@@ -106,7 +106,7 @@ export default class PopUpBtn extends React.Component<Props, State> {
     if (this.props.changeStage === 1) {
       // ReactTooltip.show(this.fooRef) 
       if (!this.hasOpenModal) {
-        ReactTooltip.show(this.fooRef)
+        ReactTooltip.show(this.fooRef) // 展示的是上一次render中的msg
       } else 
         this.msg= ""
     }
