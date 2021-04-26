@@ -1,4 +1,4 @@
-import React, { FC, memo, useState, useCallback } from 'react'
+import React, { FC, memo, useState, useCallback, useEffect } from 'react'
 import DropTarget from './Dustbin'
 import Box from './Box'
 import { ItemTypes, availTypes } from './ItemTypes'
@@ -41,7 +41,7 @@ export interface ContainerState {
 export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
     const [dustbins, setDustbins] = useState(data.content)
 
-    const [boxes] = useState<BoxState[]>(data.boxes)
+    const [boxes, setBoxes] = useState<BoxState[]>(data.boxes)
 
     const [droppedBoxNames, setDroppedBoxNames] = useState<string[]>([])
 
@@ -69,6 +69,11 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         },
         [droppedBoxNames, dustbins]
     )
+
+    useEffect(() => {
+        setDustbins(data.content)
+        setBoxes(data.boxes)
+    }, [data])
 
     const matched = () => {
         const a = dustbins.filter(function (item) {
