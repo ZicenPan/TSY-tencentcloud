@@ -587,7 +587,6 @@
                 {
                     "name": "收益与标准",
                     "type": "match",
-                    "num": 5,
                     "content": [
                         {
                             "type": "text",
@@ -646,80 +645,66 @@
                 {
                     "name": "产品功能说明",
                     "type": "match",
-                    "num": 5,
                     "content": [
                         {
                             "type": "text",
-                            "data": "用户调研反映多数用户希望在“探元素社交软件”里增加表情反馈功能，该竞品分析报告旨在分析总结竞品表情反馈功能的"
+                            "data": "用于罗列需求的各项功能"
                         },
                         {
                             "type": "dustbin",
-                            "id": "0",
-                            "data": "A"
-                        },
-                        {
-                            "type": "text",
-                            "data": "、"
+                            "data": "A",
+                            "matched": false
                         },
                         {
                             "type": "dustbin",
-                            "id": "1",
-                            "data": "A"
-                        },
-                        {
-                            "type": "text",
-                            "data": "、"
+                            "data": "B",
+                            "matched": false
                         },
                         {
                             "type": "dustbin",
-                            "id": "2",
-                            "data": "A"
-                        },
-                        {
-                            "type": "text",
-                            "data": "和己方产品的"
+                            "data": "C",
+                            "matched": false
                         },
                         {
                             "type": "dustbin",
-                            "id": "3",
-                            "data": "B"
-                        },
-                        {
-                            "type": "text",
-                            "data": "、"
+                            "data": "D",
+                            "matched": false
                         },
                         {
                             "type": "dustbin",
-                            "id": "4",
-                            "data": "B"
-                        },
-                        {
-                            "type": "text",
-                            "data": "。"
+                            "data": "E",
+                            "matched": false
                         }
                     ],
                     "boxes": [
                         {
-                            "name": "呈现方式",
+                            "name": "进入会话选择要回复的消息",
                             "type": "A"
                         },
                         {
-                            "name": "优缺点",
-                            "type": "A"
+                            "name": "点击系统表情发送反馈",
+                            "type": "C"
                         },
                         {
-                            "name": "用户价值",
-                            "type": "A"
+                            "name": "双击已回复的表情取消反馈",
+                            "type": "E"
                         },
                         {
-                            "name": "启发点",
+                            "name": "长按消息吊起功能面板",
                             "type": "B"
                         },
                         {
-                            "name": "机会点",
-                            "type": "B"
+                            "name": "按照聚类排列展示表情",
+                            "type": "D"
                         }
-                    ]
+                    ],
+                    "resultMsg": {
+                        "correctMsg": "完全正确，你提供的介绍清晰合理!",
+                        "errorMsg": "根据每个软件的描述，再思考一下它是不是本次分析的竞品呢？",
+                        "standardMsg": "分析竞品必须是以及时通讯为主要互动方式且具有表情反馈功能的社交软件；无需包含没有表情反馈功能的社交软件。飞书和Messenger是现有即时通讯产品中有表情反馈功能的竞品。"
+                    },
+                    "taskDesc": "分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标",
+                    "opGuide": "拖动下方词语，补全分析目标"
                 },
                 {
                     "name": "产品交互说明",
