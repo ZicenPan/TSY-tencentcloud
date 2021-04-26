@@ -708,7 +708,37 @@
                 },
                 {
                     "name": "产品交互说明",
-                    "type": "form"
+                    "type": "fakeui",
+                    "alignself": "align-self-start",
+                    "content": [
+                        {
+                            "fuid": 1,
+                            "name": "xx",
+                            "url": "http://182.254.228.214/static/img/fakeui-fs-1.png",
+                            "hit_flag": 1,
+                            "offset_left": 13,
+                            "offset_bottom": 135,
+                            "width": 76,
+                            "height": 55
+                        },
+                        {
+                            "fuid": 2,
+                            "name": "xx",
+                            "url": "http://182.254.228.214/static/img/fakeui-fs-2.png",
+                            "hit_flag": 1,
+                            "offset_left": 5,
+                            "offset_bottom": 167,
+                            "width": 16,
+                            "height": 45
+                        },
+                        {
+                            "fuid": 2,
+                            "name": "xx",
+                            "url": "http://182.254.228.214/static/img/fakeui-fs-3.png",
+                            "hit_flag": 0
+                        }
+                    ]
+
                 },
                 {
                     "name": "附录",
