@@ -1,4 +1,17 @@
-.div-topbar {
+#topbar-div-topbar {
+    max-height: 70px;
+    display:block;
+}   
+
+.topbar-exit-logo {
     position: absolute;
-    max-height: 100px;
+}
+
+.topbar-div-topbar {
+
+}
+
+.topbar-video {
+    position: absolute;
+    left: 90%;
 }

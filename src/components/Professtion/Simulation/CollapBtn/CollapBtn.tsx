@@ -1,6 +1,7 @@
 import React from 'react'
 import '@/scss/style.scss'
 
+import './CollapBtn.scss'
 interface Props {
     name: string
     content: string
@@ -26,17 +27,17 @@ class CollapBtn extends React.Component<Props, State> {
     }
     displayC = () => {
         if (this.state.display) {
-            return <div>{this.props.content}</div>
+            return <p className="CollapBtn-content">{this.props.content}</p>
         }
         return
     }
     render() {
         return (
-            <div className="mt-40">
+            <div className="mt-40 d-flex flex-column CollapBtn-container">
                 <button onClick={this.handleClk} type="submit" className="btn btn-clp">
                     <h2>{this.props.name}</h2>
                 </button>
-                <h4 className="mt-40">{this.displayC()}</h4>
+                <div className="mt-40 ">{this.displayC()}</div>
             </div>
         )
     }

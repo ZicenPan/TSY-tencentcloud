@@ -135,6 +135,6 @@ export default class ComponentSheet extends React.Component<Props, State> {
       //       </div>
 
       // </div>
-    );
+    )
   }
 }

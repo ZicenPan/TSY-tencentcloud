@@ -19,23 +19,20 @@ interface Props {
 // }
 
 class TopBar extends React.Component<Props, {}> {
-  // constructor(props: any) {
-  //   super(props)
-  //   this.state = {
-  //     cur: 0,
-  //   };
-// }
+  constructor(props: any) {
+    super(props)
+    this.handleClickStageBar = this.handleClickStageBar.bind(this)
+}
+  
 
   componentDidMount() {
     console.log(this.props);
   } 
-  // displayC = () => {
-  //   if (this.state.cur == 0) {
-  //     return;
-  //   }
-  //   console.log("here");
-  //   return <div>{this.props.content}</div>;
-  // };
+
+  handleClickStageBar(i) {
+    this.props.handleChangeCurStage(i)
+    this.props.handleChangeType("simulation")
+  }
 
   render() {
 
@@ -44,16 +41,13 @@ class TopBar extends React.Component<Props, {}> {
     const stagesBars = [];
     for (let i = 1; i <= stageNum; i++) {
         let firstBarStyle = {}
-        if (i === 1)
-          firstBarStyle = {marginLeft: 380};
-        
+ 
         if (i <= this.props.stage) {
           stagesBars.push(
             <div 
               key={"topbar"+i.toString()} 
               className="number-circle-blue ml-40" 
-              style={firstBarStyle} 
-              onClick={()=>{this.props.handleChangeCurStage(i)}}
+              onClick={()=>{this.handleClickStageBar(i)}}
             >
               {i}
             </div>
@@ -63,36 +57,37 @@ class TopBar extends React.Component<Props, {}> {
             <div 
               key={"topbar"+i.toString()} 
               className="number-circle-grey ml-40" 
-              style={firstBarStyle} 
-              onClick={()=>{this.props.handleChangeCurStage(i)}}
+              onClick={()=>{this.handleClickStageBar(i)}}
             >
               {i}
             </div>
             );
         }
         if (this.props.curStage === i) {
-          stagesBars.push(<p key={"topbarstr"+i.toString()} className="ml-20" style={{alignSelf: "center"}}>{this.props.stageStrs[i-1]}</p>);
+          stagesBars.push(<p key={"topbarstr"+i.toString()} className="ml-20 mt-10" style={{alignSelf: "center"}}>{this.props.stageStrs[i-1]}</p>);
         } 
 
     }
 
     return (
-      <section className="progress-bar-top fixed-top bg-white div-topbar">
-        <div className="d-flex flex-row ">
-          <img src={img} alt="Logo" />
+      <div className="progress-bar-top fixed-top bg-white" id="topbar-div-topbar">
+        <div className="d-flex flex-row">
+          <img src={img} alt="Logo" className="topbar-exit-logo" onClick={()=>{this.props.handleChangeType("sketch")}}/>
             {/* <span className="circle-blue" /> */}
-  
-          {stagesBars}
+          <div className='d-flex flex-row m-auto'>
+            {stagesBars}
+          </div>
+          
 
-          <div className="ml-auto">
+          <div className="topbar-video">
             <a>
-              <button id="bannerBtn" type="button" className="btn btn-blue" onClick={()=>{this.props.handleChangeType("sketch")}}>
-                个人中心
+              <button id="bannerBtn" type="button" className="btn btn-blue" onClick={()=>{this.props.handleChangeType("professtionVideo")}}>
+                产品经理视频
               </button>
             </a>
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 }

@@ -30,14 +30,18 @@ export default class Video extends Component<Props, {}> {
     // }
   
     render() {
+        let stageId = this.props.videoInfo.stage_id.toString()
         return(
             <div>
-                <h1 className="text-center mt-40">{this.props.videoInfo.name}</h1>
-                <h3 className="video-introduction">简介</h3>
-                <p className="mt-10 ">{this.props.videoInfo.introduction}</p>
+                <h1 className="video-title mt-40 ">
+                    <span className="video-stageid mr-20">{stageId[1]?stageId:'0'+stageId}</span>
+                    {this.props.videoInfo.name}
+                </h1>
+                <h3 className="video-introduction-title mt-10">简介</h3>
+                <p className="mt-10 video-introduction-content">{this.props.videoInfo.introduction}</p>
                 <div className="Player">
                     <Player
-                        poster="https://video-react.js.org/assets/poster.png"
+                        poster={this.props.videoInfo.cover_url}
                     >
                         <source
                         src={this.props.videoInfo.src_url}

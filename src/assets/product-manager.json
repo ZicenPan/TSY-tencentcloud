@@ -4,7 +4,10 @@
         {
             "name": "接受需求",
             "steps": [
-                {
+                {   
+                    "taskDesc":"",
+                    "opGuide":"点击对话框推进对话",
+                    "backgroundImg":"http://182.254.228.214/static/img/conversation-back.png",
                     "name": "接受需求",
                     "type": "conversation",
                     "content": {
@@ -64,9 +67,32 @@
             "steps": [
                 {
                     "name": "竞品调研",
-                    "type": "why"
+                    "type": "explain",
+                    "direction":"column",
+                    "content":[
+                        {
+                            "name": "竞品调研",
+                            "type": "what",
+                            "alignself": "align-self-center",
+                            "content":"竞品调研是设计产品或产品功能前的必备步骤，通过对竞争对手的产品进行比较、分析和总结，了解市场情况并得出产品规划建议的过程。"
+                        },
+                        {
+                            "name": "竞品调研",
+                            "type": "why",
+                            "alignself": "align-self-center",
+                            "content":"- 价值：了解竞争对手的产品和市场动态，取其精华，去其糟粕影响：为产品制定可行且优于竞品的方案对接方：帮助研发和设计团队快速了解市场标准及目前已经被采用的方案，提升开发效率"
+                        }
+                        
+                    ]
                 },
                 {
+                    "resultMsg": {
+                        "correctMsg":"恭喜，你已确定本次分析的竞品！",
+                        "errorMsg":"根据每个软件的描述，再思考一下它是不是本次分析的竞品呢？",
+                        "standardMsg":"分析竞品必须是以及时通讯为主要互动方式且具有表情反馈功能的社交软件；无需包含没有表情反馈功能的社交软件。飞书和Messenger是现有即时通讯产品中有表情反馈功能的竞品。"
+                    },
+                    "taskDesc":"分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标",
+                    "opGuide":"拖动下方词语，补全分析目标",
                     "name": "明确分析目标",
                     "type": "match",
                     "num": 5,
@@ -77,8 +103,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "0",
-                            "data": ""
+                            "data": "A",
+                            "matched": false
                         },
                         {
                             "type": "text",
@@ -86,8 +112,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "1",
-                            "data": ""
+                            "data": "A",
+                            "matched": false
                         },
                         {
                             "type": "text",
@@ -95,8 +121,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "2",
-                            "data": ""
+                            "data": "A",
+                            "matched": false
                         },
                         {
                             "type": "text",
@@ -104,8 +130,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "3",
-                            "data": ""
+                            "data": "B",
+                            "matched": false
                         },
                         {
                             "type": "text",
@@ -113,8 +139,8 @@
                         },
                         {
                             "type": "dustbin",
-                            "id": "4",
-                            "data": ""
+                            "data": "B",
+                            "matched": false
                         },
                         {
                             "type": "text",
@@ -123,23 +149,35 @@
                     ],
                     "boxes": [
                         {
-                            "name": "呈现方式"
+                            "name": "呈现方式",
+                            "type": "A"
                         },
                         {
-                            "name": "优缺点"
+                            "name": "优缺点",
+                            "type": "A"
                         },
                         {
-                            "name": "用户价值"
+                            "name": "用户价值",
+                            "type": "A"
                         },
                         {
-                            "name": "启发点"
+                            "name": "启发点",
+                            "type": "B"
                         },
                         {
-                            "name": "机会点"
+                            "name": "机会点",
+                            "type": "B"
                         }
                     ]
                 },
                 {
+                    "resultMsg": {
+                        "correctMsg":"恭喜，你已确定本次分析的竞品！",
+                        "errorMsg":"根据每个软件的描述，再思考一下它是不是本次分析的竞品呢？",
+                        "standardMsg":"分析竞品必须是以及时通讯为主要互动方式且具有表情反馈功能的社交软件；无需包含没有表情反馈功能的社交软件。飞书和Messenger是现有即时通讯产品中有表情反馈功能的竞品。"
+                    },
+                    "taskDesc":"从网络或根据经验尽可能全面地找出与己方产品定位相似的产品，然后选出与分析目标相关且市场规模较大的产品作为分析对象",
+                    "opGuide":"点击选择两个竞品作为分析对象",
                     "name": "确定分析竞品",
                     "type": "selection",
                     "content": [
@@ -147,79 +185,251 @@
                             "title": "Bilibili",
                             "description": "哔哩哔哩，现为中国年轻世代高度聚集的文化社区和视频平台，主要功能为视频内容的分发。其中视频评论没有表情反馈功能。",
                             "icon": "",
-                            "answer": false
+                            "answer": false,
+                            "selected": false
                         },
                         {
                             "title": "微信",
                             "description": "微信，提供即时通讯、公众平台、朋友圈、消息推送等功能的社交服务平台。其中即时通讯没有表情反馈功能。",
                             "icon": "",
-                            "answer": false
+                            "answer": false,
+                            "selected": false
                         },
                         {
                             "title": "Messenger",
                             "description": "Messenger，中文名飞书信，是从脸书独立出来的信息传输应用，帮助用户进行即时通讯、接收通知并阅读新鲜事。其中即时通讯有表情反馈功能。",
                             "icon": "",
-                            "answer": true
+                            "answer": true,
+                            "selected": false
                         },
                         {
                             "title": "抖音",
                             "description": "抖音，一款音乐创意短视频社交软件，是一个面向全年龄的音乐短视频社区平台。其中评论回复没有表情反馈功能。",
                             "icon": "",
-                            "answer": false
+                            "answer": false,
+                            "selected": false
                         },
                         {
                             "title": "京东",
                             "description": "京东，专业的综合网上购物商城，销售超数万品牌、千万种商品。主要功能为网购，与客服沟通的通讯页面没有表情反馈功能。",
                             "icon": "",
-                            "answer": false
+                            "answer": false,
+                            "selected": false
                         },
                         {
                             "title": "飞书",
                             "description": "飞书，将即时沟通、音视频会议、文档和工作台深度整合的沟通协作平台，全方位提升企业效率。其中即时通讯有表情反馈功能。",
                             "icon": "",
-                            "answer": true
+                            "answer": true,
+                            "selected": false
                         }
                     ]
                 },
                 {
                     "name": "竞品对比分析",
-                    "type": "fakeui",
-                    "content": [
+                    "type": "combination",
+                    "direction":"row",
+                    "content":[
                         {
-                            "fuid":1,
-                            "name":"xx",
-                            "url":"http://182.254.228.214/simulation/static/media/fakeui-fs-1.png",
-                            "hit_flag": 1,
-                            "offset_left":13,
-                            "offset_bottom":240,
-                            "width": 76,
-                            "height": 90
+                            "name": "竞品对比分析",
+                            "type": "fakeui",
+                            "alignself": "align-self-start",
+                            "content": [
+                                {
+                                    "fuid": 1,
+                                    "name": "xx",
+                                    "url": "http://182.254.228.214/static/img/fakeui-fs-1.png",
+                                    "hit_flag": 1,
+                                    "offset_left": 13,
+                                    "offset_bottom": 135,
+                                    "width": 76,
+                                    "height": 55
+                                },
+                                {
+                                    "fuid": 2,
+                                    "name": "xx",
+                                    "url": "http://182.254.228.214/static/img/fakeui-fs-2.png",
+                                    "hit_flag": 1,
+                                    "offset_left": 5,
+                                    "offset_bottom": 167,
+                                    "width": 16,
+                                    "height": 45
+                                },
+                                {
+                                    "fuid": 2,
+                                    "name": "xx",
+                                    "url": "http://182.254.228.214/static/img/fakeui-fs-3.png",
+                                    "hit_flag": 0
+                                }
+                            ]
                         },
                         {
-                            "fuid":2,
-                            "name":"xx",
-                            "url":"http://182.254.228.214/simulation/static/media/fakeui-fs-2.png",
-                            "hit_flag": 1,
-                            "offset_left":5,
-                            "offset_bottom":297,
-                            "width": 16,
-                            "height": 80
-                        },
-                        {
-                            "fuid":2,
-                            "name":"xx",
-                            "url":"http://182.254.228.214/simulation/static/media/fakeui-fs-3.png",
-                            "hit_flag": 0
+                            "name": "用户反馈分析",
+                            "type": "combination",
+                            "direction": "column",
+                            "alignself": "align-self-center",
+                            "content": [
+                                {
+                                    "name": "用户反馈分析1",
+                                    "type": "form",
+                                    "columns": [
+                                        {
+                                            "dataField": "id",
+                                            "text": "步骤",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "proscons",
+                                            "text": "竞品的优点/缺点",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "ins",
+                                            "text": "启发点",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        }
+                                    ],
+                                    "grid": [
+                                        { "id": "飞书", "proscons": "单击表情撤销反馈非常简洁，易于用户操作", "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "messenger", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""}
+                                    ]
+                                },
+                                {
+                                    "name": "用户反馈分析2",
+                                    "type": "form",
+                                    "columns": [
+                                        {
+                                            "dataField": "id",
+                                            "text": "步骤",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "proscons",
+                                            "text": "竞品的优点/缺点",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "ins",
+                                            "text": "启发点",
+                                            "editor": {
+                                                "type":"textarea"
+                                            }
+                                        }
+                                    ],
+                                    "grid": [
+                                        { "id": "飞书", "proscons": "单击表情撤销反馈非常简洁，易于用户操作", "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "messenger", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""},
+                                        { "id": "", "proscons": "", "ins": ""}
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
                 {
                     "name": "用户反馈分析",
-                    "type": "form"
+                    "type": "form",
+                    "columns": [
+                        {
+                            "dataField": "id",
+                            "text": "步骤",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        },
+                        {
+                            "dataField": "proscons",
+                            "text": "竞品的优点/缺点",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        },
+                        {
+                            "dataField": "ins",
+                            "text": "启发点",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        }
+                    ],
+                    "grid": [
+                        { "id": "飞书", "proscons": "单击表情撤销反馈非常简洁，易于用户操作", "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"},
+                        { "id": "", "proscons": "", "ins": ""},
+                        { "id": "", "proscons": "", "ins": ""},
+                        { "id": "messenger", "proscons": "", "ins": ""},
+                        { "id": "", "proscons": "", "ins": ""},
+                        { "id": "", "proscons": "", "ins": ""}
+                    ]
                 },
                 {
                     "name": "结论与建议",
-                    "type": "form"
+                    "type": "form",
+                    "columns": [
+                        {
+                            "dataField": "id",
+                            "text": "竞品",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        },
+                        {
+                            "dataField": "process",
+                            "text": "流程",
+                            "editor": {
+                                "type": "select",
+                                "options": [
+                                    {
+                                        "value": "A",
+                                        "label": "选择反馈信息"
+                                    },
+                                    {
+                                        "value": "B",
+                                        "label": "发送表情反馈"
+                                    },
+                                    {
+                                        "value": "C",
+                                        "label": "撤销表情反馈"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "dataField": "interaction",
+                            "text": "交互",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        },
+                        {
+                            "dataField": "vision",
+                            "text": "视觉",
+                            "editor": {
+                                "type":"textarea"
+                            }
+                        }
+                    ],
+                    "grid": [
+                        { "id": "步骤一", "process": "", "interaction": "", "vision": "" },
+                        { "id": "步骤二", "process": "", "interaction": "", "vision": "" },
+                        { "id": "步骤三", "process": "", "interaction": "", "vision": "" }
+                    ]
                 }
             ]
         },
@@ -228,19 +438,241 @@
             "steps": [
                 {
                     "name": "撰写需求文档",
-                    "type": "why"
+                    "type": "explain"
                 },
                 {
                     "name": "概述与背景",
-                    "type": "match"
+                    "type": "match",
+                    "num": 5,
+                    "content": [
+                        {
+                            "type": "text",
+                            "data": "用户调研反映多数用户希望在“探元素社交软件”里增加表情反馈功能，该竞品分析报告旨在分析总结竞品表情反馈功能的"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "0",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "1",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "2",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "和己方产品的"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "3",
+                            "data": "B"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "4",
+                            "data": "B"
+                        },
+                        {
+                            "type": "text",
+                            "data": "。"
+                        }
+                    ],
+                    "boxes": [
+                        {
+                            "name": "呈现方式",
+                            "type": "A"
+                        },
+                        {
+                            "name": "优缺点",
+                            "type": "A"
+                        },
+                        {
+                            "name": "用户价值",
+                            "type": "A"
+                        },
+                        {
+                            "name": "启发点",
+                            "type": "B"
+                        },
+                        {
+                            "name": "机会点",
+                            "type": "B"
+                        }
+                    ]
                 },
                 {
                     "name": "收益与标准",
-                    "type": "match"
+                    "type": "match",
+                    "num": 5,
+                    "content": [
+                        {
+                            "type": "text",
+                            "data": "用户调研反映多数用户希望在“探元素社交软件”里增加表情反馈功能，该竞品分析报告旨在分析总结竞品表情反馈功能的"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "0",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "1",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "2",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "和己方产品的"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "3",
+                            "data": "B"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "4",
+                            "data": "B"
+                        },
+                        {
+                            "type": "text",
+                            "data": "。"
+                        }
+                    ],
+                    "boxes": [
+                        {
+                            "name": "呈现方式",
+                            "type": "A"
+                        },
+                        {
+                            "name": "优缺点",
+                            "type": "A"
+                        },
+                        {
+                            "name": "用户价值",
+                            "type": "A"
+                        },
+                        {
+                            "name": "启发点",
+                            "type": "B"
+                        },
+                        {
+                            "name": "机会点",
+                            "type": "B"
+                        }
+                    ]
                 },
                 {
                     "name": "产品功能说明",
-                    "type": "match"
+                    "type": "match",
+                    "num": 5,
+                    "content": [
+                        {
+                            "type": "text",
+                            "data": "用户调研反映多数用户希望在“探元素社交软件”里增加表情反馈功能，该竞品分析报告旨在分析总结竞品表情反馈功能的"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "0",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "1",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "2",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "和己方产品的"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "3",
+                            "data": "B"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "4",
+                            "data": "B"
+                        },
+                        {
+                            "type": "text",
+                            "data": "。"
+                        }
+                    ],
+                    "boxes": [
+                        {
+                            "name": "呈现方式",
+                            "type": "A"
+                        },
+                        {
+                            "name": "优缺点",
+                            "type": "A"
+                        },
+                        {
+                            "name": "用户价值",
+                            "type": "A"
+                        },
+                        {
+                            "name": "启发点",
+                            "type": "B"
+                        },
+                        {
+                            "name": "机会点",
+                            "type": "B"
+                        }
+                    ]
                 },
                 {
                     "name": "产品交互说明",
@@ -248,7 +680,7 @@
                 },
                 {
                     "name": "附录",
-                    "type": "why"
+                    "type": "explain"
                 }
             ]
         },
@@ -297,7 +729,81 @@
                 },
                 {
                     "name": "确定需求目标",
-                    "type": "match"
+                    "type": "match",
+                    "num": 5,
+                    "content": [
+                        {
+                            "type": "text",
+                            "data": "用户调研反映多数用户希望在“探元素社交软件”里增加表情反馈功能，该竞品分析报告旨在分析总结竞品表情反馈功能的"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "0",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "1",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "2",
+                            "data": "A"
+                        },
+                        {
+                            "type": "text",
+                            "data": "和己方产品的"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "3",
+                            "data": "B"
+                        },
+                        {
+                            "type": "text",
+                            "data": "、"
+                        },
+                        {
+                            "type": "dustbin",
+                            "id": "4",
+                            "data": "B"
+                        },
+                        {
+                            "type": "text",
+                            "data": "。"
+                        }
+                    ],
+                    "boxes": [
+                        {
+                            "name": "呈现方式",
+                            "type": "A"
+                        },
+                        {
+                            "name": "优缺点",
+                            "type": "A"
+                        },
+                        {
+                            "name": "用户价值",
+                            "type": "A"
+                        },
+                        {
+                            "name": "启发点",
+                            "type": "B"
+                        },
+                        {
+                            "name": "机会点",
+                            "type": "B"
+                        }
+                    ]
                 },
                 {
                     "name": "项目排期",
@@ -310,28 +816,33 @@
             "steps": [
                 {
                     "name": "研发沟通",
-                    "type": "why"
+                    "type": "explain"
                 },
                 {
                     "name": "撰写需求文档",
-                    "type": "why"
+                    "type": "explain"
                 },
                 {
                     "name": "撰写需求文档",
-                    "type": "why"
+                    "type": "explain"
                 },
                 {
                     "name": "撰写需求文档",
-                    "type": "why"
+                    "type": "explain"
                 }
             ]
         },
         {
             "name": "验收上线",
-            "steps": []
+            "steps": [
+                {
+                    "name": "验收上线",
+                    "type": "explain"  
+                }
+            ]
         }
     ],
-    "recources":[
+    "recources": [
         {},
         {
             "rid": 1,
@@ -358,15 +869,15 @@
             "src_url": ""
         }
     ],
-    "videos":[
+    "videos": [
         {},
         {
             "vid": 1,
             "name": "产品经理需求的由来",
             "introduction": "“产品经理”这一岗位最早出现于上世纪初。宝洁公司推出一款名叫“Camay”的香皂，但市场反响平平，于是宝洁公司的年轻职员麦古利提出“Camay”应该有专属的品牌负责人，以对市场负责为导向，进而管控“Camay”的设计、制作、销售等流程。宝洁的高层同意了麦古利的建议，并支持他进行尝试，最终大获成功。后来，宝洁根据这一事件调整了管理体系，产品经理这一岗位已现雏形。",
             "stage_id": 1,
-            "src_url": "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
-            "cover_url": "https://video-react.js.org/assets/poster.png"
+            "src_url": "http://182.254.228.214/static/video/PM分享四、关于产品经理_x264.mp4",
+            "cover_url": "http://182.254.228.214/static/img/videocover-pm-1.png"
         },
         {
             "vid": 2,
@@ -374,7 +885,7 @@
             "introduction": "“产品经理”这一岗位最早出现于上世纪初。宝洁公司推出一款名叫“Camay”的香皂，但市场反响平平，于是宝洁公司的年轻职员麦古利提出“Camay”应该有专属的品牌负责人，以对市场负责为导向，进而管控“Camay”的设计、制作、销售等流程。宝洁的高层同意了麦古利的建议，并支持他进行尝试，最终大获成功。后来，宝洁根据这一事件调整了管理体系，产品经理这一岗位已现雏形。",
             "stage_id": 2,
             "src_url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4",
-            "cover_url": "http://182.254.228.214/simulation/static/media/cloudbase.a32240d6.png"
+            "cover_url": "http://182.254.228.214/static/img/videocover-pm-2.png"
         },
         {
             "vid": 3,
@@ -382,7 +893,7 @@
             "introduction": "“产品经理”这一岗位最早出现于上世纪初。宝洁公司推出一款名叫“Camay”的香皂，但市场反响平平，于是宝洁公司的年轻职员麦古利提出“Camay”应该有专属的品牌负责人，以对市场负责为导向，进而管控“Camay”的设计、制作、销售等流程。宝洁的高层同意了麦古利的建议，并支持他进行尝试，最终大获成功。后来，宝洁根据这一事件调整了管理体系，产品经理这一岗位已现雏形。",
             "stage_id": 3,
             "src_url": "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
-            "cover_url": "https://video-react.js.org/assets/poster.png"
+            "cover_url": "http://182.254.228.214/static/img/videocover-pm-3.png"
         },
         {
             "vid": 4,
@@ -390,7 +901,7 @@
             "introduction": "“产品经理”这一岗位最早出现于上世纪初。宝洁公司推出一款名叫“Camay”的香皂，但市场反响平平，于是宝洁公司的年轻职员麦古利提出“Camay”应该有专属的品牌负责人，以对市场负责为导向，进而管控“Camay”的设计、制作、销售等流程。宝洁的高层同意了麦古利的建议，并支持他进行尝试，最终大获成功。后来，宝洁根据这一事件调整了管理体系，产品经理这一岗位已现雏形。",
             "stage_id": 4,
             "src_url": "https://zhstatic.zhihu.com/cfe/griffith/zhihu2018_hd.mp4",
-            "cover_url": "http://182.254.228.214/simulation/static/media/cloudbase.a32240d6.png"
+            "cover_url": "http://182.254.228.214/static/img/videocover-pm-4.png"
         }
     ]
 }

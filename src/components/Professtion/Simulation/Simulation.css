@@ -1,7 +1,10 @@
-.App {
+.Simulation {
   text-align: center;
   align-items: center;
   justify-content: center;
+  height: 900px;
+  background-repeat:no-repeat!important;
+  background-size:100% 100%!important;
 }
 
 .main-container {
@@ -36,4 +39,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+/* 
+.Simulation-sidebar {
+  position: absolute;
+} */
+
+.Simulation-video {
+  margin-left: 10%;
+  width: 100%;
+}
+
+.PopUpNavList {
+  width: 220px;
 }

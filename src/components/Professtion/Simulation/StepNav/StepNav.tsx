@@ -35,13 +35,13 @@ class StepNav extends React.Component<Props, {}> {
 
         if (this.props.curStep === i) {
           stepBars.push(
-            <li
+            <p
               key={"stepInfo"+i.toString()} 
-              className=" StepNav-font-blue mt-10"
+              className=" StepNav-font-cur mt-10"
               onClick={()=>{this.props.handleChangeStep(i)}}
             >
                 {this.props.stepInfo[i].name}
-            </li>
+            </p>
           );
         } else {
             if (i <= this.props.step || this.props.curStage < this.props.stage) {
@@ -70,7 +70,7 @@ class StepNav extends React.Component<Props, {}> {
 
     return (
 
-        <div className="d-flex flex-column ">
+        <div className="d-flex flex-column StepNav-container">
           <ul>
           {stepBars}
           </ul>
