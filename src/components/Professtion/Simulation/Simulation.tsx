@@ -225,6 +225,7 @@ export default class Simulation extends React.Component<Props, State> {
 
     parseSimulationContent = (templateData) => {
         let className = templateData.alignself?templateData.alignself:"";
+        className += templateData.marginTop?templateData.marginTop:"";
         // className += " z-index-mid"
         switch (templateData.type) {
             case "combination": {

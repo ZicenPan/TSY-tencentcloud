@@ -7,9 +7,12 @@ interface Props {
     data: any
     handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
-
+  
 export const Form: FC<Props> = memo(function Form({ data }) {
     const [columns, setColumns] = useState(data.columns)
+    const [grid, setGrid] = useState(data.grid)
+
+    console.log("here data", grid);
     function getType(type: string) {
         switch (type) {
             case 'select':
@@ -30,9 +33,9 @@ export const Form: FC<Props> = memo(function Form({ data }) {
     return (
         <BootstrapTable
             keyField="id"
-            data={data.grid}
-            columns={data.columns}
-            cellEdit={cellEditFactory({ mode: 'click' })}
+            data={grid}
+            columns={columns}
+            cellEdit={cellEditFactory({ mode: "click", blurToSave: true})}
         />
     )
 })

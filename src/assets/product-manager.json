@@ -383,12 +383,18 @@
                 {
                     "name": "用户反馈分析",
                     "type": "form",
+                    "marginTop": " mt-160",
                     "columns": [
                         {
-                            "dataField": "id",
+                            "dataField": "from",
                             "text": "来源",
                             "editor": {
                                 "type": "textarea"
+                            },
+                            "style": {
+                                "width": "140px",
+                                "height": "105px",
+                                "fontSize": "16px"
                             }
                         },
                         {
@@ -398,25 +404,34 @@
                                 "type": "select",
                                 "options": [
                                     {
-                                        "value": "A",
+                                        "value": "交互",
                                         "label": "交互"
                                     },
                                     {
-                                        "value": "B",
+                                        "value": "视觉",
                                         "label": "视觉"
                                     },
                                     {
-                                        "value": "C",
+                                        "value": "流程",
                                         "label": "流程"
                                     }
                                 ]
+                            },
+                            "style": {
+                                "width": "140px",
+                                "height": "105px",
+                                "fontSize": "16px"
                             }
                         },
                         {
-                            "dataField": "quote",
+                            "dataField": "id",
                             "text": "引用",
                             "editor": {
                                 "type": "textarea"
+                            },
+                            "style": {
+                                "width": "300px",
+                                "fontSize": "16px"
                             }
                         },
                         {
@@ -424,27 +439,31 @@
                             "text": "分析",
                             "editor": {
                                 "type": "textarea"
+                            },
+                            "style": {
+                                "width": "300px",
+                                "height": "105px",
+                                "fontSize": "16px"
                             }
                         }
                     ],
-
                     "grid": [
                         {
-                            "id": "用户访谈",
+                            "from": "用户访谈",
                             "cat": "",
-                            "quote": "Messenger撤销表情反馈需要在点击表情后再选择一次之前发送的表情，虽然这一步可以让我选择其他表情，但是感觉非常繁琐",
+                            "id": "Messenger撤销表情反馈需要在点击表情后再选择一次之前发送的表情，虽然这一步可以让我选择其他表情，但是感觉非常繁琐",
                             "analy": ""
                         },
                         {
-                            "id": "网上论坛",
+                            "from": "网上论坛",
                             "cat": "",
-                            "quote": "飞书的反馈表情都设计得太生动形象了，很多都能很好地表达我想反馈的情感！",
+                            "id": "飞书的反馈表情都设计得太生动形象了，很多都能很好地表达我想反馈的情感！",
                             "analy": ""
                         },
                         {
-                            "id": "网上论坛",
+                            "from": "网上论坛",
                             "cat": "",
-                            "quote": "要是我能对几条消息批量反馈就好了",
+                            "id": "要是我能对几条消息批量反馈就好了",
                             "analy": ""
                         }
                     ]
