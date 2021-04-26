@@ -70,6 +70,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         [droppedBoxNames, dustbins]
     )
 
+    // Re-render when data updates.
     useEffect(() => {
         setDustbins(data.content)
         setBoxes(data.boxes)
