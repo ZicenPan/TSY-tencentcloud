@@ -2,6 +2,7 @@ import React from 'react'
 import '@/scss/style.scss'
 
 import './CollapBtn.scss'
+import { ThisTypeNode } from 'typescript'
 interface Props {
     name: string
     content: string
@@ -27,7 +28,21 @@ class CollapBtn extends React.Component<Props, State> {
     }
     displayC = () => {
         if (this.state.display) {
-            return <p className="CollapBtn-content">{this.props.content}</p>
+            let content = this.props.content;
+            let lines = content.split('-');
+            let ulist = [];
+            if(lines.length === 1) { // Not a list
+                return <div className="CollapBtn-content">{this.props.content}</div>
+            } else {
+                for(let line of lines) {
+                    let line_content =  line.split("：");
+                    ulist.push(
+                    <li className="Ulist" key={line_content[0]}>
+                        <div className="lihead">{line_content[0] + "："}</div>{line_content[1]}
+                    </li>);
+                }
+                return <div className="CollapBtn-content"><ul>{ulist}</ul></div>
+            }
         }
         return
     }
