@@ -4,5 +4,20 @@
 }
 
 .CollapBtn-content {
+    position: static;
     width: 800px;
+    margin-right: 1px;
+}
+
+.Seach-Icon {
+    width: 50px;
+}
+
+span {
+    font-size: 30px;
+    position: relative;
+    width: 40px;
+    left: 900px;
+    top: -46px !important;
+    z-index: 10;
 }

@@ -37,6 +37,7 @@ class CollapBtn extends React.Component<Props, State> {
                 <button onClick={this.handleClk} type="submit" className="btn btn-clp">
                     <h2>{this.props.name}</h2>
                 </button>
+                <span className="glyphicon glyphicon-search"/>
                 <div className="mt-40 ">{this.displayC()}</div>
             </div>
         )
