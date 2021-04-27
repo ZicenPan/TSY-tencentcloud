@@ -34,18 +34,18 @@ export default class FakeUi extends React.Component<Props, State> {
         let hitArea = <div/>
         if (this.props.data[this.state.num].hit_flag === 1) {
             const hitLeft = this.props.data[this.state.num].offset_left
-            const hitBottom = this.props.data[this.state.num].offset_bottom
+            const hitTop = this.props.data[this.state.num].offset_top
             const width = this.props.data[this.state.num].width
             const height = this.props.data[this.state.num].height
 
             const fakeUiHitStyle =
             {
-                position: 'relative' as 'relative',
+                position: 'absolute' as 'absolute',
                 left: hitLeft.toString()+'%',
-                bottom: hitBottom.toString()+'%',
+                top: hitTop.toString()+'%',
                 width: width.toString()+'%',
                 height: height.toString()+'%',
-                zIndex: 2,
+                zIndex: 9999,
                 opacity: 0.5,
                 cursor: 'pointer',
                 backgroundColor: 'blue',
@@ -56,7 +56,10 @@ export default class FakeUi extends React.Component<Props, State> {
         return (
             <div className="fakeui-container">
                 <img className="fakeui-ui" src = {this.props.data[this.state.num].url}/>
-                {hitArea}
+
+                    {hitArea}
+
+                
             </div>
         )
     }

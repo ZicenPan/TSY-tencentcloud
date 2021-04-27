@@ -170,15 +170,15 @@
                     ]
                 },
                 {
+                    "name": "确定分析竞品",
+                    "type": "selection",
                     "resultMsg": {
                         "correctMsg": "恭喜，你已确定本次分析的竞品！",
                         "errorMsg": "根据每个软件的描述，再思考一下它是不是本次分析的竞品呢？",
                         "standardMsg": "分析竞品必须是以及时通讯为主要互动方式且具有表情反馈功能的社交软件；无需包含没有表情反馈功能的社交软件。飞书和Messenger是现有即时通讯产品中有表情反馈功能的竞品。"
                     },
-                    "taskDesc": "从网络或根据经验尽可能全面地找出与己方产品定位相似的产品，然后选出与分析目标相关且市场规模较大的产品作为分析对象",
-                    "opGuide": "点击选择两个竞品作为分析对象",
-                    "name": "确定分析竞品",
-                    "type": "selection",
+                    "taskDesc":"从网络或根据经验尽可能全面地找出与己方产品定位相似的产品，然后选出与分析目标相关且市场规模较大的产品作为分析对象",
+                    "opGuide":"点击选择两个竞品作为分析对象",
                     "content": [
                         {
                             "title": "Bilibili",
@@ -227,50 +227,57 @@
                 {
                     "name": "竞品对比分析",
                     "type": "combination",
-                    "direction": "row",
-                    "content": [
+                    "direction":"column",
+                    "content":[
                         {
-                            "name": "竞品对比分析",
-                            "type": "fakeui",
-                            "alignself": "align-self-start",
-                            "content": [
-                                {
-                                    "fuid": 1,
-                                    "name": "xx",
-                                    "url": "http://182.254.228.214/static/img/fakeui-fs-1.png",
-                                    "hit_flag": 1,
-                                    "offset_left": 13,
-                                    "offset_bottom": 135,
-                                    "width": 76,
-                                    "height": 55
-                                },
-                                {
-                                    "fuid": 2,
-                                    "name": "xx",
-                                    "url": "http://182.254.228.214/static/img/fakeui-fs-2.png",
-                                    "hit_flag": 1,
-                                    "offset_left": 5,
-                                    "offset_bottom": 167,
-                                    "width": 16,
-                                    "height": 45
-                                },
-                                {
-                                    "fuid": 2,
-                                    "name": "xx",
-                                    "url": "http://182.254.228.214/static/img/fakeui-fs-3.png",
-                                    "hit_flag": 0
-                                }
-                            ]
+                            "type": "switch",
+                            "num":2, 
+                            "identify":"竞品对比分析switch1",
+                            "switchNames":["飞书","Messenger"],
+                            "alignself": "align-self-center"
                         },
                         {
-                            "name": "用户反馈分析",
+                            "name": "竞品对比分析",
                             "type": "combination",
-                            "direction": "column",
-                            "alignself": "align-self-center",
-                            "content": [
+                            "direction":"row",
+                            "content":[
                                 {
-                                    "name": "用户反馈分析1",
+                                    "name": "竞品对比分析",
+                                    "type": "fakeui",
+                                    "alignself": "align-self-start",
+                                    "content": [
+                                        {
+                                            "fuid": 1,
+                                            "name": "xx",
+                                            "url": "http://182.254.228.214/static/img/fakeui-fs-1.png",
+                                            "hit_flag": 1,
+                                            "offset_left": 14,
+                                            "offset_top": 79,
+                                            "width": 75,
+                                            "height": 8.5
+                                        },
+                                        {
+                                            "fuid": 2,
+                                            "name": "xx",
+                                            "url": "http://182.254.228.214/static/img/fakeui-fs-2.png",
+                                            "hit_flag": 1,
+                                            "offset_left": 5,
+                                            "offset_top": 74,
+                                            "width": 16,
+                                            "height": 7
+                                        },
+                                        {
+                                            "fuid": 2,
+                                            "name": "xx",
+                                            "url": "http://182.254.228.214/static/img/fakeui-fs-3.png",
+                                            "hit_flag": 0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "飞书",
                                     "type": "form",
+                                    "alignself": "align-self-center",
                                     "columns": [
                                         {
                                             "dataField": "id",
@@ -306,10 +313,52 @@
                                         { "id": "", "proscons": "", "ins": "" },
                                         { "id": "", "proscons": "", "ins": "" }
                                     ]
+                                }
+                            ]
+                            
+                        },
+                        {
+                            "name": "竞品对比分析",
+                            "type": "combination",
+                            "direction":"row",
+                            "content":[
+                                {
+                                    "name": "竞品对比分析",
+                                    "type": "fakeui",
+                                    "alignself": "align-self-start",
+                                    "content": [
+                                        {
+                                            "fuid": 1,
+                                            "name": "xx",
+                                            "url": "http://182.254.228.214/static/img/fakeui-fs-2.png",
+                                            "hit_flag": 1,
+                                            "offset_left": 5,
+                                            "offset_top": 74,
+                                            "width": 16,
+                                            "height": 7
+                                        },
+                                        {
+                                            "fuid": 2,
+                                            "name": "xx",
+                                            "url": "http://182.254.228.214/static/img/fakeui-fs-1.png",
+                                            "hit_flag": 1,
+                                            "offset_left": 14,
+                                            "offset_top": 79,
+                                            "width": 75,
+                                            "height": 8.5
+                                        },
+                                        {
+                                            "fuid": 2,
+                                            "name": "xx",
+                                            "url": "http://182.254.228.214/static/img/fakeui-fs-3.png",
+                                            "hit_flag": 0
+                                        }
+                                    ]
                                 },
                                 {
-                                    "name": "用户反馈分析2",
+                                    "name": "Messenger",
                                     "type": "form",
+                                    "alignself": "align-self-center",
                                     "columns": [
                                         {
                                             "dataField": "id",
@@ -377,6 +426,7 @@
                                     ]
                                 }
                             ]
+                            
                         }
                     ]
                 },
@@ -717,7 +767,7 @@
                             "url": "http://182.254.228.214/static/img/fakeui-fs-1.png",
                             "hit_flag": 1,
                             "offset_left": 13,
-                            "offset_bottom": 135,
+                            "offset_top": 135,
                             "width": 76,
                             "height": 55
                         },
@@ -727,7 +777,7 @@
                             "url": "http://182.254.228.214/static/img/fakeui-fs-2.png",
                             "hit_flag": 1,
                             "offset_left": 5,
-                            "offset_bottom": 167,
+                            "offset_top": 167,
                             "width": 16,
                             "height": 45
                         },

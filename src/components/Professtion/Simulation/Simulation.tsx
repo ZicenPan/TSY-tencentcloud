@@ -48,6 +48,7 @@ interface State {
     curStep: number
     data: any
     stageChange: number
+    swtichMap: any
 }
 
 export default class Simulation extends React.Component<Props, State> {
@@ -60,12 +61,15 @@ export default class Simulation extends React.Component<Props, State> {
             data: initData.stages[this.props.stage].steps
                 ? initData.stages[this.props.stage].steps[this.props.step]
                 : '',
-            stageChange: 0
+            stageChange: 0,
+            swtichMap:{}
         }
         this.handleNext = this.handleNext.bind(this)
         this.handleChangeCurStage = this.handleChangeCurStage.bind(this)
         this.handleChangeStep = this.handleChangeStep.bind(this)
         this.handleSetInputData = this.handleSetInputData.bind(this)
+        this.handleSwtichNum = this.handleSwtichNum.bind(this)
+
         this.getInputData()
     }
 
@@ -203,7 +207,7 @@ export default class Simulation extends React.Component<Props, State> {
         }
     }
 
-    handleChangeCurStage = (curStage) => {
+    handleChangeCurStage = (curStage:number) => {
         if (curStage <= this.props.stage) {
             this.setState({
                 curStage: curStage,
@@ -214,7 +218,7 @@ export default class Simulation extends React.Component<Props, State> {
         }
     }
 
-    handleChangeStep = (step) => {
+    handleChangeStep = (step:number) => {
         if (step < initData.stages[this.state.curStage].steps.length) {
             this.setState({
                 data: initData.stages[this.state.curStage].steps[step],
@@ -223,8 +227,17 @@ export default class Simulation extends React.Component<Props, State> {
         }
     }
 
+    handleSwtichNum = (swtichId:string, num:number) => {
+        let swtichMapTemp = this.state.swtichMap
+        swtichMapTemp[swtichId] = num
+        this.setState({
+            swtichMap:swtichMapTemp
+        })
+    }
+
     parseSimulationContent = (templateData) => {
         let className = templateData.alignself?templateData.alignself:"";
+
         // className += " z-index-mid"
         switch (templateData.type) {
             case "combination": {
@@ -239,10 +252,41 @@ export default class Simulation extends React.Component<Props, State> {
                 for(let child of templateData.content) {
                     childContents.push(this.parseSimulationContent(child))
                     childContents.push(<div className="ml-40 mt-40"/>)
+                    // 此时state中已经存有对应swtich的状态
+                    // 约定：如果是带有swtich的combination,只支持switch+对应数量的模板
+                    if (child.type === "switch") {
+                        childContents.push(this.parseSimulationContent(templateData.content[this.state.swtichMap[child.identify]]))
+                        childContents.push(<div className="ml-40 mt-40"/>)
+                        break
+                    }
+                    
                 }
                 return (
                     <div className={className}> 
                         {childContents}
+                    </div>
+                )
+            }
+            case 'switch': {
+                // 获得切换按钮
+                let swtichBtns = []
+                for(let i = 0; i < templateData.num; i++) {
+                    swtichBtns.push(
+                        <button className="btn btn-white" onClick={()=>{this.handleSwtichNum(templateData.identify, i+1)}}>{templateData.switchNames[i]}</button>
+                    )
+                }
+                // 设置state
+                if (!this.state.swtichMap.hasOwnProperty(templateData.identify)) {
+                    let swtichMapTemp = this.state.swtichMap
+                    swtichMapTemp[templateData.identify] = 1
+                    this.setState({
+                        swtichMap:swtichMapTemp
+                    })
+                }
+
+                return(
+                    <div className={className}>
+                        <span>{swtichBtns}</span>
                     </div>
                 )
             }
