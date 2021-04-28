@@ -7,7 +7,7 @@
 #convo-speaker-others {
     // left: -320px;
     // float: left;
-    margin-right: 600px;
+    margin-right: 700px;
 }
 
 #convo-speaker-user {
@@ -22,4 +22,36 @@
     right: 60%;
     width: 550px;
 }
+
+#convo-content-user {
+    width: 840px;
+    height: 200px;
+    flex-grow: 0;
+    margin: 8px 0 0;
+    padding: 20px 40px;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
+    background-color: white;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border: 1px solid transparent;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  #convo-content-others {
+    width: 840px;
+    height: 200px;
+    flex-grow: 0;
+    margin: 8px 0 0;
+    padding: 20px 40px;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
+    background-color: white;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    border: 1px solid transparent;
+    text-align: left;
+    vertical-align: top;
+  }
 

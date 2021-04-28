@@ -10,3 +10,9 @@ export const lightLogoUrl = "http://"+tysIp+"/static/svg/light-logo.svg"
 export const taskDescLogoUrl = "http://"+tysIp+"/static/svg/task-description-log.svg"
 
 export const closeBtnUrl = "http://"+tysIp+"/static/svg/closing_button.svg" 
+
+export const errorLogoUrl = "http://"+tysIp+"/static/svg/error.svg" 
+
+export const correctLogoUrl = "http://"+tysIp+"/static/svg/correct.svg" 
+
+export const pageResultCloseBtnUrl = "http://"+tysIp+"/static/svg/pageresult-close-btn.svg"   
