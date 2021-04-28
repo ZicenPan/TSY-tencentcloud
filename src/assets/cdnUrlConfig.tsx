@@ -10,3 +10,5 @@ export const lightLogoUrl = "http://"+tysIp+"/static/svg/light-logo.svg"
 export const taskDescLogoUrl = "http://"+tysIp+"/static/svg/task-description-log.svg"
 
 export const closeBtnUrl = "http://"+tysIp+"/static/svg/closing_button.svg" 
+
+export const seachLogoUrl = "http://"+tysIp+"/static/svg/search_icon.svg"
