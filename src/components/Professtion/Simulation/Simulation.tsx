@@ -18,6 +18,7 @@ import {Match} from './Match/Match'
 import StepNav from './StepNav/StepNav'
 import FakeUi from './FakeUi/FakeUi'
 import TestInput from './TestInput/TestInput'
+import SimulatonTool from './SimulationTool/SimulationTool'
 
 import linesImg from '@/assets/lines.png'
 import conversionBack from '@/assets/conversation-back.png'
@@ -58,9 +59,7 @@ export default class Simulation extends React.Component<Props, State> {
         this.state = {
             curStage: this.props.stage,
             curStep: this.props.step,
-            data: initData.stages[this.props.stage].steps
-                ? initData.stages[this.props.stage].steps[this.props.step]
-                : '',
+            data: {},
             stageChange: 0,
             swtichMap:{}
         }
@@ -69,6 +68,7 @@ export default class Simulation extends React.Component<Props, State> {
         this.handleChangeStep = this.handleChangeStep.bind(this)
         this.handleSetInputData = this.handleSetInputData.bind(this)
         this.handleSwtichNum = this.handleSwtichNum.bind(this)
+        this.handleGetToolData = this.handleGetToolData.bind(this)
 
         this.getInputData()
     }
@@ -131,6 +131,21 @@ export default class Simulation extends React.Component<Props, State> {
             }
         }
         return false
+    }
+
+    handleGetToolData(data:any) {
+        console.log("before parse:\n"+data)
+        let toolInput = {}
+        try {
+            toolInput = JSON.parse(data);
+            console.log("after parse:\n"+toolInput)
+            this.setState({
+                data: toolInput
+            })
+        } catch(e) {
+            alert(e); // error in the above string (in this case, yes)!
+        } 
+
     }
 
     componentWillUnmount() {
@@ -505,21 +520,30 @@ export default class Simulation extends React.Component<Props, State> {
         }
         // 背景图片获取
         return (
-            <div className="Simulation z-index-lowest" 
-                style={backStyle}
-            >
-                <div className="z-index-highest">
-                    <TopBar 
-                        stage = {this.props.stage}
-                        stageStrs = {stageStrs} 
-                        curStage = {this.state.curStage} 
-                        handleChangeType={this.props.handleChangeType}
-                        handleChangeCurStage={this.handleChangeCurStage}
-                    />
+
+            <div>
+                
+                <div className="Simulation z-index-lowest" 
+                    style={backStyle}
+                >
+                    <div className="z-index-highest">
+                        <TopBar 
+                            stage = {this.props.stage}
+                            stageStrs = {stageStrs} 
+                            curStage = {this.state.curStage} 
+                            handleChangeType={this.props.handleChangeType}
+                            handleChangeCurStage={this.handleChangeCurStage}
+                        />
+                    </div>
+
+                    {this.currentContent()}
                 </div>
 
-                {this.currentContent()}
+                <div>
+                    <SimulatonTool handleGetToolData={this.handleGetToolData}/>
+                </div>
             </div>
+
         )
     }
 }

@@ -252,8 +252,9 @@
                                             "hit_flag": 1,
                                             "offset_left": 14,
                                             "offset_top": 79,
-                                            "width": 75,
-                                            "height": 8.5
+                                            "hit_width": 75,
+                                            "hit_height": 8.5,
+                                            "width":100
                                         },
                                         {
                                             "name": "xx",
@@ -261,8 +262,8 @@
                                             "hit_flag": 1,
                                             "offset_left": 5,
                                             "offset_top": 74,
-                                            "width": 16,
-                                            "height": 7
+                                            "hit_width": 16,
+                                            "hit_height": 7
                                         },
                                         {
                                             "name": "xx",
@@ -275,8 +276,8 @@
                                             "hit_flag": 1,
                                             "offset_left": 14,
                                             "offset_top": 82.5,
-                                            "width": 27,
-                                            "height": 4
+                                            "hit_width": 27,
+                                            "hit_height": 4
                                         }
                                     ]
                                 },
@@ -340,8 +341,9 @@
                                             "hit_flag": 1,
                                             "offset_left": 5,
                                             "offset_top": 74,
-                                            "width": 16,
-                                            "height": 7
+                                            "hit_width": 16,
+                                            "hit_height": 7,
+                                            "width":10000
                                         },
                                         {
                                             "fuid": 2,
@@ -350,8 +352,8 @@
                                             "hit_flag": 1,
                                             "offset_left": 14,
                                             "offset_top": 79,
-                                            "width": 75,
-                                            "height": 8.5
+                                            "hit_width": 75,
+                                            "hit_hit_height": 8.5
                                         },
                                         {
                                             "fuid": 2,
@@ -774,8 +776,8 @@
                             "hit_flag": 1,
                             "offset_left": 13,
                             "offset_top": 135,
-                            "width": 76,
-                            "height": 55
+                            "hit_width": 76,
+                            "hit_height": 55
                         },
                         {
                             "fuid": 2,
@@ -784,8 +786,8 @@
                             "hit_flag": 1,
                             "offset_left": 5,
                             "offset_top": 167,
-                            "width": 16,
-                            "height": 45
+                            "hit_width": 16,
+                            "hit_height": 45
                         },
                         {
                             "fuid": 2,
