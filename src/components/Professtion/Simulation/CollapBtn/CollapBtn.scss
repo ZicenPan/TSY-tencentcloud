@@ -1,14 +1,25 @@
 .CollapBtn-container {
     // position: relative;
     // left: 12%;
+    position: static;
+    width: 888px;
+    left: 0px;
+    top: 0px;
 }
 
 .CollapBtn-content {
-    position: static;
-    width: 800px;
-    margin-right: 1px;
-    font-size: 15px;
+    width: 900px;
+    height: 56px;
+    left: 0px;
+    top: 0px;
     text-align: left;
+    /* /large body */
+
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
 }
 
 .Seach-Icon {
@@ -18,19 +29,27 @@
 .Ulist {
     text-align: left;
     margin-bottom: 15px;
-    font-size: 15px;
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 30px;
 }
 
 .lihead {
-    color: blue;
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #325AE4;
     display: inline-block;
 }
 
 span {
-    font-size: 30px;
     position: relative;
     width: 40px;
-    left: 900px;
+    left: 910px;
     top: -46px !important;
     z-index: 10;
 }

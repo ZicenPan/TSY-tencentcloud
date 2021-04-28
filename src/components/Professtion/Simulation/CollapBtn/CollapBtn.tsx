@@ -1,5 +1,6 @@
 import React from 'react'
 import '@/scss/style.scss'
+import {seachLogoUrl} from "../../../../assets/cdnUrlConfig"
 
 import './CollapBtn.scss'
 import { ThisTypeNode } from 'typescript'
@@ -52,7 +53,7 @@ class CollapBtn extends React.Component<Props, State> {
                 <button onClick={this.handleClk} type="submit" className="btn btn-clp">
                     <h2>{this.props.name}</h2>
                 </button>
-                <span className="glyphicon glyphicon-search"/>
+                <span><img src={seachLogoUrl} alt="seach btn"/></span>
                 <div className="mt-40 ">{this.displayC()}</div>
             </div>
         )
