@@ -16,3 +16,5 @@ export const errorLogoUrl = "http://"+tysIp+"/static/svg/error.svg"
 export const correctLogoUrl = "http://"+tysIp+"/static/svg/correct.svg" 
 
 export const pageResultCloseBtnUrl = "http://"+tysIp+"/static/svg/pageresult-close-btn.svg"   
+
+export const seachLogoUrl = "http://"+tysIp+"/static/svg/search_icon.svg"
