@@ -36,6 +36,8 @@ class CollapBtn extends React.Component<Props, State> {
                 return <div className="CollapBtn-content">{this.props.content}</div>
             } else {
                 for(let line of lines) {
+                    if(line.length === 0)
+                        continue;
                     let line_content =  line.split("：");
                     ulist.push(
                     <li className="Ulist" key={line_content[0]}>

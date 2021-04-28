@@ -11,4 +11,4 @@ export const taskDescLogoUrl = "http://"+tysIp+"/static/svg/task-description-log
 
 export const closeBtnUrl = "http://"+tysIp+"/static/svg/closing_button.svg" 
 
-export const seachLogoUrl = "http://111.229.91.248/static/svg/search_icon.svg"
+export const seachLogoUrl = "http://"+tysIp+"/static/svg/search_icon.svg"
