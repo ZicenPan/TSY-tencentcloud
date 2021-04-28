@@ -20,13 +20,15 @@ export default class FakeUi extends React.Component<Props, State> {
         num: 0,
     };
 
-    this.handleHitArea = this.handleHitArea.bind(this)
+    this.handleHit = this.handleHit.bind(this)
 }
-    handleHitArea() {
+    handleHit() {
+        if (this.state.num >= this.props.data.length - 1)
+            return
         
-        this.setState({
-            num: this.state.num + 1,
-        });
+            this.setState({
+                num: this.state.num + 1,
+            });
     }   
 
     render() {
@@ -51,11 +53,11 @@ export default class FakeUi extends React.Component<Props, State> {
                 backgroundColor: 'blue',
             }
     
-            hitArea = <div style={fakeUiHitStyle} onClick={this.handleHitArea}/>
+            hitArea = <div style={fakeUiHitStyle} onClick={()=>this.handleHit()}/>
         }
         return (
             <div className="fakeui-container">
-                <img className="fakeui-ui" src = {this.props.data[this.state.num].url}/>
+                <img className="fakeui-ui" src = {this.props.data[this.state.num].url} onClick={()=>{if(this.props.data[this.state.num].hit_flag===0)this.handleHit()}}/>
 
                     {hitArea}
 

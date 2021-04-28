@@ -247,9 +247,8 @@
                                     "alignself": "align-self-start",
                                     "content": [
                                         {
-                                            "fuid": 1,
                                             "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-1.png",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-fs-1-1.png",
                                             "hit_flag": 1,
                                             "offset_left": 14,
                                             "offset_top": 79,
@@ -257,9 +256,8 @@
                                             "height": 8.5
                                         },
                                         {
-                                            "fuid": 2,
                                             "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-2.png",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-fs-1-2.png",
                                             "hit_flag": 1,
                                             "offset_left": 5,
                                             "offset_top": 74,
@@ -267,10 +265,18 @@
                                             "height": 7
                                         },
                                         {
-                                            "fuid": 2,
                                             "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-3.png",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-fs-1-3.png",
                                             "hit_flag": 0
+                                        },
+                                        {
+                                            "name": "xx",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-feishu-2-1.png",
+                                            "hit_flag": 1,
+                                            "offset_left": 14,
+                                            "offset_top": 82.5,
+                                            "width": 27,
+                                            "height": 4
                                         }
                                     ]
                                 },
@@ -330,7 +336,7 @@
                                         {
                                             "fuid": 1,
                                             "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-2.png",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-fs-1-2.png",
                                             "hit_flag": 1,
                                             "offset_left": 5,
                                             "offset_top": 74,
@@ -340,7 +346,7 @@
                                         {
                                             "fuid": 2,
                                             "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-1.png",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-fs-1-1.png",
                                             "hit_flag": 1,
                                             "offset_left": 14,
                                             "offset_top": 79,
@@ -350,7 +356,7 @@
                                         {
                                             "fuid": 2,
                                             "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-3.png",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-fs-1-3.png",
                                             "hit_flag": 0
                                         }
                                     ]
@@ -764,7 +770,7 @@
                         {
                             "fuid": 1,
                             "name": "xx",
-                            "url": "http://111.229.91.248/static/img/fakeui-fs-1.png",
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-fs-1-1.png",
                             "hit_flag": 1,
                             "offset_left": 13,
                             "offset_top": 135,
@@ -774,7 +780,7 @@
                         {
                             "fuid": 2,
                             "name": "xx",
-                            "url": "http://111.229.91.248/static/img/fakeui-fs-2.png",
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-fs-1-2.png",
                             "hit_flag": 1,
                             "offset_left": 5,
                             "offset_top": 167,
@@ -784,7 +790,7 @@
                         {
                             "fuid": 2,
                             "name": "xx",
-                            "url": "http://111.229.91.248/static/img/fakeui-fs-3.png",
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-fs-1-3.png",
                             "hit_flag": 0
                         }
                     ]
