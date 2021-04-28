@@ -1,0 +1,52 @@
+.PageResult-Modal-error {
+    position: absolute; 
+    left: 50%;
+    top: 356px;
+
+    width: 340px;
+    height: 188px;
+
+    background: #FDF0F0;
+    /* warning red */
+
+    border: 1px solid #DE5246;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(222, 82, 70, 0.1);
+    border-radius: 5px;
+}
+
+.PageResult-Modal-correct {
+    position: absolute; 
+    left: 50%;
+    top: 356px;
+
+    width: 340px;
+    height: 188px;
+
+    background:#DDF2E8;
+    /* warning light green */
+
+    border: 1px solid #1AA260;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px rgba(222, 82, 70, 0.1);
+    border-radius: 5px;
+}
+
+.PageResult-msg {
+    padding: 10px 10px;
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+}
+

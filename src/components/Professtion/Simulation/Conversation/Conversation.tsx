@@ -43,16 +43,17 @@ class Conversation extends Component<Props, State> {
 
     render() {
         let speaker = this.lookupConvo(this.state.num).speaker
-        let speakerClassName = speaker==="用户"?"convo-speaker-user":"convo-speaker-others"
+        let speakerIdName = speaker==="用户"?"convo-speaker-user":"convo-speaker-others"
+        let contentIdName = speaker==="用户"?"convo-content-user":"convo-content-others"
         let characterImgDom = speaker!=="用户"?<img className="conversation-character z-index-low" src = {characterImg}/>:<div/>
         return (
                 <div className="convo-container">
                     <div className = " z-index-mid">
-                        <button className="convo-speaker"  id={speakerClassName} >
+                        <button className="convo-speaker"  id={speakerIdName} >
                             <h2 className="text-center">{speaker}</h2>
                         </button>
                         <div>
-                            <button onClick={this.nextConvo} type="submit" className="convo-content">
+                            <button onClick={this.nextConvo} type="submit" id={contentIdName} >
                                 <h2>{this.lookupConvo(this.state.num).content}</h2>
                             </button>
                         </div>
