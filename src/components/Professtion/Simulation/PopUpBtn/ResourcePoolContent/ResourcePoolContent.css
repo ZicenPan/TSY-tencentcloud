@@ -54,8 +54,8 @@
 
 .resource-status-position {
     position: relative;
-    left: 95px;
-    top: 100px;
+    left: 100px;
+    top: 110px;
 }
 
 .resource-content {
@@ -99,4 +99,19 @@
     position: relative;
     left: 20px;
     top: 20px;
+}
+
+.resource-example-font {
+    /* body */
+
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    /* Gray 1 */
+
+    color: #333333;
 }
