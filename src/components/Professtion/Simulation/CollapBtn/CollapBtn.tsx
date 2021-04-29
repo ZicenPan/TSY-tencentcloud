@@ -33,7 +33,10 @@ class CollapBtn extends React.Component<Props, State> {
             let lines = content.split('-');
             let ulist = [];
             if(lines.length === 1) { // Not a list
-                return <div className="CollapBtn-content">{this.props.content}</div>
+                return <div className="CollapBtn-content">
+                    {this.props.content}
+                    <h4 className="PullUpLink" onClick={this.handleClk}>收起</h4>
+                    </div>
             } else {
                 for(let line of lines) {
                     if(line.length === 0)
@@ -44,7 +47,10 @@ class CollapBtn extends React.Component<Props, State> {
                         <div className="lihead">{line_content[0] + "："}</div>{line_content[1]}
                     </li>);
                 }
-                return <div className="CollapBtn-content"><ul>{ulist}</ul></div>
+                return <div className="CollapBtn-content">
+                    <ul>{ulist}</ul>                
+                    <h4 className="PullUpLink" onClick={this.handleClk}>收起</h4>
+                    </div>
             }
         }
         return
@@ -53,10 +59,12 @@ class CollapBtn extends React.Component<Props, State> {
         return (
             <div className="mt-40 d-flex flex-column CollapBtn-container">
                 <button onClick={this.handleClk} type="submit" className="btn btn-clp">
-                    <h2>{this.props.name}</h2>
+                    <h2 className="CollapBtn-name">{this.props.name}</h2>
                 </button>
                 <span><img src={seachLogoUrl} alt="seach btn"/></span>
-                <div className="mt-40 ">{this.displayC()}</div>
+                <div className="mt-40 ">
+                    {this.displayC()}
+                    </div>
             </div>
         )
     }

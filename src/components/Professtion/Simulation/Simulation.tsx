@@ -314,11 +314,11 @@ export default class Simulation extends React.Component<Props, State> {
                     
                     <div className={className}>
                         <CollapBtn
-                            name={this.state.data.content[0].name!+"是什么"}
+                            name={"什么是" + this.state.data.content[0].name!}
                             content={this.state.data.content[0].content!}
                         />
                         <CollapBtn
-                            name={this.state.data.content[1].name!+"为什么"}
+                            name={"为什么要做" + this.state.data.content[1].name!}
                             content={this.state.data.content[1].content!}
                         />
                         <div>
