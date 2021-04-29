@@ -107,6 +107,11 @@ export default class PopUpBtn extends React.Component<Props, State> {
       // ReactTooltip.show(this.fooRef) 
       if (!this.hasOpenModal) {
         ReactTooltip.show(this.fooRef) // 展示的是上一次render中的msg
+
+        // 计时器3秒消失
+        setTimeout(() => {
+          ReactTooltip.hide(this.fooRef)
+        }, 3000)
       } else 
         this.msg= ""
     }
@@ -124,8 +129,8 @@ export default class PopUpBtn extends React.Component<Props, State> {
           isOpen={this.state.showModal}
           contentLabel="onRequestClose Example"
           onRequestClose={this.handleCloseModal}
-          className="Modal centered"
-          overlayClassName="Overlay"
+          className="PopUpBtn-Modal centered"
+          overlayClassName="PopUpBtn-Overlay"
         > 
           {this.getModelContent()}
           <button className="btn btn-blue mt-40 btn-right"onClick={this.handleCloseModal}>明白了</button>

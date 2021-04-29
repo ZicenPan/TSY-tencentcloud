@@ -2,7 +2,7 @@ import React from "react";
 import "./ResourcePoolContent.css"
 import backicon from "@/assets/backicon.png"
 import rsc1 from "@/assets/resource1.png"
-import {rscLogoUrl} from "../../../../../assets/cdnUrlConfig"
+import {rscLogoUrl, ResourcePoolContentGrid, ResourcePoolContentLock} from "../../../../../assets/cdnUrlConfig"
 
 interface Props {
     stage: number
@@ -82,9 +82,11 @@ export default class ResourcePoolContent extends React.Component<Props, State> {
             }
             case "detail": {
                 let name = ""
+                let srcUrl = ""
                 for (let i = 1; i < this.props.data.length; i++) {
                     if(this.props.data[i].rid === this.state.resourceId) {
                         name = this.props.data[i].name
+                        srcUrl = this.props.data[i].src_url
                     }
                 }
                 return (
@@ -94,14 +96,15 @@ export default class ResourcePoolContent extends React.Component<Props, State> {
                             <img className="back-icon" src={backicon} alt="backlogo" onClick={()=>this.handleClickBackIcon()}/>
 
                             <h2 className="ml-20">资源库</h2>
-                            <span className="recource-title">{name}</span>
+                            <h2 className="recource-title text-center">{name}</h2>
+                            <div className="ml-40"/>
                         </div>
                         
                         {/* 空白 */}
                         <div className="mt-40"/>
 
                         <div className="resource-content">
-                            <img className="resource-img" src={rsc1} alt="资源"/>
+                            <img className="resource-img" src={srcUrl} alt="资源"/>
                         </div>
                         
                     </div>
@@ -125,7 +128,7 @@ export default class ResourcePoolContent extends React.Component<Props, State> {
 function ResourceCard(props) {
     return (
         <div>
-            <button className="recource-card text-center ml-40 mt-10" onClick ={()=>props.onClick()}> 
+            <button className="recource-card text-center ml-40 mt-10"   style={{background:`url("${ResourcePoolContentGrid}")`}} onClick ={()=>props.onClick()}> 
                 <h3 className="text-center">{props.name}</h3>
                 <div className="resource-status-position">
                     <ResourceStatusBtn access_flag={props.access_flag }/>
@@ -142,28 +145,29 @@ function ResourceStatusBtn(props) {
          case 1: {
             return (
                 <div className="resource-status-finished-background">
-                    <span className="resource-status-finished-font">已完成</span>
+                    <h2 className="resource-status-finished-font">已完成</h2>
                 </div>
             )
          }
          case 2: {
             return(
                 <div className="resource-status-doing-background">
-                    <span className="resource-status-doing-font">进行中</span>
+                    <h2 className="resource-status-doing-font">进行中</h2>
                 </div>
             )
          }
          case 3: {
             return(
-                <div className="d-flex flex-row example-status">
-                    <span>范例 &nbsp; 已解锁</span>
+                <div className="ml-20">
+                    <h2 className="resource-example-font ml-20">范例</h2>
                 </div>
             )
          }
          case 4: {
             return(
-                <div className="d-flex flex-row example-status">
-                    <span>范例 &nbsp; 未解锁</span>
+                <div className="d-flex flex-row ml-20">
+                    <h2 className="resource-example-font">范例</h2>
+                    <img src={ResourcePoolContentLock} className="ml-10 "/>
                 </div>
             )
          }

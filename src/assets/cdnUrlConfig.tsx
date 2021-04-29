@@ -23,3 +23,8 @@ export const seachLogoUrl = "http://"+tysIp+"/static/svg/search_icon.svg"
 export const StandardTipCloseLogo = "http://"+tysIp+"/static/svg/StandardTip-close-logo.svg"
 
 export const StandardTipOpenLogo = "http://"+tysIp+"/static/svg/StandardTip-open-logo.svg"
+
+// Professtion/Simulation/PopUpBtn/ResourcePoolContent
+export const ResourcePoolContentGrid = "http://"+tysIp+"/static/svg/ResourcePoolContent-grid.svg"
+
+export const ResourcePoolContentLock = "http://"+tysIp+"/static/svg/ResourcePoolContent-lock.svg"
