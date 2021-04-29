@@ -20,6 +20,14 @@
     line-height: 30px;
 }
 
+.CollapBtn-name {
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 37px;
+}
+
 .Seach-Icon {
     width: 50px;
 }
@@ -47,7 +55,15 @@
 span {
     position: relative;
     width: 40px;
-    left: 910px;
+    left: 920px;
     top: -46px !important;
     z-index: 10;
+}
+
+.PullUpLink {
+    left: 920px;
+    position: relative;
+    color: #325AE4;
+    text-decoration: underline;
+    user-select: none;
 }
