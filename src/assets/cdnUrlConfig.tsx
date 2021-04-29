@@ -18,3 +18,8 @@ export const correctLogoUrl = "http://"+tysIp+"/static/svg/correct.svg"
 export const pageResultCloseBtnUrl = "http://"+tysIp+"/static/svg/pageresult-close-btn.svg"   
 
 export const seachLogoUrl = "http://"+tysIp+"/static/svg/search_icon.svg"
+
+// Professtion/Simulation/StandardTip
+export const StandardTipCloseLogo = "http://"+tysIp+"/static/svg/StandardTip-close-logo.svg"
+
+export const StandardTipOpenLogo = "http://"+tysIp+"/static/svg/StandardTip-open-logo.svg"
