@@ -193,6 +193,19 @@
   }
 }
 
+.btn-grey {
+
+  background:  #C4C4C4;;
+  color: $white;
+  border-color:  #C4C4C4;;
+
+  &:hover {
+      background: #C4C4C4;;
+      color: $white;
+      border-color: #C4C4C4;;
+  }
+}
+
 .btn-clp {
   width: 888px;
   height: 60px;

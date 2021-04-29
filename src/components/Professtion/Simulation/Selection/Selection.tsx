@@ -3,11 +3,12 @@
 import React, { FC, memo, useState, useCallback } from 'react'
 import update from 'immutability-helper'
 import { PageResult } from './../Result/PageResult'
+import StandardTip from './../../StandardTip/StandardTip'
 import '@/scss/style.scss'
 
 interface Props {
     data: any
-    handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+    handleNext: () => void
 }
 
 interface State {
@@ -17,6 +18,7 @@ interface State {
 
 export const Selection: FC<Props> = memo(function Selection({ data, handleNext }) {
     const [options, setOptions] = useState(data.content)
+    const [showStandardTip, setShowStandardTip] = useState(false)
 
     const handleClick = useCallback(
         (index: number) => {
@@ -81,8 +83,9 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
                 checked={matched()} 
                 handleNext={handleNext} 
                 resultMsg = {data.resultMsg}
-                
+                setShowStandardTip = {setShowStandardTip}
            />
+           {showStandardTip?<StandardTip standardMsg={data.resultMsg.standardMsg}/>:<div/>}
             <button
                 onClick={handleNext}
                 type="submit"

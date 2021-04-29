@@ -3,12 +3,14 @@ import DropTarget from './Dustbin'
 import Box from './Box'
 import { ItemTypes, availTypes } from './ItemTypes'
 import update from 'immutability-helper'
-import '@/scss/style.scss'
-import { PageResult } from './../Result/PageResult'
 
+import { PageResult } from './../Result/PageResult'
+import StandardTip from './../../StandardTip/StandardTip'
+
+import '@/scss/style.scss'
 interface Props {
     data: any
-    handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+    handleNext: () => void
 }
 
 interface DustbinState {
@@ -44,6 +46,8 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
     const [boxes, setBoxes] = useState<BoxState[]>(data.boxes)
 
     const [droppedBoxNames, setDroppedBoxNames] = useState<string[]>([])
+
+    const [showStandardTip, setShowStandardTip] = useState(false)
 
     function isDropped(boxName: string) {
         return droppedBoxNames.indexOf(boxName) > -1
@@ -111,7 +115,9 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                     <Box name={name} type={type} isDropped={isDropped(name)} key={index} />
                 ))}
             </div>
-            <PageResult checked={matched()} handleNext={handleNext} resultMsg={data.resultMsg}/>
+            <PageResult checked={matched()} handleNext={handleNext} setShowStandardTip={setShowStandardTip} resultMsg={data.resultMsg}/>
+            
+            {showStandardTip?<StandardTip standardMsg={data.resultMsg.standardMsg}/>:<div/>}
             <button
                 onClick={handleNext}
                 type="submit"

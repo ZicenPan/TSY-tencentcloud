@@ -8,14 +8,17 @@ import './PageResult.scss'
 
 interface Props {
     checked: boolean
-    handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+    handleNext: () => void
     resultMsg: any
-
+    setShowStandardTip:(boolean) => void
 }
 
-export const PageResult: FC<Props> = memo(function PageResult({ checked, handleNext, resultMsg}) {
-    const [showStandard, setShowStandard] = useState(false)
+export const PageResult: FC<Props> = memo(function PageResult({ checked, handleNext, resultMsg, setShowStandardTip}) {
+
+    const [btnName, setBtnName] = useState<string>("确认")
     const [showModal, setShowModal] = useState(false)
+    let btnRef = React.createRef<HTMLButtonElement>()
+    
 
     function handleOpenModal() {
         setShowModal(true)
@@ -23,13 +26,27 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
 
     function handleCloseModal() {
         setShowModal(false)
+        
+    }
+
+    function handleCloseCorrectModal() {
+        handleCloseModal()
+        setShowStandardTip(true)
+    }
+
+    function handleSubmit() {
+        handleOpenModal()
+        if (checked) {
+            setBtnName("下一步")
+            btnRef.current.onclick = handleNext
+        } else {
+            setBtnName("确认")
+        }
     }
 
     function getModelContent() {
         let content:string
-        if (showStandard&&checked) 
-            content = resultMsg.standardMsg?resultMsg.standardMsg:""
-        else if (checked) 
+        if (checked) 
             content = resultMsg.correctMsg?resultMsg.correctMsg:"回答正确"
         else 
             content = resultMsg.errorMsg?resultMsg.errorMsg:"回答错误"
@@ -42,21 +59,14 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
         )
     }
 
-    function handleStandard() {
-        if (!checked)
-            handleCloseModal()
-        else {
-            setShowStandard(true)
-            handleOpenModal()
-        }
-    }
-
     // 根据正确错误切换样式
     let logoUrl:string
     let modalClassName:string
+    let btnContent:string
     if(!checked) {
         logoUrl = errorLogoUrl
         modalClassName = "PageResult-Modal-error"
+
     } else  {
         logoUrl = correctLogoUrl
         modalClassName = "PageResult-Modal-correct"
@@ -64,21 +74,22 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
     return (
         <div>
             <button
-                onClick={handleOpenModal}
+                ref={btnRef}
+                onClick={handleSubmit}
                 type="submit"
                 className="btn btn-blue"
                 style={{ position: 'fixed', top: '85%', left: '70%' }}
             >
-                Next
+                {btnName}
             </button>
             <ReactModal
                 isOpen={showModal}
                 contentLabel="onRequestClose Example"
-                onRequestClose={showStandard ? handleNext : handleStandard}
+                onRequestClose={checked?handleCloseCorrectModal:handleCloseModal}
                 className={modalClassName+" centered"}
                  >
                 <div className="d-flex flex-column">
-                    <img className="align-self-end mt-10 mr-10  " src={pageResultCloseBtnUrl} onClick={handleCloseModal}/>
+                    <img className="align-self-end mt-10 mr-10" src={pageResultCloseBtnUrl} onClick={checked?handleCloseCorrectModal:handleCloseModal}/>
 
                     <img className="align-self-center mt-20" src={logoUrl}/>
                     <div className="PageResult-msg  text-center">
