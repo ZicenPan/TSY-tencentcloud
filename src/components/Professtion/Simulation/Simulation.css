@@ -53,3 +53,8 @@
 .PopUpNavList {
   width: 220px;
 }
+
+.Simulation-StepNav {
+  position: absolute;
+  top: 300px
+}

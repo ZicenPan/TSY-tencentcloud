@@ -457,7 +457,7 @@ export default class Simulation extends React.Component<Props, State> {
                                 />
                             </div>
 
-                            <div className="mt-40 ml-20">
+                            <div className="mt-40 ml-20 Simulation-StepNav">
                                 <StepNav
                                     stage={this.props.stage}
                                     curStage={this.state.curStage}
