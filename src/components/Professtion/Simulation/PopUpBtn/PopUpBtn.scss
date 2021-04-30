@@ -1,7 +1,11 @@
+::-webkit-scrollbar {
+    height: 90%;
+}
+
 
 .PopUpBtn-Modal {
     position: absolute; 
-    top: 60%;
+    top: 50%;
     width: 60%;
     background-color: #ffffff;
     padding: 40px;
@@ -20,13 +24,19 @@
     z-index: 9999;
 }
 
+#ReactModal-content {
+    // border-radius: 20px;
+    max-height: 100%;
+    // overflow: scroll!important;
+}
+
 .Modal-Div {
-    overflow: auto!important;
+    // overflow: auto!important;
 }
 
 .PopUpBtn {
 
-    padding: 8px 12px;
+    padding: 7px 17px;
     /* white */
 
     background: #FFFFFF;
@@ -37,8 +47,17 @@
     border:none;
 }
 
-.PopUpBtn-Name {
+#PopUpBtn-Name {
     color: #4F4F4F;
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#PopUpBtn-Name-light {
+    color: #325AE4;
     font-family: PingFang HK;
     font-style: normal;
     font-weight: normal;
@@ -48,7 +67,13 @@
 
 .PopUpBtn-Logo {
     margin-top: 3px;
+    background: #325AE4;
 }
 
 .PopUpBtn-container {
+}
+
+.PopUpBtn-closeLogo {
+    width: 12px;
+    cursor: pointer;
 }
