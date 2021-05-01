@@ -332,7 +332,7 @@ export default class Simulation extends React.Component<Props, State> {
                                 className="btn btn-blue"
                                 style={{ position: 'fixed', top: '85%', left: '70%' }}
                             >
-                                Next
+                                下一步
                             </button>
                         </div>
                     </div>
@@ -357,7 +357,7 @@ export default class Simulation extends React.Component<Props, State> {
                                 className="btn btn-blue"
                                 style={{ position: 'fixed', top: '85%', left: '70%' }}
                             >
-                                Next
+                                下一步
                             </button>
                         </div>
                     </div>
@@ -387,7 +387,7 @@ export default class Simulation extends React.Component<Props, State> {
                                         padding: '10px 100px'
                                     }}
                                 >
-                                    Next
+                                    下一步
                                 </button>
                             </div>
                         </div>
@@ -406,7 +406,7 @@ export default class Simulation extends React.Component<Props, State> {
                             className="btn btn-blue"
                             style={{ position: 'fixed', top: '85%', left: '70%' }}
                         >
-                            Next
+                            下一步
                         </button>
                     </div>
                 )
