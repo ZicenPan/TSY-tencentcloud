@@ -8,6 +8,7 @@ import { PageResult } from './../Result/PageResult'
 import StandardTip from './../../StandardTip/StandardTip'
 
 import '@/scss/style.scss'
+import './Match.scss'
 interface Props {
     data: any
     handleNext: () => void
@@ -58,6 +59,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
             setDroppedBoxNames(
                 update(droppedBoxNames, item.name ? { $push: [item.name] } : { $push: [] })
             )
+            console.log("Item type", item.type, "Dustbin type", dustbins[index].data)
             setDustbins(
                 update(dustbins, {
                     [index]: {
@@ -94,15 +96,17 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                 {dustbins.map((item: any, index: number) => {
                     if (item.type === 'dustbin') {
                         return (
+                            <div className={item.matched? "Droptarget" : "Falsetarget"}>
                             <DropTarget
                                 accepts={availTypes}
                                 lastDroppedItem={item.lastDroppedItem}
                                 onDrop={(box) => handleDrop(index, box)}
                                 key={index}
                             />
+                            </div>
                         )
                     } else {
-                        return <p style={{ lineHeight: 2.5 }}>{item.data}</p>
+                        return <div className="ItemData">{item.data}</div>
                     }
                 })}
             </div>

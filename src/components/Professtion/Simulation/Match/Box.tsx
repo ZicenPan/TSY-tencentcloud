@@ -1,5 +1,6 @@
 import React, { CSSProperties, FC, memo } from 'react'
 import { ConnectDragSource, DragSourceMonitor, DragSource, DragSourceConnector } from 'react-dnd'
+import './Match.scss'
 
 const style: CSSProperties = {
   border: '1px dashed gray',
@@ -29,7 +30,7 @@ export const Box: FC<BoxProps> = memo(function Box({
 }) {
   const opacity = isDragging ? 0.4 : 1
   return connectDragSource(
-    <div role="Box" style={{ ...style, opacity }}>
+    <div role="Box" className="ItemFrame" style={{opacity }}>
       {isDropped ? <s>{name}</s> : name}
     </div>,
   )
