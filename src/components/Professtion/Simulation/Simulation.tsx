@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
+import './Simulation.css'
 import initData from '../../../assets/product-manager.json'
 import { Form } from './Form/Form'
 import CollapBtn from './CollapBtn/CollapBtn'
@@ -20,10 +21,13 @@ import FakeUi from './FakeUi/FakeUi'
 import TestInput from './TestInput/TestInput'
 
 import linesImg from '@/assets/lines.png'
-import conversionBack from '@/assets/conversation-back.png'
-import {rscLogoUrl, opGuideLogoUrl, taskDescLogoUrl} from "../../../assets/cdnUrlConfig"
-import './Simulation.css'
-import { url } from 'node:inspector'
+import {rscLogoUrl, 
+        opGuideLogoUrl, 
+        taskDescLogoUrl, 
+        rscLightLogoUrl, 
+        opGuideLightLogoUrl, 
+        taskDescLightLogoUrl} from "../../../assets/cdnUrlConfig"
+
 
 const tysPrefix = "tys_sim_"
 const userPrefix = "user1"
@@ -285,8 +289,8 @@ export default class Simulation extends React.Component<Props, State> {
                 }
 
                 return(
-                    <div className={className}>
-                        <span>{swtichBtns}</span>
+                    <div className={className+"d-flex"}>
+                        <div>{swtichBtns}</div>
                     </div>
                 )
             }
@@ -427,6 +431,7 @@ export default class Simulation extends React.Component<Props, State> {
                                     data=""
                                     changeStage = {0}
                                     logoUrl = {taskDescLogoUrl}
+                                    logoLightUrl = {taskDescLightLogoUrl}
                                 />
                             </div>
                             <div className="mt-20 ml-40">
@@ -437,6 +442,7 @@ export default class Simulation extends React.Component<Props, State> {
                                     data=""
                                     changeStage = {0}
                                     logoUrl = {opGuideLogoUrl}
+                                    logoLightUrl = {opGuideLightLogoUrl}
                                 />
                             </div>
                             <div className="mt-20 ml-40">
@@ -447,10 +453,11 @@ export default class Simulation extends React.Component<Props, State> {
                                     data={initData.recources}
                                     changeStage = {this.state.stageChange}
                                     logoUrl = {rscLogoUrl}
+                                    logoLightUrl = {rscLightLogoUrl}
                                 />
                             </div>
 
-                            <div className="mt-40 ml-20">
+                            <div className="mt-40 ml-20 Simulation-StepNav">
                                 <StepNav
                                     stage={this.props.stage}
                                     curStage={this.state.curStage}

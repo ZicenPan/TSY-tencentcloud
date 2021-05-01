@@ -4,6 +4,7 @@ import img from '@/assets/exitIcon.png';
 
 import "@/scss/style.scss";
 import "./TopBar.css";
+import {TopBarVideo} from "../../../../assets/cdnUrlConfig"
 
 interface Props {
   stageStrs: Array<string>,
@@ -80,11 +81,11 @@ class TopBar extends React.Component<Props, {}> {
           
 
           <div className="topbar-video">
-            <a>
-              <button id="bannerBtn" type="button" className="btn btn-blue" onClick={()=>{this.props.handleChangeType("professtionVideo")}}>
-                产品经理视频
-              </button>
-            </a>
+            
+            <button className="topbar-videoBtn d-flex" onClick={()=>{this.props.handleChangeType("professtionVideo")}}>
+              <img className="topbar-videoimg mr-1" src={TopBarVideo}/>
+              <h4 className="m-auto">业内人士分享视频</h4>
+            </button>
           </div>
         </div>
       </div>
