@@ -226,7 +226,8 @@ export default class Simulation extends React.Component<Props, State> {
         if (step < initData.stages[this.state.curStage].steps.length) {
             this.setState({
                 data: initData.stages[this.state.curStage].steps[step],
-                curStep: step
+                curStep: step,
+                stageChange: 0,
             })
         }
     }

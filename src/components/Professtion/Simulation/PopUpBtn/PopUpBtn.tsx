@@ -71,7 +71,7 @@ export default class PopUpBtn extends React.Component<Props, State> {
           )
       case "操作指引":
           return(
-            <OpGuideContent content={this.props.content}/>
+            <OpGuideContent opGuide={this.props.content}/>
           )
       case "资源库":
         return(
