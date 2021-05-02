@@ -11,6 +11,7 @@ interface Props {
 
 interface State {
     num: number
+    twinkling : boolean
 }
 
 export default class FakeUi extends React.Component<Props, State> {
@@ -18,16 +19,25 @@ export default class FakeUi extends React.Component<Props, State> {
     super(props)
     this.state = {
         num: 0,
+        twinkling: false
     };
 
     this.handleHitArea = this.handleHitArea.bind(this)
+    this.handleHitWrongArea = this.handleHitWrongArea.bind(this)
 }
     handleHitArea() {
         
         this.setState({
             num: this.state.num + 1,
+            twinkling: false
         });
-    }   
+    }
+    
+    handleHitWrongArea() {
+        this.setState({
+            twinkling: true
+        });   
+    }
 
     render() {
         
@@ -47,19 +57,14 @@ export default class FakeUi extends React.Component<Props, State> {
                 height: height.toString()+'%',
                 zIndex: 9999,
                 opacity: 0.5,
-                cursor: 'pointer',
-                backgroundColor: 'blue',
+                cursor: 'pointer'
             }
-    
-            hitArea = <div style={fakeUiHitStyle} onClick={this.handleHitArea}/>
+            hitArea = <div style={fakeUiHitStyle} id={this.state.twinkling?"fakeui-twinkling":""} onClick={this.handleHitArea}/>
         }
         return (
             <div className="fakeui-container">
-                <img className="fakeui-ui" src = {this.props.data[this.state.num].url}/>
-
+                <img className="fakeui-ui" src = {this.props.data[this.state.num].url} onClick={this.handleHitWrongArea}/>
                     {hitArea}
-
-                
             </div>
         )
     }
