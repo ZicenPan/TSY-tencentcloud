@@ -253,36 +253,45 @@
                             "direction":"row",
                             "content":[
                                 {
-                                    "name": "竞品对比分析",
+                                    "name": "竞品对比分析-feishu",
                                     "type": "fakeui",
                                     "alignself": "align-self-start",
                                     "content": [
-                                        {
-                                            "fuid": 1,
-                                            "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-1.png",
-                                            "hit_flag": 1,
-                                            "offset_left": 14,
-                                            "offset_top": 79,
-                                            "width": 75,
-                                            "height": 8.5
-                                        },
-                                        {
-                                            "fuid": 2,
-                                            "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-2.png",
-                                            "hit_flag": 1,
-                                            "offset_left": 5,
-                                            "offset_top": 74,
-                                            "width": 16,
-                                            "height": 7
-                                        },
-                                        {
-                                            "fuid": 2,
-                                            "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-3.png",
-                                            "hit_flag": 0
-                                        }
+                                            { 
+                                                "name": "feishu1", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-1.png", 
+                                                "hit_flag": 1, 
+                                                "width":300, 
+                                                "offset_left":15, 
+                                                "offset_top":79.5, 
+                                                "hit_width":74, 
+                                                "hit_height":7 
+                                            }, 
+                                            { 
+                                                "name": "feishu2", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png", 
+                                                "hit_flag": 1, 
+                                                "width":300, 
+                                                "offset_left":7, 
+                                                "offset_top":75, 
+                                                "hit_width":14, 
+                                                "hit_height":6 
+                                            }, 
+                                            { 
+                                                "name": "feishu3", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png", 
+                                                "hit_flag": 1, 
+                                                "width":300, 
+                                                "offset_left":18, 
+                                                "offset_top":83, 
+                                                "hit_width":24, 
+                                                "hit_height":4 
+                                            }, 
+                                            { 
+                                                "name": "feishu4", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-4.png", 
+                                                "hit_flag": 0 
+                                            } 
                                     ]
                                 },
                                 {
@@ -334,36 +343,75 @@
                             "direction":"row",
                             "content":[
                                 {
-                                    "name": "竞品对比分析",
+                                    "name": "竞品对比分析-messenger1",
                                     "type": "fakeui",
                                     "alignself": "align-self-start",
                                     "content": [
-                                        {
-                                            "fuid": 1,
-                                            "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-2.png",
-                                            "hit_flag": 1,
-                                            "offset_left": 5,
-                                            "offset_top": 74,
-                                            "width": 16,
-                                            "height": 7
-                                        },
-                                        {
-                                            "fuid": 2,
-                                            "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-1.png",
-                                            "hit_flag": 1,
-                                            "offset_left": 14,
-                                            "offset_top": 79,
-                                            "width": 75,
-                                            "height": 8.5
-                                        },
-                                        {
-                                            "fuid": 2,
-                                            "name": "xx",
-                                            "url": "http://111.229.91.248/static/img/fakeui-fs-3.png",
-                                            "hit_flag": 0
-                                        }
+                                        {  
+                                            "name": "messenger1",  
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-1.png",  
+                                            "hit_flag": 1,  
+                                            "width":300,  
+                                            "offset_left":14,  
+                                            "offset_top":74,  
+                                            "hit_width":72 , 
+                                            "hit_height":11 
+                                        }, 
+                                        {  
+                                            "name": "messenger2",  
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-2.png",  
+                                            "hit_flag": 1,  
+                                            "width":300,  
+                                            "offset_left":4,  
+                                            "offset_top":68,  
+                                            "hit_width":15 , 
+                                            "hit_height":6 
+                                        }, 
+                                        {  
+                                            "name": "messenger3",  
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png",  
+                                            "hit_flag": 1,  
+                                            "width":300,  
+                                            "offset_left":0,  
+                                            "offset_top":0,  
+                                            "hit_width":100 , 
+                                            "hit_height":100 
+                                        }, 
+                                        {  
+                                            "name": "messenger4",  
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-4.png",  
+                                            "hit_flag": 1,  
+                                            "width":300,  
+                                            "offset_left":83,  
+                                            "offset_top":33,  
+                                            "hit_width":12 , 
+                                            "hit_height":9 
+                                        }, 
+                                        {  
+                                            "name": "messenger5",  
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-5.png",  
+                                            "hit_flag": 1,  
+                                            "width":300,  
+                                            "offset_left":83,  
+                                            "offset_top":25,  
+                                            "hit_width":14 , 
+                                            "hit_height":8 
+                                        }, 
+                                        {  
+                                            "name": "messenger6",  
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-6.png",  
+                                            "hit_flag": 1,  
+                                            "width":300,  
+                                            "offset_left":18, 
+                                            "offset_top":37,  
+                                            "hit_width":19 , 
+                                            "hit_height":9 
+                                        }, 
+                                        {  
+                                            "name": "messenger7",  
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-7.png",  
+                                            "hit_flag": 0 
+                                        } 
                                     ]
                                 },
                                 {
@@ -790,7 +838,7 @@
                 },
                 {
                     "name": "产品交互说明",
-                    "type": "fakeui",
+                    "type": "multiPage",
                     "alignself": "align-self-start",
                     "taskDesc": "详细描述交互步骤，说明需要注意的用例细节，并配合图例展示",
                     "opGuide": {
@@ -798,30 +846,371 @@
                     },
                     "content": [
                         {
-                            "fuid": 1,
-                            "name": "xx",
-                            "url": "http://111.229.91.248/static/img/fakeui-fs-1.png",
-                            "hit_flag": 1,
-                            "offset_left": 13,
-                            "offset_top": 135,
-                            "width": 76,
-                            "height": 55
+                            "name": "竞品对比分析",
+                            "type": "combination",
+                            "direction":"row",
+                            "content":[
+                                {
+                                    "name": "竞品对比分析",
+                                    "type": "combination",
+                                    "direction":"column",
+                                    "content":[
+                                        {
+                                            "name": "产品交互说明-1",
+                                            "type": "fakeui",
+                                            "content": [
+                                              {
+                                                "name": "PRD-1-1",
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-1-1.png",
+                                                "hit_flag": 1,
+                                                "width": 150,
+                                                "offset_left": 5.5,
+                                                "offset_top": 92,
+                                                "hit_width": 15,
+                                                "hit_height": 7
+                                              },
+                                              {
+                                                "name": "PRD-1-2",
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-1-2.png",
+                                                "hit_flag": 1,
+                                                "width": 150,
+                                                "offset_left": 2,
+                                                "offset_top": 15,
+                                                "hit_width": 95,
+                                                "hit_height": 10
+                                              },
+                                              {
+                                                "name": "PRD-1-3",
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-1-3.png",
+                                                "hit_flag": 0,
+                                                "width": 150
+                                              }
+                                            ]
+                                          },
+                                          { 
+                                            "name": "产品交互说明-2", 
+                                            "type": "fakeui", 
+                                            "content": [ 
+                                              { 
+                                                "name": "PRD-2-1", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-2-1.png", 
+                                                "hit_flag": 1, 
+                                                "width": 150, 
+                                                "offset_left": 15, 
+                                                "offset_top": 37.5, 
+                                                "hit_width": 60, 
+                                                "hit_height": 15 
+                                              }, 
+                                              { 
+                                                "name": "PRD-2-2", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-2-2.png", 
+                                                "hit_flag": 0, 
+                                                "width": 150 
+                                              } 
+                                            ] 
+                                          }
+                                    ]
+                                },
+                                {
+                                    "name": "产品交互说明1",
+                                    "type": "form",
+                                    "alignself": "align-self-center",
+                                    "columns": [
+                                        {
+                                            "dataField": "id",
+                                            "text": "步骤",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "proscons",
+                                            "text": "竞品的优点/缺点",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "ins",
+                                            "text": "启发点",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        }
+                                    ],
+                                    "grid": [
+                                        {
+                                            "id": "飞书",
+                                            "proscons": "单击表情撤销反馈非常简洁，易于用户操作",
+                                            "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"
+                                        },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "messenger", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" }
+                                    ]
+                                }
+                            ]
+                            
                         },
                         {
-                            "fuid": 2,
-                            "name": "xx",
-                            "url": "http://111.229.91.248/static/img/fakeui-fs-2.png",
-                            "hit_flag": 1,
-                            "offset_left": 5,
-                            "offset_top": 167,
-                            "width": 16,
-                            "height": 45
+                            "name": "竞品对比分析",
+                            "type": "combination",
+                            "direction":"row",
+                            "content":[
+                                {
+                                    "name": "竞品对比分析",
+                                    "type": "combination",
+                                    "direction":"column",
+                                    "content":[
+                                        { 
+                                            "name": "产品交互说明-3", 
+                                            "type": "fakeui", 
+                                            "content": [ 
+                                              { 
+                                                "name": "PRD-3-1", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-1.png", 
+                                                "hit_flag": 1, 
+                                                "width": 150, 
+                                                "offset_left": 15, 
+                                                "offset_top": 37.5, 
+                                                "hit_width": 60, 
+                                                "hit_height": 15 
+                                              }, 
+                                              { 
+                                                "name": "PRD-3-2", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-2.png", 
+                                                "hit_flag": 0, 
+                                                "width": 150 
+                                              } 
+                                            ] 
+                                          },
+                                          { 
+                                            "name": "产品交互说明-4", 
+                                            "type": "fakeui", 
+                                            "content": [ 
+                                              { 
+                                                "name": "PRD-3-2", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-2.png", 
+                                                "hit_flag": 1, 
+                                                "width": 150, 
+                                                "offset_left": 11, 
+                                                "offset_top": 51, 
+                                                "hit_width": 78, 
+                                                "hit_height": 7 
+                                              }, 
+                                              { 
+                                                "name": "PRD-4-2", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-4-2.png", 
+                                                "hit_flag": 1, 
+                                                "width": 150, 
+                                                "offset_left": 74, 
+                                                "offset_top": 51, 
+                                                "hit_width": 15, 
+                                                "hit_height": 7 
+                                              }, 
+                                              { 
+                                                "name": "PRD-4-4", 
+                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-4-4.png", 
+                                                "hit_flag": 0, 
+                                                "width": 150 
+                                              } 
+                                            ] 
+                                          }
+                                    ]
+                                },
+                                {
+                                    "name": "产品交互说明2",
+                                    "type": "form",
+                                    "alignself": "align-self-center",
+                                    "columns": [
+                                        {
+                                            "dataField": "id",
+                                            "text": "步骤",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "proscons",
+                                            "text": "竞品的优点/缺点",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "ins",
+                                            "text": "启发点",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        }
+                                    ],
+                                    "grid": [
+                                        {
+                                            "id": "飞书",
+                                            "proscons": "单击表情撤销反馈非常简洁，易于用户操作",
+                                            "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"
+                                        },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "messenger", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" }
+                                    ]
+                                }
+                            ]
+                            
                         },
                         {
-                            "fuid": 2,
-                            "name": "xx",
-                            "url": "http://111.229.91.248/static/img/fakeui-fs-3.png",
-                            "hit_flag": 0
+                            "name": "竞品对比分析",
+                            "type": "combination",
+                            "direction":"row",
+                            "content":[
+                                {  
+                                    "name": "产品交互说明-5",  
+                                    "type": "fakeui",  
+                                    "content": [  
+                                      {  
+                                        "name": "PRD-5-1",  
+                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-5-1.png",  
+                                        "hit_flag": 1,  
+                                        "width": 300,  
+                                        "offset_left": 21,  
+                                        "offset_top": 52,  
+                                        "hit_width": 50,  
+                                        "hit_height": 5  
+                                      },  
+                                      {  
+                                        "name": "PRD-5-2",  
+                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-5-2.png",  
+                                        "hit_flag": 1,  
+                                        "width": 300,  
+                                        "offset_left": 21,  
+                                        "offset_top": 52,  
+                                        "hit_width": 50,  
+                                        "hit_height": 5  
+                                      },  
+                                      {  
+                                        "name": "PRD-5-3",  
+                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-5-3.png",  
+                                        "hit_flag": 0,  
+                                        "width": 300  
+                                      }  
+                                    ]  
+                                },
+                                {
+                                    "name": "产品交互说明3",
+                                    "type": "form",
+                                    "alignself": "align-self-center",
+                                    "columns": [
+                                        {
+                                            "dataField": "id",
+                                            "text": "步骤",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "proscons",
+                                            "text": "竞品的优点/缺点",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "ins",
+                                            "text": "启发点",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        }
+                                    ],
+                                    "grid": [
+                                        {
+                                            "id": "飞书",
+                                            "proscons": "单击表情撤销反馈非常简洁，易于用户操作",
+                                            "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"
+                                        },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "messenger", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" }
+                                    ]
+                                }
+                            ]
+                            
+                        },
+                        {
+                            "name": "竞品对比分析",
+                            "type": "combination",
+                            "direction":"row",
+                            "content":[
+                                { 
+                                    "name": "产品交互说明-6", 
+                                    "type": "fakeui", 
+                                    "content": [ 
+                                      { 
+                                        "name": "PRD-6-2", 
+                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-6-2.png", 
+                                        "hit_flag": 1, 
+                                        "width": 300, 
+                                        "offset_left": 40, 
+                                        "offset_top": 52, 
+                                        "hit_width": 25, 
+                                        "hit_height": 4 
+                                      }, 
+                                      { 
+                                        "name": "PRD-6-3", 
+                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-6-3.png", 
+                                        "hit_flag": 0 
+                                      } 
+                                    ] 
+                                },
+                                {
+                                    "name": "产品交互说明4",
+                                    "type": "form",
+                                    "alignself": "align-self-center",
+                                    "columns": [
+                                        {
+                                            "dataField": "id",
+                                            "text": "步骤",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "proscons",
+                                            "text": "竞品的优点/缺点",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        },
+                                        {
+                                            "dataField": "ins",
+                                            "text": "启发点",
+                                            "editor": {
+                                                "type": "textarea"
+                                            }
+                                        }
+                                    ],
+                                    "grid": [
+                                        {
+                                            "id": "飞书",
+                                            "proscons": "单击表情撤销反馈非常简洁，易于用户操作",
+                                            "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"
+                                        },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "messenger", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" },
+                                        { "id": "", "proscons": "", "ins": "" }
+                                    ]
+                                }
+                            ]
+                            
                         }
                     ]
                 },
