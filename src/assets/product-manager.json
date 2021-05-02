@@ -1086,7 +1086,22 @@
             "steps": [
                 {
                     "name": "研发沟通",
-                    "type": "explain"
+                    "type": "explain",
+                    "direction": "column",
+                    "content": [
+                        {
+                            "name": "问题沟通",
+                            "type": "what",
+                            "alignself": "align-self-center",
+                            "content": "需求立项后，项目进入研发阶段。设计师根据产品需求文档和原型图进行UI/UX设计；开发人员搭建前后端框架，并在收到设计和交互图后完成开发；研发收尾时测试人员按照需求文档检测所有功能无误。"
+                        },
+                        {
+                            "name": "问题沟通",
+                            "type": "why",
+                            "alignself": "align-self-center",
+                            "content": "研发是产品落地的实现过程。其间，产品经理与设计、开发、测试等人员紧密合作，不断沟通解决问题，最终将需求呈现为完整可运行的产品功能。"
+                        }
+                    ]
                 },
                 {
                     "name": "设计需要材料",
