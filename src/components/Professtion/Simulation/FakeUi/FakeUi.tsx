@@ -41,7 +41,7 @@ export default class FakeUi extends React.Component<Props, State> {
 
     render() {
         let width = 300
-        if ( this.props.data[this.state.num].hasOwnProperty("width"))
+        if (this.props.data[this.state.num].hasOwnProperty("width"))
             width = this.props.data[this.state.num].width
         let hitArea = <div/>
         if (this.props.data[this.state.num].hit_flag === 1) {
