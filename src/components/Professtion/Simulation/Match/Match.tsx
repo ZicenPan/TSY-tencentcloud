@@ -105,27 +105,40 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         setItemsChecked(true);
     }
 
+    function getText() {
+        let returnDom = []
+        dustbins.forEach((item: any, index: number) => {
+            if (item.type === 'dustbin') {
+                console.log("Judge match", itemsChecked)
+                returnDom.push(
+                    <div className={itemsChecked? (item.matched? "Correcttarget" : "Falsetarget"): "Droptarget"}>
+                    <DropTarget
+                        accepts={availTypes}
+                        lastDroppedItem={item.lastDroppedItem}
+                        onDrop={(box) => handleDrop(index, box)}
+                        key={index}
+                    />
+                    </div>
+                )
+
+            } else {
+                returnDom.push(
+                    item.data
+                )
+            }
+        })
+
+        return (
+            <div className="ItemData flex-row  flex-wrap">{returnDom}</div>
+        )
+        
+    }
+
     return (
         <div>
             <h2 className="mt-160">{data.name}</h2>
-            <div className="mt-40 d-flex flex-row flex-wrap">
-                {dustbins.map((item: any, index: number) => {
-                    if (item.type === 'dustbin') {
-                        console.log("Judge match", itemsChecked)
-                        return (
-                            <div className={itemsChecked? (item.matched? "Correcttarget" : "Falsetarget"): "Droptarget"}>
-                            <DropTarget
-                                accepts={availTypes}
-                                lastDroppedItem={item.lastDroppedItem}
-                                onDrop={(box) => handleDrop(index, box)}
-                                key={index}
-                            />
-                            </div>
-                        )
-                    } else {
-                        return <div className="ItemData">{item.data}</div>
-                    }
-                })}
+            <div className="mt-40 ">
+                {getText()}
             </div>
 
             <div
