@@ -1,3 +1,9 @@
+.feedback-page {
+    /*flex-grow: 5;*/
+    /*width: fit-content;*/
+    /*background-image: url("@/assets/svg/user-feedback.svg");*/
+}
+
 .feedback-bubble {
     display: -webkit-flex; /* Safari */
     display: flex;
@@ -9,19 +15,19 @@
 /*TODO: auto render for all comments*/
 #bubble0 {
     position: relative;
-    top: 50px;
+    top: 30px;
     left: -400px;
 }
 
 #bubble1 {
     position: relative;
-    top: 150px;
+    top: 40px;
     left: 380px;
 }
 
 #bubble2 {
     position: relative;
-    top: 230px;
+    top: 50px;
     left: -100px;
 }
 
@@ -43,6 +49,9 @@
 
 .nameWrapper {
     flex-grow: 0;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: row;
     margin-top: 3px;
     width: 100%;
 }
@@ -61,4 +70,22 @@
     border-top-left-radius: 12px;
     border: 2px solid transparent;
     text-align: right;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    margin-top: -25px;
+    background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    -webkit-transition: background-position 1s steps(28);
+    transition: background-position 1s steps(28);
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+}
+.heart.is-active {
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    background-position: -2800px 0;
 }

@@ -37,9 +37,21 @@ class FeedbackPage extends React.Component<PageProps, {}> {
 
 }
 
-class FeedbackBubble extends React.Component<SubProps, {}> {
+interface states {
+    isActive: boolean,
+}
+
+class FeedbackBubble extends React.Component<SubProps, states> {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isActive: false,
+        }
+    }
+
     onClick = (e) => {
         e.stopPropagation();
+        this.setState({isActive: !(this.state.isActive)});
     }
 
     render() {
@@ -49,6 +61,7 @@ class FeedbackBubble extends React.Component<SubProps, {}> {
                     {this.props.data.comment}
                 </button>
                 <div className="nameWrapper">
+                    <div className={this.state.isActive ? "heart is-active" : "heart"} onClick={this.onClick}> </div>
                     <button className="feedback-name" >
                         {this.props.data.username}
                     </button>

@@ -447,6 +447,7 @@ export default class Simulation extends React.Component<Props, State> {
                 )
             }
             case 'userFeedback' : {
+                // this.setBackgroundImg();
                 return (
                     <div className={className}>
                         <UserFeedback data={this.state.data.content} handleNext={this.handleNext} />
