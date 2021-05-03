@@ -1,0 +1,91 @@
+.feedback-page {
+    /*flex-grow: 5;*/
+    /*width: fit-content;*/
+    /*background-image: url("@/assets/svg/user-feedback.svg");*/
+}
+
+.feedback-bubble {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/*TODO: auto render for all comments*/
+#bubble0 {
+    position: relative;
+    top: 30px;
+    left: -400px;
+}
+
+#bubble1 {
+    position: relative;
+    top: 40px;
+    left: 380px;
+}
+
+#bubble2 {
+    position: relative;
+    top: 50px;
+    left: -100px;
+}
+
+.feedback-comment {
+    width: 300px;
+    height: fit-content;
+    flex-grow: 0;
+    margin: 8px 0 0;
+    padding: 20px 40px;
+    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
+    background-color: white;
+    border-bottom-left-radius: 50px;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    border: 1px solid transparent;
+    text-align: left;
+    vertical-align: top;
+}
+
+.nameWrapper {
+    flex-grow: 0;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-direction: row;
+    margin-top: 3px;
+    width: 100%;
+}
+
+.feedback-name {
+    position: absolute;
+    right: 0;
+    width: fit-content;
+    height: fit-content;
+    margin: 8px 0 0;
+    padding: 5px 10px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    background-color: #F2F2F2;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border: 2px solid transparent;
+    text-align: right;
+}
+
+.heart {
+    width: 100px;
+    height: 100px;
+    margin-top: -25px;
+    background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    -webkit-transition: background-position 1s steps(28);
+    transition: background-position 1s steps(28);
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s;
+}
+.heart.is-active {
+    -webkit-transition-duration: 1s;
+    transition-duration: 1s;
+    background-position: -2800px 0;
+}

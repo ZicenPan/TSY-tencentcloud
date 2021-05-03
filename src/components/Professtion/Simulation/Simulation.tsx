@@ -19,6 +19,7 @@ import {Match} from './Match/Match'
 import StepNav from './StepNav/StepNav'
 import FakeUi from './FakeUi/FakeUi'
 import TestInput from './TestInput/TestInput'
+import UserFeedback from "./UserFeedback/UserFeedback";
 
 import linesImg from '@/assets/lines.png'
 import {rscLogoUrl, 
@@ -27,6 +28,7 @@ import {rscLogoUrl,
         rscLightLogoUrl, 
         opGuideLightLogoUrl, 
         taskDescLightLogoUrl} from "../../../assets/cdnUrlConfig"
+import EndPage from "./EndPage/EndPage";
 
 
 const tysPrefix = "tys_sim_"
@@ -445,7 +447,21 @@ export default class Simulation extends React.Component<Props, State> {
                     </div>
                 )
             }
-
+            case 'userFeedback' : {
+                // this.setBackgroundImg();
+                return (
+                    <div className={className}>
+                        <UserFeedback data={this.state.data.content} handleNext={this.handleNext} />
+                    </div>
+                )
+            }
+            case 'finish' : {
+                return (
+                    <div className={className}>
+                        <EndPage data={this.state.data} handleNext={this.handleNext} />
+                    </div>
+                )
+            }
             default:
                 return <div />
         }

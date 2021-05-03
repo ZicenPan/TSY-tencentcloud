@@ -1513,7 +1513,35 @@
             "steps": [
                 {
                     "name": "验收上线",
-                    "type": "explain"
+                    "type": "userFeedback",
+                    "backgroundImg": "http://111.229.91.248/static/img/svg/user-feedback.svg",
+                    "content": [
+                        {
+                            "username": "user1",
+                            "comment": "感觉这个功能好方便，只需要点几个按钮就行了，非常快捷"
+                        },
+                        {
+                            "username": "user2",
+                            "comment": "这个新功能太棒啦，再也不会因为干巴巴地回复一条只有表情的消息而觉得尴尬了!"
+                        },
+                        {
+                            "username": "user3",
+                            "comment": "这些表情都好可爱啊，爱了爱了～"
+                        }
+                    ],
+                    "supplemental": [
+                        {
+                            "type": "img",
+                            "url": "@/assets/svg/user-feedback.svg"
+                        }
+                    ]
+                },
+                {
+                    "name": "体验结束",
+                    "type": "finish",
+                    "backgroundImg": "http://111.229.91.248/static/img/svg/finish-bg.svg",
+                    "job": "产品经理",
+                    "qrcode": "There will be an image :)"
                 }
             ]
         }
