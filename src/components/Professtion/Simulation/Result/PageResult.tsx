@@ -78,7 +78,7 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
                 onClick={handleSubmit}
                 type="submit"
                 className="btn btn-blue"
-                style={{ position: 'fixed', top: '85%', left: '70%' }}
+                style={{ position: 'fixed', top: '85%', left: '70%', width: '352px'}}
             >
                 {btnName}
             </button>
