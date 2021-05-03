@@ -53,6 +53,7 @@ interface State {
     data: any
     stageChange: number
     swtichMap: any
+    multiPageIndex: number
 }
 
 export default class Simulation extends React.Component<Props, State> {
@@ -66,9 +67,11 @@ export default class Simulation extends React.Component<Props, State> {
                 ? initData.stages[this.props.stage].steps[this.props.step]
                 : '',
             stageChange: 0,
-            swtichMap:{}
+            swtichMap:{},
+            multiPageIndex: 0
         }
         this.handleNext = this.handleNext.bind(this)
+        this.handleChangeMultiPageIndex = this.handleChangeMultiPageIndex.bind(this)
         this.handleChangeCurStage = this.handleChangeCurStage.bind(this)
         this.handleChangeStep = this.handleChangeStep.bind(this)
         this.handleSetInputData = this.handleSetInputData.bind(this)
@@ -180,6 +183,16 @@ export default class Simulation extends React.Component<Props, State> {
 
     }
 
+    handleChangeMultiPageIndex = () => {
+        if (this.state.multiPageIndex >= this.state.data.content.length-1)
+            this.handleNext()
+        else {
+            this.setState({
+                multiPageIndex: this.state.multiPageIndex + 1
+            })
+        }
+    }
+
     handleNext = () => {
         console.log(this.state)
         console.log('beforeNext: ', this.state.curStage, ' ', this.state.curStep)
@@ -239,12 +252,32 @@ export default class Simulation extends React.Component<Props, State> {
             swtichMap:swtichMapTemp
         })
     }
-
+/* eslint-disable */
     parseSimulationContent = (templateData) => {
         let className = templateData.alignself?templateData.alignself:"";
-
         // className += " z-index-mid"
         switch (templateData.type) {
+            case "multiPage": {
+                return (
+                    <div>
+                        {
+                            this.state.multiPageIndex<templateData.content.length
+                            ?this.parseSimulationContent(templateData.content[this.state.multiPageIndex])
+                            :""
+                        }
+                        <div>
+                            <button
+                                onClick={this.handleChangeMultiPageIndex}
+                                type="submit"
+                                className="btn btn-blue"
+                                style={{ position: 'fixed', top: '85%', left: '70%' }}
+                            >
+                                {this.state.multiPageIndex >= this.state.data.content.length-1?"下一步":"继续"}
+                            </button>
+                        </div>
+                    </div>
+                )
+            }
             case "combination": {
                 className += " d-flex";
                 if (templateData.direction === "row") {
@@ -417,7 +450,7 @@ export default class Simulation extends React.Component<Props, State> {
                 return <div />
         }
     }
-
+/* eslint-enable */
     currentContent = () => {
         switch (this.props.type) {
             case "simulation": {
