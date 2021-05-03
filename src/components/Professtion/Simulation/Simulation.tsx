@@ -28,6 +28,7 @@ import {rscLogoUrl,
         rscLightLogoUrl, 
         opGuideLightLogoUrl, 
         taskDescLightLogoUrl} from "../../../assets/cdnUrlConfig"
+import EndPage from "./EndPage/EndPage";
 
 
 const tysPrefix = "tys_sim_"
@@ -451,6 +452,13 @@ export default class Simulation extends React.Component<Props, State> {
                 return (
                     <div className={className}>
                         <UserFeedback data={this.state.data.content} handleNext={this.handleNext} />
+                    </div>
+                )
+            }
+            case 'finish' : {
+                return (
+                    <div className={className}>
+                        <EndPage data={this.state.data} handleNext={this.handleNext} />
                     </div>
                 )
             }
