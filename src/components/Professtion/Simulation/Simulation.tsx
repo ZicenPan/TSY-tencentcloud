@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { DndProvider } from 'react-dnd'
 import { HTML5Backend } from 'react-dnd-html5-backend'
 
+import './Simulation.css'
 import initData from '../../../assets/product-manager.json'
 import { Form } from './Form/Form'
 import CollapBtn from './CollapBtn/CollapBtn'
@@ -20,10 +21,13 @@ import FakeUi from './FakeUi/FakeUi'
 import TestInput from './TestInput/TestInput'
 
 import linesImg from '@/assets/lines.png'
-import conversionBack from '@/assets/conversation-back.png'
-import {rscLogoUrl, opGuideLogoUrl, taskDescLogoUrl} from "../../../assets/cdnUrlConfig"
-import './Simulation.css'
-import { url } from 'node:inspector'
+import {rscLogoUrl, 
+        opGuideLogoUrl, 
+        taskDescLogoUrl, 
+        rscLightLogoUrl, 
+        opGuideLightLogoUrl, 
+        taskDescLightLogoUrl} from "../../../assets/cdnUrlConfig"
+
 
 const tysPrefix = "tys_sim_"
 const userPrefix = "user1"
@@ -49,6 +53,7 @@ interface State {
     data: any
     stageChange: number
     swtichMap: any
+    multiPageIndex: number
 }
 
 export default class Simulation extends React.Component<Props, State> {
@@ -62,9 +67,11 @@ export default class Simulation extends React.Component<Props, State> {
                 ? initData.stages[this.props.stage].steps[this.props.step]
                 : '',
             stageChange: 0,
-            swtichMap:{}
+            swtichMap:{},
+            multiPageIndex: 0
         }
         this.handleNext = this.handleNext.bind(this)
+        this.handleChangeMultiPageIndex = this.handleChangeMultiPageIndex.bind(this)
         this.handleChangeCurStage = this.handleChangeCurStage.bind(this)
         this.handleChangeStep = this.handleChangeStep.bind(this)
         this.handleSetInputData = this.handleSetInputData.bind(this)
@@ -176,6 +183,16 @@ export default class Simulation extends React.Component<Props, State> {
 
     }
 
+    handleChangeMultiPageIndex = () => {
+        if (this.state.multiPageIndex >= this.state.data.content.length)
+            this.handleNext()
+        else {
+            this.setState({
+                multiPageIndex: this.state.multiPageIndex + 1
+            })
+        }
+    }
+
     handleNext = () => {
         console.log(this.state)
         console.log('beforeNext: ', this.state.curStage, ' ', this.state.curStep)
@@ -222,7 +239,8 @@ export default class Simulation extends React.Component<Props, State> {
         if (step < initData.stages[this.state.curStage].steps.length) {
             this.setState({
                 data: initData.stages[this.state.curStage].steps[step],
-                curStep: step
+                curStep: step,
+                stageChange: 0,
             })
         }
     }
@@ -234,12 +252,32 @@ export default class Simulation extends React.Component<Props, State> {
             swtichMap:swtichMapTemp
         })
     }
-
+/* eslint-disable */
     parseSimulationContent = (templateData) => {
         let className = templateData.alignself?templateData.alignself:"";
-
         // className += " z-index-mid"
         switch (templateData.type) {
+            case "multiPage": {
+                return (
+                    <div>
+                        {
+                            this.state.multiPageIndex<templateData.content.length
+                            ?this.parseSimulationContent(templateData.content[this.state.multiPageIndex])
+                            :""
+                        }
+                        <div>
+                            <button
+                                onClick={this.handleChangeMultiPageIndex}
+                                type="submit"
+                                className="btn btn-blue"
+                                style={{ position: 'fixed', top: '85%', left: '70%' }}
+                            >
+                                {this.state.multiPageIndex >= this.state.data.content.length-1?"下一步":"继续"}
+                            </button>
+                        </div>
+                    </div>
+                )
+            }
             case "combination": {
                 className += " d-flex";
                 if (templateData.direction === "row") {
@@ -285,8 +323,8 @@ export default class Simulation extends React.Component<Props, State> {
                 }
 
                 return(
-                    <div className={className}>
-                        <span>{swtichBtns}</span>
+                    <div className={className+"d-flex"}>
+                        <div>{swtichBtns}</div>
                     </div>
                 )
             }
@@ -328,7 +366,7 @@ export default class Simulation extends React.Component<Props, State> {
                                 className="btn btn-blue"
                                 style={{ position: 'fixed', top: '85%', left: '70%' }}
                             >
-                                Next
+                                下一步
                             </button>
                         </div>
                     </div>
@@ -353,7 +391,7 @@ export default class Simulation extends React.Component<Props, State> {
                                 className="btn btn-blue"
                                 style={{ position: 'fixed', top: '85%', left: '70%' }}
                             >
-                                Next
+                                下一步
                             </button>
                         </div>
                     </div>
@@ -383,7 +421,7 @@ export default class Simulation extends React.Component<Props, State> {
                                         padding: '10px 100px'
                                     }}
                                 >
-                                    Next
+                                    下一步
                                 </button>
                             </div>
                         </div>
@@ -402,7 +440,7 @@ export default class Simulation extends React.Component<Props, State> {
                             className="btn btn-blue"
                             style={{ position: 'fixed', top: '85%', left: '70%' }}
                         >
-                            Next
+                            下一步
                         </button>
                     </div>
                 )
@@ -412,7 +450,7 @@ export default class Simulation extends React.Component<Props, State> {
                 return <div />
         }
     }
-
+/* eslint-enable */
     currentContent = () => {
         switch (this.props.type) {
             case "simulation": {
@@ -427,6 +465,7 @@ export default class Simulation extends React.Component<Props, State> {
                                     data=""
                                     changeStage = {0}
                                     logoUrl = {taskDescLogoUrl}
+                                    logoLightUrl = {taskDescLightLogoUrl}
                                 />
                             </div>
                             <div className="mt-20 ml-40">
@@ -437,6 +476,7 @@ export default class Simulation extends React.Component<Props, State> {
                                     data=""
                                     changeStage = {0}
                                     logoUrl = {opGuideLogoUrl}
+                                    logoLightUrl = {opGuideLightLogoUrl}
                                 />
                             </div>
                             <div className="mt-20 ml-40">
@@ -447,10 +487,11 @@ export default class Simulation extends React.Component<Props, State> {
                                     data={initData.recources}
                                     changeStage = {this.state.stageChange}
                                     logoUrl = {rscLogoUrl}
+                                    logoLightUrl = {rscLightLogoUrl}
                                 />
                             </div>
 
-                            <div className="mt-40 ml-20">
+                            <div className="mt-40 ml-20 Simulation-StepNav">
                                 <StepNav
                                     stage={this.props.stage}
                                     curStage={this.state.curStage}

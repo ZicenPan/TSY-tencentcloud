@@ -5,6 +5,7 @@ import React, { CSSProperties, FC, memo, useState } from 'react'
 import { ConnectDropTarget, DropTargetMonitor, DropTarget } from 'react-dnd'
 import { setFlagsFromString } from 'v8'
 
+import './Match.scss'
 const style: CSSProperties = {
     height: '3rem',
     marginRight: '1.5rem',
@@ -40,18 +41,19 @@ export const Dustbin: FC<DustbinProps> = memo(function Dustbin({
     const [last, setLast] = useState("")
 
     let backgroundColor = 'white'
-    if (isActive) {
-        backgroundColor = '#cccccc'
-    }
-
+    // let borderBottom = "solid red";
+    // FIX ME: No color changing
+    // if (isActive) {
+    //     backgroundColor = 'yellow'
+    // }
     return connectDropTarget(
         <div
             ref={connectDropTarget}
             role="Dustbin"
-            style={{ ...style, backgroundColor, border: 'solid 1px black', textAlign: 'center' }}
+            style={{backgroundColor, }}
         >
             {lastDroppedItem ? (
-                <p style={{ verticalAlign: 'center' }}>{lastDroppedItem.name}</p>
+                <p className="DropText" style={{ verticalAlign: 'center' }}>{lastDroppedItem.name}</p>
             ) : (
                 <p>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -71,6 +73,6 @@ export default DropTarget(
     (connect, monitor) => ({
         connectDropTarget: connect.dropTarget(),
         isOver: monitor.isOver(),
-        canDrop: monitor.canDrop()
+        canDrop: monitor.canDrop(),
     })
 )(Dustbin)

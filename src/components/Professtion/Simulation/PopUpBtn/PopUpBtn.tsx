@@ -6,8 +6,8 @@ import ResourcePoolContent from './ResourcePoolContent/ResourcePoolContent'
 import TaskDescContent from './TaskDescContent/TaskDescContent'
 import OpGuideContent from './OpGuideContent/OpGuideContent'
 
+import {closeBtnUrl} from '../../../../assets/cdnUrlConfig'
 import './PopUpBtn.scss'
-
 
 
 
@@ -18,10 +18,12 @@ interface Props {
     data: any;
     changeStage: number;
     logoUrl: string
+    logoLightUrl: string
 }
 
 interface State {
     showModal: boolean;
+    mouseEnter:boolean;
 }
 
 export default class PopUpBtn extends React.Component<Props, State> {
@@ -32,10 +34,12 @@ export default class PopUpBtn extends React.Component<Props, State> {
     super(props);
     this.state = {
       showModal: false,
+      mouseEnter: false,
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleOnMouseEnter = this.handleOnMouseEnter.bind(this);
     this.fooRef = React.createRef();
   }
 
@@ -54,6 +58,11 @@ export default class PopUpBtn extends React.Component<Props, State> {
     this.hasOpenModal = false
   }
 
+  handleOnMouseEnter(status:boolean) {
+    this.setState({ mouseEnter:status})
+    console.log("handleOnMouseEnter")
+  }
+
   getModelContent() {
     switch (this.props.name) {
       case "任务描述":
@@ -62,7 +71,7 @@ export default class PopUpBtn extends React.Component<Props, State> {
           )
       case "操作指引":
           return(
-            <OpGuideContent content={this.props.content}/>
+            <OpGuideContent opGuide={this.props.content}/>
           )
       case "资源库":
         return(
@@ -105,7 +114,7 @@ export default class PopUpBtn extends React.Component<Props, State> {
     
     if (this.props.changeStage === 1) {
       // ReactTooltip.show(this.fooRef) 
-      if (!this.hasOpenModal) {
+      if (!this.hasOpenModal&&!this.state.mouseEnter) {
         ReactTooltip.show(this.fooRef) // 展示的是上一次render中的msg
 
         // 计时器3秒消失
@@ -119,9 +128,20 @@ export default class PopUpBtn extends React.Component<Props, State> {
     console.log(this.props.changeStage)
     return (
       <div className="PopUpBtn-container">
-        <button className="PopUpBtn d-flex flex-row"  ref={ref => {this.fooRef = ref}} onClick={this.handleOpenModal}  data-event = "null" data-effect ="solid" data-type = "info" data-event-off = "click" data-tip = {this.msg} data-place="right">
-          <img className = "PopUpBtn-Logo" src={this.props.logoUrl} alt="logo"/>
-          <p className="ml-10 PopUpBtn-Name">{this.props.name}</p>
+        <button className="PopUpBtn d-flex flex-row"  
+          ref={ref => {this.fooRef = ref}} 
+          onClick={this.handleOpenModal}  
+          data-event = "null" 
+          data-effect ="solid" 
+          data-type = "info" 
+          data-event-off = "click" 
+          data-tip = {this.msg} 
+          data-place="right"
+          onMouseEnter={()=>{this.handleOnMouseEnter(true)}}
+          onMouseLeave={()=>{this.handleOnMouseEnter(false)}}
+        >
+          <img className = "PopUpBtn-Log mt-1" src={this.state.mouseEnter?this.props.logoLightUrl:this.props.logoUrl} alt="logo"/>
+          <p className="ml-10" id={this.state.mouseEnter?"PopUpBtn-Name-light":"PopUpBtn-Name"}>{this.props.name}</p>
         </button>
         <ReactTooltip/>
 
@@ -129,11 +149,18 @@ export default class PopUpBtn extends React.Component<Props, State> {
           isOpen={this.state.showModal}
           contentLabel="onRequestClose Example"
           onRequestClose={this.handleCloseModal}
-          className="PopUpBtn-Modal centered"
+          className="PopUpBtn-Modal centered "
           overlayClassName="PopUpBtn-Overlay"
         > 
-          {this.getModelContent()}
-          <button className="btn btn-blue mt-40 btn-right"onClick={this.handleCloseModal}>明白了</button>
+          <div className="d-flex flex-column">
+            <img src={closeBtnUrl} className="align-self-end PopUpBtn-closeLogo" onClick={this.handleCloseModal}/>
+            <div id="ReactModal-content">
+              {this.getModelContent()}
+            </div>
+            
+            {this.props.name!=="资源库"?<button className="btn btn-blue mt-40 btn-right align-self-end"onClick={this.handleCloseModal}>明白了</button>:<div className="mt-80"/>}
+          </div>
+          
         </ReactModal>
       </div>
       

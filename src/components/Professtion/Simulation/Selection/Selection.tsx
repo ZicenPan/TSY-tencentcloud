@@ -5,6 +5,7 @@ import update from 'immutability-helper'
 import { PageResult } from './../Result/PageResult'
 import StandardTip from './../../StandardTip/StandardTip'
 import '@/scss/style.scss'
+import './Selection.scss'
 
 interface Props {
     data: any
@@ -52,17 +53,17 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
                     // const requestImageFile = require.context('../../../../assets/', true, /.png$/)
 
                     return (
-                        <div className="sel mt-20">
                             <button
+                                className="Selection-sel mt-20"
                                 style={{
-                                    borderColor: item.selected ? '#131313' : '#ffffff',
+                                    borderColor: item.selected ? '#325AE4' : '#ffffff',
                                     backgroundColor: '#ffffff'
                                 }}
                                 onClick={() => handleClick(id)}
                             >
                                 <div className="d-flex flex-row">
                                     <img
-                                        src="https://fyp-web-1gdzo8ub179215dc-1304731661.tcloudbaseapp.com/tys-website-assets/companyIcons/Bilibili.png"
+                                        src={data.content[id].icon}
                                         // src={require(`../../../../assets/${imgName}.png`)}
                                         width="50"
                                         height="50"
@@ -74,7 +75,6 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
                                     </div>
                                 </div>
                             </button>
-                        </div>
                     )
                 })}
             </div>

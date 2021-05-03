@@ -78,7 +78,10 @@ export default class ProfesstionVideo extends React.Component<Props, State> {
                         videoList.push(
                             <div>
                                 <img className="video-cover mt-20 ml-40" src={this.props.videoData[i].cover_url} onClick ={()=>this.handleClickCover(this.props.videoData[i].vid)}/>
-                                <h2 className="mt-10 ml-40"><span className="ProfesstionVideo-stageid">{stageIdStr[1]?stageIdStr:'0'+stageIdStr}</span>&nbsp;{this.props.videoData[i].name}</h2>
+                                <h2 className="mt-10 ml-40 d-flex">
+                                    <div className="ProfesstionVideo-stageid ">{stageIdStr[1]?stageIdStr:'0'+stageIdStr}</div>
+                                    <div className="mt-10 ml-10">{this.props.videoData[i].name}</div>
+                                </h2>
                                 <h3 className="ml-40">已解锁</h3>
                             </div>
                         )
@@ -86,7 +89,10 @@ export default class ProfesstionVideo extends React.Component<Props, State> {
                         videoList.push(
                             <div>
                                 <img className="video-cover mt-10 ml-40" src={this.props.videoData[i].cover_url}/>
-                                <h2 className="mt-10 ml-40"><span className="ProfesstionVideo-stageid">{stageIdStr[1]?stageIdStr:'0'+stageIdStr}</span>&nbsp;{this.props.videoData[i].name}</h2>
+                                <h2 className="mt-10 ml-40 d-flex">
+                                    <div className="ProfesstionVideo-stageid ">{stageIdStr[1]?stageIdStr:'0'+stageIdStr}</div>
+                                    <div className="mt-10 ml-10">{this.props.videoData[i].name}</div>
+                                </h2>                                
                                 <h3 className="ml-40">未解锁</h3>
                             </div>
                         )
