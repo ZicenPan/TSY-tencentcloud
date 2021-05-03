@@ -9,11 +9,12 @@ import './PageResult.scss'
 interface Props {
     checked: boolean
     handleNext: () => void
+    handleCheck: () => void
     resultMsg: any
     setShowStandardTip:(boolean) => void
 }
 
-export const PageResult: FC<Props> = memo(function PageResult({ checked, handleNext, resultMsg, setShowStandardTip}) {
+export const PageResult: FC<Props> = memo(function PageResult({ checked, handleNext, handleCheck, resultMsg, setShowStandardTip}) {
 
     const [btnName, setBtnName] = useState<string>("确认")
     const [showModal, setShowModal] = useState(false)
@@ -36,6 +37,7 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
 
     function handleSubmit() {
         handleOpenModal()
+        handleCheck()
         if (checked) {
             setBtnName("下一步")
             btnRef.current.onclick = handleNext

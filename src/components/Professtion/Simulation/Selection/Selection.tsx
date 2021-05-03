@@ -36,6 +36,8 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
         [options]
     )
 
+    const doNothing = () => {
+    }
     function handleClear() {
         setOptions(data.content)
     }
@@ -85,7 +87,8 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
             
             <PageResult 
                 checked={matched()} 
-                handleNext={handleNext} 
+                handleNext={handleNext}
+                handleCheck={doNothing}
                 resultMsg = {data.resultMsg}
                 setShowStandardTip = {setShowStandardTip}
            />

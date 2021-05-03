@@ -9,6 +9,7 @@ import StandardTip from './../../StandardTip/StandardTip'
 
 import '@/scss/style.scss'
 import './Match.scss'
+import { components } from 'react-select'
 interface Props {
     data: any
     handleNext: () => void
@@ -50,12 +51,15 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
 
     const [showStandardTip, setShowStandardTip] = useState(false)
 
+    let [itemsChecked, setItemsChecked] = useState(false);
+
     function isDropped(boxName: string) {
         return droppedBoxNames.indexOf(boxName) > -1
     }
 
     const handleDrop = useCallback(
         (index: number, item: BoxSpec) => {
+            setItemsChecked(false);
             setDroppedBoxNames(
                 update(droppedBoxNames, item.name ? { $push: [item.name] } : { $push: [] })
             )
@@ -89,10 +93,16 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
     }, [data])
 
     const matched = () => {
+        itemsChecked = true;
         const a = dustbins.filter(function (item) {
             return item.matched === false
         })
         return a.length === 0
+    }
+
+    const handleCheck = () => {
+        console.log("Judge Matching!\n");
+        setItemsChecked(true);
     }
 
     return (
@@ -101,8 +111,9 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
             <div className="mt-40 d-flex flex-row flex-wrap">
                 {dustbins.map((item: any, index: number) => {
                     if (item.type === 'dustbin') {
+                        console.log("Judge match", itemsChecked)
                         return (
-                            <div className={item.matched? "Droptarget" : "Falsetarget"}>
+                            <div className={itemsChecked? (item.matched? "Correcttarget" : "Falsetarget"): "Droptarget"}>
                             <DropTarget
                                 accepts={availTypes}
                                 lastDroppedItem={item.lastDroppedItem}
@@ -125,7 +136,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                     <Box name={name} type={type} isDropped={isDropped(name)} key={index} />
                 ))}
             </div>
-            <PageResult checked={matched()} handleNext={handleNext} setShowStandardTip={setShowStandardTip} resultMsg={data.resultMsg}/>
+            <PageResult checked={matched()} handleNext={handleNext} handleCheck={handleCheck} setShowStandardTip={setShowStandardTip} resultMsg={data.resultMsg}/>
             
             {showStandardTip?<StandardTip standardMsg={data.resultMsg.standardMsg}/>:<div/>}
             <button

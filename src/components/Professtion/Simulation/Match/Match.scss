@@ -12,9 +12,18 @@
 .Droptarget {
     padding-top: 8px;
     margin: 2px;
-    width: 100px;
+    min-width: 100px;
     height: 40px;
     border-bottom:solid blue;
+    text-align: 'center'; 
+}
+
+.Correcttarget {
+    padding-top: 8px;
+    margin: 2px;
+    min-width: 100px;
+    height: 40px;
+    border-bottom:solid green;
     text-align: 'center'; 
 }
 
@@ -22,7 +31,7 @@
 .Falsetarget {
     padding-top: 8px;
     margin: 2px;
-    width: 100px;
+    min-width: 100px;
     height: 40px;
     border-bottom:solid red;
     text-align: 'center'; 
@@ -38,7 +47,7 @@
     justify-content: center;
     align-items: center;
 
-    width: 90px;
+    min-width: 90px;
     margin: 10px;
     height: 50px;
     left: 0px;
