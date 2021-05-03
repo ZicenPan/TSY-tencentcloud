@@ -59,3 +59,45 @@
   position: absolute;
   top: 300px
 }
+
+.Simulation-swtichBtn-blue {
+  width: 110px;
+  height: 35px;
+
+  /* primary-蓝 */
+
+  background: #325AE4;
+
+  /* bolded body */
+
+  font-family: PingFang HK;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* white */
+
+  color: #FFFFFF;
+  border: none;
+}
+
+.Simulation-swtichBtn-grey {
+  width: 110px;
+  height: 35px;
+
+  /* primary-蓝 */
+
+  background: #C4C4C4;
+
+  /* bolded body */
+
+  font-family: PingFang HK;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* white */
+
+  color: #FFFFFF;
+  border: none;
+}

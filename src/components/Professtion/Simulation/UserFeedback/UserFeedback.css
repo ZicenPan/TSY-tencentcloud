@@ -1,7 +1,7 @@
 .feedback-page {
-    /*flex-grow: 5;*/
-    /*width: fit-content;*/
-    /*background-image: url("@/assets/svg/user-feedback.svg");*/
+    flex-grow: 5;
+    width: fit-content;
+    background-image: url("@/assets/svg/user-feedback.svg");
 }
 
 .feedback-bubble {

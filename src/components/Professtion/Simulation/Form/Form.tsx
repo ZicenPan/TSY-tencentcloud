@@ -27,12 +27,19 @@ export const Form: FC<Props> = memo(function Form({ data }) {
     //         }
     //     })
     // })
-    return (
-        <BootstrapTable
-            keyField="id"
-            data={data.grid}
-            columns={data.columns}
-            cellEdit={cellEditFactory({ mode: 'click' })}
-        />
-    )
+    if (data.columns) {
+        return (
+            <BootstrapTable
+                keyField="id"
+                data={data.grid}
+                columns={data.columns}
+                cellEdit={cellEditFactory({ mode: 'click' })}
+            />
+        )
+    } else {
+        return(
+            <div/>
+        )
+    }
+
 })

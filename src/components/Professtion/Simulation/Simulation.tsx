@@ -180,10 +180,10 @@ export default class Simulation extends React.Component<Props, State> {
     //   });
     // };
 
-    setBackgroundImg = () => {
-        let imgUrl = this.state.data.backgroundImg ? this.state.data.backgroundImg:"";
+    // setBackgroundImg = () => {
+    //     let imgUrl = this.state.data.backgroundImg ? this.state.data.backgroundImg:"";
 
-    }
+    // }
 
     handleChangeMultiPageIndex = () => {
         if (this.state.multiPageIndex >= this.state.data.content.length-1)
@@ -312,7 +312,11 @@ export default class Simulation extends React.Component<Props, State> {
                 let swtichBtns = []
                 for(let i = 0; i < templateData.num; i++) {
                     swtichBtns.push(
-                        <button className="btn btn-white" onClick={()=>{this.handleSwtichNum(templateData.identify, i+1)}}>{templateData.switchNames[i]}</button>
+                        <button 
+                            className={(this.state.swtichMap.hasOwnProperty(templateData.identify)&&this.state.swtichMap[templateData.identify]==i+1)?"Simulation-swtichBtn-blue":"Simulation-swtichBtn-grey"}
+                            onClick={()=>{this.handleSwtichNum(templateData.identify, i+1)}}>
+                            {templateData.switchNames[i]}
+                         </button>
                     )
                 }
                 // 设置state
