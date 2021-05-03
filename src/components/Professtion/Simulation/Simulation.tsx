@@ -184,7 +184,7 @@ export default class Simulation extends React.Component<Props, State> {
     }
 
     handleChangeMultiPageIndex = () => {
-        if (this.state.multiPageIndex >= this.state.data.content.length)
+        if (this.state.multiPageIndex >= this.state.data.content.length-1)
             this.handleNext()
         else {
             this.setState({

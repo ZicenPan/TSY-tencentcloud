@@ -76,6 +76,12 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         [droppedBoxNames, dustbins]
     )
 
+    function handleClear() {
+        setDustbins(data.content)
+        setBoxes(data.boxes)
+        setDroppedBoxNames([])
+    }
+
     // Re-render when data updates.
     useEffect(() => {
         setDustbins(data.content)
@@ -122,6 +128,14 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
             <PageResult checked={matched()} handleNext={handleNext} setShowStandardTip={setShowStandardTip} resultMsg={data.resultMsg}/>
             
             {showStandardTip?<StandardTip standardMsg={data.resultMsg.standardMsg}/>:<div/>}
+            <button
+                onClick={handleClear}
+                type="submit"
+                className="btn"
+                style={{ position: 'fixed', top: '85%', left: '64%' , color: '#325AE4'}}
+            >
+                清空
+            </button>
             <button
                 onClick={handleNext}
                 type="submit"
