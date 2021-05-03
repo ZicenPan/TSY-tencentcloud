@@ -19,6 +19,7 @@ import {Match} from './Match/Match'
 import StepNav from './StepNav/StepNav'
 import FakeUi from './FakeUi/FakeUi'
 import TestInput from './TestInput/TestInput'
+import UserFeedback from "./UserFeedback/UserFeedback";
 
 import linesImg from '@/assets/lines.png'
 import {rscLogoUrl, 
@@ -445,7 +446,13 @@ export default class Simulation extends React.Component<Props, State> {
                     </div>
                 )
             }
-
+            case 'userFeedback' : {
+                return (
+                    <div className={className}>
+                        <UserFeedback data={this.state.data.content} handleNext={this.handleNext} />
+                    </div>
+                )
+            }
             default:
                 return <div />
         }

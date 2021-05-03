@@ -1513,8 +1513,8 @@
             "steps": [
                 {
                     "name": "验收上线",
-                    "type": "feedback",
-                    "contain": [
+                    "type": "userFeedback",
+                    "content": [
                         {
                             "username": "user1",
                             "comment": "感觉这个功能好方便，只需要点几个按钮就行了，非常快捷"
@@ -1540,7 +1540,7 @@
                     "type": "finish",
                     "backgroundImg": "@/assets/svg/finish-bg.svg",
                     "job": "产品经理",
-                    "qrcode": "https://github.com/Zhang-JK"
+                    "qrcode": "There will be an image :)"
                 }
             ]
         }
