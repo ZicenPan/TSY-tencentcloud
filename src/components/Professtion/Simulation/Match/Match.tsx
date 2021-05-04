@@ -104,6 +104,12 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         console.log("Judge Matching!\n");
         setItemsChecked(true);
     }
+    const isHeader = (str) => {
+        if(str.length >= 1 && str[0] === '#') {
+            return true;
+        }
+        return false;
+    }
 
     function getText() {
         let returnDom = []
@@ -123,7 +129,9 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
 
             } else {
                 returnDom.push(
-                    item.data
+                        isHeader(item.data)? 
+                            <p className="HeaderData">{item.data.substr(1, item.data.length-1)}</p> 
+                            : item.data
                 )
             }
         })
@@ -131,7 +139,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         return (
             <div className="ItemData flex-row  flex-wrap">{returnDom}</div>
         )
-        
+
     }
 
     return (
