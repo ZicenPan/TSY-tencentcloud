@@ -17,10 +17,10 @@
 }
 
 .conversation-character {
-    position: absolute;
-    bottom:-10%;
-    right: 60%;
-    width: 550px;
+    position: fixed;
+    bottom:5%;
+    left: 3.5%;
+    width: 37vw;
 }
 
 #convo-content-user {

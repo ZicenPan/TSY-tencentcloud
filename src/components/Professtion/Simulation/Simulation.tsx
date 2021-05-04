@@ -186,14 +186,23 @@ export default class Simulation extends React.Component<Props, State> {
 
     // }
 
-    handleChangeMultiPageIndex = () => {
-        if (this.state.multiPageIndex >= this.state.data.content.length-1)
-            this.handleNext()
-        else {
-            this.setState({
-                multiPageIndex: this.state.multiPageIndex + 1
-            })
+    handleChangeMultiPageIndex = (isNext:boolean) => {
+        if (isNext) {
+            if (this.state.multiPageIndex >= this.state.data.content.length-1)
+                this.handleNext()
+            else {
+                this.setState({
+                    multiPageIndex: this.state.multiPageIndex + 1
+                })
+            }
+        } else {
+            if (this.state.multiPageIndex > 0) {
+                this.setState({
+                    multiPageIndex: this.state.multiPageIndex - 1
+                })        
+            }
         }
+
     }
 
     handleNext = () => {
@@ -269,11 +278,24 @@ export default class Simulation extends React.Component<Props, State> {
                             :""
                         }
                         <div>
+                            {
+                                this.state.multiPageIndex>0
+                                ? <button
+                                    onClick={()=>{this.handleChangeMultiPageIndex(false)}}
+                                    type="submit"
+                                    className="btn btn-blue"
+                                    style={{ position: 'fixed', top: '85%', left: '60%', width: "130px"}}
+                                    >
+                                     返回
+                                 </button>
+                                :<div/>
+                            }
+                            
                             <button
-                                onClick={this.handleChangeMultiPageIndex}
+                                onClick={()=>{this.handleChangeMultiPageIndex(true)}}
                                 type="submit"
                                 className="btn btn-blue"
-                                style={{ position: 'fixed', top: '85%', left: '70%' }}
+                                style={{ position: 'fixed', top: '85%', left: '70%', width: "130px"}}
                             >
                                 {this.state.multiPageIndex >= this.state.data.content.length-1?"下一步":"继续"}
                             </button>
@@ -330,8 +352,13 @@ export default class Simulation extends React.Component<Props, State> {
                 }
 
                 return(
-                    <div className={className+"d-flex"} style={style}>
-                        <div>{swtichBtns}</div>
+                    
+                    <div className={className} style={style}>
+                        <div className="d-flex flex-column">
+                            <h2 className="Simulation-switchTitle">{templateData.title?templateData.title:""}</h2>
+                            <div className="d-flex">{swtichBtns}</div>
+                        </div>
+                        
                     </div>
                 )
             }

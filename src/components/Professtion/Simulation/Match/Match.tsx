@@ -194,7 +194,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                 onClick={handleClear}
                 type="submit"
                 className="btn"
-                style={{ position: 'fixed', top: '85%', left: '64%' , color: '#325AE4'}}
+                style={{ position: 'fixed', top: '85%', left: '63%' , color: '#325AE4'}}
             >
                 清空
             </button>

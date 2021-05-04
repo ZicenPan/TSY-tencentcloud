@@ -1,7 +1,7 @@
 import React, { FC, Fragment, memo, useState } from 'react'
 import ReactModal from 'react-modal'
 
-import {errorLogoUrl,correctLogoUrl,pageResultCloseBtnUrl} from "../../../../assets/cdnUrlConfig"
+import {errorLogoUrl,correctLogoUrl,pageResultCloseBtnUrl,pageResultErrorCloseBtnUrl} from "../../../../assets/cdnUrlConfig"
 
 import '@/scss/style.scss'
 import './PageResult.scss'
@@ -64,14 +64,17 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
     // 根据正确错误切换样式
     let logoUrl:string
     let modalClassName:string
+    let closeBtnUrl:string
     let btnContent:string
     if(!checked) {
         logoUrl = errorLogoUrl
         modalClassName = "PageResult-Modal-error"
+        closeBtnUrl = pageResultErrorCloseBtnUrl
 
     } else  {
         logoUrl = correctLogoUrl
         modalClassName = "PageResult-Modal-correct"
+        closeBtnUrl = pageResultCloseBtnUrl
     }
     return (
         <div>
@@ -80,7 +83,7 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
                 onClick={handleSubmit}
                 type="submit"
                 className="btn btn-blue"
-                style={{ position: 'fixed', top: '85%', left: '70%', width: '352px'}}
+                style={{ position: 'fixed', top: '85%', left: '70%', width: '20vw', maxWidth: "352px"}}
             >
                 {btnName}
             </button>
@@ -91,7 +94,7 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
                 className={modalClassName+" centered"}
                  >
                 <div className="d-flex flex-column">
-                    <img className="align-self-end mt-10 mr-10" src={pageResultCloseBtnUrl} onClick={checked?handleCloseCorrectModal:handleCloseModal}/>
+                    <img className="align-self-end mt-10 mr-10" src={closeBtnUrl} onClick={checked?handleCloseCorrectModal:handleCloseModal}/>
 
                     <img className="align-self-center mt-20" src={logoUrl}/>
                     <div className="PageResult-msg  text-center">
