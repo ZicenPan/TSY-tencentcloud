@@ -104,39 +104,77 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         console.log("Judge Matching!\n");
         setItemsChecked(true);
     }
+    const isHeader = (str) => {
+        if(str.length >= 1 && str[0] === '#') {
+            return true;
+        }
+        return false;
+    }
 
     function getText() {
         let returnDom = []
+        let listDom = []
+        let listItemDom = []
+        let inlist = false;
         dustbins.forEach((item: any, index: number) => {
-            if (item.type === 'dustbin') {
-                console.log("Judge match", itemsChecked)
-                returnDom.push(
-                    <div className={itemsChecked? (item.matched? "Correcttarget" : "Falsetarget"): "Droptarget"}>
-                    <DropTarget
-                        accepts={availTypes}
-                        lastDroppedItem={item.lastDroppedItem}
-                        onDrop={(box) => handleDrop(index, box)}
-                        key={index}
-                    />
-                    </div>
-                )
-
+            if(item.type === 'listHead') {
+                inlist = true;
+            } else if(item.type === "listTail") {
+                inlist = false;
+                returnDom.push(<ol>{listDom}</ol>);
+                listDom= [];
+            } else if (item.type === 'dustbin') {
+                if(!inlist) {
+                    returnDom.push(
+                        <div className={itemsChecked? (item.matched? "Correcttarget" : "Falsetarget"): "Droptarget"}>
+                        <DropTarget
+                            accepts={availTypes}
+                            lastDroppedItem={item.lastDroppedItem}
+                            onDrop={(box) => handleDrop(index, box)}
+                            key={index}
+                        />
+                        </div>
+                    )
+                }
+                else {
+                    listItemDom.push(
+                        <div className={itemsChecked? (item.matched? "Correcttarget" : "Falsetarget"): "Droptarget"}>
+                        <DropTarget
+                            accepts={availTypes}
+                            lastDroppedItem={item.lastDroppedItem}
+                            onDrop={(box) => handleDrop(index, box)}
+                            key={index}
+                        />
+                        </div>
+                    )
+                }
             } else {
+                if(!inlist) {
                 returnDom.push(
-                    item.data
+                        isHeader(item.data)? 
+                            <p className="HeaderData">{item.data.substr(1, item.data.length-1)}</p> 
+                            : item.data
                 )
+                } else {
+                    if(item.data[item.data.length-1] === "\n") {
+                        listDom.push(<li>{listItemDom}{item.data}</li>);
+                        listItemDom = [];
+                    } else {
+                        listItemDom.push(item.data);
+                    }
+                }
             }
         })
 
         return (
             <div className="ItemData flex-row  flex-wrap">{returnDom}</div>
         )
-        
+
     }
 
     return (
         <div>
-            <h2 className="mt-160">{data.name}</h2>
+            <h2 className="mt-80">{data.name}</h2>
             <div className="mt-40 ">
                 {getText()}
             </div>
