@@ -7,7 +7,7 @@
                 {
                     "taskDesc": "",
                     "opGuide": {
-                        "words":"点击对话框推进对话"
+                        "words": "点击对话框推进对话"
                     },
                     "backgroundImg": "http://111.229.91.248/static/img/conversation-back.png",
                     "name": "接受需求",
@@ -94,7 +94,7 @@
                     },
                     "taskDesc": "分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标",
                     "opGuide": {
-                        "words":"拖动下方词语，补全分析目标"
+                        "words": "拖动下方词语，补全分析目标"
                     },
                     "name": "明确分析目标",
                     "type": "match",
@@ -181,9 +181,9 @@
                         "errorMsg": "根据每个软件的描述，再思考一下它是不是本次分析的竞品呢？",
                         "standardMsg": "分析竞品必须是以及时通讯为主要互动方式且具有表情反馈功能的社交软件；无需包含没有表情反馈功能的社交软件。飞书和Messenger是现有即时通讯产品中有表情反馈功能的竞品。"
                     },
-                    "taskDesc":"从网络或根据经验尽可能全面地找出与己方产品定位相似的产品，然后选出与分析目标相关且市场规模较大的产品作为分析对象",
+                    "taskDesc": "从网络或根据经验尽可能全面地找出与己方产品定位相似的产品，然后选出与分析目标相关且市场规模较大的产品作为分析对象",
                     "opGuide": {
-                        "words":"点击选择两个竞品作为分析对象"
+                        "words": "点击选择两个竞品作为分析对象"
                     },
                     "content": [
                         {
@@ -233,69 +233,69 @@
                 {
                     "name": "竞品对比分析",
                     "type": "combination",
-                    "direction":"column",
-                    "taskDesc":"从流程、交互和视觉三个方面分析不同竞品对于表情反馈功能的实现方式",
+                    "direction": "column",
+                    "taskDesc": "从流程、交互和视觉三个方面分析不同竞品对于表情反馈功能的实现方式",
                     "opGuide": {
-                        "words":"点击左侧竞品体验表情反馈功能，可通过上方按钮切换竞品界面，并在右侧表格中通过选择及填空完善竞品对比分析",
-                        "img":"http://111.229.91.248/static/svg/opGuide/opGuide-project-compare.svg"
+                        "words": "点击左侧竞品体验表情反馈功能，可通过上方按钮切换竞品界面，并在右侧表格中通过选择及填空完善竞品对比分析",
+                        "img": "http://111.229.91.248/static/svg/opGuide/opGuide-project-compare.svg"
                     },
                     "style":{
                         "margin-left":"20px"
                     },
-                    "content":[
+                    "content": [
                         {
                             "type": "switch",
-                            "num":2, 
-                            "identify":"竞品对比分析switch1",
-                            "switchNames":["飞书","Messenger"],
-                            "alignself": "align-self-start",
+                            "num": 2,
+                            "identify": "竞品对比分析switch1",
+                            "switchNames": ["飞书", "Messenger"],
+                            "alignself": "align-self-center",
                             "title":"竞品分析对比"
                         },
                         {
                             "name": "竞品对比分析",
                             "type": "combination",
-                            "direction":"row",
-                            "content":[
+                            "direction": "row",
+                            "content": [
                                 {
                                     "name": "竞品对比分析-feishu",
                                     "type": "fakeui",
                                     "alignself": "align-self-start",
                                     "content": [
-                                            { 
-                                                "name": "feishu1", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-1.png", 
-                                                "hit_flag": 1, 
-                                                "width":300, 
-                                                "offset_left":15, 
-                                                "offset_top":79.5, 
-                                                "hit_width":74, 
-                                                "hit_height":7 
-                                            }, 
-                                            { 
-                                                "name": "feishu2", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png", 
-                                                "hit_flag": 1, 
-                                                "width":300, 
-                                                "offset_left":7, 
-                                                "offset_top":75, 
-                                                "hit_width":14, 
-                                                "hit_height":6 
-                                            }, 
-                                            { 
-                                                "name": "feishu3", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png", 
-                                                "hit_flag": 1, 
-                                                "width":300, 
-                                                "offset_left":18, 
-                                                "offset_top":83, 
-                                                "hit_width":24, 
-                                                "hit_height":4 
-                                            }, 
-                                            { 
-                                                "name": "feishu4", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-4.png", 
-                                                "hit_flag": 0 
-                                            } 
+                                        {
+                                            "name": "feishu1",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-1.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 15,
+                                            "offset_top": 79.5,
+                                            "hit_width": 74,
+                                            "hit_height": 7
+                                        },
+                                        {
+                                            "name": "feishu2",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 7,
+                                            "offset_top": 75,
+                                            "hit_width": 14,
+                                            "hit_height": 6
+                                        },
+                                        {
+                                            "name": "feishu3",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 18,
+                                            "offset_top": 83,
+                                            "hit_width": 24,
+                                            "hit_height": 4
+                                        },
+                                        {
+                                            "name": "feishu4",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-4.png",
+                                            "hit_flag": 0
+                                        }
                                     ]
                                 },
                                 {
@@ -339,83 +339,82 @@
                                     ]
                                 }
                             ]
-                            
                         },
                         {
                             "name": "竞品对比分析",
                             "type": "combination",
-                            "direction":"row",
-                            "content":[
+                            "direction": "row",
+                            "content": [
                                 {
                                     "name": "竞品对比分析-messenger1",
                                     "type": "fakeui",
                                     "alignself": "align-self-start",
                                     "content": [
-                                        {  
-                                            "name": "messenger1",  
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-1.png",  
-                                            "hit_flag": 1,  
-                                            "width":300,  
-                                            "offset_left":14,  
-                                            "offset_top":74,  
-                                            "hit_width":72 , 
-                                            "hit_height":11 
-                                        }, 
-                                        {  
-                                            "name": "messenger2",  
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-2.png",  
-                                            "hit_flag": 1,  
-                                            "width":300,  
-                                            "offset_left":4,  
-                                            "offset_top":68,  
-                                            "hit_width":15 , 
-                                            "hit_height":6 
-                                        }, 
-                                        {  
-                                            "name": "messenger3",  
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png",  
-                                            "hit_flag": 1,  
-                                            "width":300,  
-                                            "offset_left":0,  
-                                            "offset_top":0,  
-                                            "hit_width":100 , 
-                                            "hit_height":100 
-                                        }, 
-                                        {  
-                                            "name": "messenger4",  
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-4.png",  
-                                            "hit_flag": 1,  
-                                            "width":300,  
-                                            "offset_left":83,  
-                                            "offset_top":33,  
-                                            "hit_width":12 , 
-                                            "hit_height":9 
-                                        }, 
-                                        {  
-                                            "name": "messenger5",  
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-5.png",  
-                                            "hit_flag": 1,  
-                                            "width":300,  
-                                            "offset_left":83,  
-                                            "offset_top":25,  
-                                            "hit_width":14 , 
-                                            "hit_height":8 
-                                        }, 
-                                        {  
-                                            "name": "messenger6",  
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-6.png",  
-                                            "hit_flag": 1,  
-                                            "width":300,  
-                                            "offset_left":18, 
-                                            "offset_top":37,  
-                                            "hit_width":19 , 
-                                            "hit_height":9 
-                                        }, 
-                                        {  
-                                            "name": "messenger7",  
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-7.png",  
-                                            "hit_flag": 0 
-                                        } 
+                                        {
+                                            "name": "messenger1",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-1.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 14,
+                                            "offset_top": 74,
+                                            "hit_width": 72,
+                                            "hit_height": 11
+                                        },
+                                        {
+                                            "name": "messenger2",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-2.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 4,
+                                            "offset_top": 68,
+                                            "hit_width": 15,
+                                            "hit_height": 6
+                                        },
+                                        {
+                                            "name": "messenger3",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 0,
+                                            "offset_top": 0,
+                                            "hit_width": 100,
+                                            "hit_height": 100
+                                        },
+                                        {
+                                            "name": "messenger4",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-4.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 83,
+                                            "offset_top": 33,
+                                            "hit_width": 12,
+                                            "hit_height": 9
+                                        },
+                                        {
+                                            "name": "messenger5",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-5.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 83,
+                                            "offset_top": 25,
+                                            "hit_width": 14,
+                                            "hit_height": 8
+                                        },
+                                        {
+                                            "name": "messenger6",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-6.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 18,
+                                            "offset_top": 37,
+                                            "hit_width": 19,
+                                            "hit_height": 9
+                                        },
+                                        {
+                                            "name": "messenger7",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-7.png",
+                                            "hit_flag": 0
+                                        }
                                     ]
                                 },
                                 {
@@ -489,7 +488,6 @@
                                     ]
                                 }
                             ]
-                            
                         }
                     ]
                 },
@@ -498,11 +496,16 @@
                     "type": "form",
                     "marginTop": "mt-80",
                     "opGuide": {
-                        "words":"下拉选择或填写内容完善表格",
-                        "img":"http://111.229.91.248/static/svg/opGuide/opGuide-form.svg"
+                        "words": "下拉选择或填写内容完善表格",
+                        "img": "http://111.229.91.248/static/svg/opGuide/opGuide-form.svg"
                     },
                     "taskDesc": "阅读网上针对竞品表情反馈功能的讨论以及针对竞品表情反馈功能的用户访谈纪要，了解用户对于竞品该功能的体验反馈，进一步总结出竞品功能的优劣（实际工作中需要一定的量，模拟中可以仅从提供的案例里总结）",
                     "columns": [
+                        {
+                            "dataField": "id",
+                            "text": "id",
+                            "hidden": true
+                        },
                         {
                             "dataField": "from",
                             "text": "来源",
@@ -542,7 +545,7 @@
                             }
                         },
                         {
-                            "dataField": "id",
+                            "dataField": "quote",
                             "text": "引用",
                             "editor": {
                                 "type": "textarea"
@@ -567,21 +570,24 @@
                     ],
                     "grid": [
                         {
+                            "id": 0,
                             "from": "用户访谈",
                             "cat": "",
-                            "id": "Messenger撤销表情反馈需要在点击表情后再选择一次之前发送的表情，虽然这一步可以让我选择其他表情，但是感觉非常繁琐",
+                            "quote": "Messenger撤销表情反馈需要在点击表情后再选择一次之前发送的表情，虽然这一步可以让我选择其他表情，但是感觉非常繁琐",
                             "analy": ""
                         },
                         {
+                            "id": 1,
                             "from": "网上论坛",
                             "cat": "",
-                            "id": "飞书的反馈表情都设计得太生动形象了，很多都能很好地表达我想反馈的情感！",
+                            "quote": "飞书的反馈表情都设计得太生动形象了，很多都能很好地表达我想反馈的情感！",
                             "analy": ""
                         },
                         {
+                            "id": 2,
                             "from": "网上论坛",
                             "cat": "",
-                            "id": "要是我能对几条消息批量反馈就好了",
+                            "quote": "要是我能对几条消息批量反馈就好了",
                             "analy": ""
                         }
                     ]
@@ -589,17 +595,29 @@
                 {
                     "name": "结论与建议",
                     "type": "form",
-                    "taskDesc":"提炼归纳竞品功能的优缺点、对应分类及相应的启发点/机会点",
+                    "taskDesc": "提炼归纳竞品功能的优缺点、对应分类及相应的启发点/机会点",
+                    "marginTop": "mt-80",
                     "opGuide": {
-                        "words":"下拉选择或填写内容完善表格",
-                        "img":"http://111.229.91.248/static/svg/opGuide/opGuide-form.svg"
+                        "words": "下拉选择或填写内容完善表格",
+                        "img": "http://111.229.91.248/static/svg/opGuide/opGuide-form.svg"
                     },
                     "columns": [
                         {
                             "dataField": "id",
-                            "text": "步骤",
+                            "text": "id",
+                            "hidden": true
+                        },
+                        {
+                            "dataField": "item",
+                            "text": "竞品",
                             "editor": {
                                 "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "140px",
+                                "rowSpan": "4"
                             }
                         },
                         {
@@ -607,6 +625,11 @@
                             "text": "竞品的优点/缺点",
                             "editor": {
                                 "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "350px"
                             }
                         },
                         {
@@ -614,21 +637,27 @@
                             "text": "启发点",
                             "editor": {
                                 "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "350px"
                             }
                         }
                     ],
 
                     "grid": [
                         {
-                            "id": "飞书",
+                            "id": 0,
+                            "item": "飞书",
                             "proscons": "单击表情撤销反馈非常简洁，易于用户操作",
                             "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"
                         },
-                        { "id": "", "proscons": "", "ins": "" },
-                        { "id": "", "proscons": "", "ins": "" },
-                        { "id": "messenger", "proscons": "", "ins": "" },
-                        { "id": "", "proscons": "", "ins": "" },
-                        { "id": "", "proscons": "", "ins": "" }
+                        { "id": 1, "item": "", "proscons": "", "ins": "" },
+                        { "id": 2, "item": "", "proscons": "", "ins": "" },
+                        { "id": 3, "item": "messenger", "proscons": "", "ins": "" },
+                        { "id": 4, "item": "", "proscons": "", "ins": "" },
+                        { "id": 5, "item": "", "proscons": "", "ins": "" }
                     ]
                 },
                 {
@@ -668,7 +697,7 @@
                     },
                     "taskDesc": "根据“需求详情”介绍背景情况与需求目标",
                     "opGuide": {
-                        "words":"拖动下方词语，补全分析目标"
+                        "words": "拖动下方词语，补全分析目标"
                     },
                     "name": "概述与背景",
                     "type": "match",
@@ -738,7 +767,7 @@
                     "type": "match",
                     "taskDesc": "了解预期收益的优化事项，制定相关判断标准",
                     "opGuide": {
-                        "words":"拖动下方词语，补全判断标准"
+                        "words": "拖动下方词语，补全判断标准"
                     },
                     "content": [
                         {
@@ -940,7 +969,16 @@
                                 "words":"拖动下方词句，将各功能按合理流程顺序排序"
                             }
                         }
-                    ]
+                    ],
+                    "resultMsg": {
+                        "correctMsg": "完全正确，你提供的介绍清晰合理!",
+                        "errorMsg": "根据每个软件的描述，再思考一下它是不是本次分析的竞品呢？",
+                        "standardMsg": "分析竞品必须是以及时通讯为主要互动方式且具有表情反馈功能的社交软件；无需包含没有表情反馈功能的社交软件。飞书和Messenger是现有即时通讯产品中有表情反馈功能的竞品。"
+                    },
+                    "taskDesc": "详细描述功能情况，包括发送表情和撤销表情操作的入口位置、触发方式、显示内容、展示方式等细节",
+                    "opGuide": {
+                        "words": "拖动下方词句，将各功能按合理流程顺序排序"
+                    }
                 },
 
                 {
@@ -949,73 +987,73 @@
                     "alignself": "align-self-start",
                     "taskDesc": "详细描述交互步骤，说明需要注意的用例细节，并配合图例展示",
                     "opGuide": {
-                        "words":"下拉选择合适内容来完成表格，并点击模拟绘制交互原型图"
+                        "words": "下拉选择合适内容来完成表格，并点击模拟绘制交互原型图"
                     },
                     "content": [
                         {
                             "name": "竞品对比分析",
                             "type": "combination",
-                            "direction":"row",
-                            "content":[
+                            "direction": "row",
+                            "content": [
                                 {
                                     "name": "竞品对比分析",
                                     "type": "combination",
-                                    "direction":"column",
-                                    "content":[
+                                    "direction": "column",
+                                    "content": [
                                         {
                                             "name": "产品交互说明-1",
                                             "type": "fakeui",
                                             "content": [
-                                              {
-                                                "name": "PRD-1-1",
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-1-1.png",
-                                                "hit_flag": 1,
-                                                "width": 150,
-                                                "offset_left": 5.5,
-                                                "offset_top": 92,
-                                                "hit_width": 15,
-                                                "hit_height": 7
-                                              },
-                                              {
-                                                "name": "PRD-1-2",
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-1-2.png",
-                                                "hit_flag": 1,
-                                                "width": 150,
-                                                "offset_left": 2,
-                                                "offset_top": 15,
-                                                "hit_width": 95,
-                                                "hit_height": 10
-                                              },
-                                              {
-                                                "name": "PRD-1-3",
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-1-3.png",
-                                                "hit_flag": 0,
-                                                "width": 150
-                                              }
+                                                {
+                                                    "name": "PRD-1-1",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-1-1.png",
+                                                    "hit_flag": 1,
+                                                    "width": 150,
+                                                    "offset_left": 5.5,
+                                                    "offset_top": 92,
+                                                    "hit_width": 15,
+                                                    "hit_height": 7
+                                                },
+                                                {
+                                                    "name": "PRD-1-2",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-1-2.png",
+                                                    "hit_flag": 1,
+                                                    "width": 150,
+                                                    "offset_left": 2,
+                                                    "offset_top": 15,
+                                                    "hit_width": 95,
+                                                    "hit_height": 10
+                                                },
+                                                {
+                                                    "name": "PRD-1-3",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-1-3.png",
+                                                    "hit_flag": 0,
+                                                    "width": 150
+                                                }
                                             ]
-                                          },
-                                          { 
-                                            "name": "产品交互说明-2", 
-                                            "type": "fakeui", 
-                                            "content": [ 
-                                              { 
-                                                "name": "PRD-2-1", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-2-1.png", 
-                                                "hit_flag": 1, 
-                                                "width": 150, 
-                                                "offset_left": 15, 
-                                                "offset_top": 37.5, 
-                                                "hit_width": 60, 
-                                                "hit_height": 15 
-                                              }, 
-                                              { 
-                                                "name": "PRD-2-2", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-2-2.png", 
-                                                "hit_flag": 0, 
-                                                "width": 150 
-                                              } 
-                                            ] 
-                                          }
+                                        },
+                                        {
+                                            "name": "产品交互说明-2",
+                                            "type": "fakeui",
+                                            "content": [
+                                                {
+                                                    "name": "PRD-2-1",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-2-1.png",
+                                                    "hit_flag": 1,
+                                                    "width": 150,
+                                                    "offset_left": 15,
+                                                    "offset_top": 37.5,
+                                                    "hit_width": 60,
+                                                    "hit_height": 15
+                                                },
+                                                {
+                                                    "name": "PRD-2-2",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-2-2.png",
+                                                    "hit_flag": 0,
+                                                    "width": 150
+                                                }
+                                            ]
+                                        }
                                     ]
                                 },
                                 {
@@ -1059,72 +1097,71 @@
                                     ]
                                 }
                             ]
-                            
                         },
                         {
                             "name": "竞品对比分析",
                             "type": "combination",
-                            "direction":"row",
-                            "content":[
+                            "direction": "row",
+                            "content": [
                                 {
                                     "name": "竞品对比分析",
                                     "type": "combination",
-                                    "direction":"column",
-                                    "content":[
-                                        { 
-                                            "name": "产品交互说明-3", 
-                                            "type": "fakeui", 
-                                            "content": [ 
-                                              { 
-                                                "name": "PRD-3-1", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-1.png", 
-                                                "hit_flag": 1, 
-                                                "width": 150, 
-                                                "offset_left": 15, 
-                                                "offset_top": 37.5, 
-                                                "hit_width": 60, 
-                                                "hit_height": 15 
-                                              }, 
-                                              { 
-                                                "name": "PRD-3-2", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-2.png", 
-                                                "hit_flag": 0, 
-                                                "width": 150 
-                                              } 
-                                            ] 
-                                          },
-                                          { 
-                                            "name": "产品交互说明-4", 
-                                            "type": "fakeui", 
-                                            "content": [ 
-                                              { 
-                                                "name": "PRD-3-2", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-2.png", 
-                                                "hit_flag": 1, 
-                                                "width": 150, 
-                                                "offset_left": 11, 
-                                                "offset_top": 51, 
-                                                "hit_width": 78, 
-                                                "hit_height": 7 
-                                              }, 
-                                              { 
-                                                "name": "PRD-4-2", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-4-2.png", 
-                                                "hit_flag": 1, 
-                                                "width": 150, 
-                                                "offset_left": 74, 
-                                                "offset_top": 51, 
-                                                "hit_width": 15, 
-                                                "hit_height": 7 
-                                              }, 
-                                              { 
-                                                "name": "PRD-4-4", 
-                                                "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-4-4.png", 
-                                                "hit_flag": 0, 
-                                                "width": 150 
-                                              } 
-                                            ] 
-                                          }
+                                    "direction": "column",
+                                    "content": [
+                                        {
+                                            "name": "产品交互说明-3",
+                                            "type": "fakeui",
+                                            "content": [
+                                                {
+                                                    "name": "PRD-3-1",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-1.png",
+                                                    "hit_flag": 1,
+                                                    "width": 150,
+                                                    "offset_left": 15,
+                                                    "offset_top": 37.5,
+                                                    "hit_width": 60,
+                                                    "hit_height": 15
+                                                },
+                                                {
+                                                    "name": "PRD-3-2",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-2.png",
+                                                    "hit_flag": 0,
+                                                    "width": 150
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "name": "产品交互说明-4",
+                                            "type": "fakeui",
+                                            "content": [
+                                                {
+                                                    "name": "PRD-3-2",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-2.png",
+                                                    "hit_flag": 1,
+                                                    "width": 150,
+                                                    "offset_left": 11,
+                                                    "offset_top": 51,
+                                                    "hit_width": 78,
+                                                    "hit_height": 7
+                                                },
+                                                {
+                                                    "name": "PRD-4-2",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-4-2.png",
+                                                    "hit_flag": 1,
+                                                    "width": 150,
+                                                    "offset_left": 74,
+                                                    "offset_top": 51,
+                                                    "hit_width": 15,
+                                                    "hit_height": 7
+                                                },
+                                                {
+                                                    "name": "PRD-4-4",
+                                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-4-4.png",
+                                                    "hit_flag": 0,
+                                                    "width": 150
+                                                }
+                                            ]
+                                        }
                                     ]
                                 },
                                 {
@@ -1168,44 +1205,43 @@
                                     ]
                                 }
                             ]
-                            
                         },
                         {
                             "name": "竞品对比分析",
                             "type": "combination",
-                            "direction":"row",
-                            "content":[
-                                {  
-                                    "name": "产品交互说明-5",  
-                                    "type": "fakeui",  
-                                    "content": [  
-                                      {  
-                                        "name": "PRD-5-1",  
-                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-5-1.png",  
-                                        "hit_flag": 1,  
-                                        "width": 300,  
-                                        "offset_left": 21,  
-                                        "offset_top": 52,  
-                                        "hit_width": 50,  
-                                        "hit_height": 5  
-                                      },  
-                                      {  
-                                        "name": "PRD-5-2",  
-                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-5-2.png",  
-                                        "hit_flag": 1,  
-                                        "width": 300,  
-                                        "offset_left": 21,  
-                                        "offset_top": 52,  
-                                        "hit_width": 50,  
-                                        "hit_height": 5  
-                                      },  
-                                      {  
-                                        "name": "PRD-5-3",  
-                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-5-3.png",  
-                                        "hit_flag": 0,  
-                                        "width": 300  
-                                      }  
-                                    ]  
+                            "direction": "row",
+                            "content": [
+                                {
+                                    "name": "产品交互说明-5",
+                                    "type": "fakeui",
+                                    "content": [
+                                        {
+                                            "name": "PRD-5-1",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-5-1.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 21,
+                                            "offset_top": 52,
+                                            "hit_width": 50,
+                                            "hit_height": 5
+                                        },
+                                        {
+                                            "name": "PRD-5-2",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-5-2.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 21,
+                                            "offset_top": 52,
+                                            "hit_width": 50,
+                                            "hit_height": 5
+                                        },
+                                        {
+                                            "name": "PRD-5-3",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-5-3.png",
+                                            "hit_flag": 0,
+                                            "width": 300
+                                        }
+                                    ]
                                 },
                                 {
                                     "name": "产品交互说明3",
@@ -1248,33 +1284,32 @@
                                     ]
                                 }
                             ]
-                            
                         },
                         {
                             "name": "竞品对比分析",
                             "type": "combination",
-                            "direction":"row",
-                            "content":[
-                                { 
-                                    "name": "产品交互说明-6", 
-                                    "type": "fakeui", 
-                                    "content": [ 
-                                      { 
-                                        "name": "PRD-6-2", 
-                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-6-2.png", 
-                                        "hit_flag": 1, 
-                                        "width": 300, 
-                                        "offset_left": 40, 
-                                        "offset_top": 52, 
-                                        "hit_width": 25, 
-                                        "hit_height": 4 
-                                      }, 
-                                      { 
-                                        "name": "PRD-6-3", 
-                                        "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-6-3.png", 
-                                        "hit_flag": 0 
-                                      } 
-                                    ] 
+                            "direction": "row",
+                            "content": [
+                                {
+                                    "name": "产品交互说明-6",
+                                    "type": "fakeui",
+                                    "content": [
+                                        {
+                                            "name": "PRD-6-2",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-6-2.png",
+                                            "hit_flag": 1,
+                                            "width": 300,
+                                            "offset_left": 40,
+                                            "offset_top": 52,
+                                            "hit_width": 25,
+                                            "hit_height": 4
+                                        },
+                                        {
+                                            "name": "PRD-6-3",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-6-3.png",
+                                            "hit_flag": 0
+                                        }
+                                    ]
                                 },
                                 {
                                     "name": "产品交互说明4",
@@ -1317,7 +1352,6 @@
                                     ]
                                 }
                             ]
-                            
                         }
                     ]
                 },
@@ -1472,7 +1506,7 @@
                     "type": "conversation",
                     "backgroundImg": "http://111.229.91.248/static/img/conversation-back.png",
                     "opGuide": {
-                        "words":"点击对话框推进对话"
+                        "words": "点击对话框推进对话"
                     },
                     "content": {
                         "convo": [
@@ -1520,7 +1554,7 @@
                     },
                     "taskDesc": "明确需求的开发目标与边界，让设计、开发和测试同学了解项目预期",
                     "opGuide": {
-                        "words":"点击三个目标作为本次需求目标"
+                        "words": "点击三个目标作为本次需求目标"
                     },
                     "type": "selection",
                     "content": [
@@ -1572,7 +1606,7 @@
                     "name": "项目排期",
                     "taskDesc": "理清各个项目环节之间的关系（先后，并行）以及潜在的风险（如联调因为技术难度大可能延期），梳理排期表",
                     "opGuide": {
-                        "words":"根据各模块的前置依赖和产品内容，选择合适的开始时间并补全各环节的可能风险"
+                        "words": "根据各模块的前置依赖和产品内容，选择合适的开始时间并补全各环节的可能风险"
                     },
                     "type": "form"
                 }
@@ -1604,7 +1638,7 @@
                     "type": "form",
                     "taskDesc": "针对设计需要材料的问题，产品经理需找到并联系负责系统聊天表情的设计人员，给对方发送需求文档，提出需要之前的设计稿和相关材料，让该设计联系本项目的设计人员",
                     "opGuide": {
-                        "words":"- 点击推进对话- 打开“通讯录”，点击模拟与设计人员沟通的过程- 对接完成后，打开”资源库“中的”需求文档“，在“会议纪要”表格中记录解决问题的进展"
+                        "words": "- 点击推进对话- 打开“通讯录”，点击模拟与设计人员沟通的过程- 对接完成后，打开”资源库“中的”需求文档“，在“会议纪要”表格中记录解决问题的进展"
                     }
                 },
                 {
@@ -1612,7 +1646,7 @@
                     "type": "form",
                     "taskDesc": "产品经理修改需求文档，在交互部分说明主、客界面不同的表情聚类展示方式。然后联系本项目设计和开发，对接需求文档中新的内容， 让设计更新设计稿然后交至开发",
                     "opGuide": {
-                        "words":"- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
+                        "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
                     }
                 },
                 {
@@ -1620,7 +1654,7 @@
                     "type": "form",
                     "taskDesc": "测试人员通过缺陷单提出bug后，产品经理联系本项目开发，转发缺陷单并说明无法取消表情的bug情况 让设计更新设计稿然后交至开发",
                     "opGuide": {
-                        "words":"打开“通讯录”查看新消息，并点击模拟回复"
+                        "words": "打开“通讯录”查看新消息，并点击模拟回复"
                     }
                 },
                 {
