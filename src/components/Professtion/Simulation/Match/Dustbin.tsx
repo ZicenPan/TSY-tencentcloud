@@ -45,7 +45,7 @@ export const Dustbin: FC<DustbinProps> = memo(function Dustbin({
         <div
             ref={connectDropTarget}
             role="Dustbin"
-            style={{backgroundColor, }}
+            style={{backgroundColor, width : "100%", height : "100%"}}
         >
             {lastDroppedItem ? (
                 <p className="DropText" style={{ verticalAlign: 'center' }}>{lastDroppedItem.name}</p>

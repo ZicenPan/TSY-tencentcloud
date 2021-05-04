@@ -71,7 +71,7 @@ class StepNav extends React.Component<Props, {}> {
     return (
 
         <div className="d-flex flex-column StepNav-container">
-          <ul>
+          <ul style= {{paddingLeft : "35px"}}>
           {stepBars}
           </ul>
           
