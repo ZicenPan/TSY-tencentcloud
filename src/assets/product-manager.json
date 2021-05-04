@@ -811,9 +811,17 @@
                             "data": "用于罗列需求的各项功能"
                         },
                         {
+                            "type": "listHead",
+                            "data": "null"
+                        },
+                        {
                             "type": "dustbin",
                             "data": "A",
                             "matched": false
+                        },
+                        {
+                            "type": "text",
+                            "data": "\n"
                         },
                         {
                             "type": "dustbin",
@@ -821,9 +829,17 @@
                             "matched": false
                         },
                         {
+                            "type": "text",
+                            "data": "\n"
+                        },
+                        {
                             "type": "dustbin",
                             "data": "C",
                             "matched": false
+                        },
+                        {
+                            "type": "text",
+                            "data": "\n"
                         },
                         {
                             "type": "dustbin",
@@ -831,9 +847,21 @@
                             "matched": false
                         },
                         {
+                            "type": "text",
+                            "data": "\n"
+                        },
+                        {
                             "type": "dustbin",
                             "data": "E",
                             "matched": false
+                        },
+                        {
+                            "type": "text",
+                            "data": "\n"
+                        },
+                        {
+                            "type": "listTail",
+                            "data": "null"
                         }
                     ],
                     "boxes": [

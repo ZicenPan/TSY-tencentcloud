@@ -120,7 +120,6 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
             if(item.type === 'listHead') {
                 inlist = true;
             } else if(item.type === "listTail") {
-                console.log("push !");
                 inlist = false;
                 returnDom.push(<ol>{listDom}</ol>);
                 listDom= [];
@@ -158,12 +157,10 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                 )
                 } else {
                     if(item.data[item.data.length-1] === "\n") {
-                        console.log("push list! ", item.data);
                         listDom.push(<li>{listItemDom}{item.data}</li>);
                         listItemDom = [];
                     } else {
                         listItemDom.push(item.data);
-                        console.log("push item dom!", item.data);
                     }
                 }
             }
@@ -177,7 +174,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
 
     return (
         <div>
-            <h2 className="mt-160">{data.name}</h2>
+            <h2 className="mt-80">{data.name}</h2>
             <div className="mt-40 ">
                 {getText()}
             </div>

@@ -41,11 +41,6 @@ export const Dustbin: FC<DustbinProps> = memo(function Dustbin({
     const [last, setLast] = useState("")
 
     let backgroundColor = 'white'
-    // let borderBottom = "solid red";
-    // FIX ME: No color changing
-    // if (isActive) {
-    //     backgroundColor = 'yellow'
-    // }
     return connectDropTarget(
         <div
             ref={connectDropTarget}
