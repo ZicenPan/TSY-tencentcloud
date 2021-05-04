@@ -6,7 +6,9 @@ export const ItemTypes = {
     FOOD: 'food',
     GLASS: 'glass',
     PAPER: 'paper',
-    C: 'C'
+    C: 'C',
+    D: 'D',
+    E: 'E'
 }
   
 export const getType = (type: string) => {
@@ -17,8 +19,12 @@ export const getType = (type: string) => {
           return ItemTypes.B
       case 'C':
           return ItemTypes.C
+      case 'D':
+            return ItemTypes.D
+      case 'E':
+            return ItemTypes.E
   }
   return ItemTypes.A
 }
 
-export const availTypes = [ItemTypes.A, ItemTypes.B, ItemTypes.C]
+export const availTypes = [ItemTypes.A, ItemTypes.B, ItemTypes.C, ItemTypes.D, ItemTypes.E]
