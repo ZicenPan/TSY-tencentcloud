@@ -27,6 +27,8 @@ export const correctLogoUrl = "http://"+tysIp+"/static/svg/correct.svg"
 
 export const pageResultCloseBtnUrl = "http://"+tysIp+"/static/svg/pageresult-close-btn.svg"   
 
+export const pageResultErrorCloseBtnUrl = "http://"+tysIp+"/static/svg/pageresult-error-close-btn.svg"   
+
 // Professtion/Simulation
 export const seachLogoUrl = "http://"+tysIp+"/static/svg/search_icon.svg"
 
