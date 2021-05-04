@@ -268,6 +268,8 @@ export default class Simulation extends React.Component<Props, State> {
     parseSimulationContent = (templateData) => {
         let className = templateData.alignself?templateData.alignself:"";
         let style = templateData.style?templateData.style:{};
+        className += templateData.marginTop?templateData.marginTop:"";
+        // className += " z-index-mid"
         switch (templateData.type) {
             case "multiPage": {
                 return (

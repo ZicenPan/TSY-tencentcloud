@@ -3,6 +3,8 @@ import BootstrapTable from 'react-bootstrap-table-next'
 import cellEditFactory, { Type } from 'react-bootstrap-table2-editor'
 import update from 'immutability-helper'
 
+import "./Form.scss";
+
 interface Props {
     data: any
     handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
@@ -33,7 +35,8 @@ export const Form: FC<Props> = memo(function Form({ data }) {
                 keyField="id"
                 data={data.grid}
                 columns={data.columns}
-                cellEdit={cellEditFactory({ mode: 'click' })}
+                cellEdit={cellEditFactory({ mode: 'click', blurToSave: true })}
+                headerClasses="header-class"
             />
         )
     } else {
