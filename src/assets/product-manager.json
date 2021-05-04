@@ -516,7 +516,8 @@
                                 "width": "140px",
                                 "height": "105px",
                                 "fontSize": "16px"
-                            }
+                            },
+                            "editable": false
                         },
                         {
                             "dataField": "cat",
@@ -553,7 +554,8 @@
                             "style": {
                                 "width": "300px",
                                 "fontSize": "16px"
-                            }
+                            },
+                            "editable": false
                         },
                         {
                             "dataField": "analy",
@@ -590,7 +592,31 @@
                             "quote": "要是我能对几条消息批量反馈就好了",
                             "analy": ""
                         }
+                    ],
+                    "answer": [
+                        {
+                            "id": 0,
+                            "from": "",
+                            "cat": "交互",
+                            "quote": "",
+                            "analy": ""
+                        },
+                        {
+                            "id": 1,
+                            "from": "",
+                            "cat": "视觉",
+                            "quote": "",
+                            "analy": ""
+                        },
+                        {
+                            "id": 2,
+                            "from": "",
+                            "cat": "流程",
+                            "quote": "",
+                            "analy": ""
+                        }
                     ]
+
                 },
                 {
                     "name": "结论与建议",
