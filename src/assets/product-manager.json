@@ -720,7 +720,35 @@
                     "content": [
                         {
                             "type": "text",
-                            "data": "预期收益 通过表情反馈功能，可以达成如下三项优化：1. 提升使用表情回复对话的交互效率 2. 有效减少“单发多回”场景的消息队列长度 3. 能够提升用户的互动率 判断标准"
+                            "data": "#预期收益"
+                        },
+                        {
+                            "type": "listHead",
+                            "data": "null"
+                        },
+                        {
+                            "type": "text",
+                            "data": "提升使用表情回复对话的交互效率\n"
+                        },
+                        {
+                            "type": "text",
+                            "data": "有效减少“单发多回”场景的消息队列长度\n"
+                        },
+                        {
+                            "type": "text",
+                            "data": "能够提升用户的互动率\n"
+                        },
+                        {
+                            "type": "listTail",
+                            "data": "null"
+                        },
+                        {
+                            "type": "text",
+                            "data": "#判断标准"
+                        },
+                        {
+                            "type": "listHead",
+                            "data": "null"
                         },
                         {
                             "type": "dustbin",
@@ -729,7 +757,7 @@
                         },
                         {
                             "type": "text",
-                            "data": "达到80%以上"
+                            "data": "达到80%以上\n"
                         },
                         {
                             "type": "dustbin",
@@ -738,7 +766,7 @@
                         },
                         {
                             "type": "text",
-                            "data": "1.5次/人/天"
+                            "data": "1.5次/人/天\n"
                         },
                         {
                             "type": "dustbin",
@@ -747,7 +775,11 @@
                         },
                         {
                             "type": "text",
-                            "data": "提升10%"
+                            "data": "提升10%\n"
+                        },
+                        {
+                            "type": "listTail",
+                            "data": "null"
                         }
                     ],
                     "boxes": [
