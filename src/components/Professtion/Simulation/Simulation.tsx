@@ -6,6 +6,7 @@ import { HTML5Backend } from 'react-dnd-html5-backend'
 import './Simulation.css'
 import initData from '../../../assets/product-manager.json'
 import { Form } from './Form/Form'
+import {StaticDisplay} from './StaticDisplay/StaticDisplay'
 import CollapBtn from './CollapBtn/CollapBtn'
 // import ComponentSheet from './Form/ComponentSheet'
 import ComponentSheet from '../../Form/Form'
@@ -257,7 +258,7 @@ export default class Simulation extends React.Component<Props, State> {
 /* eslint-disable */
     parseSimulationContent = (templateData) => {
         let className = templateData.alignself?templateData.alignself:"";
-        // className += " z-index-mid"
+        let style = templateData.style?templateData.style:{};
         switch (templateData.type) {
             case "multiPage": {
                 return (
@@ -302,7 +303,7 @@ export default class Simulation extends React.Component<Props, State> {
                     
                 }
                 return (
-                    <div className={className}> 
+                    <div className={className} style={style}> 
                         {childContents}
                     </div>
                 )
@@ -329,14 +330,14 @@ export default class Simulation extends React.Component<Props, State> {
                 }
 
                 return(
-                    <div className={className+"d-flex"}>
+                    <div className={className+"d-flex"} style={style}>
                         <div>{swtichBtns}</div>
                     </div>
                 )
             }
             case 'conversation':
                 return (
-                    <div className={className}>
+                    <div className={className} style={style}>
                         <Conversation
                             data={templateData.content.convo}
                             id={this.state.curStep}
@@ -346,7 +347,7 @@ export default class Simulation extends React.Component<Props, State> {
                 )
             case 'match':
                 return (
-                    <div className={className}>
+                    <div className={className} style={style} >
                         <DndProvider backend={HTML5Backend}>
                             <Match data={templateData} handleNext={this.handleNext} />
                         </DndProvider>
@@ -356,7 +357,7 @@ export default class Simulation extends React.Component<Props, State> {
                 // className+=" nihao"
                 return (
                     
-                    <div className={className}>
+                    <div className={className} style={style}>
                         <CollapBtn
                             name={"什么是" + this.state.data.content[0].name!}
                             content={this.state.data.content[0].content!}
@@ -379,14 +380,14 @@ export default class Simulation extends React.Component<Props, State> {
                 )
             case 'selection': {
                 return (
-                    <div className={className}>
+                    <div className={className} style={style}>
                         <Selection data={templateData} handleNext={this.handleNext} />
                     </div>
                 )
             }
             case 'form':
                 return (
-                    <div className={className}>
+                    <div className={className} style={style}>
                         <h2>{templateData.name}</h2>
                         <Form data={templateData} handleNext={this.handleNext} />
                         {/* <ComponentSheet data="" handleNext={this.handleNext} /> */}
@@ -413,7 +414,7 @@ export default class Simulation extends React.Component<Props, State> {
                 }
                 if (findedFlag) {
                     return (
-                        <div className={className}>
+                        <div className={className} style={style}>
                             <Video videoInfo={videoInfo} />
                             <div>
                                 <button
@@ -438,7 +439,7 @@ export default class Simulation extends React.Component<Props, State> {
             }
             case 'fakeui': {
                 return (
-                    <div className={className}>
+                    <div className={className} style={style}>
                         <FakeUi data={templateData.content} />
                         <button
                             onClick={this.handleNext}
@@ -454,16 +455,23 @@ export default class Simulation extends React.Component<Props, State> {
             case 'userFeedback' : {
                 // this.setBackgroundImg();
                 return (
-                    <div className={className}>
+                    <div className={className} style={style}>
                         <UserFeedback data={this.state.data.content} handleNext={this.handleNext} />
                     </div>
                 )
             }
             case 'finish' : {
                 return (
-                    <div className={className}>
+                    <div className={className} style={style}>
                         <EndPage data={this.state.data} handleNext={this.handleNext} />
                     </div>
+                )
+            }
+            case 'staticDisplay' : {
+                return (
+                    <div className={className} style={style}>
+                        <StaticDisplay templateData = {templateData}/>
+                   </div>
                 )
             }
             default:
