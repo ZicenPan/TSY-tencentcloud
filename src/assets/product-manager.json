@@ -12,7 +12,7 @@
                     "backgroundImg": "http://111.229.91.248/static/img/conversation-back.png",
                     "name": "接受需求",
                     "type": "conversation",
-                    "content": {
+                    "content": {    
                         "convo": [
                             {
                                 "speaker": "运营",
@@ -238,6 +238,9 @@
                     "opGuide": {
                         "words":"点击左侧竞品体验表情反馈功能，可通过上方按钮切换竞品界面，并在右侧表格中通过选择及填空完善竞品对比分析",
                         "img":"http://111.229.91.248/static/svg/opGuide/opGuide-project-compare.svg"
+                    },
+                    "style":{
+                        "margin-left":"20px"
                     },
                     "content":[
                         {
@@ -804,98 +807,122 @@
                 },
                 {
                     "name": "产品功能说明",
-                    "type": "match",
-                    "content": [
+                    "type": "combination",
+                    "direction":"column",
+                    "content":[
                         {
-                            "type": "text",
-                            "data": "用于罗列需求的各项功能"
-                        },
-                        {
-                            "type": "listHead",
-                            "data": "null"
-                        },
-                        {
-                            "type": "dustbin",
-                            "data": "A",
-                            "matched": false
-                        },
-                        {
-                            "type": "text",
-                            "data": "\n"
-                        },
-                        {
-                            "type": "dustbin",
-                            "data": "B",
-                            "matched": false
-                        },
-                        {
-                            "type": "text",
-                            "data": "\n"
-                        },
-                        {
-                            "type": "dustbin",
-                            "data": "C",
-                            "matched": false
-                        },
-                        {
-                            "type": "text",
-                            "data": "\n"
-                        },
-                        {
-                            "type": "dustbin",
-                            "data": "D",
-                            "matched": false
-                        },
-                        {
-                            "type": "text",
-                            "data": "\n"
-                        },
-                        {
-                            "type": "dustbin",
-                            "data": "E",
-                            "matched": false
-                        },
-                        {
-                            "type": "text",
-                            "data": "\n"
-                        },
-                        {
-                            "type": "listTail",
-                            "data": "null"
+                            "name": "产品交互说明-1",
+                            "type": "staticDisplay",
+                            "direction":"column",
+                            "alignself": "align-self-center",
+                            "content": [
+                              {
+                                "type": "image",
+                                "content":"http://111.229.91.248/static/img/staticDisplay/产品功能说明-流程图.jpg",
+                                "style": {
+                                    "width":"90%"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "产品功能说明",
+                            "type": "match",
+                            "alignself": "align-self-center",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "data": "用于罗列需求的各项功能"
+                                },
+                                {
+                                    "type": "listHead",
+                                    "data": "null"
+                                },
+                                {
+                                    "type": "dustbin",
+                                    "data": "A",
+                                    "matched": false
+                                },
+                                {
+                                    "type": "text",
+                                    "data": "\n"
+                                },
+                                {
+                                    "type": "dustbin",
+                                    "data": "B",
+                                    "matched": false
+                                },
+                                {
+                                    "type": "text",
+                                    "data": "\n"
+                                },
+                                {
+                                    "type": "dustbin",
+                                    "data": "C",
+                                    "matched": false
+                                },
+                                {
+                                    "type": "text",
+                                    "data": "\n"
+                                },
+                                {
+                                    "type": "dustbin",
+                                    "data": "D",
+                                    "matched": false
+                                },
+                                {
+                                    "type": "text",
+                                    "data": "\n"
+                                },
+                                {
+                                    "type": "dustbin",
+                                    "data": "E",
+                                    "matched": false
+                                },
+                                {
+                                    "type": "text",
+                                    "data": "\n"
+                                },
+                                {
+                                    "type": "listTail",
+                                    "data": "null"
+                                }
+                            ],
+                            "boxes": [
+                                {
+                                    "name": "进入会话选择要回复的消息",
+                                    "type": "A"
+                                },
+                                {
+                                    "name": "点击系统表情发送反馈",
+                                    "type": "C"
+                                },
+                                {
+                                    "name": "双击已回复的表情取消反馈",
+                                    "type": "E"
+                                },
+                                {
+                                    "name": "长按消息吊起功能面板",
+                                    "type": "B"
+                                },
+                                {
+                                    "name": "按照聚类排列展示表情",
+                                    "type": "D"
+                                }
+                            ],
+                            "resultMsg": {
+                                "correctMsg": "完全正确，你提供的介绍清晰合理!",
+                                "errorMsg": "根据每个软件的描述，再思考一下它是不是本次分析的竞品呢？",
+                                "standardMsg": "分析竞品必须是以及时通讯为主要互动方式且具有表情反馈功能的社交软件；无需包含没有表情反馈功能的社交软件。飞书和Messenger是现有即时通讯产品中有表情反馈功能的竞品。"
+                            },
+                            "taskDesc": "详细描述功能情况，包括发送表情和撤销表情操作的入口位置、触发方式、显示内容、展示方式等细节",
+                            "opGuide": {
+                                "words":"拖动下方词句，将各功能按合理流程顺序排序"
+                            }
                         }
-                    ],
-                    "boxes": [
-                        {
-                            "name": "进入会话选择要回复的消息",
-                            "type": "A"
-                        },
-                        {
-                            "name": "点击系统表情发送反馈",
-                            "type": "C"
-                        },
-                        {
-                            "name": "双击已回复的表情取消反馈",
-                            "type": "E"
-                        },
-                        {
-                            "name": "长按消息吊起功能面板",
-                            "type": "B"
-                        },
-                        {
-                            "name": "按照聚类排列展示表情",
-                            "type": "D"
-                        }
-                    ],
-                    "resultMsg": {
-                        "correctMsg": "完全正确，你提供的介绍清晰合理!",
-                        "errorMsg": "根据每个软件的描述，再思考一下它是不是本次分析的竞品呢？",
-                        "standardMsg": "分析竞品必须是以及时通讯为主要互动方式且具有表情反馈功能的社交软件；无需包含没有表情反馈功能的社交软件。飞书和Messenger是现有即时通讯产品中有表情反馈功能的竞品。"
-                    },
-                    "taskDesc": "详细描述功能情况，包括发送表情和撤销表情操作的入口位置、触发方式、显示内容、展示方式等细节",
-                    "opGuide": {
-                        "words":"拖动下方词句，将各功能按合理流程顺序排序"
-                    }
+                    ]
                 },
+
                 {
                     "name": "产品交互说明",
                     "type": "multiPage",
