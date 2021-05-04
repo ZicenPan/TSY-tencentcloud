@@ -174,7 +174,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
 
     return (
         <div>
-            <h2 className="mt-80">{data.name}</h2>
+            <h2 className="mt-80 MatchHeader">{data.name}</h2>
             <div className="mt-40 ">
                 {getText()}
             </div>

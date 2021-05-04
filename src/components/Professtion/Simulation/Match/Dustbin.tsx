@@ -50,7 +50,7 @@ export const Dustbin: FC<DustbinProps> = memo(function Dustbin({
             {lastDroppedItem ? (
                 <p className="DropText" style={{ verticalAlign: 'center' }}>{lastDroppedItem.name}</p>
             ) : (
-                <p>
+                <p style={{marginBottom : '0px', padding: 'auto'}}>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </p>
             )}
