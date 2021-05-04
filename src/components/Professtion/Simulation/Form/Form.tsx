@@ -1,16 +1,20 @@
 import React, { FC, memo, useState, useEffect } from 'react'
 import BootstrapTable from 'react-bootstrap-table-next'
 import cellEditFactory, { Type } from 'react-bootstrap-table2-editor'
+
+import { PageResult } from './../Result/PageResult'
+import StandardTip from './../../StandardTip/StandardTip'
+
 import update from 'immutability-helper'
 
 import './Form.scss'
 
 interface Props {
     data: any
-    handleNext: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+    handleNext: () => void
 }
 
-export const Form: FC<Props> = memo(function Form({ data }) {
+export const Form: FC<Props> = memo(function Form({ data, handleNext}) {
     const [columns, setColumns] = useState(data.columns)
     const [grid, setGrid] = useState(data.grid)
     const [answer] = useState(data.answer)
@@ -26,6 +30,8 @@ export const Form: FC<Props> = memo(function Form({ data }) {
         console.log(grid)
     }, [grid])
 
+    console.log("data", data)
+    console.log("rmsg", data.resultMsg)
     const handleDataChange = (data) => {
         console.log('changed', data)
     }
@@ -71,6 +77,13 @@ export const Form: FC<Props> = memo(function Form({ data }) {
         setPass(equal);
     }
 
+    function handleCheck() {
+
+    }
+
+    function setShowStandardTip(){
+
+    }
     if (data.columns) {
         return (
             <div className="mt-40">
@@ -83,6 +96,17 @@ export const Form: FC<Props> = memo(function Form({ data }) {
                     blurToSave: true, afterSaveCell })}
                     headerClasses="header-class"
                 />
+                            <PageResult checked={pass} handleNext={handleNext} resultMsg={(data.resultMsg)?data.resultMsg:""} handleCheck={handleCheck} setShowStandardTip={setShowStandardTip}/>
+
+                            <button
+                onClick={handleNext}
+                type="submit"
+                className="btn btn-blue"
+                style={{ position: 'fixed', top: '85%', left: '90%' }}
+            >
+                Skip
+            </button>
+
             </div>
         )
     } else {

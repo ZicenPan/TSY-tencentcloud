@@ -420,16 +420,6 @@ export default class Simulation extends React.Component<Props, State> {
                         <h2>{templateData.name}</h2>
                         <Form data={templateData} handleNext={this.handleNext} />
                         {/* <ComponentSheet data="" handleNext={this.handleNext} /> */}
-                        <div>
-                            <button
-                                onClick={this.handleNext}
-                                type="submit"
-                                className="btn btn-blue"
-                                style={{ position: 'fixed', top: '85%', left: '70%' }}
-                            >
-                                下一步
-                            </button>
-                        </div>
                     </div>
                 )
             case 'video': {
