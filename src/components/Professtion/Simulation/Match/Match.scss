@@ -67,7 +67,6 @@
     height: 50px;
     left: 0px;
     top: 0px;
-
     /* /large body */
 
     font-family: PingFang HK;
@@ -87,4 +86,12 @@
     border: 1px solid #325AE4;
     box-sizing: border-box;
     border-radius: 5px;
+}
+
+.MatchHeader {
+    font-family: PingFang HK;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 37px;
 }
