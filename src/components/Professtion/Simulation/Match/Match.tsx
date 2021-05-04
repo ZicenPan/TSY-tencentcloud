@@ -9,6 +9,7 @@ import StandardTip from './../../StandardTip/StandardTip'
 
 import '@/scss/style.scss'
 import './Match.scss'
+import { components } from 'react-select'
 interface Props {
     data: any
     handleNext: () => void
@@ -50,12 +51,15 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
 
     const [showStandardTip, setShowStandardTip] = useState(false)
 
+    let [itemsChecked, setItemsChecked] = useState(false);
+
     function isDropped(boxName: string) {
         return droppedBoxNames.indexOf(boxName) > -1
     }
 
     const handleDrop = useCallback(
         (index: number, item: BoxSpec) => {
+            setItemsChecked(false);
             setDroppedBoxNames(
                 update(droppedBoxNames, item.name ? { $push: [item.name] } : { $push: [] })
             )
@@ -76,6 +80,12 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         [droppedBoxNames, dustbins]
     )
 
+    function handleClear() {
+        setDustbins(data.content)
+        setBoxes(data.boxes)
+        setDroppedBoxNames([])
+    }
+
     // Re-render when data updates.
     useEffect(() => {
         setDustbins(data.content)
@@ -83,32 +93,52 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
     }, [data])
 
     const matched = () => {
+        itemsChecked = true;
         const a = dustbins.filter(function (item) {
             return item.matched === false
         })
         return a.length === 0
     }
 
+    const handleCheck = () => {
+        console.log("Judge Matching!\n");
+        setItemsChecked(true);
+    }
+
+    function getText() {
+        let returnDom = []
+        dustbins.forEach((item: any, index: number) => {
+            if (item.type === 'dustbin') {
+                console.log("Judge match", itemsChecked)
+                returnDom.push(
+                    <div className={itemsChecked? (item.matched? "Correcttarget" : "Falsetarget"): "Droptarget"}>
+                    <DropTarget
+                        accepts={availTypes}
+                        lastDroppedItem={item.lastDroppedItem}
+                        onDrop={(box) => handleDrop(index, box)}
+                        key={index}
+                    />
+                    </div>
+                )
+
+            } else {
+                returnDom.push(
+                    item.data
+                )
+            }
+        })
+
+        return (
+            <div className="ItemData flex-row  flex-wrap">{returnDom}</div>
+        )
+        
+    }
+
     return (
         <div>
             <h2 className="mt-160">{data.name}</h2>
-            <div className="mt-40 d-flex flex-row flex-wrap">
-                {dustbins.map((item: any, index: number) => {
-                    if (item.type === 'dustbin') {
-                        return (
-                            <div className={item.matched? "Droptarget" : "Falsetarget"}>
-                            <DropTarget
-                                accepts={availTypes}
-                                lastDroppedItem={item.lastDroppedItem}
-                                onDrop={(box) => handleDrop(index, box)}
-                                key={index}
-                            />
-                            </div>
-                        )
-                    } else {
-                        return <div className="ItemData">{item.data}</div>
-                    }
-                })}
+            <div className="mt-40 ">
+                {getText()}
             </div>
 
             <div
@@ -119,9 +149,17 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                     <Box name={name} type={type} isDropped={isDropped(name)} key={index} />
                 ))}
             </div>
-            <PageResult checked={matched()} handleNext={handleNext} setShowStandardTip={setShowStandardTip} resultMsg={data.resultMsg}/>
+            <PageResult checked={matched()} handleNext={handleNext} handleCheck={handleCheck} setShowStandardTip={setShowStandardTip} resultMsg={data.resultMsg}/>
             
             {showStandardTip?<StandardTip standardMsg={data.resultMsg.standardMsg}/>:<div/>}
+            <button
+                onClick={handleClear}
+                type="submit"
+                className="btn"
+                style={{ position: 'fixed', top: '85%', left: '64%' , color: '#325AE4'}}
+            >
+                清空
+            </button>
             <button
                 onClick={handleNext}
                 type="submit"

@@ -1,0 +1,45 @@
+.finishingTextBox {
+    display: flex;
+    width: 695px;
+    height: 394px;
+    flex-direction: column;
+    padding: 10px 50px 20px 90px;
+    position: absolute;
+    right: 5%;
+    top: 300px;
+    background-image: url("@/assets/svg/dialogBubble.svg");
+    /*border: 5px solid #325AE4;*/
+}
+
+.title {
+    flex-grow: 4;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.subTitle {
+    flex-grow: 3;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 40px;
+    white-space:nowrap;
+}
+
+.qrcode {
+    flex-grow: 10;
+}
+
+.content {
+    flex-grow: 1;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.shareButton {
+    flex-grow: 3;
+}

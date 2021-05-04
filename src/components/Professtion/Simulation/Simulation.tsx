@@ -19,6 +19,7 @@ import {Match} from './Match/Match'
 import StepNav from './StepNav/StepNav'
 import FakeUi from './FakeUi/FakeUi'
 import TestInput from './TestInput/TestInput'
+import UserFeedback from "./UserFeedback/UserFeedback";
 
 import linesImg from '@/assets/lines.png'
 import {rscLogoUrl, 
@@ -27,6 +28,7 @@ import {rscLogoUrl,
         rscLightLogoUrl, 
         opGuideLightLogoUrl, 
         taskDescLightLogoUrl} from "../../../assets/cdnUrlConfig"
+import EndPage from "./EndPage/EndPage";
 
 
 const tysPrefix = "tys_sim_"
@@ -53,6 +55,7 @@ interface State {
     data: any
     stageChange: number
     swtichMap: any
+    multiPageIndex: number
 }
 
 export default class Simulation extends React.Component<Props, State> {
@@ -66,9 +69,11 @@ export default class Simulation extends React.Component<Props, State> {
                 ? initData.stages[this.props.stage].steps[this.props.step]
                 : '',
             stageChange: 0,
-            swtichMap:{}
+            swtichMap:{},
+            multiPageIndex: 0
         }
         this.handleNext = this.handleNext.bind(this)
+        this.handleChangeMultiPageIndex = this.handleChangeMultiPageIndex.bind(this)
         this.handleChangeCurStage = this.handleChangeCurStage.bind(this)
         this.handleChangeStep = this.handleChangeStep.bind(this)
         this.handleSetInputData = this.handleSetInputData.bind(this)
@@ -175,9 +180,19 @@ export default class Simulation extends React.Component<Props, State> {
     //   });
     // };
 
-    setBackgroundImg = () => {
-        let imgUrl = this.state.data.backgroundImg ? this.state.data.backgroundImg:"";
+    // setBackgroundImg = () => {
+    //     let imgUrl = this.state.data.backgroundImg ? this.state.data.backgroundImg:"";
 
+    // }
+
+    handleChangeMultiPageIndex = () => {
+        if (this.state.multiPageIndex >= this.state.data.content.length-1)
+            this.handleNext()
+        else {
+            this.setState({
+                multiPageIndex: this.state.multiPageIndex + 1
+            })
+        }
     }
 
     handleNext = () => {
@@ -239,12 +254,32 @@ export default class Simulation extends React.Component<Props, State> {
             swtichMap:swtichMapTemp
         })
     }
-
+/* eslint-disable */
     parseSimulationContent = (templateData) => {
         let className = templateData.alignself?templateData.alignself:"";
-
         // className += " z-index-mid"
         switch (templateData.type) {
+            case "multiPage": {
+                return (
+                    <div>
+                        {
+                            this.state.multiPageIndex<templateData.content.length
+                            ?this.parseSimulationContent(templateData.content[this.state.multiPageIndex])
+                            :""
+                        }
+                        <div>
+                            <button
+                                onClick={this.handleChangeMultiPageIndex}
+                                type="submit"
+                                className="btn btn-blue"
+                                style={{ position: 'fixed', top: '85%', left: '70%' }}
+                            >
+                                {this.state.multiPageIndex >= this.state.data.content.length-1?"下一步":"继续"}
+                            </button>
+                        </div>
+                    </div>
+                )
+            }
             case "combination": {
                 className += " d-flex";
                 if (templateData.direction === "row") {
@@ -277,7 +312,11 @@ export default class Simulation extends React.Component<Props, State> {
                 let swtichBtns = []
                 for(let i = 0; i < templateData.num; i++) {
                     swtichBtns.push(
-                        <button className="btn btn-white" onClick={()=>{this.handleSwtichNum(templateData.identify, i+1)}}>{templateData.switchNames[i]}</button>
+                        <button 
+                            className={(this.state.swtichMap.hasOwnProperty(templateData.identify)&&this.state.swtichMap[templateData.identify]==i+1)?"Simulation-swtichBtn-blue":"Simulation-swtichBtn-grey"}
+                            onClick={()=>{this.handleSwtichNum(templateData.identify, i+1)}}>
+                            {templateData.switchNames[i]}
+                         </button>
                     )
                 }
                 // 设置state
@@ -412,12 +451,26 @@ export default class Simulation extends React.Component<Props, State> {
                     </div>
                 )
             }
-
+            case 'userFeedback' : {
+                // this.setBackgroundImg();
+                return (
+                    <div className={className}>
+                        <UserFeedback data={this.state.data.content} handleNext={this.handleNext} />
+                    </div>
+                )
+            }
+            case 'finish' : {
+                return (
+                    <div className={className}>
+                        <EndPage data={this.state.data} handleNext={this.handleNext} />
+                    </div>
+                )
+            }
             default:
                 return <div />
         }
     }
-
+/* eslint-enable */
     currentContent = () => {
         switch (this.props.type) {
             case "simulation": {

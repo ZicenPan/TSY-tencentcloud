@@ -36,6 +36,12 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
         [options]
     )
 
+    const doNothing = () => {
+    }
+    function handleClear() {
+        setOptions(data.content)
+    }
+
     const matched = () => {
         const a = options.filter(function (item) {
             return item.selected !== item.answer
@@ -81,11 +87,21 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
             
             <PageResult 
                 checked={matched()} 
-                handleNext={handleNext} 
+                handleNext={handleNext}
+                handleCheck={doNothing}
                 resultMsg = {data.resultMsg}
                 setShowStandardTip = {setShowStandardTip}
            />
            {showStandardTip?<StandardTip standardMsg={data.resultMsg.standardMsg}/>:<div/>}
+
+           <button
+                onClick={handleClear}
+                type="submit"
+                className="btn"
+                style={{ position: 'fixed', top: '85%', left: '64%' , color: '#325AE4'}}
+            >
+                清空
+            </button>
             <button
                 onClick={handleNext}
                 type="submit"
