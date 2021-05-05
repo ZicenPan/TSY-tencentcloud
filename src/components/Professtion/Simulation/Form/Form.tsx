@@ -95,6 +95,15 @@ export const Form: FC<Props> = memo(function Form({ data, handleNext }) {
             </div>
         )
     } else {
-        return <div />
+        return (
+            <button
+                onClick={handleNext}
+                type="submit"
+                className="btn btn-blue"
+                style={{ position: 'fixed', top: '85%', left: '90%' }}
+            >
+                Skip
+            </button>
+        )
     }
 })
