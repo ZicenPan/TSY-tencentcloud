@@ -21,6 +21,7 @@ import StepNav from './StepNav/StepNav'
 import FakeUi from './FakeUi/FakeUi'
 import TestInput from './TestInput/TestInput'
 import UserFeedback from "./UserFeedback/UserFeedback";
+import {PageResult} from "./Result/PageResult"
 
 import linesImg from '@/assets/lines.png'
 import {rscLogoUrl, 
@@ -30,6 +31,7 @@ import {rscLogoUrl,
         opGuideLightLogoUrl, 
         taskDescLightLogoUrl} from "../../../assets/cdnUrlConfig"
 import EndPage from "./EndPage/EndPage";
+import update from 'immutability-helper'
 
 
 const tysPrefix = "tys_sim_"
@@ -71,7 +73,7 @@ export default class Simulation extends React.Component<Props, State> {
                 : '',
             stageChange: 0,
             swtichMap:{},
-            multiPageIndex: 0
+            multiPageIndex: 0,
         }
         this.handleNext = this.handleNext.bind(this)
         this.handleChangeMultiPageIndex = this.handleChangeMultiPageIndex.bind(this)
@@ -242,7 +244,7 @@ export default class Simulation extends React.Component<Props, State> {
                 curStage: curStage,
                 curStep: 0,
                 data: initData.stages[curStage].steps ? initData.stages[curStage].steps[0] : '',
-                stageChange: 0
+                stageChange: 0,
             })
         }
     }

@@ -78,6 +78,8 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
     }
     return (
         <div>
+
+
             <button
                 ref={btnRef}
                 onClick={handleSubmit}
@@ -87,6 +89,7 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
             >
                 {btnName}
             </button>
+
             <ReactModal
                 isOpen={showModal}
                 contentLabel="onRequestClose Example"

@@ -108,8 +108,8 @@ export default class ProfesstionVideo extends React.Component<Props, State> {
                         </div>
                         
                         <div className="mt-80"/>
-        
-                        <h2 className="ProfesstionVideo-title">分享视频</h2>
+                        
+                        {/* <h2 className="ProfesstionVideo-title">分享视频</h2> */}
                         <div className="d-flex flex-row profession-video-list ml-100">
                             
                             {/* {videoList} */}

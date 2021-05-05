@@ -248,7 +248,7 @@
                             "num": 2,
                             "identify": "竞品对比分析switch1",
                             "switchNames": ["飞书", "Messenger"],
-                            "alignself": "align-self-center",
+                            "alignself": "align-self-start",
                             "title":"竞品分析对比"
                         },
                         {
