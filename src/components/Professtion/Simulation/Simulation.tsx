@@ -417,7 +417,7 @@ export default class Simulation extends React.Component<Props, State> {
             case 'form':
                 return (
                     <div className={className} style={style}>
-                        <h2>{templateData.name}</h2>
+                        <h2 className="SimulationHeader">{templateData.name}</h2>
                         <Form data={templateData} handleNext={this.handleNext} />
                         {/* <ComponentSheet data="" handleNext={this.handleNext} /> */}
                     </div>
