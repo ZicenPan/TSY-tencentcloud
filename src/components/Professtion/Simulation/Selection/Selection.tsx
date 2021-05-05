@@ -68,13 +68,15 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
                                 onClick={() => handleClick(id)}
                             >
                                 <div className="d-flex flex-row">
-                                    <img
+                                    {data.content[id].icon !== "" &&
+                                        <img
                                         src={data.content[id].icon}
                                         // src={require(`../../../../assets/${imgName}.png`)}
                                         width="50"
                                         height="50"
                                         alt="logo1"
-                                    />
+                                        />
+                                    }
                                     <div className="ml-20">
                                         <h3>{data.content[id].title}</h3>
                                         <p className="mt-10">{data.content[id].description}</p>
