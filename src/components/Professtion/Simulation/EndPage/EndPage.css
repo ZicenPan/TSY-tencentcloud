@@ -1,14 +1,16 @@
 .finishingTextBox {
     display: flex;
-    width: 695px;
-    height: 394px;
+    /*width: 695px;*/
+    /*height: 394px;*/
     flex-direction: column;
     padding: 10px 50px 20px 90px;
     position: absolute;
-    right: 5%;
+    left: 55%;
+    right: 8%;
     top: 300px;
-    background-image: url("@/assets/svg/dialogBubble.svg");
-    /*border: 5px solid #325AE4;*/
+    background-image: url("http://111.229.91.248/static/img/dialogBubble.png");
+    /*background-size:cover;*/
+    background-size:100% 100%;
 }
 
 .title {

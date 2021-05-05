@@ -503,58 +503,60 @@ export default class Simulation extends React.Component<Props, State> {
             case "simulation": {
                 return (
                     <div className="main-container d-flex flex-row justify-content-between">
-                        <div className="d-flex PopUpNavList flex-column z-index-high">
-                            <div className="mt-20 ml-40">
-                                <PopUpBtn
-                                    name="任务描述"
-                                    content={this.state.data.taskDesc}
-                                    stage={this.props.stage}
-                                    data=""
-                                    changeStage = {0}
-                                    logoUrl = {taskDescLogoUrl}
-                                    logoLightUrl = {taskDescLightLogoUrl}
-                                />
-                            </div>
-                            <div className="mt-20 ml-40">
-                                <PopUpBtn
-                                    name="操作指引"
-                                    content={this.state.data.opGuide}
-                                    stage={this.props.stage}
-                                    data=""
-                                    changeStage = {0}
-                                    logoUrl = {opGuideLogoUrl}
-                                    logoLightUrl = {opGuideLightLogoUrl}
-                                />
-                            </div>
-                            <div className="mt-20 ml-40">
-                                <PopUpBtn
-                                    name="资源库"
-                                    content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
-                                    stage={this.props.stage}
-                                    data={initData.recources}
-                                    changeStage = {this.state.stageChange}
-                                    logoUrl = {rscLogoUrl}
-                                    logoLightUrl = {rscLightLogoUrl}
-                                />
-                            </div>
+                        {(this.props.stage !== 6 || this.props.step !== 1) && // for not displaying side panel in the finish page
+                            <div className="d-flex PopUpNavList flex-column z-index-high">
+                                <div className="mt-20 ml-40">
+                                    <PopUpBtn
+                                        name="任务描述"
+                                        content={this.state.data.taskDesc}
+                                        stage={this.props.stage}
+                                        data=""
+                                        changeStage = {0}
+                                        logoUrl = {taskDescLogoUrl}
+                                        logoLightUrl = {taskDescLightLogoUrl}
+                                    />
+                                </div>
+                                <div className="mt-20 ml-40">
+                                    <PopUpBtn
+                                        name="操作指引"
+                                        content={this.state.data.opGuide}
+                                        stage={this.props.stage}
+                                        data=""
+                                        changeStage = {0}
+                                        logoUrl = {opGuideLogoUrl}
+                                        logoLightUrl = {opGuideLightLogoUrl}
+                                    />
+                                </div>
+                                <div className="mt-20 ml-40">
+                                    <PopUpBtn
+                                        name="资源库"
+                                        content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                        stage={this.props.stage}
+                                        data={initData.recources}
+                                        changeStage = {this.state.stageChange}
+                                        logoUrl = {rscLogoUrl}
+                                        logoLightUrl = {rscLightLogoUrl}
+                                    />
+                                </div>
 
-                            <div className="mt-40 ml-20 Simulation-StepNav">
-                                <StepNav
-                                    stage={this.props.stage}
-                                    curStage={this.state.curStage}
-                                    curStep={this.state.curStep}
-                                    step={this.props.step}
-                                    stepInfo={initData.stages[this.state.curStage].steps}
-                                    handleChangeStep={this.handleChangeStep}
-                                />
+                                <div className="mt-40 ml-20 Simulation-StepNav">
+                                    <StepNav
+                                        stage={this.props.stage}
+                                        curStage={this.state.curStage}
+                                        curStep={this.state.curStep}
+                                        step={this.props.step}
+                                        stepInfo={initData.stages[this.state.curStage].steps}
+                                        handleChangeStep={this.handleChangeStep}
+                                    />
+                                </div>
+                                <div className="side-container-240" />
                             </div>
-                            <div className="side-container-240" />
-                        </div>
+                        }
 
                         <div className="z-index-mid d-flex">
                             {this.parseSimulationContent(this.state.data)}
                         </div>
-                        
+
                         <div className="PopUpNavList ml-20" />
                     </div>
                 )

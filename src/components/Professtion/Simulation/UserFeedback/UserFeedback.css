@@ -1,7 +1,6 @@
 .feedback-page {
     flex-grow: 5;
     width: fit-content;
-    background-image: url("@/assets/svg/user-feedback.svg");
 }
 
 .feedback-bubble {
@@ -52,32 +51,33 @@
     display: -webkit-flex; /* Safari */
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
     margin-top: 3px;
     width: 100%;
 }
 
 .feedback-name {
-    position: absolute;
+    /*position: absolute;*/
+    flex-grow: 0;
     right: 0;
-    width: fit-content;
-    height: fit-content;
+    width: 90px;
+    height: 40px;
     margin: 8px 0 0;
-    padding: 5px 10px;
+    padding: 5px 3px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
     background-color: #F2F2F2;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
     border-top-left-radius: 12px;
     border: 2px solid transparent;
-    text-align: right;
 }
 
 .heart {
+    flex-grow: 0;
     width: 100px;
     height: 100px;
-    margin-top: -25px;
-    background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat;
-    background-position: 0 0;
+    margin-top: -22px;
+    background: url("https://cssanimation.rocks/images/posts/steps/heart.png") no-repeat 0 0;
     cursor: pointer;
     -webkit-transition: background-position 1s steps(28);
     transition: background-position 1s steps(28);

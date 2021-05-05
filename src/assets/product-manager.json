@@ -1701,7 +1701,7 @@
                 {
                     "name": "验收上线",
                     "type": "userFeedback",
-                    "backgroundImg": "http://111.229.91.248/static/svg/user-feedback.svg",
+                    "backgroundImg": "http://111.229.91.248/static/img/user-feedback.png",
                     "content": [
                         {
                             "username": "user1",
@@ -1715,18 +1715,12 @@
                             "username": "user3",
                             "comment": "这些表情都好可爱啊，爱了爱了～"
                         }
-                    ],
-                    "supplemental": [
-                        {
-                            "type": "img",
-                            "url": "@/assets/svg/user-feedback.svg"
-                        }
                     ]
                 },
                 {
                     "name": "体验结束",
                     "type": "finish",
-                    "backgroundImg": "http://111.229.91.248/static/svg/finish-bg.svg",
+                    "backgroundImg": "http://111.229.91.248/static/img/finish-bg.png",
                     "job": "产品经理",
                     "qrcode": "There will be an image :)"
                 }
