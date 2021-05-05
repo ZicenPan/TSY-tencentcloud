@@ -74,7 +74,7 @@ export const Form: FC<Props> = memo(function Form({ data, handleNext }) {
                     data={grid}
                     columns={columns}
                     cellEdit={cellEditFactory({ mode: 'click', blurToSave: true, afterSaveCell })}
-                    headerClasses="header-class"
+                    headerClasses={data.headerClass ? data.headerClass : 'header-class'}
                 />
                 <PageResult
                     checked={pass}
