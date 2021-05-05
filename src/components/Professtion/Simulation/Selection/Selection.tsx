@@ -53,7 +53,7 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
     console.log(data.resultMsg)
     return (
         <div className="mt-40">
-            <h2>{data.name}</h2>
+            <h2 className="SelectionHeader">{data.name}</h2>
             <div className="d-flex justify-content-around flex-wrap mt-20">
                 {options.map((item: any, id: number) => {
                     // const requestImageFile = require.context('../../../../assets/', true, /.png$/)
