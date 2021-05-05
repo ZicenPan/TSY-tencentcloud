@@ -62,7 +62,8 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
                             <button
                                 className="Selection-sel mt-20"
                                 style={{
-                                    borderColor: item.selected ? '#325AE4' : '#ffffff',
+                                    borderColor: item.selected ? (data.content[id].answer ? '#00AA90' : '#D0104C') : '#58B2DC',
+                                    borderWidth: item.selected ? 3 : 1,
                                     backgroundColor: '#ffffff'
                                 }}
                                 onClick={() => handleClick(id)}
