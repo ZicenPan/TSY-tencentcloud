@@ -1,57 +1,63 @@
 .convo-container {
-    position: relative;
-    top: 300px;
-    padding: 0 0px;
+  position: relative;
+  top: 300px;
+  padding: 0 0px;
+}
+
+#convo-speaker-others-wrapper {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#convo-speaker-user-wrapper {
+  display: flex;
+  justify-content: flex-end;
 }
 
 #convo-speaker-others {
-    // left: -320px;
-    // float: left;
-    margin-right: 700px;
+  width: fit-content;
 }
 
 #convo-speaker-user {
-    margin-left: 690px;
-    // z-index: 1;
-    // left: 930px;
+  width: fit-content;
 }
 
 .conversation-character {
-    position: fixed;
-    bottom:5%;
-    left: 3.5%;
-    width: 37vw;
+  position: fixed;
+  bottom: 5%;
+  left: 3.5%;
+  width: 37vw;
 }
 
 #convo-content-user {
-    width: 840px;
-    height: 200px;
-    flex-grow: 0;
-    margin: 8px 0 0;
-    padding: 20px 40px;
-    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
-    background-color: white;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-left-radius: 50px;
-    border: 1px solid transparent;
-    text-align: left;
-    vertical-align: top;
-  }
+  width: 840px;
+  height: 200px;
+  flex-grow: 0;
+  margin: 8px 0 0;
+  padding: 20px 40px;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
+  background-color: white;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  border: 1px solid transparent;
+  text-align: left;
+  vertical-align: top;
+}
 
-  #convo-content-others {
-    width: 840px;
-    height: 200px;
-    flex-grow: 0;
-    margin: 8px 0 0;
-    padding: 20px 40px;
-    box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
-    background-color: white;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border-top-right-radius: 50px;
-    border: 1px solid transparent;
-    text-align: left;
-    vertical-align: top;
-  }
+#convo-content-others {
+  width: 840px;
+  height: 200px;
+  flex-grow: 0;
+  margin: 8px 0 0;
+  padding: 20px 40px;
+  box-shadow: 0 3px 20px 0 rgba(0, 0, 0, 0.12);
+  background-color: white;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  border: 1px solid transparent;
+  text-align: left;
+  vertical-align: top;
+}
 
