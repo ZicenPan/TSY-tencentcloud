@@ -125,7 +125,6 @@ export default class PopUpBtn extends React.Component<Props, State> {
         this.msg= ""
     }
     
-    console.log(this.props.changeStage)
     return (
       <div className="PopUpBtn-container">
         <button className="PopUpBtn d-flex flex-row"  
