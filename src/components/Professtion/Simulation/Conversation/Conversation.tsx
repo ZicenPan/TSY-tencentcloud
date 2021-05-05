@@ -49,9 +49,11 @@ class Conversation extends Component<Props, State> {
         return (
                 <div className="convo-container">
                     <div className = " z-index-mid">
-                        <button className="convo-speaker"  id={speakerIdName} >
-                            <h2 className="text-center">{speaker}</h2>
-                        </button>
+                        <div className="speaker-wrapper" id={speakerIdName+"-wrapper"}>
+                            <button className="convo-speaker"  id={speakerIdName} >
+                                <h2 className="text-center">{speaker}</h2>
+                            </button>
+                        </div>
                         <div>
                             <button onClick={this.nextConvo} type="submit" id={contentIdName} >
                                 <h2>{this.lookupConvo(this.state.num).content}</h2>
