@@ -180,8 +180,8 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
             </div>
 
             <div
-                className="d-flex justify-content-center mt-80"
-                style={{ overflow: 'hidden', clear: 'both' }}
+                className="d-flex justify-content-center"
+                style={{clear: 'both', marginBottom:"80px"}}
             >
                 {boxes.map(({ name, type }, index) => (
                     <Box name={name} type={type} isDropped={isDropped(name)} key={index} />
