@@ -29,9 +29,12 @@ import {
     taskDescLogoUrl,
     rscLightLogoUrl,
     opGuideLightLogoUrl,
-    taskDescLightLogoUrl
+    taskDescLightLogoUrl,
+    mailListLogoUrl,
+    mailListLightLogoUrl
 } from '../../../assets/cdnUrlConfig'
 import EndPage from './EndPage/EndPage'
+import { isUndefined } from 'lodash'
 
 const tysPrefix = 'tys_sim_'
 const userPrefix = 'user1'
@@ -58,10 +61,14 @@ interface State {
     stageChange: number
     swtichMap: any
     multiPageIndex: number
+    showMailList: boolean,
+    backgroundImg : string,
+    showMailListMsg: boolean
 }
 
 export default class Simulation extends React.Component<Props, State> {
     inputData = {}
+    mailListRef = React.createRef()
     constructor(props: any) {
         super(props)
         this.state = {
@@ -72,7 +79,10 @@ export default class Simulation extends React.Component<Props, State> {
                 : '',
             stageChange: 0,
             swtichMap: {},
-            multiPageIndex: 0
+            multiPageIndex: 0,
+            showMailList: false,
+            backgroundImg: "",
+            showMailListMsg:false
         }
         this.handleNext = this.handleNext.bind(this)
         this.handleChangeMultiPageIndex = this.handleChangeMultiPageIndex.bind(this)
@@ -210,15 +220,51 @@ export default class Simulation extends React.Component<Props, State> {
         }
     }
 
-    handleNext = () => {
+    handleMailList = (type:string) => {
+        const cap = initData.stages[this.state.curStage].steps!.length
+        // 弹出通讯录均为同一任务之中
+        if (this.state.curStep < cap - 1) {
+            if (Object.keys(this.state.data).length === 0)
+                return false
+
+            if (initData.stages[this.state.curStage].steps[this.state.curStep+1].hasOwnProperty("mailListFlag")) {
+                this.setState({
+                    showMailList:true,
+                    showMailListMsg:true
+                })
+                return true
+            }
+        }
+        return false
+    }
+
+    handleNext = ({
+        type = "normal"
+      } = {}) => {
         console.log(this.state)
         console.log('beforeNext: ', this.state.curStage, ' ', this.state.curStep)
         const cap = initData.stages[this.state.curStage].steps!.length
+
+        // 判断是否需要弹出通讯录,进入会议等待
+        if (this.handleMailList(type)) {
+            this.setState({
+                backgroundImg:"http://111.229.91.248/static/img/workPlace.png",
+                data:{}
+            })
+            return
+        }
+        if (type==="mailList") {
+            if (this.state.curStep >= cap - 1 || !initData.stages[this.state.curStage].steps[this.state.curStep+1].hasOwnProperty("mailListFlag"))
+                return 
+        }
+
         if (this.state.curStep < cap - 1) {
             this.setState(() => ({
                 curStep: this.state.curStep + 1,
                 data: initData.stages[this.state.curStage].steps![this.state.curStep + 1],
-                stageChange: 0
+                stageChange: 0,
+                backgroundImg:"",
+                showMailListMsg:false
             }))
 
             if (this.state.curStep >= this.props.step) {
@@ -248,6 +294,8 @@ export default class Simulation extends React.Component<Props, State> {
                 curStep: 0,
                 data: initData.stages[curStage].steps ? initData.stages[curStage].steps[0] : '',
                 stageChange: 0,
+                backgroundImg:"",
+                showMailListMsg:false
             })
         }
     }
@@ -257,7 +305,9 @@ export default class Simulation extends React.Component<Props, State> {
             this.setState({
                 data: initData.stages[this.state.curStage].steps[step],
                 curStep: step,
-                stageChange: 0
+                stageChange: 0,
+                backgroundImg:"",
+                showMailListMsg:false
             })
         }
     }
@@ -352,6 +402,7 @@ export default class Simulation extends React.Component<Props, State> {
                 }
                 return (
                     <div className={className} style={style}>
+                        <h2 className="d-flex Simulation-pageTitle">{templateData.name?templateData.name:""}</h2>
                         {childContents}
                     </div>
                 )
@@ -549,9 +600,10 @@ export default class Simulation extends React.Component<Props, State> {
                                         content={this.state.data.taskDesc}
                                         stage={this.props.stage}
                                         data=""
-                                        changeStage={0}
+                                        showTooltip={false}
                                         logoUrl={taskDescLogoUrl}
                                         logoLightUrl={taskDescLightLogoUrl}
+                                        handleNext={this.handleNext}
                                     />
                                 </div>
                                 <div className="mt-20 ml-40">
@@ -560,9 +612,10 @@ export default class Simulation extends React.Component<Props, State> {
                                         content={this.state.data.opGuide}
                                         stage={this.props.stage}
                                         data=""
-                                        changeStage={0}
+                                        showTooltip={false}
                                         logoUrl={opGuideLogoUrl}
                                         logoLightUrl={opGuideLightLogoUrl}
+                                        handleNext={this.handleNext}
                                     />
                                 </div>
                                 <div className="mt-20 ml-40">
@@ -571,11 +624,28 @@ export default class Simulation extends React.Component<Props, State> {
                                         content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                         stage={this.props.stage}
                                         data={initData.recources}
-                                        changeStage={this.state.stageChange}
+                                        showTooltip={this.state.stageChange===1}
                                         logoUrl={rscLogoUrl}
                                         logoLightUrl={rscLightLogoUrl}
-                                    />
+                                        handleNext={this.handleNext}
+                                    />  
                                 </div>
+
+                                {this.state.showMailList
+                                ?<div className="mt-20 ml-40">
+                                        <PopUpBtn
+                                            name="通讯录"
+                                            content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                            stage={this.props.stage}
+                                            data={initData.recources}
+                                            showTooltip={this.state.showMailListMsg}
+                                            logoUrl={mailListLogoUrl}
+                                            logoLightUrl={mailListLightLogoUrl}
+                                            handleNext={this.handleNext}
+                                        />
+                                 </div>
+                                 :<div/>
+                                }
 
                                 <div className="mt-40 ml-20 Simulation-StepNav">
                                     <StepNav
@@ -625,9 +695,11 @@ export default class Simulation extends React.Component<Props, State> {
         let backStyle = {}
         if (this.props.type === 'simulation') {
             backStyle = {
-                background: `url("${linesImg}"),url("${
-                    this.state.data.backgroundImg ? this.state.data.backgroundImg : ''
-                }")`
+                background: `url("${linesImg}"),
+                
+                url("${this.state.data.backgroundImg ? this.state.data.backgroundImg : ''}"),
+                url("${this.state.backgroundImg ? this.state.backgroundImg : ''}")
+                `
             }
         }
         // 背景图片获取

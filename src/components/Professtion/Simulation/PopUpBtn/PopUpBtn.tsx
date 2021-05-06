@@ -16,9 +16,10 @@ interface Props {
     content: string;
     stage: number;
     data: any;
-    changeStage: number;
-    logoUrl: string
-    logoLightUrl: string
+    showTooltip: boolean;
+    logoUrl: string;
+    logoLightUrl: string;
+    handleNext:Function
 }
 
 interface State {
@@ -27,9 +28,9 @@ interface State {
 }
 
 export default class PopUpBtn extends React.Component<Props, State> {
-  fooRef = null
+  tooltipRef = null
   msg = ""
-  hasOpenModal = false
+  hasClickBtn = false
   constructor(props: any) {
     super(props);
     this.state = {
@@ -40,7 +41,8 @@ export default class PopUpBtn extends React.Component<Props, State> {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleOnMouseEnter = this.handleOnMouseEnter.bind(this);
-    this.fooRef = React.createRef();
+    this.handleClickBtn = this.handleClickBtn.bind(this)
+    this.tooltipRef = React.createRef();
   }
 
   componentDidMount () {
@@ -50,12 +52,12 @@ export default class PopUpBtn extends React.Component<Props, State> {
 
   handleOpenModal() {
     this.setState({ showModal: true });
-    this.hasOpenModal = true
+    this.hasClickBtn = true
   }
 
   handleCloseModal() {
     this.setState({ showModal: false });
-    this.hasOpenModal = false
+    this.hasClickBtn = false
   }
 
   handleOnMouseEnter(status:boolean) {
@@ -104,32 +106,87 @@ export default class PopUpBtn extends React.Component<Props, State> {
         // 获得图片
         break
       }
+      case "通讯录": {
+        this.msg = "你收到了一条信息"
+      }
     }
   }
  
+  handleClickBtn() {
+    this.hasClickBtn = true
+    switch (this.props.name) {
+      case "任务描述": {
+        this.handleOpenModal()
+        break
+      }
+      case "操作指引": {
+        this.handleOpenModal()
+        break
+      }
+      case "资源库": {
+        this.handleOpenModal()
+        break
+      }
+      case "通讯录": {
+        this.props.handleNext("mailList")
+        break
+      }
+    }
+  }
+
+  handleTooltip() {
+    switch (this.props.name) {
+      case "任务描述": {
+        break
+      }
+      case "操作指引": {
+        break
+      }
+      case "资源库": {
+        if (this.props.showTooltip) {
+          // ReactTooltip.show(this.tooltipRef) 
+          if (!this.hasClickBtn&&!this.state.mouseEnter) {
+            ReactTooltip.show(this.tooltipRef) // 展示的是上一次render中的msg
+    
+            // 计时器3秒消失
+            setTimeout(() => {
+              ReactTooltip.hide(this.tooltipRef)
+            }, 3000)
+          } else 
+            this.msg= ""
+        }
+        break
+      }
+      case "通讯录": {
+        if (this.props.showTooltip) {
+          // ReactTooltip.show(this.tooltipRef) 
+          if (!this.hasClickBtn&&!this.state.mouseEnter) {
+            ReactTooltip.show(this.tooltipRef) // 展示的是上一次render中的msg
+            console.log("通讯录")
+            // 计时器3秒消失
+            setTimeout(() => {
+              ReactTooltip.hide(this.tooltipRef)
+            }, 3000)
+          } else 
+            this.msg= ""
+        }
+        break
+      }
+    }
+  }
 
   render() {
     // 获得各个按钮所需信息
     this.getContext()
     
-    if (this.props.changeStage === 1) {
-      // ReactTooltip.show(this.fooRef) 
-      if (!this.hasOpenModal&&!this.state.mouseEnter) {
-        ReactTooltip.show(this.fooRef) // 展示的是上一次render中的msg
-
-        // 计时器3秒消失
-        setTimeout(() => {
-          ReactTooltip.hide(this.fooRef)
-        }, 3000)
-      } else 
-        this.msg= ""
-    }
+    // 处理弹窗
+    this.handleTooltip()
     
     return (
       <div className="PopUpBtn-container">
         <button className="PopUpBtn d-flex flex-row"  
-          ref={ref => {this.fooRef = ref}} 
-          onClick={this.handleOpenModal}  
+          ref={ref => {this.tooltipRef = ref}} 
+          onClick={this.handleClickBtn}  
           data-event = "null" 
           data-effect ="solid" 
           data-type = "info" 

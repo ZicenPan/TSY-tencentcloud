@@ -248,8 +248,7 @@
                             "num": 2,
                             "identify": "竞品对比分析switch1",
                             "switchNames": ["飞书", "Messenger"],
-                            "alignself": "align-self-start",
-                            "title":"竞品分析对比"
+                            "alignself": "align-self-start"
                         },
                         {
                             "name": "竞品对比分析",
@@ -932,13 +931,13 @@
                                     "type": "image",
                                     "content": "http://111.229.91.248/static/img/staticDisplay/产品功能说明-流程图.jpg",
                                     "style": {
-                                        "width": "90%"
+                                        "width": "70%"
                                     }
                                 }
                             ]
                         },
                         {
-                            "name": "产品功能说明",
+                            "name": "",
                             "type": "match",
                             "alignself": "align-self-center",
                             "content": [
@@ -1050,7 +1049,8 @@
                     "alignself": "align-self-start",
                     "taskDesc": "详细描述交互步骤，说明需要注意的用例细节，并配合图例展示",
                     "opGuide": {
-                        "words": "下拉选择合适内容来完成表格，并点击模拟绘制交互原型图"
+                        "words": "下拉选择合适内容来完成表格，并点击模拟绘制交互原型图",
+                        "img": "http://111.229.91.248/static/svg/opGuide/opGuide-project-compare.svg"
                     },
                     "content": [
                         {
@@ -2060,6 +2060,7 @@
                 {
                     "name": "设计需要材料-2",
                     "type": "fakeui",
+                    "mailListFlag": true,
                     "taskDesc": "针对设计需要材料的问题，产品经理需找到并联系负责系统聊天表情的设计人员，给对方发送需求文档，提出需要之前的设计稿和相关材料，让该设计联系本项目的设计人员",
                     "opGuide": {
                         "words": "- 点击推进对话- 打开“通讯录”，点击模拟与设计人员沟通的过程- 对接完成后，打开”资源库“中的”需求文档“，在“会议纪要”表格中记录解决问题的进展"
@@ -2773,7 +2774,7 @@
             "rid": 4,
             "name": "项目排期表",
             "stage_id": 4,
-            "src_url": ""
+            "src_url": "http://111.229.91.248/static/svg/rsc/排期表.svg"
         }
     ],
     "videos": [
