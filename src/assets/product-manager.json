@@ -12,7 +12,7 @@
                     "backgroundImg": "http://111.229.91.248/static/img/conversation-back.png",
                     "name": "接受需求",
                     "type": "conversation",
-                    "content": {    
+                    "content": {
                         "convo": [
                             {
                                 "speaker": "运营",
@@ -239,8 +239,8 @@
                         "words": "点击左侧竞品体验表情反馈功能，可通过上方按钮切换竞品界面，并在右侧表格中通过选择及填空完善竞品对比分析",
                         "img": "http://111.229.91.248/static/svg/opGuide/opGuide-project-compare.svg"
                     },
-                    "style":{
-                        "margin-left":"20px"
+                    "style": {
+                        "margin-left": "20px"
                     },
                     "content": [
                         {
@@ -253,241 +253,274 @@
                         },
                         {
                             "name": "竞品对比分析",
-                            "type": "combination",
+                            "type": "screenshot",
                             "direction": "row",
-                            "content": [
+                            "fakeUI": [
                                 {
-                                    "name": "竞品对比分析-feishu",
-                                    "type": "fakeui",
-                                    "alignself": "align-self-start",
-                                    "content": [
-                                        {
-                                            "name": "feishu1",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-1.png",
-                                            "hit_flag": 1,
-                                            "width": 300,
-                                            "offset_left": 15,
-                                            "offset_top": 79.5,
-                                            "hit_width": 74,
-                                            "hit_height": 7
-                                        },
-                                        {
-                                            "name": "feishu2",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png",
-                                            "hit_flag": 1,
-                                            "width": 300,
-                                            "offset_left": 7,
-                                            "offset_top": 75,
-                                            "hit_width": 14,
-                                            "hit_height": 6
-                                        },
-                                        {
-                                            "name": "feishu3",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png",
-                                            "hit_flag": 1,
-                                            "width": 300,
-                                            "offset_left": 18,
-                                            "offset_top": 83,
-                                            "hit_width": 24,
-                                            "hit_height": 4
-                                        },
-                                        {
-                                            "name": "feishu4",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-4.png",
-                                            "hit_flag": 0
-                                        }
-                                    ]
+                                    "name": "feishu1",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-1.png",
+                                    "hit_flag": 1,
+                                    "width": 300,
+                                    "offset_left": 15,
+                                    "offset_top": 79.5,
+                                    "hit_width": 74,
+                                    "hit_height": 7
                                 },
                                 {
-                                    "name": "飞书",
-                                    "type": "form",
-                                    "alignself": "align-self-center",
-                                    "columns": [
-                                        {
-                                            "dataField": "id",
-                                            "text": "步骤",
-                                            "editor": {
-                                                "type": "textarea"
-                                            }
-                                        },
-                                        {
-                                            "dataField": "proscons",
-                                            "text": "竞品的优点/缺点",
-                                            "editor": {
-                                                "type": "textarea"
-                                            }
-                                        },
-                                        {
-                                            "dataField": "ins",
-                                            "text": "启发点",
-                                            "editor": {
-                                                "type": "textarea"
-                                            }
-                                        }
-                                    ],
-                                    "grid": [
-                                        {
-                                            "id": "飞书",
-                                            "proscons": "单击表情撤销反馈非常简洁，易于用户操作",
-                                            "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"
-                                        },
-                                        { "id": "", "proscons": "", "ins": "" },
-                                        { "id": "", "proscons": "", "ins": "" },
-                                        { "id": "messenger", "proscons": "", "ins": "" },
-                                        { "id": "", "proscons": "", "ins": "" },
-                                        { "id": "", "proscons": "", "ins": "" }
-                                    ]
+                                    "name": "feishu2",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png",
+                                    "hit_flag": 1,
+                                    "width": 300,
+                                    "offset_left": 7,
+                                    "offset_top": 75,
+                                    "hit_width": 14,
+                                    "hit_height": 6
+                                },
+                                {
+                                    "name": "feishu3",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png",
+                                    "hit_flag": 1,
+                                    "width": 300,
+                                    "offset_left": 18,
+                                    "offset_top": 83,
+                                    "hit_width": 24,
+                                    "hit_height": 4
+                                },
+                                {
+                                    "name": "feishu4",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-4.png",
+                                    "hit_flag": 0
                                 }
-                            ]
+                            ],
+                            "form": {
+                                "name": "飞书",
+                                "type": "form",
+                                "alignself": "align-self-center",
+                                "columns": [
+                                    {
+                                        "dataField": "id",
+                                        "text": "竞品",
+                                        "editor": {
+                                            "type": "textarea"
+                                        },
+                                        "style": {
+                                            "width":"140px",
+                                            "height":"105px",
+                                            "fontSize":"16px"
+                                        }
+                                    },
+                                    {
+                                        "dataField": "process",
+                                        "text": "流程",
+                                        "editor": {
+                                            "type": "select",
+                                            "options": [
+                                                {
+                                                    "value": "选择反馈信息",
+                                                    "label": "选择反馈信息"
+                                                },
+                                                {
+                                                    "value": "发送表情反馈",
+                                                    "label": "发送表情反馈"
+                                                },
+                                                {
+                                                    "value": "撤销表情反馈",
+                                                    "label": "撤销表情反馈"
+                                                }
+                                            ]
+                                        },
+                                        "style": {
+                                            "width":"140px",
+                                            "height":"105px",
+                                            "fontSize":"16px"
+                                        }
+                                    },
+                                    {
+                                        "dataField": "interaction",
+                                        "text": "交互",
+                                        "editor": {
+                                            "type": "textarea"
+                                        },
+                                        "style": {
+                                            "width":"140px",
+                                            "height":"105px",
+                                            "fontSize":"16px"
+                                        }
+                                    },
+                                    {
+                                        "dataField": "vision",
+                                        "text": "视觉",
+                                        "isDummyField": true,
+                                        "editable":false,
+                                        "style": {
+                                            "width":"140px",
+                                            "height":"105px",
+                                            "fontSize":"16px"
+                                        }
+                                    }
+                                ],
+                                "grid": [
+                                    {
+                                        "id": "步骤一",
+                                        "process": "",
+                                        "interaction": "",
+                                        "vision": ""
+                                    },
+                                    {
+                                        "id": "步骤二",
+                                        "process": "",
+                                        "interaction": "",
+                                        "vision": ""
+                                    },
+                                    {
+                                        "id": "步骤三",
+                                        "process": "",
+                                        "interaction": "",
+                                        "vision": ""
+                                    }
+                                ]
+                            }
                         },
                         {
                             "name": "竞品对比分析",
-                            "type": "combination",
+                            "type": "screenshot",
                             "direction": "row",
-                            "content": [
+                            "fakeUI": [
                                 {
-                                    "name": "竞品对比分析-messenger1",
-                                    "type": "fakeui",
-                                    "alignself": "align-self-start",
-                                    "content": [
-                                        {
-                                            "name": "messenger1",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-1.png",
-                                            "hit_flag": 1,
-                                            "width": 300,
-                                            "offset_left": 14,
-                                            "offset_top": 74,
-                                            "hit_width": 72,
-                                            "hit_height": 11
-                                        },
-                                        {
-                                            "name": "messenger2",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-2.png",
-                                            "hit_flag": 1,
-                                            "width": 300,
-                                            "offset_left": 4,
-                                            "offset_top": 68,
-                                            "hit_width": 15,
-                                            "hit_height": 6
-                                        },
-                                        {
-                                            "name": "messenger3",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png",
-                                            "hit_flag": 1,
-                                            "width": 300,
-                                            "offset_left": 0,
-                                            "offset_top": 0,
-                                            "hit_width": 100,
-                                            "hit_height": 100
-                                        },
-                                        {
-                                            "name": "messenger4",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-4.png",
-                                            "hit_flag": 1,
-                                            "width": 300,
-                                            "offset_left": 83,
-                                            "offset_top": 33,
-                                            "hit_width": 12,
-                                            "hit_height": 9
-                                        },
-                                        {
-                                            "name": "messenger5",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-5.png",
-                                            "hit_flag": 1,
-                                            "width": 300,
-                                            "offset_left": 83,
-                                            "offset_top": 25,
-                                            "hit_width": 14,
-                                            "hit_height": 8
-                                        },
-                                        {
-                                            "name": "messenger6",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-6.png",
-                                            "hit_flag": 1,
-                                            "width": 300,
-                                            "offset_left": 18,
-                                            "offset_top": 37,
-                                            "hit_width": 19,
-                                            "hit_height": 9
-                                        },
-                                        {
-                                            "name": "messenger7",
-                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-7.png",
-                                            "hit_flag": 0
-                                        }
-                                    ]
+                                    "name": "messenger1",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-1.png",
+                                    "hit_flag": 1,
+                                    "width": 300,
+                                    "offset_left": 14,
+                                    "offset_top": 74,
+                                    "hit_width": 72,
+                                    "hit_height": 11
                                 },
                                 {
-                                    "name": "Messenger",
-                                    "type": "form",
-                                    "alignself": "align-self-center",
-                                    "columns": [
-                                        {
-                                            "dataField": "id",
-                                            "text": "竞品",
-                                            "editor": {
-                                                "type": "textarea"
-                                            }
-                                        },
-                                        {
-                                            "dataField": "process",
-                                            "text": "流程",
-                                            "editor": {
-                                                "type": "select",
-                                                "options": [
-                                                    {
-                                                        "value": "A",
-                                                        "label": "选择反馈信息"
-                                                    },
-                                                    {
-                                                        "value": "B",
-                                                        "label": "发送表情反馈"
-                                                    },
-                                                    {
-                                                        "value": "C",
-                                                        "label": "撤销表情反馈"
-                                                    }
-                                                ]
-                                            }
-                                        },
-                                        {
-                                            "dataField": "interaction",
-                                            "text": "交互",
-                                            "editor": {
-                                                "type": "textarea"
-                                            }
-                                        },
-                                        {
-                                            "dataField": "vision",
-                                            "text": "视觉",
-                                            "editor": {
-                                                "type": "textarea"
-                                            }
-                                        }
-                                    ],
-
-                                    "grid": [
-                                        {
-                                            "id": "步骤一",
-                                            "process": "",
-                                            "interaction": "",
-                                            "vision": ""
-                                        },
-                                        {
-                                            "id": "步骤二",
-                                            "process": "",
-                                            "interaction": "",
-                                            "vision": ""
-                                        },
-                                        {
-                                            "id": "步骤三",
-                                            "process": "",
-                                            "interaction": "",
-                                            "vision": ""
-                                        }
-                                    ]
+                                    "name": "messenger2",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-2.png",
+                                    "hit_flag": 1,
+                                    "width": 300,
+                                    "offset_left": 4,
+                                    "offset_top": 68,
+                                    "hit_width": 15,
+                                    "hit_height": 6
+                                },
+                                {
+                                    "name": "messenger3",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png",
+                                    "hit_flag": 1,
+                                    "width": 300,
+                                    "offset_left": 0,
+                                    "offset_top": 0,
+                                    "hit_width": 100,
+                                    "hit_height": 100
+                                },
+                                {
+                                    "name": "messenger4",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-4.png",
+                                    "hit_flag": 1,
+                                    "width": 300,
+                                    "offset_left": 83,
+                                    "offset_top": 33,
+                                    "hit_width": 12,
+                                    "hit_height": 9
+                                },
+                                {
+                                    "name": "messenger5",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-5.png",
+                                    "hit_flag": 1,
+                                    "width": 300,
+                                    "offset_left": 83,
+                                    "offset_top": 25,
+                                    "hit_width": 14,
+                                    "hit_height": 8
+                                },
+                                {
+                                    "name": "messenger6",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-6.png",
+                                    "hit_flag": 1,
+                                    "width": 300,
+                                    "offset_left": 18,
+                                    "offset_top": 37,
+                                    "hit_width": 19,
+                                    "hit_height": 9
+                                },
+                                {
+                                    "name": "messenger7",
+                                    "url": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-7.png",
+                                    "hit_flag": 0
                                 }
-                            ]
+                            ],
+                            "form":                                 {
+                                "name": "Messenger",
+                                "type": "form",
+                                "alignself": "align-self-center",
+                                "columns": [
+                                    {
+                                        "dataField": "id",
+                                        "text": "竞品",
+                                        "editor": {
+                                            "type": "textarea"
+                                        }
+                                    },
+                                    {
+                                        "dataField": "process",
+                                        "text": "流程",
+                                        "editor": {
+                                            "type": "select",
+                                            "options": [
+                                                {
+                                                    "value": "A",
+                                                    "label": "选择反馈信息"
+                                                },
+                                                {
+                                                    "value": "B",
+                                                    "label": "发送表情反馈"
+                                                },
+                                                {
+                                                    "value": "C",
+                                                    "label": "撤销表情反馈"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "dataField": "interaction",
+                                        "text": "交互",
+                                        "editor": {
+                                            "type": "textarea"
+                                        }
+                                    },
+                                    {
+                                        "dataField": "vision",
+                                        "text": "视觉",
+                                        "editor": {
+                                            "type": "textarea"
+                                        }
+                                    }
+                                ],
+                                "grid": [
+                                    {
+                                        "id": "步骤一",
+                                        "process": "",
+                                        "interaction": "",
+                                        "vision": ""
+                                    },
+                                    {
+                                        "id": "步骤二",
+                                        "process": "",
+                                        "interaction": "",
+                                        "vision": ""
+                                    },
+                                    {
+                                        "id": "步骤三",
+                                        "process": "",
+                                        "interaction": "",
+                                        "vision": ""
+                                    }
+                                ]
+                            }
                         }
                     ]
                 },
@@ -621,7 +654,6 @@
                             "analy": ""
                         }
                     ]
-
                 },
                 {
                     "name": "结论与建议",
@@ -888,24 +920,24 @@
                 {
                     "name": "产品功能说明",
                     "type": "combination",
-                    "direction":"column",
-                    "content":[
+                    "direction": "column",
+                    "content": [
                         {
                             "name": "产品交互说明-1",
                             "type": "staticDisplay",
-                            "direction":"column",
+                            "direction": "column",
                             "alignself": "align-self-center",
                             "content": [
-                              {
-                                "type": "image",
-                                "content":"http://111.229.91.248/static/img/staticDisplay/产品功能说明-流程图.jpg",
-                                "style": {
-                                    "width":"90%"
+                                {
+                                    "type": "image",
+                                    "content": "http://111.229.91.248/static/img/staticDisplay/产品功能说明-流程图.jpg",
+                                    "style": {
+                                        "width": "90%"
+                                    }
                                 }
-                              }
                             ]
-                          },
-                          {
+                        },
+                        {
                             "name": "产品功能说明",
                             "type": "match",
                             "alignself": "align-self-center",
@@ -997,7 +1029,7 @@
                             },
                             "taskDesc": "详细描述功能情况，包括发送表情和撤销表情操作的入口位置、触发方式、显示内容、展示方式等细节",
                             "opGuide": {
-                                "words":"拖动下方词句，将各功能按合理流程顺序排序"
+                                "words": "拖动下方词句，将各功能按合理流程顺序排序"
                             }
                         }
                     ],
@@ -1394,110 +1426,156 @@
                     "taskDesc": "了解需求文档末尾附含的表格，用于记录文档改动情况和重点会议纪要",
                     "content": [
                         {
-                            "name": "用户反馈分析1",
+                            "marginTop": "mt-40",
+                            "name": "改动记录",
                             "type": "form",
                             "columns": [
                                 {
                                     "dataField": "id",
-                                    "text": "步骤",
-                                    "editor": {
-                                        "type": "textarea"
-                                    }
+                                    "text": "id",
+                                    "hidden": true
                                 },
                                 {
-                                    "dataField": "proscons",
-                                    "text": "竞品的优点/缺点",
+                                    "dataField": "item",
+                                    "text": "日期",
                                     "editor": {
                                         "type": "textarea"
+                                    },
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "height": "50px",
+                                        "width": "140px",
+                                        "rowSpan": "4"
+                                    },
+                                    "editable": false
+                                },
+                                {
+                                    "dataField": "update",
+                                    "text": "描述主要更新点",
+                                    "editor": {
+                                        "type": "textarea"
+                                    },
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "height": "50px",
+                                        "width": "500px"
                                     }
                                 },
                                 {
                                     "dataField": "ins",
-                                    "text": "启发点",
+                                    "text": "修改人",
                                     "editor": {
                                         "type": "textarea"
-                                    }
-                                }
-                            ],
-                            "grid": [
-                                {
-                                    "id": "飞书",
-                                    "proscons": "单击表情撤销反馈非常简洁，易于用户操作",
-                                    "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"
-                                },
-                                { "id": "", "proscons": "", "ins": "" },
-                                { "id": "", "proscons": "", "ins": "" },
-                                { "id": "messenger", "proscons": "", "ins": "" },
-                                { "id": "", "proscons": "", "ins": "" },
-                                { "id": "", "proscons": "", "ins": "" }
-                            ]
-                        },
-                        {
-                            "name": "用户反馈分析2",
-                            "type": "form",
-                            "columns": [
-                                {
-                                    "dataField": "id",
-                                    "text": "竞品",
-                                    "editor": {
-                                        "type": "textarea"
-                                    }
-                                },
-                                {
-                                    "dataField": "process",
-                                    "text": "流程",
-                                    "editor": {
-                                        "type": "select",
-                                        "options": [
-                                            {
-                                                "value": "A",
-                                                "label": "选择反馈信息"
-                                            },
-                                            {
-                                                "value": "B",
-                                                "label": "发送表情反馈"
-                                            },
-                                            {
-                                                "value": "C",
-                                                "label": "撤销表情反馈"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "dataField": "interaction",
-                                    "text": "交互",
-                                    "editor": {
-                                        "type": "textarea"
-                                    }
-                                },
-                                {
-                                    "dataField": "vision",
-                                    "text": "视觉",
-                                    "editor": {
-                                        "type": "textarea"
+                                    },
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "height": "50px",
+                                        "width": "150px"
                                     }
                                 }
                             ],
 
                             "grid": [
                                 {
-                                    "id": "步骤一",
-                                    "process": "",
-                                    "interaction": "",
-                                    "vision": ""
+                                    "id": 0,
+                                    "item": "2021.mm.dd",
+                                    "update": "初版",
+                                    "ins": "【用户名】"
+                                },
+                                { "id": 1, "item": "", "update": "", "ins": "" }
+                            ]
+                        },
+                        {
+                            "name": "会议纪要",
+                            "type": "form",
+                            "columns": [
+                                {
+                                    "dataField": "id",
+                                    "text": "id",
+                                    "hidden": true
                                 },
                                 {
-                                    "id": "步骤二",
-                                    "process": "",
-                                    "interaction": "",
-                                    "vision": ""
+                                    "dataField": "time",
+                                    "text": "时间",
+                                    "editor": {
+                                        "type": "textarea"
+                                    },
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "height": "50px",
+                                        "width": "140px"
+                                    },
+                                    "editable": false
                                 },
                                 {
-                                    "id": "步骤三",
+                                    "dataField": "process",
+                                    "text": "会议纪要",
+                                    "editor": {
+                                        "type": "textarea"
+                                    },
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "height": "50px",
+                                        "width": "300px"
+                                    },
+                                    "editable": false
+                                },
+                                {
+                                    "dataField": "interaction",
+                                    "text": "会后ToDo",
+                                    "editor": {
+                                        "type": "textarea"
+                                    },
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "height": "50px",
+                                        "width": "140px"
+                                    },
+                                    "editable": false
+                                },
+                                {
+                                    "dataField": "mat",
+                                    "text": "会议材料",
+                                    "editor": {
+                                        "type": "textarea"
+                                    },
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "height": "50px",
+                                        "width": "140px"
+                                    },
+                                    "editable": false
+                                },
+                                {
+                                    "dataField": "parti",
+                                    "text": "参会人",
+                                    "editor": {
+                                        "type": "textarea"
+                                    },
+                                    "style": {
+                                        "fontSize": "16px",
+                                        "height": "50px",
+                                        "width": "100px"
+                                    },
+                                    "editable": false
+                                }
+                            ],
+                            "grid": [
+                                {
+                                    "id": "0",
+                                    "time": "2021.mm.dd",
+                                    "process": "运营反馈许多用户在平台上提交了表情反馈功能的需求，希望一个月内开发完成。",
+                                    "interaction": "1. 产品产出竞品分析文档 \n 2. 运营产出调研问卷",
+                                    "mat": "用户反馈总结.doc",
+                                    "parti": "x运营"
+                                },
+                                {
+                                    "id": "1",
+                                    "time": "",
                                     "process": "",
                                     "interaction": "",
-                                    "vision": ""
+                                    "mat": "",
+                                    "parti": ""
                                 }
                             ]
                         }
@@ -1639,7 +1717,293 @@
                     "opGuide": {
                         "words": "根据各模块的前置依赖和产品内容，选择合适的开始时间并补全各环节的可能风险"
                     },
-                    "type": "form"
+                    "type": "form",
+                    "resultMsg": {
+                        "correctMsg": "太棒了，你已完成项目排期，记得每天检查进度，确保项目如期上限。",
+                        "errorMsg": "注意任务的先后顺序，并补全各环节的潜在风险哦~",
+                        "standardMsg": "必须包含每个项目环节的开始时间、预计结束时间、负责人和潜在风险，各环节间的先后顺序无误（如前端开发必须在交互设计完成后），在项目预计完成时间内尽可能预留时间给高风险环节；避免线性排期，可以重叠的环境需同步推进，避免排期卡着最后期限，需要预留风险缓冲期。"
+                    },
+                    "marginTop": "mt-80",
+                    "headerClass": "schedule",
+                    "columns": [
+                        {
+                            "dataField": "id",
+                            "text": "id",
+                            "hidden": true
+                        },
+                        {
+                            "dataField": "res",
+                            "text": "负责模块",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "width": "145px",
+                                "fontSize": "12px"
+                            },
+                            "align":"left",
+                            "editable": false
+                        },
+                        {
+                            "dataField": "ppl",
+                            "text": "负责人",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "width": "140px",
+                                "fontSize": "12px"
+                            },
+                            "editable": false
+                        },
+                        {
+                            "dataField": "need",
+                            "text": "所需天数",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "width": "140px",
+                                "fontSize": "12px"
+                            },
+                            "editable": false
+                        },
+                        {
+                            "dataField": "start",
+                            "text": "开始时间",
+                            "editor": {
+                                "type": "date"
+                            },
+                            "style": {
+                                "width": "150px",
+                                "fontSize": "12px"
+                            },
+                            "editable": true
+                        },
+                        {
+                            "dataField": "end",
+                            "text": "截止时间",
+                            "editor": {
+                                "type": "date"
+                            },
+                            "style": {
+                                "width": "150px",
+                                "fontSize": "12px"
+                            },
+                            "editable": true
+                        },
+                        {
+                            "dataField": "cat",
+                            "text": "当前状态",
+                            "editor": {
+                                "type": "select",
+                                "options": [
+                                    {
+                                        "value": "已完成",
+                                        "label": "已完成"
+                                    },
+                                    {
+                                        "value": "进行中",
+                                        "label": "进行中"
+                                    },
+                                    {
+                                        "value": "待开始",
+                                        "label": "待开始"
+                                    }
+                                ]
+                            },
+                            "style": {
+                                "width": "140px",
+                                "fontSize": "12px"
+                            }
+                        },
+                        {
+                            "dataField": "pre",
+                            "text": "前置依赖",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "width": "200px",
+                                "fontSize": "12px"
+                            },
+                            "align":"left",
+                            "editable": false
+                        },
+                        {
+                            "dataField": "quote",
+                            "text": "产出内容",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "width": "200px",
+                                "fontSize": "12px"
+                            },
+                            "align":"left",
+                            "editable": false
+                        },
+                        {
+                            "dataField": "analy",
+                            "text": "潜在风险",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "width": "350px",
+                                "fontSize": "12px"
+                            },
+                            "align":"left"
+                        }
+                    ],
+                    "grid": [
+                        {
+                            "id": 0,
+                            "res": "产出需求文档",
+                            "ppl": "x产品",
+                            "need": "2个工作日",
+                            "start": "",
+                            "end": "",
+                            "cat": "",
+                            "pre":"无",
+                            "quote": "需求文档",
+                            "analy": "需求文档对边际条件考虑不完全"
+                        },
+                        {
+                            "id": 1,
+                            "res": "设计图",
+                            "ppl": "x设计",
+                            "need": "5个工作日",
+                            "start": "",
+                            "end": "",
+                            "cat": "",
+                            "pre":"需求文档",
+                            "quote": "设计图",
+                            "analy": ""
+                        },
+                        {
+                            "id": 2,
+                            "res": "产品研发",
+                            "ppl": "x技术",
+                            "need": "7个工作日",
+                            "start": "",
+                            "end": "",
+                            "cat": "",
+                            "pre":"需求文档 设计图",
+                            "quote": "技术文档 测试用版本",
+                            "analy": ""
+                        },
+                        {
+                            "id": 3,
+                            "res": "测试用例",
+                            "ppl": "x测试",
+                            "need": "3个工作日",
+                            "start": "",
+                            "end": "",
+                            "cat": "",
+                            "pre":"需求文档 技术文档",
+                            "quote": "测试用例",
+                            "analy": ""
+                        },
+                        {
+                            "id": 4,
+                            "res": "组织联调",
+                            "ppl": "x产品",
+                            "need": "2个工作日",
+                            "start": "",
+                            "end": "",
+                            "cat": "",
+                            "pre":"测试用例",
+                            "quote": "测试产出测试报告",
+                            "analy": ""
+                        },
+                        {
+                            "id": 5,
+                            "res": "功能上线",
+                            "ppl": "x技术",
+                            "need": "1个工作日",
+                            "start": "",
+                            "end": "",
+                            "cat": "",
+                            "pre":"测试报告",
+                            "quote": "上线产品",
+                            "analy": ""
+                        }
+                    ],
+                    "answer": [
+                        {
+                            "id": 0,
+                            "res": "产出需求文档",
+                            "ppl": "x产品",
+                            "need": "2个工作日",
+                            "start": "2021-01-19",
+                            "end": "2021-01-20",
+                            "cat": "已完成",
+                            "pre":"无",
+                            "quote": "需求文档",
+                            "analy": "需求文档对边际条件考虑不完全"
+                        },
+                        {
+                            "id": 1,
+                            "res": "设计图",
+                            "ppl": "x设计",
+                            "need": "5个工作日",
+                            "start": "2021-01-21",
+                            "end": "2021-01-27",
+                            "cat": "进行中",
+                            "pre":"需求文档",
+                            "quote": "设计图",
+                            "analy": ""
+                        },
+                        {
+                            "id": 2,
+                            "res": "产品研发",
+                            "ppl": "x技术",
+                            "need": "7个工作日",
+                            "start": "2021-01-28",
+                            "end": "2021-02-04",
+                            "cat": "待开始",
+                            "pre":"需求文档 设计图",
+                            "quote": "技术文档 测试用版本",
+                            "analy": ""
+                        },
+                        {
+                            "id": 3,
+                            "res": "测试用例",
+                            "ppl": "x测试",
+                            "need": "3个工作日",
+                            "start": "2021-02-05",
+                            "end": "2021-02-09",
+                            "cat": "待开始",
+                            "pre":"需求文档 技术文档",
+                            "quote": "测试用例",
+                            "analy": ""
+                        },
+                        {
+                            "id": 4,
+                            "res": "组织联调",
+                            "ppl": "x产品",
+                            "need": "2个工作日",
+                            "start": "2021-02-10",
+                            "end": "2021-02-11",
+                            "cat": "待开始",
+                            "pre":"测试用例",
+                            "quote": "测试产出测试报告",
+                            "analy": ""
+                        },
+                        {
+                            "id": 5,
+                            "res": "功能上线",
+                            "ppl": "x技术",
+                            "need": "1个工作日",
+                            "start": "2021-02-12",
+                            "end": "2021-02-12",
+                            "cat": "待开始",
+                            "pre":"测试报告",
+                            "quote": "上线产品",
+                            "analy": ""
+                        }
+                    ]
                 }
             ]
         },
@@ -1665,28 +2029,686 @@
                     ]
                 },
                 {
-                    "name": "设计需要材料",
-                    "type": "form",
+                    "name": "设计需要材料-1",
+                    "taskDesc": "针对设计需要材料的问题，产品经理需找到并联系负责系统聊天表情的设计人员，给对方发送需求文档，提出需要之前的设计稿和相关材料，让该设计联系本项目的设计人员",
+                    "opGuide": {
+                        "words": "点击对话框推进对话"
+                    },
+                    "backgroundImg": "http://111.229.91.248/static/img/conversation-back.png",
+                    "type": "conversation",
+                    "content": {
+                        "convo": [
+                            {
+                                "speaker": "设计",
+                                "content": "【用户名】，我这边没有现在软件系统中聊天表情的设计图诶，能不能帮我联系一下呀？"
+                            },
+                            {
+                                "speaker": "用户",
+                                "content": "好的，我去查找一下以前负责表情设计的人员吧。你需要什么材料呢？"
+                            },
+                            {
+                                "speaker": "设计",
+                                "content": "之前的设计稿就好，我也可以后续和ta直接联系。"
+                            },
+                            {
+                                "speaker": "用户",
+                                "content": "了解，没问题。"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "name": "设计需要材料-2",
+                    "type": "fakeui",
                     "taskDesc": "针对设计需要材料的问题，产品经理需找到并联系负责系统聊天表情的设计人员，给对方发送需求文档，提出需要之前的设计稿和相关材料，让该设计联系本项目的设计人员",
                     "opGuide": {
                         "words": "- 点击推进对话- 打开“通讯录”，点击模拟与设计人员沟通的过程- 对接完成后，打开”资源库“中的”需求文档“，在“会议纪要”表格中记录解决问题的进展"
-                    }
+                    },
+                    "content": [  
+                        {  
+                          "name": "IM-1",  
+                          "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-1.png",  
+                          "hit_flag": 1,  
+                          "width": 1400,  
+                          "offset_left": 2,  
+                          "offset_top": 18,  
+                          "hit_width": 31,  
+                          "hit_height": 13 
+                        }, 
+                        {  
+                          "name": "IM-2",  
+                          "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-2.png",  
+                          "hit_flag": 1,  
+                          "width": 1400,  
+                          "offset_left":36,  
+                          "offset_top":87,  
+                          "hit_width":51,  
+                          "hit_height":7 
+                        }, 
+                        {  
+                          "name": "IM-2",  
+                          "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-3.png",  
+                          "hit_flag": 1,  
+                          "width": 1400,  
+                          "offset_left": 87.5,  
+                          "offset_top": 84,  
+                          "hit_width": 9,  
+                          "hit_height": 7 
+                        }, 
+                        {  
+                          "name": "IM-4",  
+                          "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-4.png",  
+                          "hit_flag": 1,  
+                          "width": 1400,  
+                          "offset_left": 82.2,  
+                          "offset_top": 87,  
+                          "hit_width": 5,  
+                          "hit_height": 7 
+                        }, 
+                        {  
+                          "name": "IM-5",  
+                          "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-5.png",  
+                          "hit_flag": 1,  
+                          "width": 1400,  
+                          "offset_left": 52,  
+                          "offset_top": 30,  
+                          "hit_width": 15,  
+                          "hit_height": 36 
+                        }, 
+                        {  
+                          "name": "IM-6",  
+                          "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-6.png",  
+                          "hit_flag": 1,  
+                          "width": 1400,  
+                          "offset_left": 75,  
+                          "offset_top": 73,  
+                          "hit_width": 9,  
+                          "hit_height": 7 
+                        }, 
+                        {  
+                          "name": "IM-7",  
+                          "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-7.png",  
+                          "hit_flag": 1,  
+                          "width": 1400,  
+                          "offset_left":34,   
+                          "offset_top":18,   
+                          "hit_width":64,   
+                          "hit_height":70   
+                        }, 
+                        {  
+                          "name": "IM-8",  
+                          "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-8.png",  
+                          "hit_flag": 0,  
+                          "width": 1400 
+                        } 
+                    ]  
                 },
                 {
-                    "name": "开发发现缺少边际情况",
+                    "name": "会议纪要",
                     "type": "form",
+                    "columns": [
+                        {
+                            "dataField": "id",
+                            "text": "id",
+                            "hidden": true
+                        },
+                        {
+                            "dataField": "time",
+                            "text": "时间",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "140px"
+                            },
+                            "editable": false
+                        },
+                        {
+                            "dataField": "process",
+                            "text": "会议纪要",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "300px"
+                            },
+                            "editable": false
+                        },
+                        {
+                            "dataField": "interaction",
+                            "text": "会后ToDo",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "140px"
+                            },
+                            "editable": false
+                        },
+                        {
+                            "dataField": "mat",
+                            "text": "会议材料",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "140px"
+                            },
+                            "editable": false
+                        },
+                        {
+                            "dataField": "parti",
+                            "text": "参会人",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "100px"
+                            },
+                            "editable": false
+                        }
+                    ],
+                    "grid": [
+                        {
+                            "id": "0",
+                            "time": "2021.mm.dd",
+                            "process": "交接了系统聊天表情的设计稿等相关材料。",
+                            "interaction": "1. 产品产出竞品分析文档 \n 2. 运营产出调研问卷",
+                            "mat": "",
+                            "parti": "设计xx"
+                        },
+                        {
+                            "id": "1",
+                            "time": "",
+                            "process": "",
+                            "interaction": "",
+                            "mat": "",
+                            "parti": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "开发发现缺少边际情况-1",
+                    "type": "fakeui",
                     "taskDesc": "产品经理修改需求文档，在交互部分说明主、客界面不同的表情聚类展示方式。然后联系本项目设计和开发，对接需求文档中新的内容， 让设计更新设计稿然后交至开发",
                     "opGuide": {
                         "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
-                    }
+                    },
+                    "content": [  
+                        {  
+                            "name": "im2-1-1",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-1.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":36,  
+                            "offset_top":87,  
+                            "hit_width":51,  
+                            "hit_height":7  
+                        },  
+                        {  
+                            "name": "im2-1-2",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-2.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":88,  
+                            "offset_top":85,  
+                            "hit_width":8,  
+                            "hit_height":6  
+                        },  
+                        {  
+                            "name": "im2-1-3",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-3.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":2,  
+                            "offset_top":4,  
+                            "hit_width":3,  
+                            "hit_height":4  
+                        } 
+                    ] 
+                },
+                {
+                    "name": "开发发现缺少边际情况-2",
+                    "type": "fakeui",
+                    "taskDesc": "产品经理修改需求文档，在交互部分说明主、客界面不同的表情聚类展示方式。然后联系本项目设计和开发，对接需求文档中新的内容， 让设计更新设计稿然后交至开发",
+                    "opGuide": {
+                        "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
+                    },
+                    "content": [  
+                        {  
+                            "name": "im2-1-1",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-1.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":36,  
+                            "offset_top":87,  
+                            "hit_width":51,  
+                            "hit_height":7  
+                        },  
+                        {  
+                            "name": "im2-1-2",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-2.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":88,  
+                            "offset_top":85,  
+                            "hit_width":8,  
+                            "hit_height":6  
+                        },  
+                        {  
+                            "name": "im2-1-3",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-3.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":2,  
+                            "offset_top":4,  
+                            "hit_width":3,  
+                            "hit_height":4  
+                        } 
+                    ] 
+                },
+                {
+                    "name": "开发发现缺少边际情况-3",
+                    "type": "combination",
+                    "direction": "row",
+                    "content": [
+                        {
+                            "name": "竞品对比分析",
+                            "type": "combination",
+                            "direction": "column",
+                            "content": [
+                                {
+                                    "name": "产品交互说明-3",
+                                    "type": "fakeui",
+                                    "content": [
+                                        {
+                                            "name": "PRD-3-1",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-1.png",
+                                            "hit_flag": 1,
+                                            "width": 150,
+                                            "offset_left": 15,
+                                            "offset_top": 37.5,
+                                            "hit_width": 60,
+                                            "hit_height": 15
+                                        },
+                                        {
+                                            "name": "PRD-3-2",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-2.png",
+                                            "hit_flag": 0,
+                                            "width": 150
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "产品交互说明-4",
+                                    "type": "fakeui",
+                                    "content": [
+                                        {
+                                            "name": "PRD-3-2",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-3-2.png",
+                                            "hit_flag": 1,
+                                            "width": 150,
+                                            "offset_left": 11,
+                                            "offset_top": 51,
+                                            "hit_width": 78,
+                                            "hit_height": 7
+                                        },
+                                        {
+                                            "name": "PRD-4-2",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-4-2.png",
+                                            "hit_flag": 1,
+                                            "width": 150,
+                                            "offset_left": 74,
+                                            "offset_top": 51,
+                                            "hit_width": 15,
+                                            "hit_height": 7
+                                        },
+                                        {
+                                            "name": "PRD-4-4",
+                                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-PRD-4-4.png",
+                                            "hit_flag": 0,
+                                            "width": 150
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "发送表情反馈--展示方式",
+                            "type": "form",
+                            "alignself": "align-self-center",
+                            "columns": [
+                                {
+                                    "dataField": "id",
+                                    "text": "步骤",
+                                    "editor": {
+                                        "type": "textarea"
+                                    }
+                                },
+                                {
+                                    "dataField": "proscons",
+                                    "text": "竞品的优点/缺点",
+                                    "editor": {
+                                        "type": "textarea"
+                                    }
+                                },
+                                {
+                                    "dataField": "ins",
+                                    "text": "启发点",
+                                    "editor": {
+                                        "type": "textarea"
+                                    }
+                                }
+                            ],
+                            "grid": [
+                                {
+                                    "id": "飞书",
+                                    "proscons": "单击表情撤销反馈非常简洁，易于用户操作",
+                                    "ins": "“探元素”在设计撤销表情反馈时也应该让用户一步完成撤销"
+                                },
+                                { "id": "", "proscons": "", "ins": "" },
+                                { "id": "", "proscons": "", "ins": "" },
+                                { "id": "messenger", "proscons": "", "ins": "" },
+                                { "id": "", "proscons": "", "ins": "" },
+                                { "id": "", "proscons": "", "ins": "" }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "marginTop": "mt-40",
+                    "name": "改动记录",
+                    "type": "form",
+                    "columns": [
+                        {
+                            "dataField": "id",
+                            "text": "id",
+                            "hidden": true
+                        },
+                        {
+                            "dataField": "item",
+                            "text": "日期",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "140px",
+                                "rowSpan": "4"
+                            },
+                            "editable": false
+                        },
+                        {
+                            "dataField": "update",
+                            "text": "描述主要更新点",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "500px"
+                            }
+                        },
+                        {
+                            "dataField": "ins",
+                            "text": "修改人",
+                            "editor": {
+                                "type": "textarea"
+                            },
+                            "style": {
+                                "fontSize": "16px",
+                                "height": "50px",
+                                "width": "150px"
+                            }
+                        }
+                    ],
+
+                    "grid": [
+                        {
+                            "id": 0,
+                            "item": "2021.mm.dd",
+                            "update": "初版",
+                            "ins": "【用户名】"
+                        },
+                        { "id": 1, 
+                          "item": "2021.mm.dd", 
+                          "update": "添加了________________________的展示方式", 
+                          "ins": "【用户名】" }
+                    ]
+                },
+                {
+                    "name": "开发发现缺少边际情况-4",
+                    "type": "fakeui",
+                    "taskDesc": "产品经理修改需求文档，在交互部分说明主、客界面不同的表情聚类展示方式。然后联系本项目设计和开发，对接需求文档中新的内容， 让设计更新设计稿然后交至开发",
+                    "opGuide": {
+                        "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
+                    },
+                    "content": [   
+                        {   
+                            "name": "im2-2-1",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-1.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":2,   
+                            "offset_top":32,   
+                            "hit_width":32,   
+                            "hit_height":14   
+                        },   
+                        {   
+                            "name": "im2-2-2",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-2.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":36,   
+                            "offset_top":88,   
+                            "hit_width":47,   
+                            "hit_height":6   
+                        },   
+                        {   
+                            "name": "im2-2-3",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-3.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":88,   
+                            "offset_top":84,   
+                            "hit_width":8,   
+                            "hit_height":6   
+                        }, 
+                        {   
+                            "name": "im2-2-4",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-4.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":83,   
+                            "offset_top":88,   
+                            "hit_width":4,   
+                            "hit_height":6   
+                        },   
+                        {   
+                            "name": "im2-2-5",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-5.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":50,   
+                            "offset_top":30,   
+                            "hit_width":15,   
+                            "hit_height":36 
+                        },   
+                        {   
+                            "name": "im2-2-6",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-6.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":73,   
+                            "offset_top":74,   
+                            "hit_width":9,   
+                            "hit_height":7   
+                        }, 
+                        {   
+                            "name": "im2-2-7",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-7.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":2,   
+                            "offset_top":46,   
+                            "hit_width":31,   
+                            "hit_height":15   
+                        },   
+                        {   
+                            "name": "im2-2-8",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-8.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":36,   
+                            "offset_top":87,   
+                            "hit_width":47,   
+                            "hit_height":7   
+                        },   
+                        {   
+                            "name": "im2-2-9",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-9.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":88,   
+                            "offset_top":88,   
+                            "hit_width":8,   
+                            "hit_height":6   
+                        }, 
+                        {   
+                            "name": "im2-2-10",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-10.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":83,   
+                            "offset_top":87,   
+                            "hit_width":4,   
+                            "hit_height":7   
+                        },   
+                        {   
+                            "name": "im2-2-11",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-11.png",   
+                            "hit_flag": 1,   
+                            "width":1400,   
+                            "offset_left":34,   
+                            "offset_top":18,   
+                            "hit_width":64,   
+                            "hit_height":70   
+                        }, 
+                        {   
+                            "name": "im2-2-12",   
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-12.png",   
+                            "hit_flag": 0,   
+                            "width":1400 
+                        } 
+                ]   
                 },
                 {
                     "name": "测试提出bug",
-                    "type": "form",
+                    "type": "fakeui",
                     "taskDesc": "测试人员通过缺陷单提出bug后，产品经理联系本项目开发，转发缺陷单并说明无法取消表情的bug情况 让设计更新设计稿然后交至开发",
                     "opGuide": {
                         "words": "打开“通讯录”查看新消息，并点击模拟回复"
-                    }
+                    },
+                    "content": [  
+                        {  
+                            "name": "IM-3-1",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-1.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":36,  
+                            "offset_top":87,  
+                            "hit_width":51,  
+                            "hit_height":7  
+                        },
+                        {  
+                            "name": "IM-3-2",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-2.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":88,  
+                            "offset_top":87.5,  
+                            "hit_width":8,  
+                            "hit_height":6  
+                        } ,
+                        {  
+                            "name": "IM-3-3",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-3.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":41,  
+                            "offset_top":59,  
+                            "hit_width":12,  
+                            "hit_height":15  
+                        } ,
+                        {  
+                            "name": "IM-3-4",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-4.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":52.3,  
+                            "offset_top":63.5,  
+                            "hit_width":9,  
+                            "hit_height":5  
+                        } ,
+                        {  
+                            "name": "IM-3-5",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-5.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":61,  
+                            "offset_top":51,  
+                            "hit_width":16.5,  
+                            "hit_height":8  
+                        } ,
+                        {  
+                            "name": "IM-3-6",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-6.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":61,  
+                            "offset_top":51,  
+                            "hit_width":16.5,  
+                            "hit_height":8  
+                        } ,
+                        {  
+                            "name": "IM-3-7",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-7.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":36,  
+                            "offset_top":87,  
+                            "hit_width":51,  
+                            "hit_height":7  
+                        } ,
+                        {  
+                            "name": "IM-3-8",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-8.png",  
+                            "hit_flag": 1,  
+                            "width":1400,  
+                            "offset_left":88,  
+                            "offset_top":87.5,  
+                            "hit_width":8,  
+                            "hit_height":6    
+                        } ,
+                        {  
+                            "name": "IM-3-9",  
+                            "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-9.png",  
+                            "hit_flag": 1,  
+                            "width":1400
+                        }
+                    ]  
                 },
                 {
                     "name": "产品经理的点滴",
