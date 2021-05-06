@@ -83,6 +83,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
     function handleClear() {
         setDustbins(data.content)
         setBoxes(data.boxes)
+        setItemsChecked(false);
         setDroppedBoxNames([])
     }
 
@@ -100,10 +101,17 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
         return a.length === 0
     }
 
+    const handleNextWrapper = () => {
+        setItemsChecked(false);
+        setShowStandardTip(false);
+        handleNext()
+    }
+
     const handleCheck = () => {
         console.log("Judge Matching!\n");
         setItemsChecked(true);
     }
+
     const isHeader = (str) => {
         if(str.length >= 1 && str[0] === '#') {
             return true;
@@ -180,14 +188,14 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
             </div>
 
             <div
-                className="d-flex justify-content-center mt-80"
-                style={{ overflow: 'hidden', clear: 'both' }}
+                className="d-flex justify-content-center"
+                style={{clear: 'both', marginBottom:"80px"}}
             >
                 {boxes.map(({ name, type }, index) => (
                     <Box name={name} type={type} isDropped={isDropped(name)} key={index} />
                 ))}
             </div>
-            <PageResult checked={matched()} handleNext={handleNext} handleCheck={handleCheck} setShowStandardTip={setShowStandardTip} resultMsg={data.resultMsg}/>
+            <PageResult checked={matched()} handleNext={handleNextWrapper} handleCheck={handleCheck} setShowStandardTip={setShowStandardTip} resultMsg={data.resultMsg}/>
             
             {showStandardTip?<StandardTip standardMsg={data.resultMsg.standardMsg}/>:<div/>}
             <button
@@ -199,7 +207,7 @@ export const Match: FC<Props> = memo(function Match({ data, handleNext }) {
                 清空
             </button>
             <button
-                onClick={handleNext}
+                onClick={handleNextWrapper}
                 type="submit"
                 className="btn btn-blue"
                 style={{ position: 'fixed', top: '85%', left: '90%' }}
