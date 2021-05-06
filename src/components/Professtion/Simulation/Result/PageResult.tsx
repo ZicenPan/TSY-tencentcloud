@@ -35,12 +35,19 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
         setShowStandardTip(true)
     }
 
+    function ButtonRouter() {
+        if (checked && btnName ==="下一步") {
+            handleNext()
+        } else {
+            handleSubmit()
+        }
+    }
+
     function handleSubmit() {
         handleOpenModal()
         handleCheck()
         if (checked) {
             setBtnName("下一步")
-            btnRef.current.onclick = handleNext
         } else {
             setBtnName("确认")
         }
@@ -80,7 +87,7 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
         <div>
             <button
                 ref={btnRef}
-                onClick={handleSubmit}
+                onClick={ButtonRouter}
                 type="submit"
                 className="btn btn-blue"
                 style={{ position: 'fixed', top: '85%', left: '70%', maxWidth: "352px"}}
