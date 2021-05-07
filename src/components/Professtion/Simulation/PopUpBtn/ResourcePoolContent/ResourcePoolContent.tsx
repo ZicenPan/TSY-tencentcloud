@@ -95,7 +95,7 @@ export default class ResourcePoolContent extends React.Component<Props, State> {
                        
                             <img className="back-icon" src={backicon} alt="backlogo" onClick={()=>this.handleClickBackIcon()}/>
 
-                            <h2 className="ml-20">资源库</h2>
+                            <h2 className="ml-30" style={{position:"absolute"}}>资源库</h2>
                             <h2 className="recource-title text-center">{name}</h2>
                             <div className="ml-40"/>
                         </div>
