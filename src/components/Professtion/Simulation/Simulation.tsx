@@ -58,7 +58,8 @@ interface State {
     curStage: number
     curStep: number
     data: any
-    stageChange: number
+    stageChange: boolean
+    stepChange: boolean
     swtichMap: any
     multiPageIndex: number
     showMailList: boolean,
@@ -68,7 +69,7 @@ interface State {
 
 export default class Simulation extends React.Component<Props, State> {
     inputData = {}
-    mailListRef = React.createRef()
+    opGuideRef = React.createRef<PopUpBtn>();
     constructor(props: any) {
         super(props)
         this.state = {
@@ -77,7 +78,8 @@ export default class Simulation extends React.Component<Props, State> {
             data: initData.stages[this.props.stage].steps
                 ? initData.stages[this.props.stage].steps[this.props.step]
                 : '',
-            stageChange: 0,
+            stageChange: false,
+            stepChange: false,
             swtichMap: {},
             multiPageIndex: 0,
             showMailList: false,
@@ -262,13 +264,17 @@ export default class Simulation extends React.Component<Props, State> {
             this.setState(() => ({
                 curStep: this.state.curStep + 1,
                 data: initData.stages[this.state.curStage].steps![this.state.curStep + 1],
-                stageChange: 0,
+                stageChange: false,
                 backgroundImg:"",
                 showMailListMsg:false
             }))
 
             if (this.state.curStep >= this.props.step) {
                 this.props.handleChangeStep(this.props.step + 1)
+                this.setState({
+                    stepChange: true,
+                })
+                
             }
         } else if (this.state.curStage >= initData.stages.length - 1) {
             console.log('over')
@@ -277,12 +283,15 @@ export default class Simulation extends React.Component<Props, State> {
                 curStage: this.state.curStage + 1,
                 curStep: 0,
                 data: initData.stages[this.state.curStage + 1].steps![0],
-                stageChange: this.state.curStage >= this.props.stage ? 1 : 0
+                stageChange: this.state.curStage >= this.props.stage ? false : true,
             }))
 
             if (this.state.curStage >= this.props.stage) {
                 this.props.handleChangeStage(this.props.stage + 1)
                 this.props.handleChangeStep(0)
+                this.setState({
+                    stepChange: true,
+                })
             }
         }
     }
@@ -293,9 +302,10 @@ export default class Simulation extends React.Component<Props, State> {
                 curStage: curStage,
                 curStep: 0,
                 data: initData.stages[curStage].steps ? initData.stages[curStage].steps[0] : '',
-                stageChange: 0,
+                stageChange: false,
                 backgroundImg:"",
-                showMailListMsg:false
+                showMailListMsg:false,
+                stepChange: false,
             })
         }
     }
@@ -305,9 +315,10 @@ export default class Simulation extends React.Component<Props, State> {
             this.setState({
                 data: initData.stages[this.state.curStage].steps[step],
                 curStep: step,
-                stageChange: 0,
+                stageChange: false,
                 backgroundImg:"",
-                showMailListMsg:false
+                showMailListMsg:false,
+                stepChange: false,
             })
         }
     }
@@ -596,6 +607,7 @@ export default class Simulation extends React.Component<Props, State> {
                             <div className="d-flex PopUpNavList flex-column z-index-high">
                                 <div className="mt-20 ml-40">
                                     <PopUpBtn
+                                        ref = {isUndefined}
                                         name="任务描述"
                                         content={this.state.data.taskDesc}
                                         stage={this.props.stage}
@@ -604,48 +616,53 @@ export default class Simulation extends React.Component<Props, State> {
                                         logoUrl={taskDescLogoUrl}
                                         logoLightUrl={taskDescLightLogoUrl}
                                         handleNext={this.handleNext}
+                                        autoPopFlag={false}
                                     />
                                 </div>
                                 <div className="mt-20 ml-40">
                                     <PopUpBtn
+                                        ref = {this.opGuideRef}
                                         name="操作指引"
                                         content={this.state.data.opGuide}
                                         stage={this.props.stage}
                                         data=""
-                                        showTooltip={false}
+                                        showTooltip={this.state.stepChange}
                                         logoUrl={opGuideLogoUrl}
                                         logoLightUrl={opGuideLightLogoUrl}
                                         handleNext={this.handleNext}
+                                        autoPopFlag={this.state.stepChange&&this.state.data.hasOwnProperty("opGuide")&&this.state.data.opGuide.hasOwnProperty("img")}
                                     />
                                 </div>
                                 <div className="mt-20 ml-40">
                                     <PopUpBtn
+                                        ref = {isUndefined}
                                         name="资源库"
                                         content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                         stage={this.props.stage}
                                         data={initData.recources}
-                                        showTooltip={this.state.stageChange===1}
+                                        showTooltip={this.state.stageChange}
                                         logoUrl={rscLogoUrl}
                                         logoLightUrl={rscLightLogoUrl}
                                         handleNext={this.handleNext}
+                                        autoPopFlag={false}
                                     />  
                                 </div>
 
-                                {this.state.showMailList
-                                ?<div className="mt-20 ml-40">
-                                        <PopUpBtn
-                                            name="通讯录"
-                                            content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
-                                            stage={this.props.stage}
-                                            data={initData.recources}
-                                            showTooltip={this.state.showMailListMsg}
-                                            logoUrl={mailListLogoUrl}
-                                            logoLightUrl={mailListLightLogoUrl}
-                                            handleNext={this.handleNext}
-                                        />
-                                 </div>
-                                 :<div/>
-                                }
+                              <div className="mt-20 ml-40" style={this.state.showMailList?{visibility: 'visible'}:{visibility: 'hidden'}}>
+                                    <PopUpBtn
+                                        ref = {isUndefined}
+                                        name="通讯录"
+                                        content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                        stage={this.props.stage}
+                                        data={initData.recources}
+                                        showTooltip={this.state.showMailListMsg}
+                                        logoUrl={mailListLogoUrl}
+                                        logoLightUrl={mailListLightLogoUrl}
+                                        handleNext={this.handleNext}
+                                        autoPopFlag={false}
+                                    />
+                                </div>
+
 
                                 <div className="mt-40 ml-20 Simulation-StepNav">
                                     <StepNav
@@ -702,7 +719,10 @@ export default class Simulation extends React.Component<Props, State> {
                 `
             }
         }
-        // 背景图片获取
+        // 自动触发事件
+        if(this.state.stepChange&&this.state.data.hasOwnProperty("opGuide")&&this.state.data.opGuide.hasOwnProperty("img")) {
+            this.opGuideRef.current.handleOpenModal()
+        }
         return (
             <div className="Simulation z-index-lowest" style={backStyle}>
                 <div className="z-index-highest">

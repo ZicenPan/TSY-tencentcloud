@@ -5,7 +5,7 @@ import ReactTooltip from "react-tooltip";
 import ResourcePoolContent from './ResourcePoolContent/ResourcePoolContent'
 import TaskDescContent from './TaskDescContent/TaskDescContent'
 import OpGuideContent from './OpGuideContent/OpGuideContent'
-
+const { forwardRef, useRef, useImperativeHandle } = React;
 import {closeBtnUrl} from '../../../../assets/cdnUrlConfig'
 import './PopUpBtn.scss'
 
@@ -20,6 +20,7 @@ interface Props {
     logoUrl: string;
     logoLightUrl: string;
     handleNext:Function
+    autoPopFlag: boolean
 }
 
 interface State {
@@ -47,7 +48,6 @@ export default class PopUpBtn extends React.Component<Props, State> {
 
   componentDidMount () {
     ReactModal.setAppElement("body");
-
   }
 
   handleOpenModal() {
@@ -135,6 +135,7 @@ export default class PopUpBtn extends React.Component<Props, State> {
   }
 
   handleTooltip() {
+    ReactTooltip.rebuild();
     switch (this.props.name) {
       case "任务描述": {
         break
@@ -158,18 +159,33 @@ export default class PopUpBtn extends React.Component<Props, State> {
         break
       }
       case "通讯录": {
+        // ReactTooltip.show(this.tooltipRef) 
         if (this.props.showTooltip) {
           // ReactTooltip.show(this.tooltipRef) 
-          if (!this.hasClickBtn&&!this.state.mouseEnter) {
+          if (!this.state.mouseEnter) {
             ReactTooltip.show(this.tooltipRef) // 展示的是上一次render中的msg
             console.log("通讯录")
-            // 计时器3秒消失
-            setTimeout(() => {
-              ReactTooltip.hide(this.tooltipRef)
-            }, 3000)
           } else 
             this.msg= ""
         }
+        break
+      }
+    }
+  }
+
+  // 处理自动的弹窗
+  handleAutoPop() {
+    switch (this.props.name) {
+      case "任务描述": {
+        break
+      }
+      case "操作指引": {
+        break
+      }
+      case "资源库": {
+        break
+      }
+      case "通讯录": {
         break
       }
     }
@@ -180,7 +196,8 @@ export default class PopUpBtn extends React.Component<Props, State> {
     this.getContext()
     
     // 处理弹窗
-    this.handleTooltip()
+    if (this.props.showTooltip)
+      this.handleTooltip()
     
     return (
       <div className="PopUpBtn-container">
