@@ -16,7 +16,8 @@
                         "convo": [
                             {
                                 "speaker": "运营",
-                                "content": "【用户名】，最近有很多用户反馈想要有表情反馈功能。"
+                                "content": "【用户名】，最近有很多用户反馈想要有表情反馈功能。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -24,7 +25,8 @@
                             },
                             {
                                 "speaker": "运营",
-                                "content": "就是可以在聊天中对一条信息回复表情，从而便捷地做出反应。"
+                                "content": "就是可以在聊天中对一条信息回复表情，从而便捷地做出反应。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -32,7 +34,8 @@
                             },
                             {
                                 "speaker": "运营",
-                                "content": "因为这样在用户想只回复表情时，就无需再发一条新的消息了。"
+                                "content": "因为这样在用户想只回复表情时，就无需再发一条新的消息了。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -40,7 +43,8 @@
                             },
                             {
                                 "speaker": "运营",
-                                "content": "我们后台已经连续1周收到这个需求的反馈了，并且反馈来自各个年龄层用户。从反馈数上来说，这一周加起来收到了100多条，算是历来比较集中的用户需求反馈了。"
+                                "content": "我们后台已经连续1周收到这个需求的反馈了，并且反馈来自各个年龄层用户。从反馈数上来说，这一周加起来收到了100多条，算是历来比较集中的用户需求反馈了。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -48,7 +52,8 @@
                             },
                             {
                                 "speaker": "运营",
-                                "content": "是的，这个功能可以提升用户体验，而且从研发端工作量来说也合理，1个月可以完成吧。"
+                                "content": "是的，这个功能可以提升用户体验，而且从研发端工作量来说也合理，1个月可以完成吧。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -1621,7 +1626,8 @@
                         "convo": [
                             {
                                 "speaker": "Leader",
-                                "content": "本次需求评估会议我们请到了设计、开发以及测试同事，一同就是否给咱们“探元素”App添加对于聊天消息的表情反馈功能，那么现在就由咱们的产品负责人跟大家介绍一下需求背景以及项目预估。"
+                                "content": "本次需求评估会议我们请到了设计、开发以及测试同事，一同就是否给咱们“探元素”App添加对于聊天消息的表情反馈功能，那么现在就由咱们的产品负责人跟大家介绍一下需求背景以及项目预估。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -1629,7 +1635,8 @@
                             },
                             {
                                 "speaker": "研发",
-                                "content": "嗯好的，那么我们要如何实现表情反馈功能呢？"
+                                "content": "嗯好的，那么我们要如何实现表情反馈功能呢？",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -1637,15 +1644,18 @@
                             },
                             {
                                 "speaker": "Leader",
-                                "content": "好的，我认为这个需求很有价值，咱们现在就立项开始需求落地吧。设计、研发和测试，你们近期的排期能安排过来吗？"
+                                "content": "好的，我认为这个需求很有价值，咱们现在就立项开始需求落地吧。设计、研发和测试，你们近期的排期能安排过来吗？",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "研发，设计和测试",
-                                "content": "嗯嗯可以的，尽力支持。"
+                                "content": "嗯嗯可以的，尽力支持。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "Leader",
-                                "content": "好的，那会后大家把对于各自部分的预估时间发给产品负责人，然后你来给项目做一个排期表吧。"
+                                "content": "好的，那会后大家把对于各自部分的预估时间发给产品负责人，然后你来给项目做一个排期表吧。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -2034,13 +2044,13 @@
                     "opGuide": {
                         "words": "点击对话框推进对话"
                     },
-                    "backgroundImg": "http://111.229.91.248/static/img/conversation-back.png",
                     "type": "conversation",
                     "content": {
                         "convo": [
                             {
                                 "speaker": "设计",
-                                "content": "【用户名】，我这边没有现在软件系统中聊天表情的设计图诶，能不能帮我联系一下呀？"
+                                "content": "【用户名】，我这边没有现在软件系统中聊天表情的设计图诶，能不能帮我联系一下呀？",
+                                "characterImg": "http://111.229.91.248/static/img/Designer-Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -2048,7 +2058,8 @@
                             },
                             {
                                 "speaker": "设计",
-                                "content": "之前的设计稿就好，我也可以后续和ta直接联系。"
+                                "content": "之前的设计稿就好，我也可以后续和ta直接联系。",
+                                "characterImg": "http://111.229.91.248/static/img/Designer-Character.png"
                             },
                             {
                                 "speaker": "用户",
