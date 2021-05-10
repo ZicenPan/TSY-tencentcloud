@@ -73,7 +73,7 @@ export const ScreenShot: FC<Props> = memo(function ScreenShot({ data, handleNext
         className="centered"
         >
         <div className="d-flex flex-column" onClick={() =>setZoomFigure( {src: zoomFigure.src, zoom:false})}>
-            <img className="align-self-center mt-20" src={zoomFigure.src}/>
+            <img className="align-self-center mt-20" src={zoomFigure.src} style={{width:"90%", height:"90%"}}/>
             
         </div>
     </ReactModal>;
