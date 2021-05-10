@@ -599,7 +599,8 @@
                             "dataField": "analy",
                             "text": "分析",
                             "editor": {
-                                "type": "textarea"
+                                "type": "textarea",
+                                "placeholder": "请描述用户对该功能的态度及原因"
                             },
                             "style": {
                                 "width": "300px",
