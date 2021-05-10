@@ -5,10 +5,11 @@ import '@/scss/style.scss'
 
 import './EndPage.css'
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import {handleInputChange} from "react-select/src/utils";
 
 interface PageProps {
     data: any
-    handleNext: () => void
+    handleChangeType: Function
 }
 
 class EndPage extends React.Component<PageProps, {}> {
@@ -34,7 +35,7 @@ class EndPage extends React.Component<PageProps, {}> {
                     赶快扫码分享你的成就吧～
                 </div>
                 <div className="shareButton">
-                    <button type="button" className="btn btn-primary">
+                    <button type="button" className="btn btn-primary" onClick={()=>{this.props.handleChangeType("professtionVideo")}}>
                         查看全部分享视频
                     </button>
                 </div>
