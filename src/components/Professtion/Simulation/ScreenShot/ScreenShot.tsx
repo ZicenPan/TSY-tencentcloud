@@ -1,5 +1,6 @@
 /* eslint-disable max-params */
 import React, { FC, memo, useState, useEffect, useCallback } from 'react'
+import "./ScreenShot.scss"
 
 import { Form } from '../Form/Form'
 import FakeUi from '../FakeUi/FakeUi'
@@ -10,10 +11,17 @@ import { PageResult } from '../Result/PageResult'
 import StandardTip from '../../StandardTip/StandardTip'
 
 import update from 'immutability-helper'
+import ReactModal from 'react-modal'
+
 
 interface Props {
     data: any
     handleNext: () => void
+}
+
+interface ZoomFigure {
+    src : any
+    zoom: boolean
 }
 
 export const ScreenShot: FC<Props> = memo(function ScreenShot({ data, handleNext }) {
@@ -23,6 +31,7 @@ export const ScreenShot: FC<Props> = memo(function ScreenShot({ data, handleNext
     const [columns, setColumns] = useState(data.form.columns)
     const [answer, setAnswer] = useState(data.form.answer)
     const [pass, setPass] = useState(false)
+    const [zoomFigure, setZoomFigure] = useState({ src:null, zoom:false})
 
     function formEqual(object1: any, object2: any) {
         const keys1 = Object.keys(object1)
@@ -58,6 +67,21 @@ export const ScreenShot: FC<Props> = memo(function ScreenShot({ data, handleNext
     //     }
     //     setPass(equal)
     // }
+    const fullScreenImg = (showModal) => <ReactModal
+        isOpen= {showModal}
+        contentLabel="onRequestClose Example"
+        className="centered"
+        >
+        <div className="d-flex flex-column" onClick={() =>setZoomFigure( {src: zoomFigure.src, zoom:false})}>
+            <img className="align-self-center mt-20" src={zoomFigure.src}/>
+            
+        </div>
+    </ReactModal>;
+
+    function setImg(imgSrc, e){
+        setZoomFigure( {src:imgSrc, zoom:true})
+    }
+    
 
     const newCols = update(columns, {
         [columns.length - 1]: {
@@ -68,19 +92,24 @@ export const ScreenShot: FC<Props> = memo(function ScreenShot({ data, handleNext
                     console.log("rowi", rowindex)
                     console.log("extra", extraData)
                     return (
-                        <button
-                            className="btn btn-blue"
-                            onClick={() => {
-                                console.log('click')
-                            }}
-                        >
-                            截图
-                        </button>
+                        <div onClick={(e)=> setImg(row.vision, e)}>
+                        <img src={row.vision} style={{width:"100%", height:"100%"}} />
+                        </div>
                     )
                 }
             }
         }
     })
+
+    // const newRows = update(grid, {
+    //     [grid.length - 1]: {
+    //         $merge: {
+    //             formatter: () => {
+
+    //             }
+    //         }
+    //     }
+    // })
 
     console.log(newCols)
     function handleCheck() {}
@@ -101,12 +130,14 @@ export const ScreenShot: FC<Props> = memo(function ScreenShot({ data, handleNext
                         cellEdit={cellEditFactory({
                             mode: 'click',
                             blurToSave: true,
-                            afterSaveCell
+                            afterSaveCell,
+                            nonEditableRows: () => [0]
                         })}
                         headerClasses={data.headerClass ? data.headerClass : 'header-class'}
                     />
                 </div>
             </div>
+            {fullScreenImg(zoomFigure.zoom)}
             <button
                 onClick={handleNext}
                 type="submit"
