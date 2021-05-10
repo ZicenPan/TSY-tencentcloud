@@ -37,10 +37,8 @@ export default class Video extends Component<Props, {}> {
             <div>
                 <div className="video-title mt-40 d-flex ">
                     <div className="video-stageid mr-20">{stageId[1]?stageId:'0'+stageId}</div>
+                    <h1>{this.props.videoInfo.name}</h1>
                 </div>
-                <h3 className="video-introduction-title mt-10">标题</h3>
-                <p className="mt-10 video-introduction-content">{this.props.videoInfo.name}</p>
-                <h3 className="video-introduction-title mt-10">简介</h3>
                 <p className="mt-10 video-introduction-content">{this.props.videoInfo.introduction}</p>
                 <div className="Player">
                     <Player
