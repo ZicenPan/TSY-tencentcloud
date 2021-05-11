@@ -13,7 +13,7 @@ import './PopUpBtn.scss'
 
 interface Props {
     name: string;
-    content: string;
+    content: any;
     stage: number;
     data: any;
     showTooltip: boolean;
@@ -107,7 +107,8 @@ export default class PopUpBtn extends React.Component<Props, State> {
         break
       }
       case "通讯录": {
-        this.msg = "你收到了一条信息"
+          this.msg = this.props.content?this.props.content.msg:"你收到了一条信息"
+        
       }
     }
   }

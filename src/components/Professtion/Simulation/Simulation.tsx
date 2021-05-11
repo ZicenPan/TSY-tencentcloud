@@ -266,7 +266,8 @@ export default class Simulation extends React.Component<Props, State> {
                 data: initData.stages[this.state.curStage].steps![this.state.curStep + 1],
                 stageChange: false,
                 backgroundImg:"",
-                showMailListMsg:false
+                showMailListMsg:false,
+                showMailList:false,
             }))
 
             if (this.state.curStep >= this.props.step) {
@@ -305,6 +306,7 @@ export default class Simulation extends React.Component<Props, State> {
                 stageChange: false,
                 backgroundImg:"",
                 showMailListMsg:false,
+                showMailList:false,
                 stepChange: false,
             })
         }
@@ -318,6 +320,7 @@ export default class Simulation extends React.Component<Props, State> {
                 stageChange: false,
                 backgroundImg:"",
                 showMailListMsg:false,
+                showMailList:false,
                 stepChange: false,
             })
         }
@@ -327,7 +330,9 @@ export default class Simulation extends React.Component<Props, State> {
         let swtichMapTemp = this.state.swtichMap
         swtichMapTemp[swtichId] = num
         this.setState({
-            swtichMap: swtichMapTemp
+            swtichMap: swtichMapTemp,
+            stepChange: false,
+            stageChange: false,
         })
     }
     /* eslint-disable */
@@ -552,7 +557,7 @@ export default class Simulation extends React.Component<Props, State> {
             case 'fakeui': {
                 return (
                     <div className={className} style={style}>
-                        <FakeUi data={templateData.content} />
+                        <FakeUi data={templateData.content} handleNext={this.handleNext} nextType={templateData.nextType}/>
                         <button
                             onClick={this.handleNext}
                             type="submit"
@@ -652,7 +657,7 @@ export default class Simulation extends React.Component<Props, State> {
                                     <PopUpBtn
                                         ref = {isUndefined}
                                         name="通讯录"
-                                        content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
+                                        content={this.state.data.mailList}
                                         stage={this.props.stage}
                                         data={initData.recources}
                                         showTooltip={this.state.showMailListMsg}

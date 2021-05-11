@@ -7,6 +7,8 @@ import { url } from "node:inspector";
 
 interface Props {
     data:any
+    nextType:Number
+    handleNext: () => void
 }
 
 interface State {
@@ -26,18 +28,35 @@ export default class FakeUi extends React.Component<Props, State> {
     this.handleHitWrongArea = this.handleHitWrongArea.bind(this)
 }
     handleHitArea() {
-        this.setState({
-            num: this.state.num + 1,
-            twinkling: false
-        });
+        if (this.state.num >= this.props.data.length-1) {
+            if (this.props.nextType&&this.props.nextType === 2) {
+                this.props.handleNext()
+            } else {
+                this.setState({
+                    num: 0
+                });
+            }
+        } else {
+            this.setState({
+                num: this.state.num + 1,
+                twinkling: false
+            });
+        }
+
     }
     
     handleHitWrongArea() {
         if (this.state.num >= this.props.data.length-1) {
-            this.setState({
-                twinkling: false,
-                num: 0,
-            }); 
+
+            if (this.props.nextType&&this.props.nextType === 2) {
+                this.props.handleNext()
+            } else {
+                this.setState({
+                    twinkling: false,
+                    num: 0,
+                });          
+            }
+
         } else {
             this.setState({
                 twinkling: true,

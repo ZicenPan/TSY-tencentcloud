@@ -463,7 +463,7 @@
                                 "columns": [
                                     {
                                         "dataField": "id",
-                                        "text": "竞品",
+                                        "text": "竞品1",
                                         "editor": {
                                             "type": "textarea"
                                         }
@@ -2045,6 +2045,9 @@
                         "words": "点击对话框推进对话"
                     },
                     "type": "conversation",
+                    "mailList": {
+                        "msg": "打开通讯录"
+                    },
                     "content": {
                         "convo": [
                             {
@@ -2076,12 +2079,13 @@
                     "opGuide": {
                         "words": "- 点击推进对话- 打开“通讯录”，点击模拟与设计人员沟通的过程- 对接完成后，打开”资源库“中的”需求文档“，在“会议纪要”表格中记录解决问题的进展"
                     },
+                    "nextType" : 2,
                     "content": [  
                         {  
                           "name": "IM-1",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-1.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 2,  
                           "offset_top": 18,  
                           "hit_width": 31,  
@@ -2091,7 +2095,7 @@
                           "name": "IM-2",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-2.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left":36,  
                           "offset_top":87,  
                           "hit_width":51,  
@@ -2101,7 +2105,7 @@
                           "name": "IM-2",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-3.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 87.5,  
                           "offset_top": 84,  
                           "hit_width": 9,  
@@ -2111,7 +2115,7 @@
                           "name": "IM-4",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-4.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 82.2,  
                           "offset_top": 87,  
                           "hit_width": 5,  
@@ -2121,7 +2125,7 @@
                           "name": "IM-5",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-5.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 52,  
                           "offset_top": 30,  
                           "hit_width": 15,  
@@ -2131,7 +2135,7 @@
                           "name": "IM-6",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-6.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 75,  
                           "offset_top": 73,  
                           "hit_width": 9,  
@@ -2141,7 +2145,7 @@
                           "name": "IM-7",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-7.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left":34,   
                           "offset_top":18,   
                           "hit_width":64,   
@@ -2151,7 +2155,7 @@
                           "name": "IM-8",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-8.png",  
                           "hit_flag": 0,  
-                          "width": 1400 
+                          "width": 1100 
                         } 
                     ]  
                 },
@@ -2257,12 +2261,13 @@
                     "opGuide": {
                         "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
                     },
+                    "nextType" : 2,
                     "content": [  
                         {  
                             "name": "im2-1-1",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-1.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":36,  
                             "offset_top":87,  
                             "hit_width":51,  
@@ -2272,7 +2277,7 @@
                             "name": "im2-1-2",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-2.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":88,  
                             "offset_top":85,  
                             "hit_width":8,  
@@ -2282,7 +2287,7 @@
                             "name": "im2-1-3",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-3.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":2,  
                             "offset_top":4,  
                             "hit_width":3,  
@@ -2298,12 +2303,13 @@
                     "opGuide": {
                         "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
                     },
+                    "nextType" : 2,
                     "content": [  
                         {  
                             "name": "im2-1-1",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-1.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":36,  
                             "offset_top":87,  
                             "hit_width":51,  
@@ -2313,7 +2319,7 @@
                             "name": "im2-1-2",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-2.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":88,  
                             "offset_top":85,  
                             "hit_width":8,  
@@ -2323,7 +2329,7 @@
                             "name": "im2-1-3",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-3.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":2,  
                             "offset_top":4,  
                             "hit_width":3,  
@@ -2443,6 +2449,9 @@
                     "marginTop": "mt-40",
                     "name": "改动记录",
                     "type": "form",
+                    "mailList":{
+                        "msg":"打开通讯录"
+                    },
                     "columns": [
                         {
                             "dataField": "id",
@@ -2510,12 +2519,13 @@
                     "opGuide": {
                         "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
                     },
+                    "nextType" : 2,
                     "content": [   
                         {   
                             "name": "im2-2-1",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-1.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":2,   
                             "offset_top":32,   
                             "hit_width":32,   
@@ -2525,7 +2535,7 @@
                             "name": "im2-2-2",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-2.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":36,   
                             "offset_top":88,   
                             "hit_width":47,   
@@ -2535,7 +2545,7 @@
                             "name": "im2-2-3",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-3.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":88,   
                             "offset_top":84,   
                             "hit_width":8,   
@@ -2545,7 +2555,7 @@
                             "name": "im2-2-4",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-4.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":83,   
                             "offset_top":88,   
                             "hit_width":4,   
@@ -2555,7 +2565,7 @@
                             "name": "im2-2-5",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-5.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":50,   
                             "offset_top":30,   
                             "hit_width":15,   
@@ -2565,7 +2575,7 @@
                             "name": "im2-2-6",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-6.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":73,   
                             "offset_top":74,   
                             "hit_width":9,   
@@ -2575,7 +2585,7 @@
                             "name": "im2-2-7",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-7.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":2,   
                             "offset_top":46,   
                             "hit_width":31,   
@@ -2585,7 +2595,7 @@
                             "name": "im2-2-8",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-8.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":36,   
                             "offset_top":87,   
                             "hit_width":47,   
@@ -2595,7 +2605,7 @@
                             "name": "im2-2-9",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-9.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":88,   
                             "offset_top":88,   
                             "hit_width":8,   
@@ -2605,7 +2615,7 @@
                             "name": "im2-2-10",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-10.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":83,   
                             "offset_top":87,   
                             "hit_width":4,   
@@ -2615,7 +2625,7 @@
                             "name": "im2-2-11",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-11.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":34,   
                             "offset_top":18,   
                             "hit_width":64,   
@@ -2625,7 +2635,7 @@
                             "name": "im2-2-12",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-12.png",   
                             "hit_flag": 0,   
-                            "width":1400 
+                            "width":1100 
                         } 
                 ]   
                 },
@@ -2637,12 +2647,13 @@
                     "opGuide": {
                         "words": "打开“通讯录”查看新消息，并点击模拟回复"
                     },
+                    "nextType" : 2,
                     "content": [  
                         {  
                             "name": "IM-3-1",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-1.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":36,  
                             "offset_top":87,  
                             "hit_width":51,  
@@ -2652,7 +2663,7 @@
                             "name": "IM-3-2",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-2.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":88,  
                             "offset_top":87.5,  
                             "hit_width":8,  
@@ -2662,7 +2673,7 @@
                             "name": "IM-3-3",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-3.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":41,  
                             "offset_top":59,  
                             "hit_width":12,  
@@ -2672,7 +2683,7 @@
                             "name": "IM-3-4",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-4.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":52.3,  
                             "offset_top":63.5,  
                             "hit_width":9,  
@@ -2682,7 +2693,7 @@
                             "name": "IM-3-5",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-5.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":61,  
                             "offset_top":51,  
                             "hit_width":16.5,  
@@ -2692,7 +2703,7 @@
                             "name": "IM-3-6",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-6.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":61,  
                             "offset_top":51,  
                             "hit_width":16.5,  
@@ -2702,7 +2713,7 @@
                             "name": "IM-3-7",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-7.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":36,  
                             "offset_top":87,  
                             "hit_width":51,  
@@ -2712,7 +2723,7 @@
                             "name": "IM-3-8",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-8.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":88,  
                             "offset_top":87.5,  
                             "hit_width":8,  
@@ -2722,7 +2733,7 @@
                             "name": "IM-3-9",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-9.png",  
                             "hit_flag": 1,  
-                            "width":1400
+                            "width":1100
                         }
                     ]  
                 },
