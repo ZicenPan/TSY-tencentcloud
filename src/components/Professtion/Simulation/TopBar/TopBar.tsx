@@ -77,16 +77,20 @@ class TopBar extends React.Component<Props, {}> {
             {/* <span className="circle-blue" /> */}
           <div className='d-flex flex-row m-auto'>
             {stagesBars}
-          </div>
-          
-
-          <div className="topbar-video">
-            
+            {/* <div className="ml-10"/> */}
             <button className="topbar-videoBtn d-flex" onClick={()=>{this.props.handleChangeType("professtionVideo")}}>
               <img className="topbar-videoimg mr-1" src={TopBarVideo}/>
               <h4 className="m-auto">业内人士分享视频</h4>
             </button>
           </div>
+          
+
+          {/* <div className="topbar-video">
+            <button className="topbar-videoBtn d-flex" onClick={()=>{this.props.handleChangeType("professtionVideo")}}>
+              <img className="topbar-videoimg mr-1" src={TopBarVideo}/>
+              <h4 className="m-auto">业内人士分享视频</h4>
+            </button>
+          </div> */}
         </div>
       </div>
     );

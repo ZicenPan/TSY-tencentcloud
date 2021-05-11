@@ -16,7 +16,8 @@
                         "convo": [
                             {
                                 "speaker": "运营",
-                                "content": "【用户名】，最近有很多用户反馈想要有表情反馈功能。"
+                                "content": "【用户名】，最近有很多用户反馈想要有表情反馈功能。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -24,7 +25,8 @@
                             },
                             {
                                 "speaker": "运营",
-                                "content": "就是可以在聊天中对一条信息回复表情，从而便捷地做出反应。"
+                                "content": "就是可以在聊天中对一条信息回复表情，从而便捷地做出反应。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -32,7 +34,8 @@
                             },
                             {
                                 "speaker": "运营",
-                                "content": "因为这样在用户想只回复表情时，就无需再发一条新的消息了。"
+                                "content": "因为这样在用户想只回复表情时，就无需再发一条新的消息了。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -40,7 +43,8 @@
                             },
                             {
                                 "speaker": "运营",
-                                "content": "我们后台已经连续1周收到这个需求的反馈了，并且反馈来自各个年龄层用户。从反馈数上来说，这一周加起来收到了100多条，算是历来比较集中的用户需求反馈了。"
+                                "content": "我们后台已经连续1周收到这个需求的反馈了，并且反馈来自各个年龄层用户。从反馈数上来说，这一周加起来收到了100多条，算是历来比较集中的用户需求反馈了。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -48,7 +52,8 @@
                             },
                             {
                                 "speaker": "运营",
-                                "content": "是的，这个功能可以提升用户体验，而且从研发端工作量来说也合理，1个月可以完成吧。"
+                                "content": "是的，这个功能可以提升用户体验，而且从研发端工作量来说也合理，1个月可以完成吧。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -248,8 +253,7 @@
                             "num": 2,
                             "identify": "竞品对比分析switch1",
                             "switchNames": ["飞书", "Messenger"],
-                            "alignself": "align-self-start",
-                            "title":"竞品分析对比"
+                            "alignself": "align-self-start"
                         },
                         {
                             "name": "竞品对比分析",
@@ -459,7 +463,7 @@
                                 "columns": [
                                     {
                                         "dataField": "id",
-                                        "text": "竞品",
+                                        "text": "竞品1",
                                         "editor": {
                                             "type": "textarea"
                                         }
@@ -934,13 +938,13 @@
                                     "type": "image",
                                     "content": "http://111.229.91.248/static/img/staticDisplay/产品功能说明-流程图.jpg",
                                     "style": {
-                                        "width": "90%"
+                                        "width": "70%"
                                     }
                                 }
                             ]
                         },
                         {
-                            "name": "产品功能说明",
+                            "name": "",
                             "type": "match",
                             "alignself": "align-self-center",
                             "content": [
@@ -1052,7 +1056,8 @@
                     "alignself": "align-self-start",
                     "taskDesc": "详细描述交互步骤，说明需要注意的用例细节，并配合图例展示",
                     "opGuide": {
-                        "words": "下拉选择合适内容来完成表格，并点击模拟绘制交互原型图"
+                        "words": "下拉选择合适内容来完成表格，并点击模拟绘制交互原型图",
+                        "img": "http://111.229.91.248/static/svg/opGuide/opGuide-project-compare.svg"
                     },
                     "content": [
                         {
@@ -1623,7 +1628,8 @@
                         "convo": [
                             {
                                 "speaker": "Leader",
-                                "content": "本次需求评估会议我们请到了设计、开发以及测试同事，一同就是否给咱们“探元素”App添加对于聊天消息的表情反馈功能，那么现在就由咱们的产品负责人跟大家介绍一下需求背景以及项目预估。"
+                                "content": "本次需求评估会议我们请到了设计、开发以及测试同事，一同就是否给咱们“探元素”App添加对于聊天消息的表情反馈功能，那么现在就由咱们的产品负责人跟大家介绍一下需求背景以及项目预估。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -1631,7 +1637,8 @@
                             },
                             {
                                 "speaker": "研发",
-                                "content": "嗯好的，那么我们要如何实现表情反馈功能呢？"
+                                "content": "嗯好的，那么我们要如何实现表情反馈功能呢？",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -1639,15 +1646,18 @@
                             },
                             {
                                 "speaker": "Leader",
-                                "content": "好的，我认为这个需求很有价值，咱们现在就立项开始需求落地吧。设计、研发和测试，你们近期的排期能安排过来吗？"
+                                "content": "好的，我认为这个需求很有价值，咱们现在就立项开始需求落地吧。设计、研发和测试，你们近期的排期能安排过来吗？",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "研发，设计和测试",
-                                "content": "嗯嗯可以的，尽力支持。"
+                                "content": "嗯嗯可以的，尽力支持。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "Leader",
-                                "content": "好的，那会后大家把对于各自部分的预估时间发给产品负责人，然后你来给项目做一个排期表吧。"
+                                "content": "好的，那会后大家把对于各自部分的预估时间发给产品负责人，然后你来给项目做一个排期表吧。",
+                                "characterImg": "http://111.229.91.248/static/img/Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -2036,13 +2046,16 @@
                     "opGuide": {
                         "words": "点击对话框推进对话"
                     },
-                    "backgroundImg": "http://111.229.91.248/static/img/conversation-back.png",
                     "type": "conversation",
+                    "mailList": {
+                        "msg": "打开通讯录"
+                    },
                     "content": {
                         "convo": [
                             {
                                 "speaker": "设计",
-                                "content": "【用户名】，我这边没有现在软件系统中聊天表情的设计图诶，能不能帮我联系一下呀？"
+                                "content": "【用户名】，我这边没有现在软件系统中聊天表情的设计图诶，能不能帮我联系一下呀？",
+                                "characterImg": "http://111.229.91.248/static/img/Designer-Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -2050,7 +2063,8 @@
                             },
                             {
                                 "speaker": "设计",
-                                "content": "之前的设计稿就好，我也可以后续和ta直接联系。"
+                                "content": "之前的设计稿就好，我也可以后续和ta直接联系。",
+                                "characterImg": "http://111.229.91.248/static/img/Designer-Character.png"
                             },
                             {
                                 "speaker": "用户",
@@ -2062,16 +2076,18 @@
                 {
                     "name": "设计需要材料-2",
                     "type": "fakeui",
+                    "mailListFlag": true,
                     "taskDesc": "针对设计需要材料的问题，产品经理需找到并联系负责系统聊天表情的设计人员，给对方发送需求文档，提出需要之前的设计稿和相关材料，让该设计联系本项目的设计人员",
                     "opGuide": {
                         "words": "- 点击推进对话- 打开“通讯录”，点击模拟与设计人员沟通的过程- 对接完成后，打开”资源库“中的”需求文档“，在“会议纪要”表格中记录解决问题的进展"
                     },
+                    "nextType" : 2,
                     "content": [  
                         {  
                           "name": "IM-1",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-1.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 2,  
                           "offset_top": 18,  
                           "hit_width": 31,  
@@ -2081,7 +2097,7 @@
                           "name": "IM-2",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-2.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left":36,  
                           "offset_top":87,  
                           "hit_width":51,  
@@ -2091,7 +2107,7 @@
                           "name": "IM-2",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-3.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 87.5,  
                           "offset_top": 84,  
                           "hit_width": 9,  
@@ -2101,7 +2117,7 @@
                           "name": "IM-4",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-4.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 82.2,  
                           "offset_top": 87,  
                           "hit_width": 5,  
@@ -2111,7 +2127,7 @@
                           "name": "IM-5",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-5.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 52,  
                           "offset_top": 30,  
                           "hit_width": 15,  
@@ -2121,7 +2137,7 @@
                           "name": "IM-6",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-6.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left": 75,  
                           "offset_top": 73,  
                           "hit_width": 9,  
@@ -2131,7 +2147,7 @@
                           "name": "IM-7",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-7.png",  
                           "hit_flag": 1,  
-                          "width": 1400,  
+                          "width": 1100,  
                           "offset_left":34,   
                           "offset_top":18,   
                           "hit_width":64,   
@@ -2141,7 +2157,7 @@
                           "name": "IM-8",  
                           "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-1-8.png",  
                           "hit_flag": 0,  
-                          "width": 1400 
+                          "width": 1100 
                         } 
                     ]  
                 },
@@ -2242,16 +2258,18 @@
                 {
                     "name": "开发发现缺少边际情况-1",
                     "type": "fakeui",
+                    "mailListFlag": true,
                     "taskDesc": "产品经理修改需求文档，在交互部分说明主、客界面不同的表情聚类展示方式。然后联系本项目设计和开发，对接需求文档中新的内容， 让设计更新设计稿然后交至开发",
                     "opGuide": {
                         "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
                     },
+                    "nextType" : 2,
                     "content": [  
                         {  
                             "name": "im2-1-1",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-1.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":36,  
                             "offset_top":87,  
                             "hit_width":51,  
@@ -2261,7 +2279,7 @@
                             "name": "im2-1-2",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-2.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":88,  
                             "offset_top":85,  
                             "hit_width":8,  
@@ -2271,7 +2289,7 @@
                             "name": "im2-1-3",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-3.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":2,  
                             "offset_top":4,  
                             "hit_width":3,  
@@ -2282,16 +2300,18 @@
                 {
                     "name": "开发发现缺少边际情况-2",
                     "type": "fakeui",
+                    "mailListFlag": true,
                     "taskDesc": "产品经理修改需求文档，在交互部分说明主、客界面不同的表情聚类展示方式。然后联系本项目设计和开发，对接需求文档中新的内容， 让设计更新设计稿然后交至开发",
                     "opGuide": {
                         "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
                     },
+                    "nextType" : 2,
                     "content": [  
                         {  
                             "name": "im2-1-1",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-1.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":36,  
                             "offset_top":87,  
                             "hit_width":51,  
@@ -2301,7 +2321,7 @@
                             "name": "im2-1-2",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-2.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":88,  
                             "offset_top":85,  
                             "hit_width":8,  
@@ -2311,7 +2331,7 @@
                             "name": "im2-1-3",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-1-3.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":2,  
                             "offset_top":4,  
                             "hit_width":3,  
@@ -2431,6 +2451,9 @@
                     "marginTop": "mt-40",
                     "name": "改动记录",
                     "type": "form",
+                    "mailList":{
+                        "msg":"打开通讯录"
+                    },
                     "columns": [
                         {
                             "dataField": "id",
@@ -2493,16 +2516,18 @@
                 {
                     "name": "开发发现缺少边际情况-4",
                     "type": "fakeui",
+                    "mailListFlag": true,
                     "taskDesc": "产品经理修改需求文档，在交互部分说明主、客界面不同的表情聚类展示方式。然后联系本项目设计和开发，对接需求文档中新的内容， 让设计更新设计稿然后交至开发",
                     "opGuide": {
                         "words": "- 打开“通讯录”查看新消息，并点击模拟回复- 打开”资源库“中的”需求文档“，下拉选择补全“产品交互说明”表格的内容，然后输入文字补全“改动记录”表格- 返回“通讯录”，点击模拟与设计、开发人员沟通"
                     },
+                    "nextType" : 2,
                     "content": [   
                         {   
                             "name": "im2-2-1",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-1.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":2,   
                             "offset_top":32,   
                             "hit_width":32,   
@@ -2512,7 +2537,7 @@
                             "name": "im2-2-2",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-2.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":36,   
                             "offset_top":88,   
                             "hit_width":47,   
@@ -2522,7 +2547,7 @@
                             "name": "im2-2-3",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-3.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":88,   
                             "offset_top":84,   
                             "hit_width":8,   
@@ -2532,7 +2557,7 @@
                             "name": "im2-2-4",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-4.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":83,   
                             "offset_top":88,   
                             "hit_width":4,   
@@ -2542,7 +2567,7 @@
                             "name": "im2-2-5",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-5.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":50,   
                             "offset_top":30,   
                             "hit_width":15,   
@@ -2552,7 +2577,7 @@
                             "name": "im2-2-6",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-6.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":73,   
                             "offset_top":74,   
                             "hit_width":9,   
@@ -2562,7 +2587,7 @@
                             "name": "im2-2-7",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-7.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":2,   
                             "offset_top":46,   
                             "hit_width":31,   
@@ -2572,7 +2597,7 @@
                             "name": "im2-2-8",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-8.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":36,   
                             "offset_top":87,   
                             "hit_width":47,   
@@ -2582,7 +2607,7 @@
                             "name": "im2-2-9",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-9.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":88,   
                             "offset_top":88,   
                             "hit_width":8,   
@@ -2592,7 +2617,7 @@
                             "name": "im2-2-10",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-10.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":83,   
                             "offset_top":87,   
                             "hit_width":4,   
@@ -2602,7 +2627,7 @@
                             "name": "im2-2-11",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-11.png",   
                             "hit_flag": 1,   
-                            "width":1400,   
+                            "width":1100,   
                             "offset_left":34,   
                             "offset_top":18,   
                             "hit_width":64,   
@@ -2612,23 +2637,25 @@
                             "name": "im2-2-12",   
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-2-2-12.png",   
                             "hit_flag": 0,   
-                            "width":1400 
+                            "width":1100 
                         } 
                 ]   
                 },
                 {
                     "name": "测试提出bug",
                     "type": "fakeui",
+                    "mailListFlag": true,
                     "taskDesc": "测试人员通过缺陷单提出bug后，产品经理联系本项目开发，转发缺陷单并说明无法取消表情的bug情况 让设计更新设计稿然后交至开发",
                     "opGuide": {
                         "words": "打开“通讯录”查看新消息，并点击模拟回复"
                     },
+                    "nextType" : 2,
                     "content": [  
                         {  
                             "name": "IM-3-1",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-1.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":36,  
                             "offset_top":87,  
                             "hit_width":51,  
@@ -2638,7 +2665,7 @@
                             "name": "IM-3-2",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-2.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":88,  
                             "offset_top":87.5,  
                             "hit_width":8,  
@@ -2648,7 +2675,7 @@
                             "name": "IM-3-3",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-3.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":41,  
                             "offset_top":59,  
                             "hit_width":12,  
@@ -2658,7 +2685,7 @@
                             "name": "IM-3-4",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-4.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":52.3,  
                             "offset_top":63.5,  
                             "hit_width":9,  
@@ -2668,7 +2695,7 @@
                             "name": "IM-3-5",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-5.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":61,  
                             "offset_top":51,  
                             "hit_width":16.5,  
@@ -2678,7 +2705,7 @@
                             "name": "IM-3-6",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-6.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":61,  
                             "offset_top":51,  
                             "hit_width":16.5,  
@@ -2688,7 +2715,7 @@
                             "name": "IM-3-7",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-7.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":36,  
                             "offset_top":87,  
                             "hit_width":51,  
@@ -2698,7 +2725,7 @@
                             "name": "IM-3-8",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-8.png",  
                             "hit_flag": 1,  
-                            "width":1400,  
+                            "width":1100,  
                             "offset_left":88,  
                             "offset_top":87.5,  
                             "hit_width":8,  
@@ -2708,7 +2735,7 @@
                             "name": "IM-3-9",  
                             "url": "http://111.229.91.248/static/img/fakeui/fakeui-IM-3-9.png",  
                             "hit_flag": 1,  
-                            "width":1400
+                            "width":1100
                         }
                     ]  
                 },
@@ -2775,7 +2802,7 @@
             "rid": 4,
             "name": "项目排期表",
             "stage_id": 4,
-            "src_url": ""
+            "src_url": "http://111.229.91.248/static/svg/rsc/排期表.svg"
         }
     ],
     "videos": [

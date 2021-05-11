@@ -120,7 +120,7 @@ export const ScreenShot: FC<Props> = memo(function ScreenShot({ data, handleNext
         <div>
             <div className="d-flex flex-row">
                 <div className="align-self-start">
-                    <FakeUi data={data.fakeUI} />
+                    <FakeUi data={data.fakeUI} handleNext={handleNext} nextType={undefined}/>
                 </div>
                 <div className="ml-40 align-self-center">
                     <BootstrapTable

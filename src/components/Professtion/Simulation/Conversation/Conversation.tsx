@@ -45,7 +45,7 @@ class Conversation extends Component<Props, State> {
         let speaker = this.lookupConvo(this.state.num).speaker
         let speakerIdName = speaker==="用户"?"convo-speaker-user":"convo-speaker-others"
         let contentIdName = speaker==="用户"?"convo-content-user":"convo-content-others"
-        let characterImgDom = speaker!=="用户"?<img className="conversation-character z-index-low" src = {characterImg}/>:<div/>
+        let characterImgDom = speaker!=="用户"?<img className="conversation-character z-index-low" src = {this.lookupConvo(this.state.num).characterImg?this.lookupConvo(this.state.num).characterImg:""}/>:<div/>
         return (
                 <div className="convo-container">
                     <div className = " z-index-mid">
