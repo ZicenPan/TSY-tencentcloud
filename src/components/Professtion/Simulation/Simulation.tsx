@@ -582,7 +582,7 @@ export default class Simulation extends React.Component<Props, State> {
             case 'finish': {
                 return (
                     <div className={className} style={style}>
-                        <EndPage data={this.state.data} handleNext={this.handleNext} />
+                        <EndPage data={this.state.data} handleChangeType={this.props.handleChangeType} />
                     </div>
                 )
             }
