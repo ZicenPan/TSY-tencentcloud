@@ -299,7 +299,7 @@
                                 "columns": [
                                     {
                                         "dataField": "id",
-                                        "text": "竞品",
+                                        "text": "步骤",
                                         "editor": {
                                             "type": "textarea"
                                         },
@@ -339,10 +339,10 @@
                                         "dataField": "interaction",
                                         "text": "交互",
                                         "editor": {
-                                            "type": "textarea"
+                                            "placeholder":"请描述用户对该功能的态度及原因"
                                         },
                                         "style": {
-                                            "width":"140px",
+                                            "width":"200px",
                                             "height":"105px",
                                             "fontSize":"16px"
                                         }
@@ -362,21 +362,21 @@
                                 "grid": [
                                     {
                                         "id": "步骤一",
-                                        "process": "",
-                                        "interaction": "",
-                                        "vision": ""
+                                        "process": "选择反馈信息",
+                                        "interaction": "长按消息调出快捷的回复表情，默认显示一列常用表情，点击“加号”可调出更多表情的选择面板",
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-1.png"
                                     },
                                     {
                                         "id": "步骤二",
                                         "process": "",
                                         "interaction": "",
-                                        "vision": ""
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png"
                                     },
                                     {
                                         "id": "步骤三",
                                         "process": "",
                                         "interaction": "",
-                                        "vision": ""
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png"
                                     }
                                 ]
                             }
@@ -599,8 +599,10 @@
                             "dataField": "analy",
                             "text": "分析",
                             "editor": {
-                                "type": "textarea"
+                                "type": "textarea",
+                                "placeholder": "请描述用户对该功能的态度及原因"
                             },
+                            "isDummyField": true,
                             "style": {
                                 "width": "300px",
                                 "height": "105px",
