@@ -39,9 +39,11 @@ export default class ScreenShot extends React.Component<Props, SState> {
             pass: false,
             figure :{src:"null", zoom:false}
         }
+        this.afterSaveCell = this.afterSaveCell.bind(this)
     }
 
     setZoomFigure(zoom: ZoomFigure) {
+        console.log("zoom!",zoom)
         this.setState( 
             {
                 figure: zoom
@@ -90,13 +92,23 @@ export default class ScreenShot extends React.Component<Props, SState> {
 
     
     fullScreenImg = () => {
+    
     return <ReactModal
-    isOpen= {this.state.figure.src.zoom}
+    isOpen= {this.state.figure.zoom}
     contentLabel="onRequestClose Example"
     className="centered"
+    style={{overlay: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.75)',
+        zIndex:64
+      }}}
     >
     <div className="d-flex flex-column" onClick={() =>this.setZoomFigure( {src: this.state.figure.src, zoom:false})}>
-        <img className="align-self-center mt-40" src={this.state.figure.src} style={{width:"90%", height:"90%"}}/>
+        <img className="align-self-center mt-40" src={this.state.figure.src} style={{width:"340px", height:"740px"}}/>
         
     </div>
     </ReactModal>;

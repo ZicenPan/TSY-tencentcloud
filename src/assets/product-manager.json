@@ -487,13 +487,22 @@
                                         "text": "交互",
                                         "editor": {
                                             "type": "textarea"
+                                        },
+                                        "style": {
+                                            "width":"200px",
+                                            "height":"200px",
+                                            "fontSize":"16px"
                                         }
                                     },
                                     {
                                         "dataField": "vision",
                                         "text": "视觉",
-                                        "editor": {
-                                            "type": "textarea"
+                                        "isDummyField": true,
+                                        "editable":false,
+                                        "style": {
+                                            "width":"140px",
+                                            "height":"105px",
+                                            "fontSize":"16px"
                                         }
                                     }
                                 ],
