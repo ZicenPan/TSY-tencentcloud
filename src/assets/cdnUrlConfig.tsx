@@ -12,6 +12,10 @@ export const opGuideLogoUrl = "http://"+tysIp+"/static/svg/op-guide-logo.svg"
 
 export const opGuideLightLogoUrl = "http://"+tysIp+"/static/svg/op-guide-light-logo.svg"
 
+export const mailListLogoUrl = "http://"+tysIp+"/static/svg/mail-list-logo.svg"
+
+export const mailListLightLogoUrl = "http://"+tysIp+"/static/svg/mail-list-light-logo.svg"
+
 export const lightLogoUrl = "http://"+tysIp+"/static/svg/light-logo.svg"
 
 export const taskDescLogoUrl = "http://"+tysIp+"/static/svg/task-description-log.svg"

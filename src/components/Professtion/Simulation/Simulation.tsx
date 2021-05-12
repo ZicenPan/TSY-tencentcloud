@@ -29,9 +29,12 @@ import {
     taskDescLogoUrl,
     rscLightLogoUrl,
     opGuideLightLogoUrl,
-    taskDescLightLogoUrl
+    taskDescLightLogoUrl,
+    mailListLogoUrl,
+    mailListLightLogoUrl
 } from '../../../assets/cdnUrlConfig'
 import EndPage from './EndPage/EndPage'
+import { isUndefined } from 'lodash'
 
 const tysPrefix = 'tys_sim_'
 const userPrefix = 'user1'
@@ -55,13 +58,18 @@ interface State {
     curStage: number
     curStep: number
     data: any
-    stageChange: number
+    stageChange: boolean
+    stepChange: boolean
     swtichMap: any
     multiPageIndex: number
+    showMailList: boolean,
+    backgroundImg : string,
+    showMailListMsg: boolean
 }
 
 export default class Simulation extends React.Component<Props, State> {
     inputData = {}
+    opGuideRef = React.createRef<PopUpBtn>();
     constructor(props: any) {
         super(props)
         this.state = {
@@ -70,9 +78,13 @@ export default class Simulation extends React.Component<Props, State> {
             data: initData.stages[this.props.stage].steps
                 ? initData.stages[this.props.stage].steps[this.props.step]
                 : '',
-            stageChange: 0,
+            stageChange: false,
+            stepChange: false,
             swtichMap: {},
-            multiPageIndex: 0
+            multiPageIndex: 0,
+            showMailList: false,
+            backgroundImg: "",
+            showMailListMsg:false
         }
         this.handleNext = this.handleNext.bind(this)
         this.handleChangeMultiPageIndex = this.handleChangeMultiPageIndex.bind(this)
@@ -210,19 +222,60 @@ export default class Simulation extends React.Component<Props, State> {
         }
     }
 
-    handleNext = () => {
+    handleMailList = (type:string) => {
+        const cap = initData.stages[this.state.curStage].steps!.length
+        // 弹出通讯录均为同一任务之中
+        if (this.state.curStep < cap - 1) {
+            if (Object.keys(this.state.data).length === 0)
+                return false
+
+            if (initData.stages[this.state.curStage].steps[this.state.curStep+1].hasOwnProperty("mailListFlag")) {
+                this.setState({
+                    showMailList:true,
+                    showMailListMsg:true
+                })
+                return true
+            }
+        }
+        return false
+    }
+
+    handleNext = ({
+        type = "normal"
+      } = {}) => {
         console.log(this.state)
         console.log('beforeNext: ', this.state.curStage, ' ', this.state.curStep)
         const cap = initData.stages[this.state.curStage].steps!.length
+
+        // 判断是否需要弹出通讯录,进入会议等待
+        if (this.handleMailList(type)) {
+            this.setState({
+                backgroundImg:"http://111.229.91.248/static/img/workPlace.png",
+                data:{}
+            })
+            return
+        }
+        if (type==="mailList") {
+            if (this.state.curStep >= cap - 1 || !initData.stages[this.state.curStage].steps[this.state.curStep+1].hasOwnProperty("mailListFlag"))
+                return 
+        }
+
         if (this.state.curStep < cap - 1) {
             this.setState(() => ({
                 curStep: this.state.curStep + 1,
                 data: initData.stages[this.state.curStage].steps![this.state.curStep + 1],
-                stageChange: 0
+                stageChange: false,
+                backgroundImg:"",
+                showMailListMsg:false,
+                showMailList:false,
             }))
 
             if (this.state.curStep >= this.props.step) {
                 this.props.handleChangeStep(this.props.step + 1)
+                this.setState({
+                    stepChange: true,
+                })
+                
             }
         } else if (this.state.curStage >= initData.stages.length - 1) {
             console.log('over')
@@ -231,12 +284,15 @@ export default class Simulation extends React.Component<Props, State> {
                 curStage: this.state.curStage + 1,
                 curStep: 0,
                 data: initData.stages[this.state.curStage + 1].steps![0],
-                stageChange: this.state.curStage >= this.props.stage ? 1 : 0
+                stageChange: this.state.curStage >= this.props.stage ? false : true,
             }))
 
             if (this.state.curStage >= this.props.stage) {
                 this.props.handleChangeStage(this.props.stage + 1)
                 this.props.handleChangeStep(0)
+                this.setState({
+                    stepChange: true,
+                })
             }
         }
     }
@@ -247,7 +303,11 @@ export default class Simulation extends React.Component<Props, State> {
                 curStage: curStage,
                 curStep: 0,
                 data: initData.stages[curStage].steps ? initData.stages[curStage].steps[0] : '',
-                stageChange: 0,
+                stageChange: false,
+                backgroundImg:"",
+                showMailListMsg:false,
+                showMailList:false,
+                stepChange: false,
             })
         }
     }
@@ -257,7 +317,11 @@ export default class Simulation extends React.Component<Props, State> {
             this.setState({
                 data: initData.stages[this.state.curStage].steps[step],
                 curStep: step,
-                stageChange: 0
+                stageChange: false,
+                backgroundImg:"",
+                showMailListMsg:false,
+                showMailList:false,
+                stepChange: false,
             })
         }
     }
@@ -266,7 +330,9 @@ export default class Simulation extends React.Component<Props, State> {
         let swtichMapTemp = this.state.swtichMap
         swtichMapTemp[swtichId] = num
         this.setState({
-            swtichMap: swtichMapTemp
+            swtichMap: swtichMapTemp,
+            stepChange: false,
+            stageChange: false,
         })
     }
     /* eslint-disable */
@@ -352,6 +418,7 @@ export default class Simulation extends React.Component<Props, State> {
                 }
                 return (
                     <div className={className} style={style}>
+                        <h2 className="d-flex Simulation-pageTitle">{templateData.name?templateData.name:""}</h2>
                         {childContents}
                     </div>
                 )
@@ -490,7 +557,7 @@ export default class Simulation extends React.Component<Props, State> {
             case 'fakeui': {
                 return (
                     <div className={className} style={style}>
-                        <FakeUi data={templateData.content} />
+                        <FakeUi data={templateData.content} handleNext={this.handleNext} nextType={templateData.nextType}/>
                         <button
                             onClick={this.handleNext}
                             type="submit"
@@ -547,37 +614,62 @@ export default class Simulation extends React.Component<Props, State> {
                             <div className="d-flex PopUpNavList flex-column z-index-high">
                                 <div className="mt-20 ml-40">
                                     <PopUpBtn
+                                        ref = {isUndefined}
                                         name="任务描述"
                                         content={this.state.data.taskDesc}
                                         stage={this.props.stage}
                                         data=""
-                                        changeStage={0}
+                                        showTooltip={false}
                                         logoUrl={taskDescLogoUrl}
                                         logoLightUrl={taskDescLightLogoUrl}
+                                        handleNext={this.handleNext}
+                                        autoPopFlag={false}
                                     />
                                 </div>
                                 <div className="mt-20 ml-40">
                                     <PopUpBtn
+                                        ref = {this.opGuideRef}
                                         name="操作指引"
                                         content={this.state.data.opGuide}
                                         stage={this.props.stage}
                                         data=""
-                                        changeStage={0}
+                                        showTooltip={this.state.stepChange}
                                         logoUrl={opGuideLogoUrl}
                                         logoLightUrl={opGuideLightLogoUrl}
+                                        handleNext={this.handleNext}
+                                        autoPopFlag={this.state.stepChange&&this.state.data.hasOwnProperty("opGuide")&&this.state.data.opGuide.hasOwnProperty("img")}
                                     />
                                 </div>
                                 <div className="mt-20 ml-40">
                                     <PopUpBtn
+                                        ref = {isUndefined}
                                         name="资源库"
                                         content="资源库-分析理解需求，自我思考并与需求对接方沟通，明确需求的真实目的以及竞品分析的目标"
                                         stage={this.props.stage}
                                         data={initData.recources}
-                                        changeStage={this.state.stageChange}
+                                        showTooltip={this.state.stageChange}
                                         logoUrl={rscLogoUrl}
                                         logoLightUrl={rscLightLogoUrl}
+                                        handleNext={this.handleNext}
+                                        autoPopFlag={false}
+                                    />  
+                                </div>
+
+                              <div className="mt-20 ml-40" style={this.state.showMailList?{visibility: 'visible'}:{visibility: 'hidden'}}>
+                                    <PopUpBtn
+                                        ref = {isUndefined}
+                                        name="通讯录"
+                                        content={this.state.data.mailList}
+                                        stage={this.props.stage}
+                                        data={initData.recources}
+                                        showTooltip={this.state.showMailListMsg}
+                                        logoUrl={mailListLogoUrl}
+                                        logoLightUrl={mailListLightLogoUrl}
+                                        handleNext={this.handleNext}
+                                        autoPopFlag={false}
                                     />
                                 </div>
+
 
                                 <div className="mt-40 ml-20 Simulation-StepNav">
                                     <StepNav
@@ -627,12 +719,17 @@ export default class Simulation extends React.Component<Props, State> {
         let backStyle = {}
         if (this.props.type === 'simulation') {
             backStyle = {
-                background: `url("${linesImg}"),url("${
-                    this.state.data.backgroundImg ? this.state.data.backgroundImg : ''
-                }")`
+                background: `url("${linesImg}"),
+                
+                url("${this.state.data.backgroundImg ? this.state.data.backgroundImg : ''}"),
+                url("${this.state.backgroundImg ? this.state.backgroundImg : ''}")
+                `
             }
         }
-        // 背景图片获取
+        // 自动触发事件
+        if(this.state.stepChange&&this.state.data.hasOwnProperty("opGuide")&&this.state.data.opGuide.hasOwnProperty("img")) {
+            this.opGuideRef.current.handleOpenModal()
+        }
         return (
             <div className="Simulation z-index-lowest" style={backStyle}>
                 <div className="z-index-highest">
