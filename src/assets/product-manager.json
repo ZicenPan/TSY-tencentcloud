@@ -338,12 +338,9 @@
                                     {
                                         "dataField": "interaction",
                                         "text": "交互",
-                                        "editor": {
-                                            "placeholder":"请描述用户对该功能的态度及原因"
-                                        },
                                         "style": {
                                             "width":"200px",
-                                            "height":"105px",
+                                            "height":"200px",
                                             "fontSize":"16px"
                                         }
                                     },
@@ -490,13 +487,22 @@
                                         "text": "交互",
                                         "editor": {
                                             "type": "textarea"
+                                        },
+                                        "style": {
+                                            "width":"200px",
+                                            "height":"200px",
+                                            "fontSize":"16px"
                                         }
                                     },
                                     {
                                         "dataField": "vision",
                                         "text": "视觉",
-                                        "editor": {
-                                            "type": "textarea"
+                                        "isDummyField": true,
+                                        "editable":false,
+                                        "style": {
+                                            "width":"140px",
+                                            "height":"105px",
+                                            "fontSize":"16px"
                                         }
                                     }
                                 ],
@@ -505,19 +511,19 @@
                                         "id": "步骤一",
                                         "process": "",
                                         "interaction": "",
-                                        "vision": ""
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-1.png"
                                     },
                                     {
                                         "id": "步骤二",
                                         "process": "",
                                         "interaction": "",
-                                        "vision": ""
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-2.png"
                                     },
                                     {
                                         "id": "步骤三",
                                         "process": "",
                                         "interaction": "",
-                                        "vision": ""
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png"
                                     }
                                 ]
                             }

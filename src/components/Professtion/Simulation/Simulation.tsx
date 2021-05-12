@@ -18,7 +18,7 @@ import ProfesstionsVideos from './ProfesstionVideo/ProfesstionVideo'
 import { Match } from './Match/Match'
 import StepNav from './StepNav/StepNav'
 import FakeUi from './FakeUi/FakeUi'
-import { ScreenShot } from './ScreenShot/ScreenShot'
+import ScreenShot from './ScreenShot/ScreenShot'
 import TestInput from './TestInput/TestInput'
 import UserFeedback from './UserFeedback/UserFeedback'
 
@@ -503,9 +503,11 @@ export default class Simulation extends React.Component<Props, State> {
                 )
             }
             case 'screenshot': {
+                console.log("template data!", templateData)
+                let newTemlate = templateData
                 return (
                     <div className={className} style={style}>
-                        <ScreenShot data={templateData} handleNext={this.handleNext}/>
+                        <ScreenShot data={newTemlate} handleNext={this.handleNext}/>
                     </div>
                 )
             }

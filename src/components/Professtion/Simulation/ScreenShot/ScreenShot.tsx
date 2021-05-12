@@ -12,6 +12,8 @@ import StandardTip from '../../StandardTip/StandardTip'
 
 import update from 'immutability-helper'
 import ReactModal from 'react-modal'
+import { PassThrough } from 'node:stream'
+import { bool } from 'prop-types'
 
 
 interface Props {
@@ -23,17 +25,31 @@ interface ZoomFigure {
     src : any
     zoom: boolean
 }
+interface SState {
+    data: any
+    pass: boolean
+    figure: ZoomFigure
+}
 
-export const ScreenShot: FC<Props> = memo(function ScreenShot({ data, handleNext }) {
-    const [UInum, setUInum] = useState(0)
+export default class ScreenShot extends React.Component<Props, SState> {
+    constructor(props: any) {
+        super(props)
+        this.state = { 
+            data: this.props.data,
+            pass: false,
+            figure :{src:"null", zoom:false}
+        }
+        this.afterSaveCell = this.afterSaveCell.bind(this)
+    }
 
-    const [grid, setGrid] = useState(data.form.grid)
-    const [columns, setColumns] = useState(data.form.columns)
-    const [answer, setAnswer] = useState(data.form.answer)
-    const [pass, setPass] = useState(false)
-    const [zoomFigure, setZoomFigure] = useState({ src:null, zoom:false})
-
-    function formEqual(object1: any, object2: any) {
+    setZoomFigure(zoom: ZoomFigure) {
+        console.log("zoom!",zoom)
+        this.setState( 
+            {
+                figure: zoom
+            })
+    }
+    formEqual(object1: any, object2: any) {
         const keys1 = Object.keys(object1)
         const keys2 = Object.keys(object2)
 
@@ -52,100 +68,110 @@ export const ScreenShot: FC<Props> = memo(function ScreenShot({ data, handleNext
         return true
     }
 
-    function afterSaveCell(oldValue: any, newValue: any, row: any) {
+    afterSaveCell(oldValue: any, newValue: any, row: any) {
+        const grid = this.props.data.form.grid
+        const columns = this.props.data.form.columns
+        const answer = this.props.data.form.answer
         console.log('grid', grid)
-        console.log('answer', answer)
+        console.log('answer',answer)
         let equal = true
         for (let i in answer) {
             if (answer.hasOwnProperty(i)) {
-                equal = equal && formEqual(answer[i], grid[i])
+                equal = equal && this.formEqual(answer[i], grid[i])
             }
         }
-        setPass(equal)
+        
+        this.setState({
+            pass:true
+        })
+    }
+    setImg(imgSrc, e){
+        console.log("Set img!")
+        this.setZoomFigure( {src:imgSrc, zoom:true})
     }
 
-    //     }
-    //     setPass(equal)
-    // }
-    const fullScreenImg = (showModal) => <ReactModal
-        isOpen= {showModal}
-        contentLabel="onRequestClose Example"
-        className="centered"
-        >
-        <div className="d-flex flex-column" onClick={() =>setZoomFigure( {src: zoomFigure.src, zoom:false})}>
-            <img className="align-self-center mt-20" src={zoomFigure.src} style={{width:"90%", height:"90%"}}/>
-            
-        </div>
-    </ReactModal>;
-
-    function setImg(imgSrc, e){
-        setZoomFigure( {src:imgSrc, zoom:true})
-    }
     
+    fullScreenImg = () => {
+    
+    return <ReactModal
+    isOpen= {this.state.figure.zoom}
+    contentLabel="onRequestClose Example"
+    className="centered"
+    style={{overlay: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.75)',
+        zIndex:64
+      }}}
+    >
+    <div className="d-flex flex-column" onClick={() =>this.setZoomFigure( {src: this.state.figure.src, zoom:false})}>
+        <img className="align-self-center mt-40" src={this.state.figure.src} style={{width:"340px", height:"740px"}}/>
+        
+    </div>
+    </ReactModal>;
+    }
 
-    const newCols = update(columns, {
-        [columns.length - 1]: {
-            $merge: {
-                formatter: (cellContent, row, rowindex, extraData) => {
-                    console.log("cell", cellContent)
-                    console.log("row", row)
-                    console.log("rowi", rowindex)
-                    console.log("extra", extraData)
-                    return (
-                        <div onClick={(e)=> setImg(row.vision, e)}>
-                        <img src={row.vision} style={{width:"100%", height:"100%"}} />
-                        </div>
-                    )
+    render() {
+
+        console.log("state!", this.state)
+        let columns = this.props.data.form.columns
+        console.log(columns)
+        console.log("columns!", columns)
+        let clength = columns.length - 1
+        let grid = this.props.data.form.grid
+        const newCols = update(columns, {
+            [clength]: {
+                $merge: {
+                    formatter: (cellContent, row, rowindex, extraData) => {
+                        console.log("cell", cellContent)
+                        console.log("row", row)
+                        console.log("rowi", rowindex)
+                        console.log("extra", extraData)
+                        return (
+                            <div onClick={(e)=> this.setImg(row.vision, e)}>
+                            <img src={row.vision} style={{width:"100%", height:"100%"}} />
+                            </div>
+                        )
+                    }
                 }
             }
-        }
-    })
+        })
+        console.log("recolumns!", columns)
 
-    // const newRows = update(grid, {
-    //     [grid.length - 1]: {
-    //         $merge: {
-    //             formatter: () => {
-
-    //             }
-    //         }
-    //     }
-    // })
-
-    console.log(newCols)
-    function handleCheck() {}
-
-    function setShowStandardTip() {}
-
-    return (
-        <div>
-            <div className="d-flex flex-row">
-                <div className="align-self-start">
-                    <FakeUi data={data.fakeUI} />
+        return (
+            <div>
+                <div className="d-flex flex-row">
+                    <div className="align-self-start">
+                        <FakeUi data={this.props.data.fakeUI} />
+                    </div>
+                    <div className="ml-40 align-self-center">
+                        <BootstrapTable
+                            keyField="id"
+                            data={grid}
+                            columns={newCols}
+                            cellEdit={cellEditFactory({
+                                mode: 'click',
+                                blurToSave: true,
+                                nonEditableRows: () => ["步骤一"],
+                                afterSaveCell:this.afterSaveCell
+                            })}
+                            headerClasses={this.props.data.headerClass ? this.props.data.headerClass : 'header-class'}
+                        />
+                    </div>
                 </div>
-                <div className="ml-40 align-self-center">
-                    <BootstrapTable
-                        keyField="id"
-                        data={grid}
-                        columns={newCols}
-                        cellEdit={cellEditFactory({
-                            mode: 'click',
-                            blurToSave: true,
-                            afterSaveCell,
-                            nonEditableRows: () => [0]
-                        })}
-                        headerClasses={data.headerClass ? data.headerClass : 'header-class'}
-                    />
-                </div>
+                {this.fullScreenImg()}
+                <button
+                    onClick={this.props.handleNext}
+                    type="submit"
+                    className="btn btn-blue"
+                    style={{ position: 'fixed', top: '85%', left: '70%' }}
+                >
+                    下一步
+                </button>
             </div>
-            {fullScreenImg(zoomFigure.zoom)}
-            <button
-                onClick={handleNext}
-                type="submit"
-                className="btn btn-blue"
-                style={{ position: 'fixed', top: '85%', left: '70%' }}
-            >
-                下一步
-            </button>
-        </div>
-    )
-})
+        )
+    }
+}
