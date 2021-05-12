@@ -19,6 +19,7 @@ export const Form: FC<Props> = memo(function Form({ data, handleNext }) {
     const [grid, setGrid] = useState(data.grid)
     const [answer, setAnswer] = useState(data.answer)
     const [pass, setPass] = useState(false)
+    const [showStandardTip, setShowStandardTip] = useState(false)
     function getType(type: string) {
         switch (type) {
             case 'select':
@@ -46,10 +47,15 @@ export const Form: FC<Props> = memo(function Form({ data, handleNext }) {
             if (val1 !== '' && val1 !== val2) {
                 return false
             }
+            // 不允许提交的答案有空白
+            if (val2 === '')
+                return false
         }
 
         return true
     }
+
+    
 
     function afterSaveCell(oldValue: any, newValue: any, row: any) {
         console.log('grid', grid)
@@ -65,7 +71,6 @@ export const Form: FC<Props> = memo(function Form({ data, handleNext }) {
 
     function handleCheck() {}
 
-    function setShowStandardTip() {}
     if (data.columns) {
         return (
             <div className="mt-40">
@@ -83,7 +88,7 @@ export const Form: FC<Props> = memo(function Form({ data, handleNext }) {
                     handleCheck={handleCheck}
                     setShowStandardTip={setShowStandardTip}
                 />
-
+                {showStandardTip?<StandardTip standardMsg={data.resultMsg.standardMsg}/>:<div/>}
                 <button
                     onClick={handleNext}
                     type="submit"
