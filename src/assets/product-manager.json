@@ -495,7 +495,7 @@
                                 "columns": [
                                     {
                                         "dataField": "id",
-                                        "text": "竞品1",
+                                        "text": "步骤",
                                         "editor": {
                                             "type": "textarea"
                                         }
@@ -507,18 +507,24 @@
                                             "type": "select",
                                             "options": [
                                                 {
-                                                    "value": "A",
+                                                    "value": "选择反馈信息",
                                                     "label": "选择反馈信息"
                                                 },
                                                 {
-                                                    "value": "B",
+                                                    "value": "发送表情反馈",
                                                     "label": "发送表情反馈"
                                                 },
                                                 {
-                                                    "value": "C",
+                                                    "value": "撤销表情反馈",
                                                     "label": "撤销表情反馈"
                                                 }
                                             ]
+                                            
+                                        },
+                                        "style": {
+                                            "width":"140px",
+                                            "height":"105px",
+                                            "fontSize":"16px"
                                         }
                                     },
                                     {
@@ -550,19 +556,21 @@
                                         "id": "步骤一",
                                         "process": "",
                                         "interaction": "",
-                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-1.png"
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-2.png"
+
                                     },
                                     {
                                         "id": "步骤二",
                                         "process": "",
                                         "interaction": "",
-                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-2.png"
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png"
+
                                     },
                                     {
                                         "id": "步骤三",
                                         "process": "",
                                         "interaction": "",
-                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png"
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-6.png"
                                     }
                                 ],
                                 "answer": [
