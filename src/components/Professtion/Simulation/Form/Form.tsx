@@ -78,7 +78,7 @@ export const Form: FC<Props> = memo(function Form({ data, handleNext }) {
                     keyField="id"
                     data={grid}
                     columns={columns}
-                    cellEdit={cellEditFactory({ mode: 'click', blurToSave: true, afterSaveCell })}
+                    cellEdit={cellEditFactory({ mode: 'click', blurToSave: true, nonEditableRows: () => [0], afterSaveCell })}
                     headerClasses={data.headerClass ? data.headerClass : 'header-class'}
                 />
                 <PageResult
