@@ -247,6 +247,11 @@
                     "style": {
                         "margin-left": "20px"
                     },
+                    "resultMsg": {
+                        "correctMsg": "太棒啦，你已完成竞品的对比分析！",
+                        "errorMsg": "请按顺序选择2个竞品的正确流程，记得描述对应的交互并截图哦~",
+                        "standardMsg": "对比需全面客观，交互描述详细准确，视觉截图可完整反映竞品设计。"
+                    },
                     "content": [
                         {
                             "type": "switch",
@@ -259,6 +264,11 @@
                             "name": "竞品对比分析",
                             "type": "screenshot",
                             "direction": "row",
+                            "resultMsg": {
+                                "correctMsg": "太棒啦，你已完成竞品的对比分析！",
+                                "errorMsg": "请按顺序选择2个竞品的正确流程，记得描述对应的交互并截图哦~",
+                                "standardMsg": "对比需全面客观，交互描述详细准确，视觉截图可完整反映竞品设计。"
+                            },
                             "fakeUI": [
                                 {
                                     "name": "feishu1",
@@ -369,13 +379,33 @@
                                     },
                                     {
                                         "id": "步骤二",
+                                        "process": "发送表情反馈",
+                                        "interaction": "",
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png"
+                                    },
+                                    {
+                                        "id": "步骤三",
+                                        "process": "撤销表情反馈",  
+                                        "interaction": "",
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png"
+                                    }
+                                ],
+                                "answer": [
+                                    {
+                                        "id": "步骤一",
+                                        "process": "选择反馈信息",
+                                        "interaction": "长按消息调出快捷的回复表情，默认显示一列常用表情，点击“加号”可调出更多表情的选择面板",
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-1.png"
+                                    },
+                                    {
+                                        "id": "步骤二",
                                         "process": "",
                                         "interaction": "",
                                         "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png"
                                     },
                                     {
                                         "id": "步骤三",
-                                        "process": "",
+                                        "process": "",  
                                         "interaction": "",
                                         "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png"
                                     }
@@ -386,6 +416,11 @@
                             "name": "竞品对比分析",
                             "type": "screenshot",
                             "direction": "row",
+                            "resultMsg": {
+                                "correctMsg": "太棒啦，你已完成竞品的对比分析！",
+                                "errorMsg": "请按顺序选择2个竞品的正确流程，记得描述对应的交互并截图哦~",
+                                "standardMsg": "对比需全面客观，交互描述详细准确，视觉截图可完整反映竞品设计。"
+                            },
                             "fakeUI": [
                                 {
                                     "name": "messenger1",
@@ -526,6 +561,26 @@
                                     {
                                         "id": "步骤三",
                                         "process": "",
+                                        "interaction": "",
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png"
+                                    }
+                                ],
+                                "answer": [
+                                    {
+                                        "id": "步骤一",
+                                        "process": "选择反馈信息",
+                                        "interaction": "",
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-1.png"
+                                    },
+                                    {
+                                        "id": "步骤二",
+                                        "process": "发送表情反馈",
+                                        "interaction": "",
+                                        "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-2.png"
+                                    },
+                                    {
+                                        "id": "步骤三",
+                                        "process": "撤销表情反馈",
                                         "interaction": "",
                                         "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Messenger-3.png"
                                     }

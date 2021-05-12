@@ -29,6 +29,7 @@ interface SState {
     data: any
     pass: boolean
     figure: ZoomFigure
+    showStandardTip: boolean
 }
 
 export default class ScreenShot extends React.Component<Props, SState> {
@@ -37,9 +38,11 @@ export default class ScreenShot extends React.Component<Props, SState> {
         this.state = { 
             data: this.props.data,
             pass: false,
-            figure :{src:"null", zoom:false}
+            figure :{src:"null", zoom:false},
+            showStandardTip: false
         }
         this.afterSaveCell = this.afterSaveCell.bind(this)
+        this.setShowStandardTip = this.setShowStandardTip.bind(this)
     }
 
     setZoomFigure(zoom: ZoomFigure) {
@@ -49,6 +52,13 @@ export default class ScreenShot extends React.Component<Props, SState> {
                 figure: zoom
             })
     }
+
+    setShowStandardTip(status:boolean) {
+        this.setState({
+            showStandardTip:status
+        })
+    }
+
     formEqual(object1: any, object2: any) {
         const keys1 = Object.keys(object1)
         const keys2 = Object.keys(object2)
@@ -63,6 +73,9 @@ export default class ScreenShot extends React.Component<Props, SState> {
             if (val1 !== '' && val1 !== val2) {
                 return false
             }
+            // 不允许提交的答案有空白
+            if (val2 === '')
+                return false
         }
 
         return true
@@ -82,7 +95,7 @@ export default class ScreenShot extends React.Component<Props, SState> {
         }
         
         this.setState({
-            pass:true
+            pass:equal
         })
     }
     setImg(imgSrc, e){
@@ -163,13 +176,22 @@ export default class ScreenShot extends React.Component<Props, SState> {
                     </div>
                 </div>
                 {this.fullScreenImg()}
+
+                <PageResult
+                    checked={this.state.pass}
+                    handleNext={this.props.handleNext}
+                    resultMsg={this.props.data.resultMsg ? this.props.data.resultMsg : ''}
+                    handleCheck={()=>{}}
+                    setShowStandardTip={this.setShowStandardTip}
+                />
+                {this.state.showStandardTip?<StandardTip standardMsg={this.props.data.resultMsg.standardMsg}/>:<div/>}
                 <button
                     onClick={this.props.handleNext}
                     type="submit"
                     className="btn btn-blue"
-                    style={{ position: 'fixed', top: '85%', left: '70%' }}
+                    style={{ position: 'fixed', top: '85%', left: '90%' }}
                 >
-                    下一步
+                    Skip
                 </button>
             </div>
         )
