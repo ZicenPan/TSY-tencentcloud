@@ -145,7 +145,7 @@ export default class ScreenShot extends React.Component<Props, SState> {
             <div>
                 <div className="d-flex flex-row">
                     <div className="align-self-start">
-                        <FakeUi data={this.props.data.fakeUI} />
+                        <FakeUi data={this.props.data.fakeUI} handleNext={this.props.handleNext} nextType={undefined}/>
                     </div>
                     <div className="ml-40 align-self-center">
                         <BootstrapTable

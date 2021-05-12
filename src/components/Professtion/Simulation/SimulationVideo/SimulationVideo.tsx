@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "./SimulationVideo.scss"
+import cellEditFactory, { Type } from 'react-bootstrap-table2-editor'
 import {
     Player,
     BigPlayButton,
@@ -12,6 +13,7 @@ import {
     PlaybackRateMenuButton,  // 倍速播放选项
     VolumeMenuButton
   } from 'video-react';
+import BootstrapTable from "react-bootstrap-table-next";
 
 interface Props {
     videoInfo:any,
@@ -35,9 +37,8 @@ export default class Video extends Component<Props, {}> {
             <div>
                 <div className="video-title mt-40 d-flex ">
                     <div className="video-stageid mr-20">{stageId[1]?stageId:'0'+stageId}</div>
-                    <h1>{this.props.videoInfo.name}</h1>    
+                    <h1>{this.props.videoInfo.name}</h1>
                 </div>
-                <h3 className="video-introduction-title mt-10">简介</h3>
                 <p className="mt-10 video-introduction-content">{this.props.videoInfo.introduction}</p>
                 <div className="Player">
                     <Player

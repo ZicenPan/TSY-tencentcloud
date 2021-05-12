@@ -85,8 +85,6 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
     }
     return (
         <div>
-
-
             <button
                 ref={btnRef}
                 onClick={ButtonRouter}
@@ -94,7 +92,7 @@ export const PageResult: FC<Props> = memo(function PageResult({ checked, handleN
                 className="btn btn-blue"
                 style={{ position: 'fixed', top: '85%', left: '70%', maxWidth: "352px"}}
             >
-                {btnName}
+                {checked?btnName:"确认"}
             </button>
 
             <ReactModal

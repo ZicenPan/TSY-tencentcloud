@@ -6,10 +6,12 @@ import { PageResult } from './../Result/PageResult'
 import StandardTip from './../../StandardTip/StandardTip'
 import '@/scss/style.scss'
 import './Selection.scss'
+import {render} from "react-dom";
 
 interface Props {
     data: any
     handleNext: () => void
+    isChecked?: boolean
 }
 
 interface State {
@@ -20,9 +22,11 @@ interface State {
 export const Selection: FC<Props> = memo(function Selection({ data, handleNext }) {
     const [options, setOptions] = useState(data.content)
     const [showStandardTip, setShowStandardTip] = useState(false)
+    const [itemsChecked, setItemsChecked] = useState(false);
 
     const handleClick = useCallback(
         (index: number) => {
+            setItemsChecked(false)
             setOptions(
                 update(options, {
                     [index]: {
@@ -37,8 +41,10 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
     )
 
     const doNothing = () => {
+        setItemsChecked(true)
     }
     function handleClear() {
+        setItemsChecked(false)
         setOptions(data.content)
     }
 
@@ -62,7 +68,7 @@ export const Selection: FC<Props> = memo(function Selection({ data, handleNext }
                             <button
                                 className="Selection-sel mt-20"
                                 style={{
-                                    borderColor: item.selected ? (data.content[id].answer ? '#00AA90' : '#D0104C') : '#58B2DC',
+                                    borderColor: itemsChecked ? (item.selected ? (data.content[id].answer ? '#00AA90' : '#D0104C') : '#58B2DC') : (item.selected ? '#58B2DC' : '#F2F2F2'),
                                     borderWidth: item.selected ? 3 : 1,
                                     backgroundColor: '#ffffff'
                                 }}

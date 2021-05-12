@@ -15,7 +15,7 @@
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
     "qrcode.react": "^1.0.1",
-    "react": "^16.13.1",
+    "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
     "react-bootstrap-table-next": "^4.0.3",
     "react-bootstrap-table2-editor": "^1.4.0",
