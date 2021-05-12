@@ -379,13 +379,13 @@
                                     },
                                     {
                                         "id": "步骤二",
-                                        "process": "发送表情反馈",
+                                        "process": "",
                                         "interaction": "",
                                         "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png"
                                     },
                                     {
                                         "id": "步骤三",
-                                        "process": "撤销表情反馈",  
+                                        "process": "",  
                                         "interaction": "",
                                         "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png"
                                     }
@@ -399,13 +399,13 @@
                                     },
                                     {
                                         "id": "步骤二",
-                                        "process": "",
+                                        "process": "发送表情反馈",
                                         "interaction": "",
                                         "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-2.png"
                                     },
                                     {
                                         "id": "步骤三",
-                                        "process": "",  
+                                        "process": "撤销表情反馈",  
                                         "interaction": "",
                                         "vision": "http://111.229.91.248/static/img/fakeui/fakeui-CompetitiveAnalysis-Feishu-3.png"
                                     }
