@@ -139,7 +139,6 @@ export default class ScreenShot extends React.Component<Props, SState> {
                 }
             }
         })
-        console.log("recolumns!", columns)
 
         return (
             <div>
@@ -155,7 +154,7 @@ export default class ScreenShot extends React.Component<Props, SState> {
                             cellEdit={cellEditFactory({
                                 mode: 'click',
                                 blurToSave: true,
-                                nonEditableRows: () => ["步骤一"],
+                                nonEditableRows: () =>  this.props.data.form.name === "Messenger"? []:["步骤一"],
                                 afterSaveCell:this.afterSaveCell
                             })}
                             headerClasses={this.props.data.headerClass ? this.props.data.headerClass : 'header-class'}
